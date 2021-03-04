@@ -7,3 +7,6 @@ name = "pypi"
 biolinkml = ">=1.6.1"
 
 [dev-packages]
+
+[requires]
+python_version = "3.7"
