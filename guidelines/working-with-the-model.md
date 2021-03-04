@@ -57,7 +57,7 @@ id	name	category	provided_by	xref	type	in_taxon
 
 There are three ways of attaching semantics to a node:
 - using testlink node property slot `category`
-  - the value of the `category` must be from the [`named thing` hierarchy](https://testlink.github.io/testlink-model/docs/NamedThing)
+  - the value of the `category` must be from the [`named thing` hierarchy](https://csolink.github.io/testlink-model/docs/NamedThing)
 - using testlink node property slot `type`
   - can have a value from any external ontology, controlled vocabulary, thesauri, or taxonomy
 - using testlink predicate slot `subclass_of` (or `rdfs:subClassOf`)
@@ -87,11 +87,11 @@ id  subject predicate   object  relation    provided_by association_type
 
 There are 3 ways of attaching the semantics to an edge:
 - using the testlink association slot `predicate`
-  - must have a value from the [`related to` hierarchy](https://testlink.github.io/testlink-model/docs/related_to)
+  - must have a value from the [`related to` hierarchy](https://csolink.github.io/testlink-model/docs/related_to)
 - using the testlink association slot `relation`
   - can have a value from any external ontology, controlled vocabulary, thesauri, or taxonomy
 - using the testlink association slot `association_type` (or `rdf:type`)
-  - must have a value from the [`association` hierarchy](https://testlink.github.io/testlink-model/docs/Association)
+  - must have a value from the [`association` hierarchy](https://csolink.github.io/testlink-model/docs/Association)
 
 
 ## testlink Model representation in Neo4j

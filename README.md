@@ -9,10 +9,10 @@
 
 Quickstart docs:
 
-- Browse the model: [https://testlink.github.io/testlink-model](https://testlink.github.io/testlink-model)
-  - [named thing](https://testlink.github.io/testlink-model/docs/NamedThing.html)
-  - [association](https://testlink.github.io/testlink-model/docs/Association.html)
-  - [predicate](https://testlink.github.io/testlink-model/docs/predicates.html)
+- Browse the model: [https://csolink.github.io/testlink-model](https://csolink.github.io/testlink-model)
+  - [named thing](https://csolink.github.io/testlink-model/docs/NamedThing.html)
+  - [association](https://csolink.github.io/testlink-model/docs/Association.html)
+  - [predicate](https://csolink.github.io/testlink-model/docs/predicates.html)
 
 See also [testlink Model Guidelines](./guidelines/index.md) for understanding, curating, and working with the model.
 
