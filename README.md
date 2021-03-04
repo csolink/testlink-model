@@ -1,7 +1,7 @@
 [![Python 3.7](https://upload.wikimedia.org/wikipedia/commons/f/fc/Blue_Python_3.7_Shield_Badge.svg)](https://www.python.org/downloads/release/python-370/)
 [![Build Status](https://travis-ci.com/testlink/testlink-model.svg?branch=master)](https://travis-ci.com/testlink/testlink-model)
-![Regenerate testlink Model Artifacts](https://github.com/testlink/testlink-model/workflows/Regenerate%20testlink%20Model%20Artifacts/badge.svg)
-![Deploy Documentation](https://github.com/testlink/testlink-model/workflows/Deploy%20Documentation/badge.svg)
+![Regenerate testlink Model Artifacts](https://github.com/csolink/testlink-model/workflows/Regenerate%20testlink%20Model%20Artifacts/badge.svg)
+![Deploy Documentation](https://github.com/csolink/testlink-model/workflows/Deploy%20Documentation/badge.svg)
 
 <img src="images/testlink-logo.png" width="20%">
 
@@ -118,7 +118,7 @@ See [GraphViz site](https://graphviz.org/) for installation in your operating sy
 
 ## How do I use testlink Model YAML programatically?
 
-For operations such as CURIE lookup, finding class by synonyms, get parents, get ancestors, etc. please make use of [testlink-model-toolkit](https://github.com/testlink/testlink-model-toolkit/). It provides a convenience methods for traversing testlink Model.
+For operations such as CURIE lookup, finding class by synonyms, get parents, get ancestors, etc. please make use of [testlink-model-toolkit](https://github.com/csolink/testlink-model-toolkit/). It provides a convenience methods for traversing testlink Model.
 
 ## External Weblinks
 

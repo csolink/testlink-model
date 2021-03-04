@@ -8,7 +8,7 @@ remote_theme: deepakunni3/just-the-docs
 
 aux_links:
   "testlink Model on GitHub":
-    - "//github.com/testlink/testlink-model"
+    - "//github.com/csolink/testlink-model"
 
 ga_tracking: UA-157380109-1
 
