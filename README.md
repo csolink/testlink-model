@@ -120,29 +120,3 @@ See [GraphViz site](https://graphviz.org/) for installation in your operating sy
 
 For operations such as CURIE lookup, finding class by synonyms, get parents, get ancestors, etc. please make use of [biolink-model-toolkit](https://github.com/biolink/biolink-model-toolkit/). It provides a convenience methods for traversing biolink Model.
 
-## External Weblinks
-
-### Useful links
-
-Apart from testlink prefixes, other useful links are:
-
-* [AMiner Dataset](https://www.aminer.cn/data/) categorizer
-* [AI Lit. Panorama](http://aipano.cse.ust.hk/p9sw2ndt) viewer
-* [Gensim](https://radimrehurek.com/gensim/models/ldaseqmodel.html) modeling
-* [Wikiverse](http://wikiverse.io) visualizer.
-* [Industry 4.0 Standards](https://i40-tools.github.io/StandardOntologyVisualization) visualizer.
-* [VocReg](https://www.vocoreg.com/documentation/NOSQL/main) NoSQL
-* [LOV](https://lov.linkeddata.es/dataset/lov) Linked Open Vocabs
-* [OpenLink](https://www.openlinksw.com/describe/?url=http%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23Ontology&graph=urn%3Aontology%3Asemantic%3Amapping&graph=urn%3Aontology%3Acartridges%3Amapping&graph=urn%3Aopl%3Ashop%3Aoffering%3Asponging%3Acache%3Aofficial&graph=urn%3Aopenlink%3Aschema%3Ageneral%3Amappings&graph=urn%3Aopenlink%3Aschema%3Aoplweb%3Amappings&graph=urn%3Acartridges%3Amapping&graph=urn%3Adata%3Aopenlink%3Aproducts&graph=urn%3Adata%3Aopenlink%3Aglossary&graph=urn%3Adata%3Aopenlink%3Awebsites) OLS ontologies
-* [Knowledge-Base Projects, Groups, and Related Materia](https://www.cs.utexas.edu/users/mfkb/related.html)
-* [WordNet](http://wordnetweb.princeton.edu/perl/webwn)
-* [Recommended Formats](https://www.loc.gov/preservation/resources/rfs/TOC.html)
- 
-### Other useful fragments?
-
-* [Prakort](https://github.com/Prakort/Research-Enrich-Computer-Science-Ontology)
-* [csoclassifier](https://github.com/angelosalatino/cso-classifier)
-* [WikiOnto](https://github.com/MarcelH91/WikiOnto)
-* [CSIHO](https://github.com/moreiragb/csiho), Computer Security Incident Handling Ontology (owl)
-* [BibliOnto](https://github.com/nizarfahmi/BibliOnto)
-* [hcio](https://github.com/sidornellas/hcio) Human-Comp interaction
