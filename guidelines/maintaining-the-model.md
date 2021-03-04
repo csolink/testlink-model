@@ -70,6 +70,6 @@ LinkML consumes the testlink Model YAML and also generates Markdown for all the 
 
 This step is automated as part of [GitHub Actions](https://github.com/testlink/testlink-model/actions) where changes in Markdown content are pushed to the `gh-pages` branch. 
 
-The [testlink Model Documentation](https://testlink.github.io/testlink-model/) site is driven from the `gh-pages` branch.
+The [testlink Model Documentation](https://csolink.github.io/testlink-model/) site is driven from the `gh-pages` branch.
 
 That means no pull request to the testlink Model repo should include generated Markdown. It is advised to ensure that [GitHub Actions](https://github.com/testlink/testlink-model/actions) remain disabled in the fork from which pull requests are made back to the main testlink repository.
