@@ -1,0 +1,31 @@
+title: testlink Model
+email: noel.mcloughlin@gmail.com
+description: A high level datamodel for representing computer system ontology entities and their associations.
+
+logo: "/assets/images/testlink-logo.png"
+
+remote_theme: deepakunni3/just-the-docs
+
+aux_links:
+  "testlink Model on GitHub":
+    - "//github.com/testlink/testlink-model"
+
+ga_tracking: UA-157380109-1
+
+search_enabled: true
+heading_anchors: true
+
+# footer_content: "testlink Model"
+
+collections:
+  docs:
+    output: true
+  about:
+    output: true
+  guidelines:
+    output: true
+
+includes:
+- about
+- guidelines
+- index.md
