@@ -866,9 +866,6 @@ slots:
   vcs root id:
     is_a: id
 
-  release id:
-    is_a: id
-
   production release id:
     is_a: release id
 
