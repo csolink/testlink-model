@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[![Build Status](https://travis-ci.org/testlink/testlink-model.svg?branch=master)](https://travis-ci.org/testlink/testlink-model)
+[![Build Status](https://travis-ci.org/testlink/testlink-model.svg?branch=main)](https://travis-ci.org/testlink/testlink-model)
 
 # testlink Model
 
@@ -11,7 +11,7 @@ A high level datamodel of Computer Systems ([Component](docs/Component), [Compon
 testlink Model is designed as a way of standardizing types and relational structures in knowledge graphs (KGs), 
 where the KG may be either a property graph or RDF triple store.
 
-The schema is expressed as a [YAML](https://github.com/csolink/testlink-model/blob/master/testlink-model.yaml), which is translated to:
+The schema is expressed as a [YAML](https://github.com/csolink/testlink-model/blob/main/testlink-model.yaml), which is translated to:
 
  * Individual pages for each class in the model, e.g [https://w3id.org/testlink/vocab/Serviceunit](https://w3id.org/testlink/vocab/Serviceunit)
  * An [OWL ontology](testlink-model.owl).

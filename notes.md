@@ -61,11 +61,11 @@ First ensure that you are on `gh-pages` branch,
 git checkout gh-pages
 ```
 
-### Merge master
+### Merge main
 
-Now, merge `master` branch to get the latest changes,
+Now, merge `main` branch to get the latest changes,
 ```bash
-git merge master
+git merge main
 ```
 
 > **Note:** Ensure there is no merge conflicts and that the merge was successful.

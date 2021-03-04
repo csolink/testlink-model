@@ -1,5 +1,5 @@
 [![Python 3.7](https://upload.wikimedia.org/wikipedia/commons/f/fc/Blue_Python_3.7_Shield_Badge.svg)](https://www.python.org/downloads/release/python-370/)
-[![Build Status](https://travis-ci.com/testlink/testlink-model.svg?branch=master)](https://travis-ci.com/testlink/testlink-model)
+[![Build Status](https://travis-ci.com/testlink/testlink-model.svg?branch=main)](https://travis-ci.com/testlink/testlink-model)
 ![Regenerate testlink Model Artifacts](https://github.com/csolink/testlink-model/workflows/Regenerate%20testlink%20Model%20Artifacts/badge.svg)
 ![Deploy Documentation](https://github.com/csolink/testlink-model/workflows/Deploy%20Documentation/badge.svg)
 
@@ -118,7 +118,7 @@ See [GraphViz site](https://graphviz.org/) for installation in your operating sy
 
 ## How do I use testlink Model YAML programatically?
 
-For operations such as CURIE lookup, finding class by synonyms, get parents, get ancestors, etc. please make use of [testlink-model-toolkit](https://github.com/csolink/testlink-model-toolkit/). It provides a convenience methods for traversing testlink Model.
+For operations such as CURIE lookup, finding class by synonyms, get parents, get ancestors, etc. please make use of [biolink-model-toolkit](https://github.com/biolink/biolink-model-toolkit/). It provides a convenience methods for traversing biolink Model.
 
 ## External Weblinks
 
@@ -131,7 +131,7 @@ Apart from testlink prefixes, other useful links are:
 * [Gensim](https://radimrehurek.com/gensim/models/ldaseqmodel.html) modeling
 * [Wikiverse](http://wikiverse.io) visualizer.
 * [Industry 4.0 Standards](https://i40-tools.github.io/StandardOntologyVisualization) visualizer.
-* [VocReg](https://www.vocoreg.com/documentation/NOSQL/master) NoSQL
+* [VocReg](https://www.vocoreg.com/documentation/NOSQL/main) NoSQL
 * [LOV](https://lov.linkeddata.es/dataset/lov) Linked Open Vocabs
 * [OpenLink](https://www.openlinksw.com/describe/?url=http%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23Ontology&graph=urn%3Aontology%3Asemantic%3Amapping&graph=urn%3Aontology%3Acartridges%3Amapping&graph=urn%3Aopl%3Ashop%3Aoffering%3Asponging%3Acache%3Aofficial&graph=urn%3Aopenlink%3Aschema%3Ageneral%3Amappings&graph=urn%3Aopenlink%3Aschema%3Aoplweb%3Amappings&graph=urn%3Acartridges%3Amapping&graph=urn%3Adata%3Aopenlink%3Aproducts&graph=urn%3Adata%3Aopenlink%3Aglossary&graph=urn%3Adata%3Aopenlink%3Awebsites) OLS ontologies
 * [Knowledge-Base Projects, Groups, and Related Materia](https://www.cs.utexas.edu/users/mfkb/related.html)

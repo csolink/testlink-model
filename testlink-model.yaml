@@ -77,7 +77,7 @@ default_prefix: ex
 
 # ordered list of prefixcommon biocontexts to be fetched
 # to resolve id prefixes and inline prefix variables
-# see: https://github.com/prefixcommons/biocontext/tree/master/registry
+# see: https://github.com/prefixcommons/biocontext/tree/main/registry
 # is: rdf rdfs owl xsd dc dcterms faldo foaf oa idot void prov dcat
 # --
 default_curi_maps:

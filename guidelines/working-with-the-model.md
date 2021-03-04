@@ -43,7 +43,7 @@ As per the model, serviceinstance nodes should have identifiers from `TBC1` and 
 
 One can further type the serviceinstance and componentservice entities using the testlink node property slot `type` (which corresponds to `rdf:type`).
 
-In [KGX serialization format](https://github.com/biolink/kgx/blob/master/data-preparation.md) the nodes can be represented as follows:
+In [KGX serialization format](https://github.com/biolink/kgx/blob/main/data-preparation.md) the nodes can be represented as follows:
 ```tsv
 id	name	category	provided_by	xref	type	in_taxon
 
@@ -73,7 +73,7 @@ Each individual interaction between componentservices can be treated as an edge 
 
 And we have additional edges that go from componentservice to serviceinstance to signify that a componentservice encodes for a serviceinstance via the testlink predicate slot `has componentservice product`.
 
-In [KGX serialization format](https://github.com/biolink/kgx/blob/master/data-preparation.md) the edges can be represented as follows:
+In [KGX serialization format](https://github.com/biolink/kgx/blob/main/data-preparation.md) the edges can be represented as follows:
 ```tsv
 id  subject predicate   object  relation    provided_by association_type
 
