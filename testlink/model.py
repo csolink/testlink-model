@@ -1,9 +1,9 @@
 # Auto generated from testlink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-03-05 02:33
-# Schema: organization
+# Generation date: 2021-03-05 02:58
+# Schema: testlink-model
 #
-# id: http://example.org/sample/organization
-# description:
+# id: https://w3id.org/testlink
+# description: Entity and association taxonomy and datamodel example
 # license: https://creativecommons.org/publicdomain/zero/1.0/
 
 import dataclasses
