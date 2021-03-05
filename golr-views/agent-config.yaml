@@ -1,0 +1,45 @@
+id: agent
+schema_generating: true
+description: service, group, organization or project that provides a piece of information
+  (i.e. a knowledge association)
+display_name: agent
+document_category: agent
+weight: 20
+fields:
+- id: enabled
+  display_name: enabled
+- id: archived
+  display_name: archived
+- id: description
+  description: a human-readable description of an entity
+  display_name: description
+- id: note
+  display_name: note
+- id: category
+  display_name: named thing_category
+  cardinality: multi
+- id: affiliation
+  description: a professional relationship between one provider (x) within another
+    provider (often an organization). Target provider identity should be specified
+    by a CURIE. Providers may have multiple affiliations.
+  display_name: affiliation
+  cardinality: multi
+- id: address
+  description: the particulars of the place where someone or an organization is situated.  For
+    now, this slot is a simple text "blob" containing all relevant details of the
+    given location for fitness of purpose. For the moment, this "address" can include
+    other contact details such as email and phone number(?).
+  display_name: address
+- id: id
+  description: Different classes of agents have distinct preferred identifiers. For
+    publishers, use the ISBN publisher code. See https://grp.isbn-international.org/
+    for publisher code lookups. For editors, authors and  individual providers, use
+    the individual's ORCID if available; Otherwise, a ScopusID, ResearchID or Google
+    Scholar ID ('GSID') may be used if the author ORCID is unknown. Institutional
+    agents could be identified by an International Standard Name Identifier ('ISNI')
+    code.
+  display_name: agent_id
+- id: name
+  description: it is recommended that an author's 'name' property be formatted as
+    "surname, firstname initial."
+  display_name: agent_name

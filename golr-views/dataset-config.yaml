@@ -1,0 +1,36 @@
+id: dataset
+schema_generating: true
+description: an item that refers to a collection of data from a data source.
+display_name: dataset
+document_category: dataset
+weight: 20
+fields:
+- id: id
+  description: A unique identifier for an entity. Must be either a CURIE shorthand
+    for a URI or a complete URI
+  display_name: id
+- id: name
+  description: A human-readable name for an attribute or entity.
+  display_name: name
+- id: enabled
+  display_name: enabled
+- id: archived
+  display_name: archived
+- id: description
+  description: a human-readable description of an entity
+  display_name: description
+- id: note
+  display_name: note
+- id: category
+  display_name: named thing_category
+  cardinality: multi
+- id: license
+  display_name: license
+- id: rights
+  display_name: rights
+- id: format
+  display_name: format
+- id: creation_date
+  description: date on which an entity was created. This can be applied to nodes or
+    edges
+  display_name: creation date

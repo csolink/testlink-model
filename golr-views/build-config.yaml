@@ -1,0 +1,45 @@
+id: build
+schema_generating: true
+display_name: build
+document_category: build
+weight: 20
+fields:
+- id: id
+  description: A unique identifier for an entity. Must be either a CURIE shorthand
+    for a URI or a complete URI
+  display_name: id
+- id: name
+  description: A human-readable name for an attribute or entity.
+  display_name: name
+- id: enabled
+  display_name: enabled
+- id: archived
+  display_name: archived
+- id: description
+  description: a human-readable description of an entity
+  display_name: description
+- id: note
+  display_name: note
+- id: category
+  display_name: named thing_category
+  cardinality: multi
+- id: license
+  display_name: license
+- id: rights
+  display_name: rights
+- id: format
+  display_name: format
+- id: creation_date
+  description: date on which an entity was created. This can be applied to nodes or
+    edges
+  display_name: creation date
+- id: created
+  display_name: created
+- id: updated
+  display_name: updated
+- id: vcs_location
+  display_name: vcs location
+- id: vcs_revision
+  display_name: vcs revision
+- id: internal_version
+  display_name: internal version

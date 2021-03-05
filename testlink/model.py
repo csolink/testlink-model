@@ -1,9 +1,9 @@
 # Auto generated from testlink-model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2021-02-17 00:01
-# Schema: testlink-Model
+# Generation date: 2021-03-05 02:33
+# Schema: organization
 #
-# id: https://w3id.org/testlink/testlink-model
-# description: Entity and association taxonomy and datamodel for computer services data
+# id: http://example.org/sample/organization
+# description:
 # license: https://creativecommons.org/publicdomain/zero/1.0/
 
 import dataclasses
@@ -25,7 +25,7 @@ from biolinkml.utils.enumerations import EnumDefinitionImpl
 from rdflib import Namespace, URIRef
 from biolinkml.utils.curienamespace import CurieNamespace
 from biolinkml.utils.metamodelcore import Bool, URIorCURIE, XSDDate, XSDTime
-from includes.types import Boolean, Date, Double, Float, Integer, String, Time, Uriorcurie
+from includes.types import Boolean, Date, Double, String, Time, Uriorcurie
 
 metamodel_version = "1.7.0"
 
@@ -36,98 +36,52 @@ dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 ACMBOOKS = CurieNamespace('ACMBOOKS', 'https://dl.acm.org/action/doSearch?SeriesKey=acmbooks&AllField=')
 ACMJOURNALS = CurieNamespace('ACMJOURNALS', 'https://dl.acm.org/action/doSearch?ConceptID=118230&AllField=')
 AML = CurieNamespace('AML', 'https://w3id.org/i40/aml#')
-CCDM = CurieNamespace('CCDM', 'http://cookingbigdata.com/linkeddata/ccdm#')
-CCINSTANCES = CurieNamespace('CCINSTANCES', 'http://cookingbigdata.com/linkeddata/ccinstances#')
-CCPRICING = CurieNamespace('CCPRICING', 'http://cookingbigdata.com/linkeddata/ccpricing#')
-CCREGIONS = CurieNamespace('CCREGIONS', 'http://cookingbigdata.com/linkeddata/ccregions#')
-CCSLA = CurieNamespace('CCSLA', 'http://cookingbigdata.com/linkeddata/ccsla#')
-CNCF = CurieNamespace('CNCF', 'https://landscape.cncf.io/selected=')
-CNTT = CurieNamespace('CNTT', 'https://cntt-n.github.io/CNTT/doc/common/glossary.html#1.1')
-COAR_ACCESS = CurieNamespace('COAR_ACCESS', 'http://vocabularies.coar-repositories.org/documentation/access_rights/')
 COAR_RESOURCE = CurieNamespace('COAR_RESOURCE', 'http://vocabularies.coar-repositories.org/documentation/resource_types/')
-COAR_VERSION = CurieNamespace('COAR_VERSION', 'http://vocabularies.coar-repositories.org/documentation/version_types/')
-CORR = CurieNamespace('CORR', 'https://arxiv.org/corr')
 CSO = CurieNamespace('CSO', 'https://cso.kmi.open.ac.uk/topics/')
 CTRL = CurieNamespace('CTRL', 'https://w3id.org/ibp/CTRLont#')
 CVE = CurieNamespace('CVE', 'https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=')
-DCMI = CurieNamespace('DCMI', 'http://purl.org/dc/elements/1.1/')
-DID = CurieNamespace('DID', 'https://www.w3.org/TR/did-core/#')
-DMCC = CurieNamespace('DMCC', 'http://cookingbigdata.com/linkeddata/dmcc-schema/documentation/#')
-DNB = CurieNamespace('DNB', 'https://d-nb.info/gnd/')
-DPN = CurieNamespace('DPN', 'http://purl.org/dpn#')
-DPS = CurieNamespace('DPS', 'http://purl.org/dpn/services#')
-DOCKERHUB = CurieNamespace('DockerHub', 'https://hub.docker.com/')
 ECO = CurieNamespace('ECO', 'https://evidenceontology.org/term/')
-ECTO = CurieNamespace('ECTO', 'http://purl.obolibrary.org/obo/ECTO_')
 EDAM = CurieNamespace('EDAM', 'http://edamontology.org/')
 EDAM_DATA = CurieNamespace('EDAM-DATA', 'http://edamontology.org/data_')
 EDAM_FORMAT = CurieNamespace('EDAM-FORMAT', 'http://edamontology.org/format_')
 EDAM_OPERATION = CurieNamespace('EDAM-OPERATION', 'http://edamontology.org/operation_')
 EDAM_TOPIC = CurieNamespace('EDAM-TOPIC', 'http://edamontology.org/topic_')
 EFO = CurieNamespace('EFO', 'http://www.ebi.ac.uk/efo/')
-ETSINFV = CurieNamespace('ETSINFV', 'https://www.etsi.org/deliver/etsi_gr/NFV/001_099/003/01.05.01_60/gr_NFV003v010501p.pdf')
-ETSINFV_MANO = CurieNamespace('ETSINFV-MANO', 'https://nfvwiki.etsi.org/index.php?title=API_specifications#API_conventions')
-EXO = CurieNamespace('ExO', 'http://purl.obolibrary.org/obo/ExO_')
-GEANT = CurieNamespace('GEANT', 'https://wiki.geant.org/display/OAV/OAV+Terminology+and+Glossary')
-GOIOTP = CurieNamespace('GOIotP', 'http://inter-iot.eu/GOIoTP#')
-GOLD_META = CurieNamespace('GOLD_META', 'http://identifiers.org/gold.meta/')
+EXO = CurieNamespace('EXO', 'http://purl.obolibrary.org/obo/ExO_')
 GSID = CurieNamespace('GSID', 'https://scholar.google.com/citations?user=')
-IOTM3L = CurieNamespace('IOTM3L', 'http://smart-ics.ee.surrey.ac.uk/ontology/fiesta-iot/doc#')
+LCSH = CurieNamespace('LCSH', 'http://id.loc.gov/authorities/subjects/')
+LCSH_PUB = CurieNamespace('LCSH_PUB', 'http://id.loc.gov/vocabulary/mgovtpubtype/')
 LOINC = CurieNamespace('LOINC', 'http://loinc.org/rdf/')
-LOV = CurieNamespace('LOV', 'https://lov.linkeddata.es/dataset/lov/terms?q=')
 MAID = CurieNamespace('MAID', 'https://academic.microsoft.com/#/detail/')
-MOBI = CurieNamespace('MOBI', 'http://schema.mobivoc.org/#')
-NCBITAXON = CurieNamespace('NCBITaxon', 'http://purl.obolibrary.org/obo/NCBITaxon_')
-NOSQL = CurieNamespace('NOSQL', 'http://purl.org/db/nosql#')
-OCO = CurieNamespace('OCO', 'https://www.openlinksw.com/describe/?url=http://www.openlinksw.com/ontology/components%23')
-OCRM = CurieNamespace('OCRM', 'https://www.openlinksw.com/describe/?url=http://www.openlinksw.com/ontology/ecrm%23')
-OIO = CurieNamespace('OIO', 'http://www.geneontology.org/formats/oboInOwl#')
+NCBITAXON = CurieNamespace('NCBITaxon', 'http://example.org/UNKNOWN/NCBITaxon/')
+NCIT = CurieNamespace('NCIT', 'http://example.org/UNKNOWN/NCIT/')
 OM = CurieNamespace('OM', 'http://www.ontology-of-units-of-measure.org/resource/om-2/')
-OMG_SPECS = CurieNamespace('OMG-SPECS', 'https://www.omg.org/spec/')
-ONAP = CurieNamespace('ONAP', 'https://wiki.onap.org/display/DW/Glossary')
 ORCID = CurieNamespace('ORCID', 'https://orcid.org/')
-OSO = CurieNamespace('OSO', 'https://www.openlinksw.com/describe/?url=http://www.openlinksw.com/ontology/software%23')
 PATO = CurieNamespace('PATO', 'http://purl.obolibrary.org/obo/pato#')
-PMID = CurieNamespace('PMID', 'http://www.ncbi.nlm.nih.gov/pubmed/')
-PEERINGDB = CurieNamespace('PeeringDb', 'https://www.peeringdb.com/ix/')
-PEERINGDB_FAC = CurieNamespace('PeeringDb_fac', 'https://www.peeringdb.com/fac/')
-PEERINGDB_PEERS = CurieNamespace('PeeringDb_peers', 'https://www.peeringdb.com/net/')
 REPR = CurieNamespace('REPR', 'https://w3id.org/reproduceme#')
-RNACENTRAL = CurieNamespace('RNACENTRAL', 'http://identifiers.org/rnacentral/')
 RO = CurieNamespace('RO', 'http://purl.obolibrary.org/obo/RO_')
-RTXKG1 = CurieNamespace('RTXKG1', 'http://kg1endpoint.rtx.ai/')
 RESEARCHID = CurieNamespace('ResearchID', 'https://publons.com/researcher/')
-SAF = CurieNamespace('SAF', 'https://opensaf.sourceforge.io/SAI-Overview-B.05.03.AL.pdf')
-SAFAISAMF = CurieNamespace('SAFAISAMF', 'https://opensaf.sourceforge.io/SAI-AIS-AMF-B.04.01.AL.pdf')
 SAN = CurieNamespace('SAN', 'https://www.irit.fr/recherches/MELODI/ontologies/SAN')
-SEMMEDDB = CurieNamespace('SEMMEDDB', 'https://skr3.nlm.nih.gov/SemMedDB')
 SIO = CurieNamespace('SIO', 'http://semanticscience.org/resource/SIO_')
 SCOPUSID = CurieNamespace('ScopusID', 'https://www.scopus.com/authid/detail.uri?authorId=')
-TAXRANK = CurieNamespace('TAXRANK', 'http://purl.obolibrary.org/obo/TAXRANK_')
-UBERON_CORE = CurieNamespace('UBERON_CORE', 'http://purl.obolibrary.org/obo/uberon/core#')
-UMLSSC = CurieNamespace('UMLSSC', 'https://metamap.nlm.nih.gov/Docs/SemanticTypes_2018AB.txt/code#')
-UMLSSG = CurieNamespace('UMLSSG', 'https://metamap.nlm.nih.gov/Docs/SemGroups_2018.txt/group#')
-UMLSST = CurieNamespace('UMLSST', 'https://metamap.nlm.nih.gov/Docs/SemanticTypes_2018AB.txt/type#')
+TAXRANK = CurieNamespace('TAXRANK', 'http://example.org/UNKNOWN/TAXRANK/')
 UO = CurieNamespace('UO', 'https://www.ebi.ac.uk/ols/ontologies/uo')
 WIKIDATA = CurieNamespace('WIKIDATA', 'https://www.wikidata.org/wiki/')
 WIKIDATA_PROPERTY = CurieNamespace('WIKIDATA_PROPERTY', 'https://www.wikidata.org/wiki/Property:')
 XAPI = CurieNamespace('XAPI', 'http://ns.inria.fr/ludo/v1/docs/xapi.html#')
 XXXX = CurieNamespace('XXXX', 'http://example.org/UNKNOWN/XXXX/')
 BIOLINKML = CurieNamespace('biolinkml', 'https://w3id.org/biolink/biolinkml/')
-TESTLINK = CurieNamespace('testlink', 'https://w3id.org/testlink/vocab/')
 CSRC = CurieNamespace('csrc', 'https://csrc.nist.gov/glossary/term')
 DCAT = CurieNamespace('dcat', 'http://www.w3.org/ns/dcat#')
 DCT = CurieNamespace('dct', 'http://purl.org/dc/terms/')
-DOI = CurieNamespace('doi', 'https://doi.org/')
+DOI = CurieNamespace('doi', 'http://example.org/UNKNOWN/doi/')
 DWC = CurieNamespace('dwc', 'https://dwc.tdwg.org/terms/#dc:')
 FOAF = CurieNamespace('foaf', 'http://xmlns.com/foaf/0.1/')
-FOLDOC = CurieNamespace('foldoc', 'https://foldoc.org/')
 GEOLINK = CurieNamespace('geolink', 'http://schema.geolink.org/1.0/base/main.html#')
 GR = CurieNamespace('gr', 'http://purl.org/goodrelations/v1#')
 GVP = CurieNamespace('gvp', 'http://vocab.getty.edu/ontology#')
 ISBN = CurieNamespace('isbn', 'https://grp.isbn-international.org/content/using-register')
-ISNI = CurieNamespace('isni', 'https://isni.org/isni/')
-ISSN = CurieNamespace('issn', 'https://portal.issn.org/resource/ISSN/')
+ISNI = CurieNamespace('isni', 'http://example.org/UNKNOWN/isni/')
 OPENVOCAB = CurieNamespace('openvocab', 'https://vocab.org/open/#')
 PAV = CurieNamespace('pav', 'http://purl.org/pav/')
 PROV = CurieNamespace('prov', 'http://www.w3.org/ns/prov#')
@@ -136,28 +90,21 @@ RDF = CurieNamespace('rdf', 'http://www.w3.org/1999/02/22-rdf-syntax-ns#')
 RDFS = CurieNamespace('rdfs', 'http://www.w3.org/2000/01/rdf-schema#')
 RR = CurieNamespace('rr', 'https://www.w3.org/ns/r2rml#')
 SCHEMA = CurieNamespace('schema', 'https://schema.org/')
-SKOS = CurieNamespace('skos', 'https://www.w3.org/TR/skos-reference/#')
+SKOS = CurieNamespace('skos', 'http://example.org/UNKNOWN/skos/')
 SOSA = CurieNamespace('sosa', 'http://www.w3.org/ns/sosa/')
 SSN = CurieNamespace('ssn', 'https://www.w3.org/TR/vocab-ssn/#')
 SSN_SYSTEM = CurieNamespace('ssn-system', 'http://www.w3.org/ns/ssn/systems/')
 SUMO = CurieNamespace('sumo', 'http://sigma.ontologyportal.org:8080/sigma/TreeView.jsp?flang=SUO-KIF&kb=SUMO&simple=yes&term=')
 SUMO_WN = CurieNamespace('sumo-wn', 'http://sigma.ontologyportal.org:8080/sigma/WordNet.jsp?POS=0&word=')
+TESTLINK = CurieNamespace('testlink', 'https://w3id.org/testlink/vocab/')
 WGS = CurieNamespace('wgs', 'http://www.w3.org/2003/01/geo/wgs84_pos')
 XSD = CurieNamespace('xsd', 'http://www.w3.org/2001/XMLSchema#')
 DEFAULT_ = TESTLINK
 
 
 # Types
-class ControlPlaneValue(str):
-    """ A control plane """
-    type_class_uri = XSD.string
-    type_class_curie = "xsd:string"
-    type_name = "control plane value"
-    type_model_uri = TESTLINK.ControlPlaneValue
-
-
 class CategoryType(Uriorcurie):
-    """ A primitive type in which the value denotes a class within the testlink model. The value must be a URI or a CURIE. In a Neo4j representation, the value should be the CURIE for the testlink class, for example testlink:Service. For an RDF representation, the value should be a URI such as https://w3id.org/testlink/vocab/Service """
+    """ A primitive type in which the value denotes a class within the csolink model. The value must be a URI or a CURIE. In a Neo4j representation, the value should be the CURIE for the csolink class, for example csolink:Service. For an RDF representation, the value should be a URI such as https://w3id.org/csolink/vocab/Service """
     type_class_uri = XSD.anyURI
     type_class_curie = "xsd:anyURI"
     type_name = "category type"
@@ -181,7 +128,7 @@ class LabelType(String):
 
 
 class PredicateType(Uriorcurie):
-    """ A CURIE from the testlink related_to hierarchy. For example, testlink:related_to, testlink:causes, testlink:repairs. """
+    """ A CURIE from the testlink related_to hierarchy. For example, testlink:related_to, testlink:causes, testlink:repairs """
     type_class_uri = XSD.anyURI
     type_class_curie = "xsd:anyURI"
     type_name = "predicate type"
@@ -208,20 +155,6 @@ class Frequency(String):
     type_class_curie = "UO:0000105"
     type_name = "frequency"
     type_model_uri = TESTLINK.Frequency
-
-
-class PercentageFrequencyValue(Double):
-    type_class_uri = UO["0000187"]
-    type_class_curie = "UO:0000187"
-    type_name = "percentage frequency value"
-    type_model_uri = TESTLINK.PercentageFrequencyValue
-
-
-class Quotient(Double):
-    type_class_uri = UO["0010006"]
-    type_class_curie = "UO:0010006"
-    type_name = "quotient"
-    type_model_uri = TESTLINK.Quotient
 
 
 class Unit(String):
@@ -254,15 +187,79 @@ class NamedThingId(EntityId):
     pass
 
 
+class ComputationalEntityId(NamedThingId):
+    pass
+
+
+class OperationalEntityId(ComputationalEntityId):
+    pass
+
+
+class ComputationalProcessOrActivityId(ComputationalEntityId):
+    pass
+
+
+class OperationalActivityId(ComputationalProcessOrActivityId):
+    pass
+
+
+class ControlActorId(OperationalEntityId):
+    pass
+
+
+class ConsumedResourceId(ControlActorId):
+    pass
+
+
+class AdministrativeOperationId(OperationalEntityId):
+    pass
+
+
+class NotificationComponentId(ControlActorId):
+    pass
+
+
+class NotificationId(OperationalEntityId):
+    pass
+
+
+class DataId(NotificationComponentId):
+    pass
+
+
+class EnvironmentId(NamedThingId):
+    pass
+
+
+class SystemicEntityId(ComputationalEntityId):
+    pass
+
+
+class ApplicationTypeId(SystemicEntityId):
+    pass
+
+
+class DeploymentEntityId(SystemicEntityId):
+    pass
+
+
+class DeploymentId(DeploymentEntityId):
+    pass
+
+
+class ComponentId(DeploymentEntityId):
+    pass
+
+
+class ComponentTypeId(SystemicEntityId):
+    pass
+
+
 class OntologyClassId(NamedThingId):
     pass
 
 
 class RelationshipTypeId(OntologyClassId):
-    pass
-
-
-class ComponentserviceOntologyClassId(OntologyClassId):
     pass
 
 
@@ -279,6 +276,42 @@ class AdministrativeEntityId(NamedThingId):
 
 
 class AgentId(AdministrativeEntityId):
+    pass
+
+
+class ProjectId(AdministrativeEntityId):
+    pass
+
+
+class RealmId(AdministrativeEntityId):
+    pass
+
+
+class DomainId(AdministrativeEntityId):
+    pass
+
+
+class HubId(AdministrativeEntityId):
+    pass
+
+
+class VcsRootId(AdministrativeEntityId):
+    pass
+
+
+class ApplicationUserId(AdministrativeEntityId):
+    pass
+
+
+class ApplicationUserLoginId(AdministrativeEntityId):
+    pass
+
+
+class ComponentOwnerId(AdministrativeEntityId):
+    pass
+
+
+class EmailId(AdministrativeEntityId):
     pass
 
 
@@ -302,35 +335,71 @@ class DistributionLevelId(DatasetVersionId):
     pass
 
 
-class DatasetSummaryId(DatasetVersionId):
-    pass
-
-
-class ConfidenceLevelId(InformationContentEntityId):
-    pass
-
-
-class EvidenceTypeId(InformationContentEntityId):
-    pass
-
-
 class PublicationId(InformationContentEntityId):
     pass
 
 
-class BookId(PublicationId):
+class BuildId(DatasetId):
     pass
 
 
-class BookChapterId(PublicationId):
+class ArchiveId(DatasetId):
     pass
 
 
-class SerialId(PublicationId):
+class InventoryId(DatasetId):
     pass
 
 
-class ArticleId(PublicationId):
+class ConfigurationId(InformationContentEntityId):
+    pass
+
+
+class EnvironmentConfigurationId(ConfigurationId):
+    pass
+
+
+class DomainEnvironmentId(EnvironmentId):
+    pass
+
+
+class DomainConfigurationId(ConfigurationId):
+    pass
+
+
+class RealmConfigurationId(ConfigurationId):
+    pass
+
+
+class ComponentConfigurationId(ConfigurationId):
+    pass
+
+
+class ApplicationConfigurationId(ConfigurationId):
+    pass
+
+
+class ApplicationInstanceConfigurationId(ConfigurationId):
+    pass
+
+
+class DeploymentConfigurationId(ConfigurationId):
+    pass
+
+
+class BuildConfigurationId(ConfigurationId):
+    pass
+
+
+class ServerHubId(HubId):
+    pass
+
+
+class ServerGroupHubId(HubId):
+    pass
+
+
+class ApexInventoryArchiveId(ArchiveId):
     pass
 
 
@@ -342,183 +411,11 @@ class ActivityId(NamedThingId):
     pass
 
 
-class ProcedureId(NamedThingId):
+class ServerId(NamedThingId):
     pass
 
 
-class PhenomenonId(NamedThingId):
-    pass
-
-
-class DeviceId(NamedThingId):
-    pass
-
-
-class ResourceSampleId(CyberEntityId):
-    pass
-
-
-class PlanetaryEntityId(NamedThingId):
-    pass
-
-
-class EnvironmentalProcessId(PlanetaryEntityId):
-    pass
-
-
-class EnvironmentalFeatureId(PlanetaryEntityId):
-    pass
-
-
-class GeographicLocationId(PlanetaryEntityId):
-    pass
-
-
-class GeographicLocationAtTimeId(GeographicLocationId):
-    pass
-
-
-class ComputationalEntityId(NamedThingId):
-    pass
-
-
-class OperationalEntityId(ComputationalEntityId):
-    pass
-
-
-class ComputationalProcessOrActivityId(ComputationalEntityId):
-    pass
-
-
-class OperationalActivityId(ComputationalProcessOrActivityId):
-    pass
-
-
-class ComputationalProcessId(ComputationalProcessOrActivityId):
-    pass
-
-
-class PathwayId(ComputationalProcessId):
-    pass
-
-
-class CyberProcessId(ComputationalProcessId):
-    pass
-
-
-class BehaviorId(ComputationalProcessId):
-    pass
-
-
-class DeathId(ComputationalProcessId):
-    pass
-
-
-class ControlActorId(OperationalEntityId):
-    pass
-
-
-class PowerId(ControlActorId):
-    pass
-
-
-class ConsumedResourceId(ControlActorId):
-    pass
-
-
-class AdministrativeOperationId(OperationalEntityId):
-    pass
-
-
-class NotificationComponentId(ControlActorId):
-    pass
-
-
-class EnvironmentalNotificationContaminantId(NotificationComponentId):
-    pass
-
-
-class AwarenessId(NotificationComponentId):
-    pass
-
-
-class DataId(NotificationComponentId):
-    pass
-
-
-class DatastreamId(DataId):
-    pass
-
-
-class BitstreamId(DataId):
-    pass
-
-
-class MessagePassingId(BitstreamId):
-    pass
-
-
-class NotificationId(OperationalEntityId):
-    pass
-
-
-class ControllerId(ControlActorId):
-    pass
-
-
-class SystemicEntityId(ComputationalEntityId):
-    pass
-
-
-class LifecycleStageId(SystemicEntityId):
-    pass
-
-
-class IndividualSystemId(SystemicEntityId):
-    pass
-
-
-class PopulationOfIndividualSystemsId(SystemicEntityId):
-    pass
-
-
-class StudyPopulationId(PopulationOfIndividualSystemsId):
-    pass
-
-
-class ErrorOrObservableFeatureId(ComputationalEntityId):
-    pass
-
-
-class ErrorId(ErrorOrObservableFeatureId):
-    pass
-
-
-class ObservableFeatureId(ErrorOrObservableFeatureId):
-    pass
-
-
-class BehavioralFeatureId(ObservableFeatureId):
-    pass
-
-
-class DeploymentEntityId(SystemicEntityId):
-    pass
-
-
-class ServiceunitId(DeploymentEntityId):
-    pass
-
-
-class ComponentId(DeploymentEntityId):
-    pass
-
-
-class ComponentTypeId(SystemicEntityId):
-    pass
-
-
-class GrossDeploymentStructureId(DeploymentEntityId):
+class ServerTypeId(SystemicEntityId):
     pass
 
 
@@ -530,119 +427,11 @@ class WorkloadId(WorkloadEntityId):
     pass
 
 
-class ComponentserviceinstanceId(WorkloadEntityId):
+class ApplicationInstanceId(WorkloadEntityId):
     pass
 
 
-class DaemonId(WorkloadEntityId):
-    pass
-
-
-class CodingSequenceId(WorkloadEntityId):
-    pass
-
-
-class ServiceinstanceId(WorkloadEntityId):
-    pass
-
-
-class ServiceinstanceIsoformId(ServiceinstanceId):
-    pass
-
-
-class KernelServicetypeId(ComponentserviceinstanceId):
-    pass
-
-
-class KernelServicetypeIsoformId(KernelServicetypeId):
-    pass
-
-
-class NoncodingKernelServicetypeId(KernelServicetypeId):
-    pass
-
-
-class KernelMessageId(NoncodingKernelServicetypeId):
-    pass
-
-
-class KernelInterruptId(NoncodingKernelServicetypeId):
-    pass
-
-
-class ComponentserviceFamilyId(OperationalEntityId):
-    pass
-
-
-class ServiceunittypeId(WorkloadEntityId):
-    pass
-
-
-class VariantcomponentservicetypeId(WorkloadEntityId):
-    pass
-
-
-class SequenceVariantId(WorkloadEntityId):
-    pass
-
-
-class MonomericVariantId(SequenceVariantId):
-    pass
-
-
-class ReagentTargetedComponentserviceId(WorkloadEntityId):
-    pass
-
-
-class EmpiricalEntityId(NamedThingId):
-    pass
-
-
-class EmpiricalTrialId(EmpiricalEntityId):
-    pass
-
-
-class EmpiricalInterventionId(EmpiricalEntityId):
-    pass
-
-
-class EmpiricalFindingId(ObservableFeatureId):
-    pass
-
-
-class OfflineMaintenanceId(EmpiricalInterventionId):
-    pass
-
-
-class CaseId(IndividualSystemId):
-    pass
-
-
-class CohortId(StudyPopulationId):
-    pass
-
-
-class ServiceBackgroundExposureId(WorkloadEntityId):
-    pass
-
-
-class FaultyProcessId(ComputationalProcessId):
-    pass
-
-
-class ErrorOrObservableFeatureExposureId(ErrorOrObservableFeatureId):
-    pass
-
-
-class FaultyProcessExposureId(FaultyProcessId):
-    pass
-
-
-class FaultyDeploymentStructureId(DeploymentEntityId):
-    pass
-
-
-class FaultyDeploymentExposureId(FaultyDeploymentStructureId):
+class ServerGroupId(WorkloadEntityId):
     pass
 
 
@@ -650,311 +439,139 @@ class OrchestrationExposureId(ControlActorId):
     pass
 
 
-class ComplexOrchestrationExposureId(OrchestrationExposureId):
-    pass
-
-
-class AdministrativeOperationalExposureId(AdministrativeOperationId):
-    pass
-
-
-class AdministrativeOperationalToComponentserviceInteractionExposureId(AdministrativeOperationalExposureId):
-    pass
-
-
-class RepairingId(NamedThingId):
-    pass
-
-
-class BioticExposureId(SystemTaxonId):
-    pass
-
-
-class GeographicExposureId(GeographicLocationId):
-    pass
-
-
-class EnvironmentalExposureId(EnvironmentalProcessId):
-    pass
-
-
-class BehavioralExposureId(BehaviorId):
-    pass
-
-
-class SocioeconomicExposureId(BehaviorId):
-    pass
-
-
-class FaultyProcessOutcomeId(FaultyProcessId):
-    pass
-
-
-class FaultyDeploymentOutcomeId(FaultyDeploymentStructureId):
-    pass
-
-
-class ErrorOrObservableFeatureOutcomeId(ErrorOrObservableFeatureId):
-    pass
-
-
-class BehavioralOutcomeId(BehaviorId):
-    pass
-
-
-class OfflineMaintenanceOutcomeId(OfflineMaintenanceId):
-    pass
-
-
-class MortalityOutcomeId(DeathId):
-    pass
-
-
-class EpidemiologicalOutcomeId(ComputationalEntityId):
-    pass
-
-
-class SocioeconomicOutcomeId(BehaviorId):
-    pass
-
-
 class AssociationId(EntityId):
     pass
 
 
-class ContributorAssociationId(AssociationId):
+class ApplicationInstanceToServerGroupHubAssociationId(AssociationId):
     pass
 
 
-class ServiceunittypeToServiceunittypePartAssociationId(AssociationId):
+class ApplicationInstanceToRealmAssociationId(AssociationId):
     pass
 
 
-class ServiceunittypeToComponentserviceAssociationId(AssociationId):
+class ApplicationInstanceToDomainEnvironmentAssociationId(AssociationId):
     pass
 
 
-class ServiceunittypeToVariantAssociationId(AssociationId):
+class ApplicationInstanceToApplicationAssociationId(AssociationId):
     pass
 
 
-class ComponentserviceToComponentserviceAssociationId(AssociationId):
+class EnvironmentConfigurationToEnvironmentAssociationId(AssociationId):
     pass
 
 
-class ComponentserviceToComponentserviceHomologyAssociationId(ComponentserviceToComponentserviceAssociationId):
+class DomainEnvironmentToDomainAssociationId(AssociationId):
     pass
 
 
-class ComponentserviceToComponentserviceCoavailabilityAssociationId(ComponentserviceToComponentserviceAssociationId):
+class DomainEnvironmentToEnvironmentAssociationId(AssociationId):
     pass
 
 
-class PairwiseComponentserviceToComponentserviceInteractionId(ComponentserviceToComponentserviceAssociationId):
+class DomainConfigurationToDomainEnvironmentAssociationId(AssociationId):
     pass
 
 
-class PairwiseOperationallyInteractionId(PairwiseComponentserviceToComponentserviceInteractionId):
+class RealmConfigurationToRealmAssociationId(AssociationId):
     pass
 
 
-class ComponentTypeToErrorOrObservableFeatureAssociationId(AssociationId):
+class RealmConfigurationToDomainEnvironmentAssociationId(AssociationId):
     pass
 
 
-class OrchestrationToOrchestrationAssociationId(AssociationId):
+class ComponentToVcsRootAssociationId(AssociationId):
     pass
 
 
-class OrchestrationToOrchestrationDerivationAssociationId(OrchestrationToOrchestrationAssociationId):
+class ComponentConfigurationToComponentAssociationId(AssociationId):
     pass
 
 
-class OrchestrationToErrorOrObservableFeatureAssociationId(AssociationId):
+class ApplicationToComponentAssociationId(AssociationId):
     pass
 
 
-class OrchestrationToPathwayAssociationId(AssociationId):
+class ApplicationToApplicationTypeAssociationId(AssociationId):
     pass
 
 
-class OrchestrationToComponentserviceAssociationId(AssociationId):
+class ApplicationConfigurationToApplicationAssociationId(AssociationId):
     pass
 
 
-class AdministrativeOperationalToComponentserviceAssociationId(AssociationId):
+class ApplicationInstanceConfigurationToApplicationInstanceAssociationId(AssociationId):
     pass
 
 
-class ResourceSampleDerivationAssociationId(AssociationId):
+class ApplicationUserLoginToApplicationUserAssociationId(AssociationId):
     pass
 
 
-class ResourceSampleToErrorOrObservableFeatureAssociationId(AssociationId):
+class EmailToApplicationUserAssociationId(AssociationId):
     pass
 
 
-class ErrorToExposureEventAssociationId(AssociationId):
+class ComponentOwnerToApplicationUserAssociationId(AssociationId):
     pass
 
 
-class ExposureEventToOutcomeAssociationId(AssociationId):
+class ComponentOwnerToComponentAssociationId(AssociationId):
     pass
 
 
-class ErrorOrObservableFeatureAssociationToLocationAssociationId(AssociationId):
+class BuildToApplicationUserLoginAssociationId(AssociationId):
     pass
 
 
-class ErrorOrObservableFeatureToLocationAssociationId(AssociationId):
+class BuildToVcsRootAssociationId(AssociationId):
     pass
 
 
-class ServiceunittypeToObservableFeatureAssociationId(AssociationId):
+class BuildToProjectAssociationId(AssociationId):
     pass
 
 
-class ExposureEventToObservableFeatureAssociationId(AssociationId):
+class BuildToApplicationInstanceAssociationId(AssociationId):
     pass
 
 
-class ErrorToObservableFeatureAssociationId(AssociationId):
+class BuildConfigurationToBuildAssociationId(AssociationId):
     pass
 
 
-class CaseToObservableFeatureAssociationId(AssociationId):
+class DeploymentToBuildAssociationId(AssociationId):
     pass
 
 
-class BehaviorToBehavioralFeatureAssociationId(AssociationId):
+class DeploymentToApplicationUserLoginAssociationId(AssociationId):
     pass
 
 
-class ComponentserviceToObservableFeatureAssociationId(AssociationId):
+class DeploymentConfigurationToDeploymentAssociationId(AssociationId):
     pass
 
 
-class ComponentserviceToErrorAssociationId(AssociationId):
+class ServerGroupToServerTypeAssociationId(AssociationId):
     pass
 
 
-class VariantToComponentserviceAssociationId(AssociationId):
+class ServerHubToServerAssociationId(AssociationId):
     pass
 
 
-class VariantToComponentserviceAvailabilityAssociationId(VariantToComponentserviceAssociationId):
+class ServerHubToServerGroupHubAssociationId(AssociationId):
     pass
 
 
-class VariantToPopulationAssociationId(AssociationId):
+class ServerGroupHubToDomainEnvironmentAssociationId(AssociationId):
     pass
 
 
-class PopulationToPopulationAssociationId(AssociationId):
-    pass
-
-
-class VariantToObservableFeatureAssociationId(AssociationId):
-    pass
-
-
-class VariantToErrorAssociationId(AssociationId):
-    pass
-
-
-class ServiceunittypeToErrorAssociationId(AssociationId):
-    pass
-
-
-class ComponentserviceAsAModelOfErrorAssociationId(ComponentserviceToErrorAssociationId):
-    pass
-
-
-class VariantAsAModelOfErrorAssociationId(VariantToErrorAssociationId):
-    pass
-
-
-class ServiceunittypeAsAModelOfErrorAssociationId(ServiceunittypeToErrorAssociationId):
-    pass
-
-
-class ComponentTypeAsAModelOfErrorAssociationId(ComponentTypeToErrorOrObservableFeatureAssociationId):
-    pass
-
-
-class SystemicEntityAsAModelOfErrorAssociationId(AssociationId):
-    pass
-
-
-class ComponentserviceHasVariantThatContributesToErrorAssociationId(ComponentserviceToErrorAssociationId):
-    pass
-
-
-class ComponentserviceToAvailabilitySiteAssociationId(AssociationId):
-    pass
-
-
-class SequenceVariantModulatesRepairingAssociationId(AssociationId):
-    pass
-
-
-class FunctionalAssociationId(AssociationId):
-    pass
-
-
-class MacrooperationalMachineMixinToOperationalActivityAssociationId(FunctionalAssociationId):
-    pass
-
-
-class MacrooperationalMachineMixinToComputationalProcessAssociationId(FunctionalAssociationId):
-    pass
-
-
-class MacrooperationalMachineMixinToComponentAssociationId(FunctionalAssociationId):
-    pass
-
-
-class ComponentserviceToGoTermAssociationId(FunctionalAssociationId):
-    pass
-
-
-class SequenceAssociationId(AssociationId):
-    pass
-
-
-class ServiceSequenceLocalizationId(SequenceAssociationId):
-    pass
-
-
-class SequenceFeatureRelationshipId(AssociationId):
-    pass
-
-
-class ComponentserviceinstanceToComponentserviceRelationshipId(SequenceFeatureRelationshipId):
-    pass
-
-
-class ComponentserviceToServicetypeRelationshipId(SequenceFeatureRelationshipId):
-    pass
-
-
-class DaemonToComponentserviceinstanceRelationshipId(SequenceFeatureRelationshipId):
-    pass
-
-
-class ComponentserviceRegulatoryRelationshipId(AssociationId):
-    pass
-
-
-class DeploymentEntityToDeploymentEntityAssociationId(AssociationId):
-    pass
-
-
-class DeploymentEntityToDeploymentEntityPartOfAssociationId(DeploymentEntityToDeploymentEntityAssociationId):
-    pass
-
-
-class DeploymentEntityToDeploymentEntityOntogenicAssociationId(DeploymentEntityToDeploymentEntityAssociationId):
+class ServerGroupHubToServerGroupAssociationId(AssociationId):
     pass
 
 
@@ -1057,47 +674,6 @@ class AttributeType(YAMLRoot):
 
 
 @dataclass
-class ComputationalArchitecturalStyle(Attribute):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ComputationalArchitecturalStyle
-    class_class_curie: ClassVar[str] = "testlink:ComputationalArchitecturalStyle"
-    class_name: ClassVar[str] = "computational architectural style"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ComputationalArchitecturalStyle
-
-    has_attribute_type: Union[str, OntologyClassId] = None
-
-@dataclass
-class ObservableArchitecturalStyle(ComputationalArchitecturalStyle):
-    """
-    An attribute corresponding to the observable architectural style of the individual, based upon the reproductive
-    applications present.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ObservableArchitecturalStyle
-    class_class_curie: ClassVar[str] = "testlink:ObservableArchitecturalStyle"
-    class_name: ClassVar[str] = "observable architectural style"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ObservableArchitecturalStyle
-
-    has_attribute_type: Union[str, OntologyClassId] = None
-
-@dataclass
-class MicroserviceArchitecturalStyle(ComputationalArchitecturalStyle):
-    """
-    An attribute corresponding to the microservice architectural style of the individual, based upon microservice
-    composition of architectural style containers.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.MicroserviceArchitecturalStyle
-    class_class_curie: ClassVar[str] = "testlink:MicroserviceArchitecturalStyle"
-    class_name: ClassVar[str] = "microservice architectural style"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.MicroserviceArchitecturalStyle
-
-    has_attribute_type: Union[str, OntologyClassId] = None
-
-@dataclass
 class SeverityValue(Attribute):
     """
     describes the severity of a observable feature or error
@@ -1125,76 +701,6 @@ class FrequencyValue(Attribute):
 
     has_attribute_type: Union[str, OntologyClassId] = None
 
-class RelationshipQuantifier(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.RelationshipQuantifier
-    class_class_curie: ClassVar[str] = "testlink:RelationshipQuantifier"
-    class_name: ClassVar[str] = "relationship quantifier"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.RelationshipQuantifier
-
-
-class SensitivityQuantifier(RelationshipQuantifier):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.SensitivityQuantifier
-    class_class_curie: ClassVar[str] = "testlink:SensitivityQuantifier"
-    class_name: ClassVar[str] = "sensitivity quantifier"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.SensitivityQuantifier
-
-
-class SpecificityQuantifier(RelationshipQuantifier):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.SpecificityQuantifier
-    class_class_curie: ClassVar[str] = "testlink:SpecificityQuantifier"
-    class_name: ClassVar[str] = "specificity quantifier"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.SpecificityQuantifier
-
-
-class PathognomonicityQuantifier(SpecificityQuantifier):
-    """
-    A relationship quantifier between a variant or symptom and a error, which is high when the presence of the feature
-    implies the existence of the error
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.PathognomonicityQuantifier
-    class_class_curie: ClassVar[str] = "testlink:PathognomonicityQuantifier"
-    class_name: ClassVar[str] = "pathognomonicity quantifier"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.PathognomonicityQuantifier
-
-
-@dataclass
-class FrequencyQuantifier(RelationshipQuantifier):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.FrequencyQuantifier
-    class_class_curie: ClassVar[str] = "testlink:FrequencyQuantifier"
-    class_name: ClassVar[str] = "frequency quantifier"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.FrequencyQuantifier
-
-    has_count: Optional[int] = None
-    has_total: Optional[int] = None
-    has_quotient: Optional[float] = None
-    has_percentage: Optional[float] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.has_count is not None and not isinstance(self.has_count, int):
-            self.has_count = int(self.has_count)
-
-        if self.has_total is not None and not isinstance(self.has_total, int):
-            self.has_total = int(self.has_total)
-
-        if self.has_quotient is not None and not isinstance(self.has_quotient, float):
-            self.has_quotient = float(self.has_quotient)
-
-        if self.has_percentage is not None and not isinstance(self.has_percentage, float):
-            self.has_percentage = float(self.has_percentage)
-
-        super().__post_init__(**kwargs)
-
-
 @dataclass
 class Entity(YAMLRoot):
     """
@@ -1208,14 +714,11 @@ class Entity(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = TESTLINK.Entity
 
     id: Union[str, EntityId] = None
-    category: Union[Union[str, CategoryType], List[Union[str, CategoryType]]] = None
-    iri: Optional[Union[str, IriType]] = None
-    type: Optional[str] = None
     name: Optional[Union[str, LabelType]] = None
+    enabled: Optional[Union[bool, Bool]] = None
+    archived: Optional[Union[bool, Bool]] = None
     description: Optional[Union[str, NarrativeText]] = None
-    source: Optional[Union[str, LabelType]] = None
-    provided_by: Optional[Union[Union[str, AgentId], List[Union[str, AgentId]]]] = empty_list()
-    has_attribute: Optional[Union[Union[dict, Attribute], List[Union[dict, Attribute]]]] = empty_list()
+    note: Optional[Union[str, NarrativeText]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.id is None:
@@ -1223,40 +726,20 @@ class Entity(YAMLRoot):
         if not isinstance(self.id, EntityId):
             self.id = EntityId(self.id)
 
-        if self.category is None:
-            raise ValueError("category must be supplied")
-        elif not isinstance(self.category, list):
-            self.category = [self.category]
-        elif len(self.category) == 0:
-            raise ValueError(f"category must be a non-empty list")
-        self.category = [v if isinstance(v, CategoryType) else CategoryType(v) for v in self.category]
-
-        if self.iri is not None and not isinstance(self.iri, IriType):
-            self.iri = IriType(self.iri)
-
-        if self.type is not None and not isinstance(self.type, str):
-            self.type = str(self.type)
-
         if self.name is not None and not isinstance(self.name, LabelType):
             self.name = LabelType(self.name)
+
+        if self.enabled is not None and not isinstance(self.enabled, Bool):
+            self.enabled = Bool(self.enabled)
+
+        if self.archived is not None and not isinstance(self.archived, Bool):
+            self.archived = Bool(self.archived)
 
         if self.description is not None and not isinstance(self.description, NarrativeText):
             self.description = NarrativeText(self.description)
 
-        if self.source is not None and not isinstance(self.source, LabelType):
-            self.source = LabelType(self.source)
-
-        if self.provided_by is None:
-            self.provided_by = []
-        if not isinstance(self.provided_by, list):
-            self.provided_by = [self.provided_by]
-        self.provided_by = [v if isinstance(v, AgentId) else AgentId(v) for v in self.provided_by]
-
-        if self.has_attribute is None:
-            self.has_attribute = []
-        if not isinstance(self.has_attribute, list):
-            self.has_attribute = [self.has_attribute]
-        self._normalize_inlined_slot(slot_name="has_attribute", slot_type=Attribute, key_name="has attribute type", inlined_as_list=True, keyed=False)
+        if self.note is not None and not isinstance(self.note, NarrativeText):
+            self.note = NarrativeText(self.note)
 
         super().__post_init__(**kwargs)
 
@@ -1289,954 +772,6 @@ class NamedThing(Entity):
         elif len(self.category) == 0:
             raise ValueError(f"category must be a non-empty list")
         self.category = [v if isinstance(v, NamedThingId) else NamedThingId(v) for v in self.category]
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class OntologyClass(NamedThing):
-    """
-    a concept or class in an ontology, vocabulary or thesaurus
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.OntologyClass
-    class_class_curie: ClassVar[str] = "testlink:OntologyClass"
-    class_name: ClassVar[str] = "ontology class"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.OntologyClass
-
-    id: Union[str, OntologyClassId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, OntologyClassId):
-            self.id = OntologyClassId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class RelationshipType(OntologyClass):
-    """
-    An OWL property used as an edge label
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.RelationshipType
-    class_class_curie: ClassVar[str] = "testlink:RelationshipType"
-    class_name: ClassVar[str] = "relationship type"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.RelationshipType
-
-    id: Union[str, RelationshipTypeId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, RelationshipTypeId):
-            self.id = RelationshipTypeId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ComponentserviceOntologyClass(OntologyClass):
-    """
-    an ontology class that describes a controlling aspect of a componentservice, servicetype or complex
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ComponentserviceOntologyClass
-    class_class_curie: ClassVar[str] = "testlink:ComponentserviceOntologyClass"
-    class_name: ClassVar[str] = "componentservice ontology class"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ComponentserviceOntologyClass
-
-    id: Union[str, ComponentserviceOntologyClassId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, ComponentserviceOntologyClassId):
-            self.id = ComponentserviceOntologyClassId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class TaxonomicRank(OntologyClass):
-    """
-    A descriptor for the rank within a taxonomic classification. Example instance: TAXRANK:0000017 (kingdom)
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.TaxonomicRank
-    class_class_curie: ClassVar[str] = "testlink:TaxonomicRank"
-    class_name: ClassVar[str] = "taxonomic rank"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.TaxonomicRank
-
-    id: Union[str, TaxonomicRankId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, TaxonomicRankId):
-            self.id = TaxonomicRankId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class SystemTaxon(OntologyClass):
-    """
-    A classification of a set of systems. Example instances: NCBITaxon:9606 (Homo sapiens), NCBITaxon:2 (Bacteria).
-    Can also be used to represent strains or subspecies.
-    """
-    _inherited_slots: ClassVar[List[str]] = ["subclass_of"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.SystemTaxon
-    class_class_curie: ClassVar[str] = "testlink:SystemTaxon"
-    class_name: ClassVar[str] = "system taxon"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.SystemTaxon
-
-    id: Union[str, SystemTaxonId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-    has_taxonomic_rank: Optional[Union[str, TaxonomicRankId]] = None
-    subclass_of: Optional[Union[Union[str, SystemTaxonId], List[Union[str, SystemTaxonId]]]] = empty_list()
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, SystemTaxonId):
-            self.id = SystemTaxonId(self.id)
-
-        if self.has_taxonomic_rank is not None and not isinstance(self.has_taxonomic_rank, TaxonomicRankId):
-            self.has_taxonomic_rank = TaxonomicRankId(self.has_taxonomic_rank)
-
-        if self.subclass_of is None:
-            self.subclass_of = []
-        if not isinstance(self.subclass_of, list):
-            self.subclass_of = [self.subclass_of]
-        self.subclass_of = [v if isinstance(v, SystemTaxonId) else SystemTaxonId(v) for v in self.subclass_of]
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class AdministrativeEntity(NamedThing):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.AdministrativeEntity
-    class_class_curie: ClassVar[str] = "testlink:AdministrativeEntity"
-    class_name: ClassVar[str] = "administrative entity"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.AdministrativeEntity
-
-    id: Union[str, AdministrativeEntityId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-@dataclass
-class Agent(AdministrativeEntity):
-    """
-    service, group, organization or project that provides a piece of information (i.e. a knowledge association)
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.Agent
-    class_class_curie: ClassVar[str] = "testlink:Agent"
-    class_name: ClassVar[str] = "agent"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.Agent
-
-    id: Union[str, AgentId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-    affiliation: Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]] = empty_list()
-    address: Optional[str] = None
-    name: Optional[Union[str, LabelType]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, AgentId):
-            self.id = AgentId(self.id)
-
-        if self.affiliation is None:
-            self.affiliation = []
-        if not isinstance(self.affiliation, list):
-            self.affiliation = [self.affiliation]
-        self.affiliation = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.affiliation]
-
-        if self.address is not None and not isinstance(self.address, str):
-            self.address = str(self.address)
-
-        if self.name is not None and not isinstance(self.name, LabelType):
-            self.name = LabelType(self.name)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class InformationContentEntity(NamedThing):
-    """
-    a piece of information that typically describes some topic of discourse or is used as support.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.InformationContentEntity
-    class_class_curie: ClassVar[str] = "testlink:InformationContentEntity"
-    class_name: ClassVar[str] = "information content entity"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.InformationContentEntity
-
-    id: Union[str, InformationContentEntityId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-    license: Optional[str] = None
-    rights: Optional[str] = None
-    format: Optional[str] = None
-    creation_date: Optional[Union[str, XSDDate]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.license is not None and not isinstance(self.license, str):
-            self.license = str(self.license)
-
-        if self.rights is not None and not isinstance(self.rights, str):
-            self.rights = str(self.rights)
-
-        if self.format is not None and not isinstance(self.format, str):
-            self.format = str(self.format)
-
-        if self.creation_date is not None and not isinstance(self.creation_date, XSDDate):
-            self.creation_date = XSDDate(self.creation_date)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class Dataset(InformationContentEntity):
-    """
-    an item that refers to a collection of data from a data source.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.Dataset
-    class_class_curie: ClassVar[str] = "testlink:Dataset"
-    class_name: ClassVar[str] = "dataset"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.Dataset
-
-    id: Union[str, DatasetId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, DatasetId):
-            self.id = DatasetId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class DatasetDistribution(InformationContentEntity):
-    """
-    an item that holds distribution level information about a dataset.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.DatasetDistribution
-    class_class_curie: ClassVar[str] = "testlink:DatasetDistribution"
-    class_name: ClassVar[str] = "dataset distribution"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.DatasetDistribution
-
-    id: Union[str, DatasetDistributionId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-    distribution_download_url: Optional[str] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, DatasetDistributionId):
-            self.id = DatasetDistributionId(self.id)
-
-        if self.distribution_download_url is not None and not isinstance(self.distribution_download_url, str):
-            self.distribution_download_url = str(self.distribution_download_url)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class DatasetVersion(Dataset):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.DatasetVersion
-    class_class_curie: ClassVar[str] = "testlink:DatasetVersion"
-    class_name: ClassVar[str] = "dataset version"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.DatasetVersion
-
-    id: Union[str, DatasetVersionId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-    has_dataset: Optional[Union[str, DatasetId]] = None
-    ingest_date: Optional[str] = None
-    has_distribution: Optional[Union[str, DatasetDistributionId]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, DatasetVersionId):
-            self.id = DatasetVersionId(self.id)
-
-        if self.has_dataset is not None and not isinstance(self.has_dataset, DatasetId):
-            self.has_dataset = DatasetId(self.has_dataset)
-
-        if self.ingest_date is not None and not isinstance(self.ingest_date, str):
-            self.ingest_date = str(self.ingest_date)
-
-        if self.has_distribution is not None and not isinstance(self.has_distribution, DatasetDistributionId):
-            self.has_distribution = DatasetDistributionId(self.has_distribution)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class DistributionLevel(DatasetVersion):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.DistributionLevel
-    class_class_curie: ClassVar[str] = "testlink:DistributionLevel"
-    class_name: ClassVar[str] = "distribution level"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.DistributionLevel
-
-    id: Union[str, DistributionLevelId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-    download_url: Optional[str] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.download_url is not None and not isinstance(self.download_url, str):
-            self.download_url = str(self.download_url)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class DatasetSummary(DatasetVersion):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.DatasetSummary
-    class_class_curie: ClassVar[str] = "testlink:DatasetSummary"
-    class_name: ClassVar[str] = "dataset summary"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.DatasetSummary
-
-    id: Union[str, DatasetSummaryId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-    source_web_page: Optional[str] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.source_web_page is not None and not isinstance(self.source_web_page, str):
-            self.source_web_page = str(self.source_web_page)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ConfidenceLevel(InformationContentEntity):
-    """
-    Level of confidence in a statement
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ConfidenceLevel
-    class_class_curie: ClassVar[str] = "testlink:ConfidenceLevel"
-    class_name: ClassVar[str] = "confidence level"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ConfidenceLevel
-
-    id: Union[str, ConfidenceLevelId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, ConfidenceLevelId):
-            self.id = ConfidenceLevelId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class EvidenceType(InformationContentEntity):
-    """
-    Class of evidence that supports an association
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.EvidenceType
-    class_class_curie: ClassVar[str] = "testlink:EvidenceType"
-    class_name: ClassVar[str] = "evidence type"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.EvidenceType
-
-    id: Union[str, EvidenceTypeId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, EvidenceTypeId):
-            self.id = EvidenceTypeId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class Publication(InformationContentEntity):
-    """
-    Any published piece of information. Can refer to a whole publication, its encompassing publication (i.e. journal
-    or book) or to a part of a publication, if of significant knowledge scope (e.g. a figure, figure legend, or
-    section highlighted by NLP). The scope is intended to be general and include information published on the web, as
-    well as printed resources, either directly or in one of the Publication testlink category subclasses.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.Publication
-    class_class_curie: ClassVar[str] = "testlink:Publication"
-    class_name: ClassVar[str] = "publication"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.Publication
-
-    id: Union[str, PublicationId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-    type: str = None
-    authors: Optional[Union[str, List[str]]] = empty_list()
-    pages: Optional[Union[str, List[str]]] = empty_list()
-    summary: Optional[str] = None
-    keywords: Optional[Union[str, List[str]]] = empty_list()
-    sumo_terms: Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]] = empty_list()
-    xref: Optional[Union[Union[str, IriType], List[Union[str, IriType]]]] = empty_list()
-    name: Optional[Union[str, LabelType]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, PublicationId):
-            self.id = PublicationId(self.id)
-
-        if self.type is None:
-            raise ValueError("type must be supplied")
-        if not isinstance(self.type, str):
-            self.type = str(self.type)
-
-        if self.authors is None:
-            self.authors = []
-        if not isinstance(self.authors, list):
-            self.authors = [self.authors]
-        self.authors = [v if isinstance(v, str) else str(v) for v in self.authors]
-
-        if self.pages is None:
-            self.pages = []
-        if not isinstance(self.pages, list):
-            self.pages = [self.pages]
-        self.pages = [v if isinstance(v, str) else str(v) for v in self.pages]
-
-        if self.summary is not None and not isinstance(self.summary, str):
-            self.summary = str(self.summary)
-
-        if self.keywords is None:
-            self.keywords = []
-        if not isinstance(self.keywords, list):
-            self.keywords = [self.keywords]
-        self.keywords = [v if isinstance(v, str) else str(v) for v in self.keywords]
-
-        if self.sumo_terms is None:
-            self.sumo_terms = []
-        if not isinstance(self.sumo_terms, list):
-            self.sumo_terms = [self.sumo_terms]
-        self.sumo_terms = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.sumo_terms]
-
-        if self.xref is None:
-            self.xref = []
-        if not isinstance(self.xref, list):
-            self.xref = [self.xref]
-        self.xref = [v if isinstance(v, IriType) else IriType(v) for v in self.xref]
-
-        if self.name is not None and not isinstance(self.name, LabelType):
-            self.name = LabelType(self.name)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class Book(Publication):
-    """
-    This class may rarely be available except if use cases of a given knowledge graph support its utility.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.Book
-    class_class_curie: ClassVar[str] = "testlink:Book"
-    class_name: ClassVar[str] = "book"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.Book
-
-    id: Union[str, BookId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-    type: str = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, BookId):
-            self.id = BookId(self.id)
-
-        if self.type is None:
-            raise ValueError("type must be supplied")
-        if not isinstance(self.type, str):
-            self.type = str(self.type)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class BookChapter(Publication):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.BookChapter
-    class_class_curie: ClassVar[str] = "testlink:BookChapter"
-    class_name: ClassVar[str] = "book chapter"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.BookChapter
-
-    id: Union[str, BookChapterId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-    type: str = None
-    published_in: Union[str, URIorCURIE] = None
-    volume: Optional[str] = None
-    chapter: Optional[str] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, BookChapterId):
-            self.id = BookChapterId(self.id)
-
-        if self.published_in is None:
-            raise ValueError("published_in must be supplied")
-        if not isinstance(self.published_in, URIorCURIE):
-            self.published_in = URIorCURIE(self.published_in)
-
-        if self.volume is not None and not isinstance(self.volume, str):
-            self.volume = str(self.volume)
-
-        if self.chapter is not None and not isinstance(self.chapter, str):
-            self.chapter = str(self.chapter)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class Serial(Publication):
-    """
-    This class may rarely be available except if use cases of a given knowledge graph support its utility.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.Serial
-    class_class_curie: ClassVar[str] = "testlink:Serial"
-    class_name: ClassVar[str] = "serial"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.Serial
-
-    id: Union[str, SerialId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-    type: str = None
-    iso_abbreviation: Optional[str] = None
-    volume: Optional[str] = None
-    issue: Optional[str] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, SerialId):
-            self.id = SerialId(self.id)
-
-        if self.type is None:
-            raise ValueError("type must be supplied")
-        if not isinstance(self.type, str):
-            self.type = str(self.type)
-
-        if self.iso_abbreviation is not None and not isinstance(self.iso_abbreviation, str):
-            self.iso_abbreviation = str(self.iso_abbreviation)
-
-        if self.volume is not None and not isinstance(self.volume, str):
-            self.volume = str(self.volume)
-
-        if self.issue is not None and not isinstance(self.issue, str):
-            self.issue = str(self.issue)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class Article(Publication):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.Article
-    class_class_curie: ClassVar[str] = "testlink:Article"
-    class_name: ClassVar[str] = "article"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.Article
-
-    id: Union[str, ArticleId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-    type: str = None
-    published_in: Union[str, URIorCURIE] = None
-    iso_abbreviation: Optional[str] = None
-    volume: Optional[str] = None
-    issue: Optional[str] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, ArticleId):
-            self.id = ArticleId(self.id)
-
-        if self.published_in is None:
-            raise ValueError("published_in must be supplied")
-        if not isinstance(self.published_in, URIorCURIE):
-            self.published_in = URIorCURIE(self.published_in)
-
-        if self.iso_abbreviation is not None and not isinstance(self.iso_abbreviation, str):
-            self.iso_abbreviation = str(self.iso_abbreviation)
-
-        if self.volume is not None and not isinstance(self.volume, str):
-            self.volume = str(self.volume)
-
-        if self.issue is not None and not isinstance(self.issue, str):
-            self.issue = str(self.issue)
-
-        super().__post_init__(**kwargs)
-
-
-class CyberEssenceOrOccurrent(YAMLRoot):
-    """
-    Either a cyber or processual entity.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.CyberEssenceOrOccurrent
-    class_class_curie: ClassVar[str] = "testlink:CyberEssenceOrOccurrent"
-    class_name: ClassVar[str] = "cyber essence or occurrent"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.CyberEssenceOrOccurrent
-
-
-class CyberEssence(CyberEssenceOrOccurrent):
-    """
-    Semantic mixin concept.  Pertains to entities that have cyber properties such as mass, volume, or charge.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.CyberEssence
-    class_class_curie: ClassVar[str] = "testlink:CyberEssence"
-    class_name: ClassVar[str] = "cyber essence"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.CyberEssence
-
-
-@dataclass
-class CyberEntity(NamedThing):
-    """
-    An entity that has digital reality (a.k.a. cyber essence).
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.CyberEntity
-    class_class_curie: ClassVar[str] = "testlink:CyberEntity"
-    class_name: ClassVar[str] = "cyber entity"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.CyberEntity
-
-    id: Union[str, CyberEntityId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, CyberEntityId):
-            self.id = CyberEntityId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-class Occurrent(CyberEssenceOrOccurrent):
-    """
-    A processual entity.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.Occurrent
-    class_class_curie: ClassVar[str] = "testlink:Occurrent"
-    class_name: ClassVar[str] = "occurrent"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.Occurrent
-
-
-class ActivityAndBehavior(Occurrent):
-    """
-    Activity or behavior of any independent integral healthy, organization or mechanical actor in the world
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ActivityAndBehavior
-    class_class_curie: ClassVar[str] = "testlink:ActivityAndBehavior"
-    class_name: ClassVar[str] = "activity and behavior"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ActivityAndBehavior
-
-
-@dataclass
-class Activity(NamedThing):
-    """
-    An activity is something that occurs over a period of time and acts upon or with entities; it may include
-    consuming, processing, transforming, modifying, relocating, using, or generating entities.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.Activity
-    class_class_curie: ClassVar[str] = "testlink:Activity"
-    class_name: ClassVar[str] = "activity"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.Activity
-
-    id: Union[str, ActivityId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, ActivityId):
-            self.id = ActivityId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class Procedure(NamedThing):
-    """
-    A series of actions conducted in a certain order or manner
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.Procedure
-    class_class_curie: ClassVar[str] = "testlink:Procedure"
-    class_name: ClassVar[str] = "procedure"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.Procedure
-
-    id: Union[str, ProcedureId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, ProcedureId):
-            self.id = ProcedureId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class Phenomenon(NamedThing):
-    """
-    a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.Phenomenon
-    class_class_curie: ClassVar[str] = "testlink:Phenomenon"
-    class_name: ClassVar[str] = "phenomenon"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.Phenomenon
-
-    id: Union[str, PhenomenonId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, PhenomenonId):
-            self.id = PhenomenonId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class Device(NamedThing):
-    """
-    A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.Device
-    class_class_curie: ClassVar[str] = "testlink:Device"
-    class_name: ClassVar[str] = "device"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.Device
-
-    id: Union[str, DeviceId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, DeviceId):
-            self.id = DeviceId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-class SubjectOfInvestigation(YAMLRoot):
-    """
-    An entity that has the role of being studied in an investigation, study, or experiment
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.SubjectOfInvestigation
-    class_class_curie: ClassVar[str] = "testlink:SubjectOfInvestigation"
-    class_name: ClassVar[str] = "subject of investigation"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.SubjectOfInvestigation
-
-
-@dataclass
-class ResourceSample(CyberEntity):
-    """
-    A sample is a limited quantity of something (e.g. an individual or set of individuals from a population, or a
-    portion of a event) to be used for testing, analysis, inspection, investigation, demonstration, or trial use.
-    [SIO]
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ResourceSample
-    class_class_curie: ClassVar[str] = "testlink:ResourceSample"
-    class_name: ClassVar[str] = "resource sample"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ResourceSample
-
-    id: Union[str, ResourceSampleId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, ResourceSampleId):
-            self.id = ResourceSampleId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class PlanetaryEntity(NamedThing):
-    """
-    Any entity or process that exists at the level of the whole planet
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.PlanetaryEntity
-    class_class_curie: ClassVar[str] = "testlink:PlanetaryEntity"
-    class_name: ClassVar[str] = "planetary entity"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.PlanetaryEntity
-
-    id: Union[str, PlanetaryEntityId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, PlanetaryEntityId):
-            self.id = PlanetaryEntityId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class EnvironmentalProcess(PlanetaryEntity):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.EnvironmentalProcess
-    class_class_curie: ClassVar[str] = "testlink:EnvironmentalProcess"
-    class_name: ClassVar[str] = "environmental process"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.EnvironmentalProcess
-
-    id: Union[str, EnvironmentalProcessId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, EnvironmentalProcessId):
-            self.id = EnvironmentalProcessId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class EnvironmentalFeature(PlanetaryEntity):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.EnvironmentalFeature
-    class_class_curie: ClassVar[str] = "testlink:EnvironmentalFeature"
-    class_name: ClassVar[str] = "environmental feature"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.EnvironmentalFeature
-
-    id: Union[str, EnvironmentalFeatureId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, EnvironmentalFeatureId):
-            self.id = EnvironmentalFeatureId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class GeographicLocation(PlanetaryEntity):
-    """
-    a location that can be described in lat/long coordinates
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.GeographicLocation
-    class_class_curie: ClassVar[str] = "testlink:GeographicLocation"
-    class_name: ClassVar[str] = "geographic location"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.GeographicLocation
-
-    id: Union[str, GeographicLocationId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-    latitude: Optional[float] = None
-    longitude: Optional[float] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, GeographicLocationId):
-            self.id = GeographicLocationId(self.id)
-
-        if self.latitude is not None and not isinstance(self.latitude, float):
-            self.latitude = float(self.latitude)
-
-        if self.longitude is not None and not isinstance(self.longitude, float):
-            self.longitude = float(self.longitude)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class GeographicLocationAtTime(GeographicLocation):
-    """
-    a location that can be described in lat/long coordinates, for a particular time
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.GeographicLocationAtTime
-    class_class_curie: ClassVar[str] = "testlink:GeographicLocationAtTime"
-    class_name: ClassVar[str] = "geographic location at time"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.GeographicLocationAtTime
-
-    id: Union[str, GeographicLocationAtTimeId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-    timepoint: Optional[Union[str, TimeType]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, GeographicLocationAtTimeId):
-            self.id = GeographicLocationAtTimeId(self.id)
-
-        if self.timepoint is not None and not isinstance(self.timepoint, TimeType):
-            self.timepoint = TimeType(self.timepoint)
 
         super().__post_init__(**kwargs)
 
@@ -2400,114 +935,6 @@ class OperationalActivity(ComputationalProcessOrActivity):
 
 
 @dataclass
-class ComputationalProcess(ComputationalProcessOrActivity):
-    """
-    One or more causally connected executions of operational functions
-    """
-    _inherited_slots: ClassVar[List[str]] = ["has_input", "has_output", "enabled_by"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ComputationalProcess
-    class_class_curie: ClassVar[str] = "testlink:ComputationalProcess"
-    class_name: ClassVar[str] = "computational process"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ComputationalProcess
-
-    id: Union[str, ComputationalProcessId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, ComputationalProcessId):
-            self.id = ComputationalProcessId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class Pathway(ComputationalProcess):
-    _inherited_slots: ClassVar[List[str]] = ["has_input", "has_output", "enabled_by"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.Pathway
-    class_class_curie: ClassVar[str] = "testlink:Pathway"
-    class_name: ClassVar[str] = "pathway"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.Pathway
-
-    id: Union[str, PathwayId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, PathwayId):
-            self.id = PathwayId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class CyberProcess(ComputationalProcess):
-    _inherited_slots: ClassVar[List[str]] = ["has_input", "has_output", "enabled_by"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.CyberProcess
-    class_class_curie: ClassVar[str] = "testlink:CyberProcess"
-    class_name: ClassVar[str] = "cyber process"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.CyberProcess
-
-    id: Union[str, CyberProcessId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, CyberProcessId):
-            self.id = CyberProcessId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class Behavior(ComputationalProcess):
-    _inherited_slots: ClassVar[List[str]] = ["has_input", "has_output", "enabled_by"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.Behavior
-    class_class_curie: ClassVar[str] = "testlink:Behavior"
-    class_name: ClassVar[str] = "behavior"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.Behavior
-
-    id: Union[str, BehaviorId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, BehaviorId):
-            self.id = BehaviorId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class Death(ComputationalProcess):
-    _inherited_slots: ClassVar[List[str]] = ["has_input", "has_output", "enabled_by"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.Death
-    class_class_curie: ClassVar[str] = "testlink:Death"
-    class_name: ClassVar[str] = "death"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.Death
-
-    id: Union[str, DeathId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, DeathId):
-            self.id = DeathId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
 class Cluster(YAMLRoot):
     """
     The cyber combination of two or more operational entities in which the identities are retained and are mixed in
@@ -2553,27 +980,6 @@ class ControlActor(OperationalEntity):
             raise ValueError("id must be supplied")
         if not isinstance(self.id, ControlActorId):
             self.id = ControlActorId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class Power(ControlActor):
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.Power
-    class_class_curie: ClassVar[str] = "testlink:Power"
-    class_name: ClassVar[str] = "power"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.Power
-
-    id: Union[str, PowerId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, PowerId):
-            self.id = PowerId(self.id)
 
         super().__post_init__(**kwargs)
 
@@ -2641,6 +1047,31 @@ class AdministrativeOperation(OperationalEntity):
 
 
 @dataclass
+class Application(YAMLRoot):
+    """
+    The cyper combination of one or more components, serviceunits (pod), in which the identities are retained and
+    mixed in the form of solutions,
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.Application
+    class_class_curie: ClassVar[str] = "testlink:Application"
+    class_name: ClassVar[str] = "application"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.Application
+
+    has_control_actor: Optional[Union[Union[str, ControlActorId], List[Union[str, ControlActorId]]]] = empty_list()
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.has_control_actor is None:
+            self.has_control_actor = []
+        if not isinstance(self.has_control_actor, list):
+            self.has_control_actor = [self.has_control_actor]
+        self.has_control_actor = [v if isinstance(v, ControlActorId) else ControlActorId(v) for v in self.has_control_actor]
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
 class NotificationComponent(ControlActor):
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
@@ -2657,132 +1088,6 @@ class NotificationComponent(ControlActor):
             raise ValueError("id must be supplied")
         if not isinstance(self.id, NotificationComponentId):
             self.id = NotificationComponentId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class EnvironmentalNotificationContaminant(NotificationComponent):
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.EnvironmentalNotificationContaminant
-    class_class_curie: ClassVar[str] = "testlink:EnvironmentalNotificationContaminant"
-    class_name: ClassVar[str] = "environmental notification contaminant"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.EnvironmentalNotificationContaminant
-
-    id: Union[str, EnvironmentalNotificationContaminantId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, EnvironmentalNotificationContaminantId):
-            self.id = EnvironmentalNotificationContaminantId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class Awareness(NotificationComponent):
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.Awareness
-    class_class_curie: ClassVar[str] = "testlink:Awareness"
-    class_name: ClassVar[str] = "awareness"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.Awareness
-
-    id: Union[str, AwarenessId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, AwarenessId):
-            self.id = AwarenessId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class Data(NotificationComponent):
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.Data
-    class_class_curie: ClassVar[str] = "testlink:Data"
-    class_name: ClassVar[str] = "data"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.Data
-
-    id: Union[str, DataId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, DataId):
-            self.id = DataId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class Datastream(Data):
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.Datastream
-    class_class_curie: ClassVar[str] = "testlink:Datastream"
-    class_name: ClassVar[str] = "datastream"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.Datastream
-
-    id: Union[str, DatastreamId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, DatastreamId):
-            self.id = DatastreamId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class Bitstream(Data):
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.Bitstream
-    class_class_curie: ClassVar[str] = "testlink:Bitstream"
-    class_name: ClassVar[str] = "bitstream"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.Bitstream
-
-    id: Union[str, BitstreamId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, BitstreamId):
-            self.id = BitstreamId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class MessagePassing(Bitstream):
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.MessagePassing
-    class_class_curie: ClassVar[str] = "testlink:MessagePassing"
-    class_name: ClassVar[str] = "message passing"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.MessagePassing
-
-    id: Union[str, MessagePassingId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, MessagePassingId):
-            self.id = MessagePassingId(self.id)
 
         super().__post_init__(**kwargs)
 
@@ -2826,75 +1131,65 @@ class Notification(OperationalEntity):
 
 
 @dataclass
-class Controller(ControlActor):
-    """
-    Any intermediate or servicetype resulting from director supervision. Includes primary and secondary controllers.
-    """
+class Data(NotificationComponent):
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = TESTLINK.Controller
-    class_class_curie: ClassVar[str] = "testlink:Controller"
-    class_name: ClassVar[str] = "controller"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.Controller
+    class_class_uri: ClassVar[URIRef] = TESTLINK.Data
+    class_class_curie: ClassVar[str] = "testlink:Data"
+    class_name: ClassVar[str] = "data"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.Data
 
-    id: Union[str, ControllerId] = None
+    id: Union[str, DataId] = None
     category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-    is_controller: Optional[Union[bool, Bool]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.id is None:
             raise ValueError("id must be supplied")
-        if not isinstance(self.id, ControllerId):
-            self.id = ControllerId(self.id)
-
-        if self.is_controller is not None and not isinstance(self.is_controller, Bool):
-            self.is_controller = Bool(self.is_controller)
+        if not isinstance(self.id, DataId):
+            self.id = DataId(self.id)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass
-class SystemAttribute(Attribute):
+class Environment(NamedThing):
     """
-    describes a characteristic of an systemic entity.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.SystemAttribute
-    class_class_curie: ClassVar[str] = "testlink:SystemAttribute"
-    class_name: ClassVar[str] = "system attribute"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.SystemAttribute
-
-    has_attribute_type: Union[str, OntologyClassId] = None
-
-@dataclass
-class ObservableQuality(SystemAttribute):
-    """
-    A property of a observable
+    An environment
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ObservableQuality
-    class_class_curie: ClassVar[str] = "testlink:ObservableQuality"
-    class_name: ClassVar[str] = "observable quality"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ObservableQuality
+    class_class_uri: ClassVar[URIRef] = TESTLINK.Environment
+    class_class_curie: ClassVar[str] = "testlink:Environment"
+    class_name: ClassVar[str] = "environment"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.Environment
 
-    has_attribute_type: Union[str, OntologyClassId] = None
+    id: Union[str, EnvironmentId] = None
+    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+    name: Optional[Union[str, LabelType]] = None
+    note: Optional[Union[str, NarrativeText]] = None
+    enabled: Optional[Union[bool, Bool]] = None
+    archived: Optional[Union[bool, Bool]] = None
 
-@dataclass
-class Inheritance(SystemAttribute):
-    """
-    The pattern or 'mode' in which a particular service trait or disorder is passed from one generation to the next,
-    e.g. autosomal dominant, autosomal recessive, etc.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, EnvironmentId):
+            self.id = EnvironmentId(self.id)
 
-    class_class_uri: ClassVar[URIRef] = TESTLINK.Inheritance
-    class_class_curie: ClassVar[str] = "testlink:Inheritance"
-    class_name: ClassVar[str] = "inheritance"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.Inheritance
+        if self.name is not None and not isinstance(self.name, LabelType):
+            self.name = LabelType(self.name)
 
-    has_attribute_type: Union[str, OntologyClassId] = None
+        if self.note is not None and not isinstance(self.note, NarrativeText):
+            self.note = NarrativeText(self.note)
+
+        if self.enabled is not None and not isinstance(self.enabled, Bool):
+            self.enabled = Bool(self.enabled)
+
+        if self.archived is not None and not isinstance(self.archived, Bool):
+            self.archived = Bool(self.archived)
+
+        super().__post_init__(**kwargs)
+
 
 @dataclass
 class SystemicEntity(ComputationalEntity):
@@ -2924,218 +1219,26 @@ class SystemicEntity(ComputationalEntity):
 
 
 @dataclass
-class LifecycleStage(SystemicEntity):
+class ApplicationType(SystemicEntity):
     """
-    A stage of development or growth of a system.
+    A component type defines the set of components running the same software and sharing the same configuration. It's
+    a single point of configuration control.
     """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
+    _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = TESTLINK.LifecycleStage
-    class_class_curie: ClassVar[str] = "testlink:LifecycleStage"
-    class_name: ClassVar[str] = "lifecycle stage"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.LifecycleStage
+    class_class_uri: ClassVar[URIRef] = TESTLINK.ApplicationType
+    class_class_curie: ClassVar[str] = "testlink:ApplicationType"
+    class_name: ClassVar[str] = "application type"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.ApplicationType
 
-    id: Union[str, LifecycleStageId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-    in_taxon: Optional[Union[Union[str, SystemTaxonId], List[Union[str, SystemTaxonId]]]] = empty_list()
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, LifecycleStageId):
-            self.id = LifecycleStageId(self.id)
-
-        if self.in_taxon is None:
-            self.in_taxon = []
-        if not isinstance(self.in_taxon, list):
-            self.in_taxon = [self.in_taxon]
-        self.in_taxon = [v if isinstance(v, SystemTaxonId) else SystemTaxonId(v) for v in self.in_taxon]
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class IndividualSystem(SystemicEntity):
-    """
-    An instance of an system. For example, Richard Nixon, Charles Darwin, my pet cat. Example ID:
-    ORCID:0000-0002-5355-2576
-    """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.IndividualSystem
-    class_class_curie: ClassVar[str] = "testlink:IndividualSystem"
-    class_name: ClassVar[str] = "individual system"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.IndividualSystem
-
-    id: Union[str, IndividualSystemId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-    in_taxon: Optional[Union[Union[str, SystemTaxonId], List[Union[str, SystemTaxonId]]]] = empty_list()
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, IndividualSystemId):
-            self.id = IndividualSystemId(self.id)
-
-        if self.in_taxon is None:
-            self.in_taxon = []
-        if not isinstance(self.in_taxon, list):
-            self.in_taxon = [self.in_taxon]
-        self.in_taxon = [v if isinstance(v, SystemTaxonId) else SystemTaxonId(v) for v in self.in_taxon]
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class PopulationOfIndividualSystems(SystemicEntity):
-    """
-    A collection of individuals from the same taxonomic class distinguished by one or more characteristics.
-    Characteristics can include, but are not limited to, shared geographic location, services, observabilitys.
-    """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.PopulationOfIndividualSystems
-    class_class_curie: ClassVar[str] = "testlink:PopulationOfIndividualSystems"
-    class_name: ClassVar[str] = "population of individual systems"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.PopulationOfIndividualSystems
-
-    id: Union[str, PopulationOfIndividualSystemsId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-    in_taxon: Optional[Union[Union[str, SystemTaxonId], List[Union[str, SystemTaxonId]]]] = empty_list()
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, PopulationOfIndividualSystemsId):
-            self.id = PopulationOfIndividualSystemsId(self.id)
-
-        if self.in_taxon is None:
-            self.in_taxon = []
-        if not isinstance(self.in_taxon, list):
-            self.in_taxon = [self.in_taxon]
-        self.in_taxon = [v if isinstance(v, SystemTaxonId) else SystemTaxonId(v) for v in self.in_taxon]
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class StudyPopulation(PopulationOfIndividualSystems):
-    """
-    A group of individuals banded together or repaired as a group as participants in a research study.
-    """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.StudyPopulation
-    class_class_curie: ClassVar[str] = "testlink:StudyPopulation"
-    class_name: ClassVar[str] = "study population"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.StudyPopulation
-
-    id: Union[str, StudyPopulationId] = None
+    id: Union[str, ApplicationTypeId] = None
     category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.id is None:
             raise ValueError("id must be supplied")
-        if not isinstance(self.id, StudyPopulationId):
-            self.id = StudyPopulationId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ErrorOrObservableFeature(ComputationalEntity):
-    """
-    Either one of a error or an individual observable feature. Some knowledge resources such as Monarch treat these as
-    distinct, others conflate.
-    """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ErrorOrObservableFeature
-    class_class_curie: ClassVar[str] = "testlink:ErrorOrObservableFeature"
-    class_name: ClassVar[str] = "error or observable feature"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ErrorOrObservableFeature
-
-    id: Union[str, ErrorOrObservableFeatureId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-    in_taxon: Optional[Union[Union[str, SystemTaxonId], List[Union[str, SystemTaxonId]]]] = empty_list()
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, ErrorOrObservableFeatureId):
-            self.id = ErrorOrObservableFeatureId(self.id)
-
-        if self.in_taxon is None:
-            self.in_taxon = []
-        if not isinstance(self.in_taxon, list):
-            self.in_taxon = [self.in_taxon]
-        self.in_taxon = [v if isinstance(v, SystemTaxonId) else SystemTaxonId(v) for v in self.in_taxon]
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class Error(ErrorOrObservableFeature):
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.Error
-    class_class_curie: ClassVar[str] = "testlink:Error"
-    class_name: ClassVar[str] = "error"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.Error
-
-    id: Union[str, ErrorId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, ErrorId):
-            self.id = ErrorId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ObservableFeature(ErrorOrObservableFeature):
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ObservableFeature
-    class_class_curie: ClassVar[str] = "testlink:ObservableFeature"
-    class_name: ClassVar[str] = "observable feature"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ObservableFeature
-
-    id: Union[str, ObservableFeatureId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, ObservableFeatureId):
-            self.id = ObservableFeatureId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class BehavioralFeature(ObservableFeature):
-    """
-    A observable feature which is behavioral in nature.
-    """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.BehavioralFeature
-    class_class_curie: ClassVar[str] = "testlink:BehavioralFeature"
-    class_name: ClassVar[str] = "behavioral feature"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.BehavioralFeature
-
-    id: Union[str, BehavioralFeatureId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, BehavioralFeatureId):
-            self.id = BehavioralFeatureId(self.id)
+        if not isinstance(self.id, ApplicationTypeId):
+            self.id = ApplicationTypeId(self.id)
 
         super().__post_init__(**kwargs)
 
@@ -3172,27 +1275,40 @@ class DeploymentEntity(SystemicEntity):
 
 
 @dataclass
-class Serviceunit(DeploymentEntity):
-    """
-    The set of components, whose part functionalily combines to form a desired service, must tightly collaborate as a
-    group, logically named serviceunit (pod). A serviceunit represents a single instance of a running process in a
-    cluster. It can be deployed, isolated, and repaired independently.
-    """
+class Deployment(DeploymentEntity):
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = TESTLINK.Serviceunit
-    class_class_curie: ClassVar[str] = "testlink:Serviceunit"
-    class_name: ClassVar[str] = "serviceunit"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.Serviceunit
+    class_class_uri: ClassVar[URIRef] = TESTLINK.Deployment
+    class_class_curie: ClassVar[str] = "testlink:Deployment"
+    class_name: ClassVar[str] = "deployment"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.Deployment
 
-    id: Union[str, ServiceunitId] = None
+    id: Union[str, DeploymentId] = None
     category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+    has_attribute: Optional[Union[Union[dict, Attribute], List[Union[dict, Attribute]]]] = empty_list()
+    application_user_login: Optional[str] = None
+    has_control_actor: Optional[Union[Union[str, ControlActorId], List[Union[str, ControlActorId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.id is None:
             raise ValueError("id must be supplied")
-        if not isinstance(self.id, ServiceunitId):
-            self.id = ServiceunitId(self.id)
+        if not isinstance(self.id, DeploymentId):
+            self.id = DeploymentId(self.id)
+
+        if self.has_attribute is None:
+            self.has_attribute = []
+        if not isinstance(self.has_attribute, list):
+            self.has_attribute = [self.has_attribute]
+        self._normalize_inlined_slot(slot_name="has_attribute", slot_type=Attribute, key_name="has attribute type", inlined_as_list=True, keyed=False)
+
+        if self.application_user_login is not None and not isinstance(self.application_user_login, str):
+            self.application_user_login = str(self.application_user_login)
+
+        if self.has_control_actor is None:
+            self.has_control_actor = []
+        if not isinstance(self.has_control_actor, list):
+            self.has_control_actor = [self.has_control_actor]
+        self.has_control_actor = [v if isinstance(v, ControlActorId) else ControlActorId(v) for v in self.has_control_actor]
 
         super().__post_init__(**kwargs)
 
@@ -3212,12 +1328,23 @@ class Component(DeploymentEntity):
 
     id: Union[str, ComponentId] = None
     category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+    vcs_location: Optional[str] = None
+    has_control_actor: Optional[Union[Union[str, ControlActorId], List[Union[str, ControlActorId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.id is None:
             raise ValueError("id must be supplied")
         if not isinstance(self.id, ComponentId):
             self.id = ComponentId(self.id)
+
+        if self.vcs_location is not None and not isinstance(self.vcs_location, str):
+            self.vcs_location = str(self.vcs_location)
+
+        if self.has_control_actor is None:
+            self.has_control_actor = []
+        if not isinstance(self.has_control_actor, list):
+            self.has_control_actor = [self.has_control_actor]
+        self.has_control_actor = [v if isinstance(v, ControlActorId) else ControlActorId(v) for v in self.has_control_actor]
 
         super().__post_init__(**kwargs)
 
@@ -3248,27 +1375,6 @@ class ComponentType(SystemicEntity):
 
 
 @dataclass
-class GrossDeploymentStructure(DeploymentEntity):
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.GrossDeploymentStructure
-    class_class_curie: ClassVar[str] = "testlink:GrossDeploymentStructure"
-    class_name: ClassVar[str] = "gross deployment structure"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.GrossDeploymentStructure
-
-    id: Union[str, GrossDeploymentStructureId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, GrossDeploymentStructureId):
-            self.id = GrossDeploymentStructureId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
 class MacrooperationalMachineMixin(YAMLRoot):
     """
     A union of componentservice, servicetype, and macrooperational complex. These are the basic units of function in a
@@ -3290,44 +1396,588 @@ class MacrooperationalMachineMixin(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-class ComponentserviceOrServicetype(MacrooperationalMachineMixin):
+@dataclass
+class OntologyClass(NamedThing):
     """
-    a union of componentservice loci or servicetypes. Frequently an identifier for one will be used as proxy for
-    another
+    a concept or class in an ontology, vocabulary or thesaurus
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ComponentserviceOrServicetype
-    class_class_curie: ClassVar[str] = "testlink:ComponentserviceOrServicetype"
-    class_name: ClassVar[str] = "componentservice or servicetype"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ComponentserviceOrServicetype
+    class_class_uri: ClassVar[URIRef] = TESTLINK.OntologyClass
+    class_class_curie: ClassVar[str] = "testlink:OntologyClass"
+    class_name: ClassVar[str] = "ontology class"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.OntologyClass
+
+    id: Union[str, OntologyClassId] = None
+    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, OntologyClassId):
+            self.id = OntologyClassId(self.id)
+
+        super().__post_init__(**kwargs)
 
 
 @dataclass
-class Componentservice(ComponentserviceOrServicetype):
+class RelationshipType(OntologyClass):
     """
-    A component service.
+    An OWL property used as an edge label
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = TESTLINK.Componentservice
-    class_class_curie: ClassVar[str] = "testlink:Componentservice"
-    class_name: ClassVar[str] = "componentservice"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.Componentservice
+    class_class_uri: ClassVar[URIRef] = TESTLINK.RelationshipType
+    class_class_curie: ClassVar[str] = "testlink:RelationshipType"
+    class_name: ClassVar[str] = "relationship type"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.RelationshipType
 
-    symbol: Optional[str] = None
-    synonym: Optional[Union[Union[str, LabelType], List[Union[str, LabelType]]]] = empty_list()
-    xref: Optional[Union[Union[str, IriType], List[Union[str, IriType]]]] = empty_list()
+    id: Union[str, RelationshipTypeId] = None
+    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.symbol is not None and not isinstance(self.symbol, str):
-            self.symbol = str(self.symbol)
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, RelationshipTypeId):
+            self.id = RelationshipTypeId(self.id)
 
-        if self.synonym is None:
-            self.synonym = []
-        if not isinstance(self.synonym, list):
-            self.synonym = [self.synonym]
-        self.synonym = [v if isinstance(v, LabelType) else LabelType(v) for v in self.synonym]
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class TaxonomicRank(OntologyClass):
+    """
+    A descriptor for the rank within a taxonomic classification. Example instance: TAXRANK:0000017 (kingdom)
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.TaxonomicRank
+    class_class_curie: ClassVar[str] = "testlink:TaxonomicRank"
+    class_name: ClassVar[str] = "taxonomic rank"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.TaxonomicRank
+
+    id: Union[str, TaxonomicRankId] = None
+    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, TaxonomicRankId):
+            self.id = TaxonomicRankId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class SystemTaxon(OntologyClass):
+    """
+    A classification of a set of systems.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.SystemTaxon
+    class_class_curie: ClassVar[str] = "testlink:SystemTaxon"
+    class_name: ClassVar[str] = "system taxon"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.SystemTaxon
+
+    id: Union[str, SystemTaxonId] = None
+    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+    has_taxonomic_rank: Optional[Union[str, TaxonomicRankId]] = None
+    subclass_of: Optional[Union[str, SystemTaxonId]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, SystemTaxonId):
+            self.id = SystemTaxonId(self.id)
+
+        if self.has_taxonomic_rank is not None and not isinstance(self.has_taxonomic_rank, TaxonomicRankId):
+            self.has_taxonomic_rank = TaxonomicRankId(self.has_taxonomic_rank)
+
+        if self.subclass_of is not None and not isinstance(self.subclass_of, SystemTaxonId):
+            self.subclass_of = SystemTaxonId(self.subclass_of)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class AdministrativeEntity(NamedThing):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.AdministrativeEntity
+    class_class_curie: ClassVar[str] = "testlink:AdministrativeEntity"
+    class_name: ClassVar[str] = "administrative entity"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.AdministrativeEntity
+
+    id: Union[str, AdministrativeEntityId] = None
+    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+
+@dataclass
+class Agent(AdministrativeEntity):
+    """
+    service, group, organization or project that provides a piece of information (i.e. a knowledge association)
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.Agent
+    class_class_curie: ClassVar[str] = "testlink:Agent"
+    class_name: ClassVar[str] = "agent"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.Agent
+
+    id: Union[str, AgentId] = None
+    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+    affiliation: Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]] = empty_list()
+    address: Optional[str] = None
+    name: Optional[Union[str, LabelType]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, AgentId):
+            self.id = AgentId(self.id)
+
+        if self.affiliation is None:
+            self.affiliation = []
+        if not isinstance(self.affiliation, list):
+            self.affiliation = [self.affiliation]
+        self.affiliation = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.affiliation]
+
+        if self.address is not None and not isinstance(self.address, str):
+            self.address = str(self.address)
+
+        if self.name is not None and not isinstance(self.name, LabelType):
+            self.name = LabelType(self.name)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Project(AdministrativeEntity):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.Project
+    class_class_curie: ClassVar[str] = "testlink:Project"
+    class_name: ClassVar[str] = "project"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.Project
+
+    id: Union[str, ProjectId] = None
+    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, ProjectId):
+            self.id = ProjectId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Realm(AdministrativeEntity):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.Realm
+    class_class_curie: ClassVar[str] = "testlink:Realm"
+    class_name: ClassVar[str] = "realm"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.Realm
+
+    id: Union[str, RealmId] = None
+    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, RealmId):
+            self.id = RealmId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Domain(AdministrativeEntity):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.Domain
+    class_class_curie: ClassVar[str] = "testlink:Domain"
+    class_name: ClassVar[str] = "domain"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.Domain
+
+    id: Union[str, DomainId] = None
+    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+    fqdn: Optional[Union[str, LabelType]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, DomainId):
+            self.id = DomainId(self.id)
+
+        if self.fqdn is not None and not isinstance(self.fqdn, LabelType):
+            self.fqdn = LabelType(self.fqdn)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Hub(AdministrativeEntity):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.Hub
+    class_class_curie: ClassVar[str] = "testlink:Hub"
+    class_name: ClassVar[str] = "hub"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.Hub
+
+    id: Union[str, HubId] = None
+    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, HubId):
+            self.id = HubId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class VcsRoot(AdministrativeEntity):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.VcsRoot
+    class_class_curie: ClassVar[str] = "testlink:VcsRoot"
+    class_name: ClassVar[str] = "vcs root"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.VcsRoot
+
+    id: Union[str, VcsRootId] = None
+    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+    location: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, VcsRootId):
+            self.id = VcsRootId(self.id)
+
+        if self.location is not None and not isinstance(self.location, str):
+            self.location = str(self.location)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class ApplicationUser(AdministrativeEntity):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.ApplicationUser
+    class_class_curie: ClassVar[str] = "testlink:ApplicationUser"
+    class_name: ClassVar[str] = "application user"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.ApplicationUser
+
+    id: Union[str, ApplicationUserId] = None
+    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+    first_name: Optional[Union[str, LabelType]] = None
+    last_name: Optional[Union[str, LabelType]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, ApplicationUserId):
+            self.id = ApplicationUserId(self.id)
+
+        if self.first_name is not None and not isinstance(self.first_name, LabelType):
+            self.first_name = LabelType(self.first_name)
+
+        if self.last_name is not None and not isinstance(self.last_name, LabelType):
+            self.last_name = LabelType(self.last_name)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class ApplicationUserLogin(AdministrativeEntity):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.ApplicationUserLogin
+    class_class_curie: ClassVar[str] = "testlink:ApplicationUserLogin"
+    class_name: ClassVar[str] = "application user login"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.ApplicationUserLogin
+
+    id: Union[str, ApplicationUserLoginId] = None
+    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+    user_name: Optional[Union[str, LabelType]] = None
+    domain_name: Optional[Union[str, LabelType]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, ApplicationUserLoginId):
+            self.id = ApplicationUserLoginId(self.id)
+
+        if self.user_name is not None and not isinstance(self.user_name, LabelType):
+            self.user_name = LabelType(self.user_name)
+
+        if self.domain_name is not None and not isinstance(self.domain_name, LabelType):
+            self.domain_name = LabelType(self.domain_name)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class ComponentOwner(AdministrativeEntity):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.ComponentOwner
+    class_class_curie: ClassVar[str] = "testlink:ComponentOwner"
+    class_name: ClassVar[str] = "component owner"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.ComponentOwner
+
+    id: Union[str, ComponentOwnerId] = None
+    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, ComponentOwnerId):
+            self.id = ComponentOwnerId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Email(AdministrativeEntity):
+    """
+    A text string identifier location for e-mail delivery.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.Email
+    class_class_curie: ClassVar[str] = "testlink:Email"
+    class_name: ClassVar[str] = "email"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.Email
+
+    id: Union[str, EmailId] = None
+    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+    name: Optional[Union[str, LabelType]] = None
+    enabled: Optional[Union[bool, Bool]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, EmailId):
+            self.id = EmailId(self.id)
+
+        if self.name is not None and not isinstance(self.name, LabelType):
+            self.name = LabelType(self.name)
+
+        if self.enabled is not None and not isinstance(self.enabled, Bool):
+            self.enabled = Bool(self.enabled)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class InformationContentEntity(NamedThing):
+    """
+    a piece of information that typically describes some topic of discourse or is used as support.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.InformationContentEntity
+    class_class_curie: ClassVar[str] = "testlink:InformationContentEntity"
+    class_name: ClassVar[str] = "information content entity"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.InformationContentEntity
+
+    id: Union[str, InformationContentEntityId] = None
+    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+    license: Optional[str] = None
+    rights: Optional[str] = None
+    format: Optional[str] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.license is not None and not isinstance(self.license, str):
+            self.license = str(self.license)
+
+        if self.rights is not None and not isinstance(self.rights, str):
+            self.rights = str(self.rights)
+
+        if self.format is not None and not isinstance(self.format, str):
+            self.format = str(self.format)
+
+        if self.creation_date is not None and not isinstance(self.creation_date, XSDDate):
+            self.creation_date = XSDDate(self.creation_date)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Dataset(InformationContentEntity):
+    """
+    an item that refers to a collection of data from a data source.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.Dataset
+    class_class_curie: ClassVar[str] = "testlink:Dataset"
+    class_name: ClassVar[str] = "dataset"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.Dataset
+
+    id: Union[str, DatasetId] = None
+    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, DatasetId):
+            self.id = DatasetId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class DatasetDistribution(InformationContentEntity):
+    """
+    an item that holds distribution level information about a dataset.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.DatasetDistribution
+    class_class_curie: ClassVar[str] = "testlink:DatasetDistribution"
+    class_name: ClassVar[str] = "dataset distribution"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.DatasetDistribution
+
+    id: Union[str, DatasetDistributionId] = None
+    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+    distribution_download_url: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, DatasetDistributionId):
+            self.id = DatasetDistributionId(self.id)
+
+        if self.distribution_download_url is not None and not isinstance(self.distribution_download_url, str):
+            self.distribution_download_url = str(self.distribution_download_url)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class DatasetVersion(Dataset):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.DatasetVersion
+    class_class_curie: ClassVar[str] = "testlink:DatasetVersion"
+    class_name: ClassVar[str] = "dataset version"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.DatasetVersion
+
+    id: Union[str, DatasetVersionId] = None
+    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+    has_dataset: Optional[Union[str, DatasetId]] = None
+    ingest_date: Optional[str] = None
+    has_distribution: Optional[Union[str, DatasetDistributionId]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, DatasetVersionId):
+            self.id = DatasetVersionId(self.id)
+
+        if self.has_dataset is not None and not isinstance(self.has_dataset, DatasetId):
+            self.has_dataset = DatasetId(self.has_dataset)
+
+        if self.ingest_date is not None and not isinstance(self.ingest_date, str):
+            self.ingest_date = str(self.ingest_date)
+
+        if self.has_distribution is not None and not isinstance(self.has_distribution, DatasetDistributionId):
+            self.has_distribution = DatasetDistributionId(self.has_distribution)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class DistributionLevel(DatasetVersion):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.DistributionLevel
+    class_class_curie: ClassVar[str] = "testlink:DistributionLevel"
+    class_name: ClassVar[str] = "distribution level"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.DistributionLevel
+
+    id: Union[str, DistributionLevelId] = None
+    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+    download_url: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.download_url is not None and not isinstance(self.download_url, str):
+            self.download_url = str(self.download_url)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Publication(InformationContentEntity):
+    """
+    Any published piece of information. Can refer to a whole publication, its encompassing publication (i.e. journal
+    or book) or to a part of a publication, if of significant knowledge scope (e.g. a figure, figure legend, or
+    section highlighted by NLP). The scope is intended to be general and include information published on the web, as
+    well as printed resources, either directly or in one of the Publication testlink category subclasses.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.Publication
+    class_class_curie: ClassVar[str] = "testlink:Publication"
+    class_name: ClassVar[str] = "publication"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.Publication
+
+    id: Union[str, PublicationId] = None
+    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+    type: str = None
+    authors: Optional[Union[str, List[str]]] = empty_list()
+    pages: Optional[Union[str, List[str]]] = empty_list()
+    summary: Optional[str] = None
+    keywords: Optional[Union[str, List[str]]] = empty_list()
+    lcsh_terms: Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]] = empty_list()
+    xref: Optional[Union[Union[str, IriType], List[Union[str, IriType]]]] = empty_list()
+    name: Optional[Union[str, LabelType]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, PublicationId):
+            self.id = PublicationId(self.id)
+
+        if self.type is None:
+            raise ValueError("type must be supplied")
+        if not isinstance(self.type, str):
+            self.type = str(self.type)
+
+        if self.authors is None:
+            self.authors = []
+        if not isinstance(self.authors, list):
+            self.authors = [self.authors]
+        self.authors = [v if isinstance(v, str) else str(v) for v in self.authors]
+
+        if self.pages is None:
+            self.pages = []
+        if not isinstance(self.pages, list):
+            self.pages = [self.pages]
+        self.pages = [v if isinstance(v, str) else str(v) for v in self.pages]
+
+        if self.summary is not None and not isinstance(self.summary, str):
+            self.summary = str(self.summary)
+
+        if self.keywords is None:
+            self.keywords = []
+        if not isinstance(self.keywords, list):
+            self.keywords = [self.keywords]
+        self.keywords = [v if isinstance(v, str) else str(v) for v in self.keywords]
+
+        if self.lcsh_terms is None:
+            self.lcsh_terms = []
+        if not isinstance(self.lcsh_terms, list):
+            self.lcsh_terms = [self.lcsh_terms]
+        self.lcsh_terms = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.lcsh_terms]
 
         if self.xref is None:
             self.xref = []
@@ -3335,63 +1985,462 @@ class Componentservice(ComponentserviceOrServicetype):
             self.xref = [self.xref]
         self.xref = [v if isinstance(v, IriType) else IriType(v) for v in self.xref]
 
+        if self.name is not None and not isinstance(self.name, LabelType):
+            self.name = LabelType(self.name)
+
         super().__post_init__(**kwargs)
 
 
 @dataclass
-class ServicetypeMixin(ComponentserviceOrServicetype):
-    """
-    The controlling operational servicetype of a single componentservice locus. ServiceType product are either
-    serviceinstances or supervisor tasks
-    """
+class Build(Dataset):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ServicetypeMixin
-    class_class_curie: ClassVar[str] = "testlink:ServicetypeMixin"
-    class_name: ClassVar[str] = "servicetype mixin"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ServicetypeMixin
+    class_class_uri: ClassVar[URIRef] = TESTLINK.Build
+    class_class_curie: ClassVar[str] = "testlink:Build"
+    class_name: ClassVar[str] = "build"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.Build
 
-    synonym: Optional[Union[Union[str, LabelType], List[Union[str, LabelType]]]] = empty_list()
-    xref: Optional[Union[Union[str, IriType], List[Union[str, IriType]]]] = empty_list()
+    id: Union[str, BuildId] = None
+    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+    created: Optional[Union[str, XSDDate]] = None
+    updated: Optional[Union[str, XSDDate]] = None
+    vcs_location: Optional[str] = None
+    vcs_revision: Optional[str] = None
+    internal_version: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.synonym is None:
-            self.synonym = []
-        if not isinstance(self.synonym, list):
-            self.synonym = [self.synonym]
-        self.synonym = [v if isinstance(v, LabelType) else LabelType(v) for v in self.synonym]
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, BuildId):
+            self.id = BuildId(self.id)
 
-        if self.xref is None:
-            self.xref = []
-        if not isinstance(self.xref, list):
-            self.xref = [self.xref]
-        self.xref = [v if isinstance(v, IriType) else IriType(v) for v in self.xref]
+        if self.created is not None and not isinstance(self.created, XSDDate):
+            self.created = XSDDate(self.created)
+
+        if self.updated is not None and not isinstance(self.updated, XSDDate):
+            self.updated = XSDDate(self.updated)
+
+        if self.vcs_location is not None and not isinstance(self.vcs_location, str):
+            self.vcs_location = str(self.vcs_location)
+
+        if self.vcs_revision is not None and not isinstance(self.vcs_revision, str):
+            self.vcs_revision = str(self.vcs_revision)
+
+        if self.internal_version is not None and not isinstance(self.internal_version, str):
+            self.internal_version = str(self.internal_version)
 
         super().__post_init__(**kwargs)
 
 
-class ServicetypeIsoformMixin(ServicetypeMixin):
+@dataclass
+class Archive(Dataset):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.Archive
+    class_class_curie: ClassVar[str] = "testlink:Archive"
+    class_name: ClassVar[str] = "archive"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.Archive
+
+    id: Union[str, ArchiveId] = None
+    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, ArchiveId):
+            self.id = ArchiveId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Inventory(Dataset):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.Inventory
+    class_class_curie: ClassVar[str] = "testlink:Inventory"
+    class_name: ClassVar[str] = "inventory"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.Inventory
+
+    id: Union[str, InventoryId] = None
+    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+    created: Optional[Union[str, XSDDate]] = None
+    component_fixed: Optional[Union[str, LabelType]] = None
+    tag: Optional[Union[str, LabelType]] = None
+    tag_name: Optional[Union[str, LabelType]] = None
+    user_login: Optional[str] = None
+    svn_tag_url: Optional[Union[str, IriType]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, InventoryId):
+            self.id = InventoryId(self.id)
+
+        if self.created is not None and not isinstance(self.created, XSDDate):
+            self.created = XSDDate(self.created)
+
+        if self.component_fixed is not None and not isinstance(self.component_fixed, LabelType):
+            self.component_fixed = LabelType(self.component_fixed)
+
+        if self.tag is not None and not isinstance(self.tag, LabelType):
+            self.tag = LabelType(self.tag)
+
+        if self.tag_name is not None and not isinstance(self.tag_name, LabelType):
+            self.tag_name = LabelType(self.tag_name)
+
+        if self.user_login is not None and not isinstance(self.user_login, str):
+            self.user_login = str(self.user_login)
+
+        if self.svn_tag_url is not None and not isinstance(self.svn_tag_url, IriType):
+            self.svn_tag_url = IriType(self.svn_tag_url)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Configuration(InformationContentEntity):
     """
-    This is an abstract class that can be mixed in with different kinds of servicetypes to indicate that the
-    servicetype is intended to represent a specific isoform rather than a canonical or reference or generic
-    servicetype. The designation of canonical or reference may be arbitrary, or it may represent the superclass of all
-    isoforms.
+    Configuration is the manner in which components are arranged to make up the computer system. Configuration
+    consists of both hardware and software components.
+    """
+    _inherited_slots: ClassVar[List[str]] = ["has_part"]
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.Configuration
+    class_class_curie: ClassVar[str] = "testlink:Configuration"
+    class_name: ClassVar[str] = "configuration"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.Configuration
+
+    id: Union[str, ConfigurationId] = None
+    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+    has_part: Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]] = empty_list()
+    has_quantitative_value: Optional[Union[Union[dict, QuantityValue], List[Union[dict, QuantityValue]]]] = empty_list()
+    version: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, ConfigurationId):
+            self.id = ConfigurationId(self.id)
+
+        if self.has_part is None:
+            self.has_part = []
+        if not isinstance(self.has_part, list):
+            self.has_part = [self.has_part]
+        self.has_part = [v if isinstance(v, NamedThingId) else NamedThingId(v) for v in self.has_part]
+
+        if self.has_quantitative_value is None:
+            self.has_quantitative_value = []
+        if not isinstance(self.has_quantitative_value, list):
+            self.has_quantitative_value = [self.has_quantitative_value]
+        self.has_quantitative_value = [v if isinstance(v, QuantityValue) else QuantityValue(**v) for v in self.has_quantitative_value]
+
+        if self.version is not None and not isinstance(self.version, str):
+            self.version = str(self.version)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class EnvironmentConfiguration(Configuration):
+    _inherited_slots: ClassVar[List[str]] = ["has_part"]
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.EnvironmentConfiguration
+    class_class_curie: ClassVar[str] = "testlink:EnvironmentConfiguration"
+    class_name: ClassVar[str] = "environment configuration"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.EnvironmentConfiguration
+
+    id: Union[str, EnvironmentConfigurationId] = None
+    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+
+@dataclass
+class DomainEnvironment(Environment):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.DomainEnvironment
+    class_class_curie: ClassVar[str] = "testlink:DomainEnvironment"
+    class_name: ClassVar[str] = "domain environment"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.DomainEnvironment
+
+    id: Union[str, DomainEnvironmentId] = None
+    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+
+@dataclass
+class DomainConfiguration(Configuration):
+    _inherited_slots: ClassVar[List[str]] = ["has_part"]
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.DomainConfiguration
+    class_class_curie: ClassVar[str] = "testlink:DomainConfiguration"
+    class_name: ClassVar[str] = "domain configuration"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.DomainConfiguration
+
+    id: Union[str, DomainConfigurationId] = None
+    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+
+@dataclass
+class RealmConfiguration(Configuration):
+    _inherited_slots: ClassVar[List[str]] = ["has_part"]
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.RealmConfiguration
+    class_class_curie: ClassVar[str] = "testlink:RealmConfiguration"
+    class_name: ClassVar[str] = "realm configuration"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.RealmConfiguration
+
+    id: Union[str, RealmConfigurationId] = None
+    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+
+@dataclass
+class ComponentConfiguration(Configuration):
+    _inherited_slots: ClassVar[List[str]] = ["has_part"]
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.ComponentConfiguration
+    class_class_curie: ClassVar[str] = "testlink:ComponentConfiguration"
+    class_name: ClassVar[str] = "component configuration"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.ComponentConfiguration
+
+    id: Union[str, ComponentConfigurationId] = None
+    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+
+@dataclass
+class ApplicationConfiguration(Configuration):
+    _inherited_slots: ClassVar[List[str]] = ["has_part"]
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.ApplicationConfiguration
+    class_class_curie: ClassVar[str] = "testlink:ApplicationConfiguration"
+    class_name: ClassVar[str] = "application configuration"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.ApplicationConfiguration
+
+    id: Union[str, ApplicationConfigurationId] = None
+    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+
+@dataclass
+class ApplicationInstanceConfiguration(Configuration):
+    _inherited_slots: ClassVar[List[str]] = ["has_part"]
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.ApplicationInstanceConfiguration
+    class_class_curie: ClassVar[str] = "testlink:ApplicationInstanceConfiguration"
+    class_name: ClassVar[str] = "application instance configuration"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.ApplicationInstanceConfiguration
+
+    id: Union[str, ApplicationInstanceConfigurationId] = None
+    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+
+@dataclass
+class DeploymentConfiguration(Configuration):
+    _inherited_slots: ClassVar[List[str]] = ["has_part"]
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.DeploymentConfiguration
+    class_class_curie: ClassVar[str] = "testlink:DeploymentConfiguration"
+    class_name: ClassVar[str] = "deployment configuration"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.DeploymentConfiguration
+
+    id: Union[str, DeploymentConfigurationId] = None
+    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+
+@dataclass
+class BuildConfiguration(Configuration):
+    _inherited_slots: ClassVar[List[str]] = ["has_part"]
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.BuildConfiguration
+    class_class_curie: ClassVar[str] = "testlink:BuildConfiguration"
+    class_name: ClassVar[str] = "build configuration"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.BuildConfiguration
+
+    id: Union[str, BuildConfigurationId] = None
+    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+
+@dataclass
+class ServerHub(Hub):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.ServerHub
+    class_class_curie: ClassVar[str] = "testlink:ServerHub"
+    class_name: ClassVar[str] = "server hub"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.ServerHub
+
+    id: Union[str, ServerHubId] = None
+    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+
+@dataclass
+class ServerGroupHub(Hub):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.ServerGroupHub
+    class_class_curie: ClassVar[str] = "testlink:ServerGroupHub"
+    class_name: ClassVar[str] = "server group hub"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.ServerGroupHub
+
+    id: Union[str, ServerGroupHubId] = None
+    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+
+@dataclass
+class ApexInventoryArchive(Archive):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.ApexInventoryArchive
+    class_class_curie: ClassVar[str] = "testlink:ApexInventoryArchive"
+    class_name: ClassVar[str] = "apex inventory archive"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.ApexInventoryArchive
+
+    id: Union[str, ApexInventoryArchiveId] = None
+    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+    release_date: Optional[Union[str, XSDDate]] = None
+    tag_name: Optional[Union[str, LabelType]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.release_date is not None and not isinstance(self.release_date, XSDDate):
+            self.release_date = XSDDate(self.release_date)
+
+        if self.tag_name is not None and not isinstance(self.tag_name, LabelType):
+            self.tag_name = LabelType(self.tag_name)
+
+        super().__post_init__(**kwargs)
+
+
+class CyberEssenceOrOccurrent(YAMLRoot):
+    """
+    Either a cyber or processual entity.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ServicetypeIsoformMixin
-    class_class_curie: ClassVar[str] = "testlink:ServicetypeIsoformMixin"
-    class_name: ClassVar[str] = "servicetype isoform mixin"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ServicetypeIsoformMixin
+    class_class_uri: ClassVar[URIRef] = TESTLINK.CyberEssenceOrOccurrent
+    class_class_curie: ClassVar[str] = "testlink:CyberEssenceOrOccurrent"
+    class_name: ClassVar[str] = "cyber essence or occurrent"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.CyberEssenceOrOccurrent
 
 
-class MacrooperationalComplexMixin(MacrooperationalMachineMixin):
+class CyberEssence(CyberEssenceOrOccurrent):
+    """
+    Semantic mixin concept.  Pertains to entities that have cyber properties such as mass, volume, or charge.
+    """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = TESTLINK.MacrooperationalComplexMixin
-    class_class_curie: ClassVar[str] = "testlink:MacrooperationalComplexMixin"
-    class_name: ClassVar[str] = "macrooperational complex mixin"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.MacrooperationalComplexMixin
+    class_class_uri: ClassVar[URIRef] = TESTLINK.CyberEssence
+    class_class_curie: ClassVar[str] = "testlink:CyberEssence"
+    class_name: ClassVar[str] = "cyber essence"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.CyberEssence
+
+
+@dataclass
+class CyberEntity(NamedThing):
+    """
+    An entity that has digital reality (a.k.a. cyber essence).
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.CyberEntity
+    class_class_curie: ClassVar[str] = "testlink:CyberEntity"
+    class_name: ClassVar[str] = "cyber entity"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.CyberEntity
+
+    id: Union[str, CyberEntityId] = None
+    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, CyberEntityId):
+            self.id = CyberEntityId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+class Occurrent(CyberEssenceOrOccurrent):
+    """
+    A processual entity.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.Occurrent
+    class_class_curie: ClassVar[str] = "testlink:Occurrent"
+    class_name: ClassVar[str] = "occurrent"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.Occurrent
+
+
+class ActivityAndBehavior(Occurrent):
+    """
+    Activity or behavior of any independent integral healthy, organization or mechanical actor in the world
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.ActivityAndBehavior
+    class_class_curie: ClassVar[str] = "testlink:ActivityAndBehavior"
+    class_name: ClassVar[str] = "activity and behavior"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.ActivityAndBehavior
+
+
+@dataclass
+class Activity(NamedThing):
+    """
+    An activity is something that occurs over a period of time and acts upon or with entities; it may include
+    consuming, processing, transforming, modifying, relocating, using, or generating entities.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.Activity
+    class_class_curie: ClassVar[str] = "testlink:Activity"
+    class_name: ClassVar[str] = "activity"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.Activity
+
+    id: Union[str, ActivityId] = None
+    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, ActivityId):
+            self.id = ActivityId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Server(NamedThing):
+    """
+    A piece of computer hardware or software (computer program) that provides functionality for other programs or
+    devices, called "clients"
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.Server
+    class_class_curie: ClassVar[str] = "testlink:Server"
+    class_name: ClassVar[str] = "server"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.Server
+
+    id: Union[str, ServerId] = None
+    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, ServerId):
+            self.id = ServerId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class ServerType(SystemicEntity):
+    """
+    A type of server
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.ServerType
+    class_class_curie: ClassVar[str] = "testlink:ServerType"
+    class_name: ClassVar[str] = "server type"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.ServerType
+
+    id: Union[str, ServerTypeId] = None
+    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, ServerTypeId):
+            self.id = ServerTypeId(self.id)
+
+        super().__post_init__(**kwargs)
 
 
 @dataclass
@@ -3448,312 +2497,29 @@ class Workload(WorkloadEntity):
 
 
 @dataclass
-class Componentserviceinstance(WorkloadEntity):
+class ApplicationInstance(WorkloadEntity):
     """
     The unit of service workload the component is capable of providing or protecting.
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = TESTLINK.Componentserviceinstance
-    class_class_curie: ClassVar[str] = "testlink:Componentserviceinstance"
-    class_name: ClassVar[str] = "componentserviceinstance"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.Componentserviceinstance
+    class_class_uri: ClassVar[URIRef] = TESTLINK.ApplicationInstance
+    class_class_curie: ClassVar[str] = "testlink:ApplicationInstance"
+    class_name: ClassVar[str] = "application instance"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.ApplicationInstance
 
-    id: Union[str, ComponentserviceinstanceId] = None
+    id: Union[str, ApplicationInstanceId] = None
     category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
+    internal_version: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.id is None:
             raise ValueError("id must be supplied")
-        if not isinstance(self.id, ComponentserviceinstanceId):
-            self.id = ComponentserviceinstanceId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class Daemon(WorkloadEntity):
-    """
-    A region of the componentserviceinstance sequence within a componentservice.
-    """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.Daemon
-    class_class_curie: ClassVar[str] = "testlink:Daemon"
-    class_name: ClassVar[str] = "daemon"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.Daemon
-
-    id: Union[str, DaemonId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, DaemonId):
-            self.id = DaemonId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class CodingSequence(WorkloadEntity):
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.CodingSequence
-    class_class_curie: ClassVar[str] = "testlink:CodingSequence"
-    class_name: ClassVar[str] = "coding sequence"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.CodingSequence
-
-    id: Union[str, CodingSequenceId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, CodingSequenceId):
-            self.id = CodingSequenceId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class Serviceinstance(WorkloadEntity):
-    """
-    A servicetype that is composed of a chain of instruction sequences and is produced by translation of kernel message
-    """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.Serviceinstance
-    class_class_curie: ClassVar[str] = "testlink:Serviceinstance"
-    class_name: ClassVar[str] = "serviceinstance"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.Serviceinstance
-
-    id: Union[str, ServiceinstanceId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-    synonym: Optional[Union[Union[str, LabelType], List[Union[str, LabelType]]]] = empty_list()
-    xref: Optional[Union[Union[str, IriType], List[Union[str, IriType]]]] = empty_list()
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, ServiceinstanceId):
-            self.id = ServiceinstanceId(self.id)
-
-        if self.synonym is None:
-            self.synonym = []
-        if not isinstance(self.synonym, list):
-            self.synonym = [self.synonym]
-        self.synonym = [v if isinstance(v, LabelType) else LabelType(v) for v in self.synonym]
-
-        if self.xref is None:
-            self.xref = []
-        if not isinstance(self.xref, list):
-            self.xref = [self.xref]
-        self.xref = [v if isinstance(v, IriType) else IriType(v) for v in self.xref]
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ServiceinstanceIsoform(Serviceinstance):
-    """
-    Represents a serviceinstance that is a specific isoform of the canonical or reference serviceinstance.
-    """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ServiceinstanceIsoform
-    class_class_curie: ClassVar[str] = "testlink:ServiceinstanceIsoform"
-    class_name: ClassVar[str] = "serviceinstance isoform"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ServiceinstanceIsoform
-
-    id: Union[str, ServiceinstanceIsoformId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, ServiceinstanceIsoformId):
-            self.id = ServiceinstanceIsoformId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class KernelServicetype(Componentserviceinstance):
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.KernelServicetype
-    class_class_curie: ClassVar[str] = "testlink:KernelServicetype"
-    class_name: ClassVar[str] = "kernel servicetype"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.KernelServicetype
-
-    id: Union[str, KernelServicetypeId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-    synonym: Optional[Union[Union[str, LabelType], List[Union[str, LabelType]]]] = empty_list()
-    xref: Optional[Union[Union[str, IriType], List[Union[str, IriType]]]] = empty_list()
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, KernelServicetypeId):
-            self.id = KernelServicetypeId(self.id)
-
-        if self.synonym is None:
-            self.synonym = []
-        if not isinstance(self.synonym, list):
-            self.synonym = [self.synonym]
-        self.synonym = [v if isinstance(v, LabelType) else LabelType(v) for v in self.synonym]
-
-        if self.xref is None:
-            self.xref = []
-        if not isinstance(self.xref, list):
-            self.xref = [self.xref]
-        self.xref = [v if isinstance(v, IriType) else IriType(v) for v in self.xref]
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class KernelServicetypeIsoform(KernelServicetype):
-    """
-    Represents a serviceinstance that is a specific isoform of the canonical or reference kernel
-    """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.KernelServicetypeIsoform
-    class_class_curie: ClassVar[str] = "testlink:KernelServicetypeIsoform"
-    class_name: ClassVar[str] = "kernel servicetype isoform"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.KernelServicetypeIsoform
-
-    id: Union[str, KernelServicetypeIsoformId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, KernelServicetypeIsoformId):
-            self.id = KernelServicetypeIsoformId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class NoncodingKernelServicetype(KernelServicetype):
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.NoncodingKernelServicetype
-    class_class_curie: ClassVar[str] = "testlink:NoncodingKernelServicetype"
-    class_name: ClassVar[str] = "noncoding kernel servicetype"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.NoncodingKernelServicetype
-
-    id: Union[str, NoncodingKernelServicetypeId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, NoncodingKernelServicetypeId):
-            self.id = NoncodingKernelServicetypeId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class KernelMessage(NoncodingKernelServicetype):
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.KernelMessage
-    class_class_curie: ClassVar[str] = "testlink:KernelMessage"
-    class_name: ClassVar[str] = "kernel message"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.KernelMessage
-
-    id: Union[str, KernelMessageId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, KernelMessageId):
-            self.id = KernelMessageId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class KernelInterrupt(NoncodingKernelServicetype):
-    """
-    TBD
-    """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.KernelInterrupt
-    class_class_curie: ClassVar[str] = "testlink:KernelInterrupt"
-    class_name: ClassVar[str] = "kernel interrupt"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.KernelInterrupt
-
-    id: Union[str, KernelInterruptId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, KernelInterruptId):
-            self.id = KernelInterruptId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ComponentserviceGroupingMixin(YAMLRoot):
-    """
-    any grouping of multiple componentservices or servicetypes
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ComponentserviceGroupingMixin
-    class_class_curie: ClassVar[str] = "testlink:ComponentserviceGroupingMixin"
-    class_name: ClassVar[str] = "componentservice grouping mixin"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ComponentserviceGroupingMixin
-
-    has_componentservice_or_servicetype: Optional[Union[Union[dict, Componentservice], List[Union[dict, Componentservice]]]] = empty_list()
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.has_componentservice_or_servicetype is None:
-            self.has_componentservice_or_servicetype = []
-        if not isinstance(self.has_componentservice_or_servicetype, list):
-            self.has_componentservice_or_servicetype = [self.has_componentservice_or_servicetype]
-        self.has_componentservice_or_servicetype = [v if isinstance(v, Componentservice) else Componentservice(**v) for v in self.has_componentservice_or_servicetype]
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ComponentserviceFamily(OperationalEntity):
-    """
-    any grouping of multiple componentservices or servicetypes related by common descent
-    """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ComponentserviceFamily
-    class_class_curie: ClassVar[str] = "testlink:ComponentserviceFamily"
-    class_name: ClassVar[str] = "componentservice family"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ComponentserviceFamily
-
-    id: Union[str, ComponentserviceFamilyId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-    has_componentservice_or_servicetype: Optional[Union[Union[dict, Componentservice], List[Union[dict, Componentservice]]]] = empty_list()
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, ComponentserviceFamilyId):
-            self.id = ComponentserviceFamilyId(self.id)
-
-        if self.has_componentservice_or_servicetype is None:
-            self.has_componentservice_or_servicetype = []
-        if not isinstance(self.has_componentservice_or_servicetype, list):
-            self.has_componentservice_or_servicetype = [self.has_componentservice_or_servicetype]
-        self.has_componentservice_or_servicetype = [v if isinstance(v, Componentservice) else Componentservice(**v) for v in self.has_componentservice_or_servicetype]
+        if not isinstance(self.id, ApplicationInstanceId):
+            self.id = ApplicationInstanceId(self.id)
+
+        if self.internal_version is not None and not isinstance(self.internal_version, str):
+            self.internal_version = str(self.internal_version)
 
         super().__post_init__(**kwargs)
 
@@ -3770,27 +2536,26 @@ class Homogeneity(Attribute):
     has_attribute_type: Union[str, OntologyClassId] = None
 
 @dataclass
-class Serviceunittype(WorkloadEntity):
+class ServerGroup(WorkloadEntity):
     """
-    An information content entity that describes a workload by specifying the total variation in service sequence
-    and/or componentservice availability, relative to some established background
+    An group of servers
     """
     _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
 
-    class_class_uri: ClassVar[URIRef] = TESTLINK.Serviceunittype
-    class_class_curie: ClassVar[str] = "testlink:Serviceunittype"
-    class_name: ClassVar[str] = "serviceunittype"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.Serviceunittype
+    class_class_uri: ClassVar[URIRef] = TESTLINK.ServerGroup
+    class_class_curie: ClassVar[str] = "testlink:ServerGroup"
+    class_name: ClassVar[str] = "server group"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.ServerGroup
 
-    id: Union[str, ServiceunittypeId] = None
+    id: Union[str, ServerGroupId] = None
     category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
     has_homogeneity: Optional[Union[dict, Homogeneity]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.id is None:
             raise ValueError("id must be supplied")
-        if not isinstance(self.id, ServiceunittypeId):
-            self.id = ServiceunittypeId(self.id)
+        if not isinstance(self.id, ServerGroupId):
+            self.id = ServerGroupId(self.id)
 
         if self.has_homogeneity is not None and not isinstance(self.has_homogeneity, Homogeneity):
             self.has_homogeneity = Homogeneity(**self.has_homogeneity)
@@ -3799,378 +2564,22 @@ class Serviceunittype(WorkloadEntity):
 
 
 @dataclass
-class Variantcomponentservicetype(WorkloadEntity):
+class Event(YAMLRoot):
     """
-    A set of zero or more variantcomponentservices on a single instance of a Sequence
-    """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.Variantcomponentservicetype
-    class_class_curie: ClassVar[str] = "testlink:Variantcomponentservicetype"
-    class_name: ClassVar[str] = "variantcomponentservicetype"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.Variantcomponentservicetype
-
-    id: Union[str, VariantcomponentservicetypeId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, VariantcomponentservicetypeId):
-            self.id = VariantcomponentservicetypeId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class SequenceVariant(WorkloadEntity):
-    """
-    A variantcomponentservice that varies in its sequence from what is considered the reference
-    variantcomponentservice at that locus.
-    """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.SequenceVariant
-    class_class_curie: ClassVar[str] = "testlink:SequenceVariant"
-    class_name: ClassVar[str] = "sequence variant"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.SequenceVariant
-
-    id: Union[str, SequenceVariantId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-    has_componentservice: Optional[Union[Union[dict, Componentservice], List[Union[dict, Componentservice]]]] = empty_list()
-    has_computational_sequence: Optional[Union[str, ComputationalSequence]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, SequenceVariantId):
-            self.id = SequenceVariantId(self.id)
-
-        if self.has_componentservice is None:
-            self.has_componentservice = []
-        if not isinstance(self.has_componentservice, list):
-            self.has_componentservice = [self.has_componentservice]
-        self.has_componentservice = [v if isinstance(v, Componentservice) else Componentservice(**v) for v in self.has_componentservice]
-
-        if self.has_computational_sequence is not None and not isinstance(self.has_computational_sequence, ComputationalSequence):
-            self.has_computational_sequence = ComputationalSequence(self.has_computational_sequence)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class MonomericVariant(SequenceVariant):
-    """
-    A single monomeric position in the service monomeric variants are single monomeric positions in service DNA at
-    which different sequence alternatives exist
-    """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.MonomericVariant
-    class_class_curie: ClassVar[str] = "testlink:MonomericVariant"
-    class_name: ClassVar[str] = "monomeric variant"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.MonomericVariant
-
-    id: Union[str, MonomericVariantId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, MonomericVariantId):
-            self.id = MonomericVariantId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ReagentTargetedComponentservice(WorkloadEntity):
-    """
-    A componentservice altered in its availability level in the context of some experiment as a result of being
-    targeted by componentservice-knockdown reagent(s).
-    """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ReagentTargetedComponentservice
-    class_class_curie: ClassVar[str] = "testlink:ReagentTargetedComponentservice"
-    class_name: ClassVar[str] = "reagent targeted componentservice"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ReagentTargetedComponentservice
-
-    id: Union[str, ReagentTargetedComponentserviceId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, ReagentTargetedComponentserviceId):
-            self.id = ReagentTargetedComponentserviceId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class EmpiricalAttribute(Attribute):
-    """
-    Attributes relating to a empirical manifestation
+    An exposure event
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = TESTLINK.EmpiricalAttribute
-    class_class_curie: ClassVar[str] = "testlink:EmpiricalAttribute"
-    class_name: ClassVar[str] = "empirical attribute"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.EmpiricalAttribute
+    class_class_uri: ClassVar[URIRef] = TESTLINK.Event
+    class_class_curie: ClassVar[str] = "testlink:Event"
+    class_name: ClassVar[str] = "event"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.Event
 
-    has_attribute_type: Union[str, OntologyClassId] = None
-
-@dataclass
-class EmpiricalMeasurement(EmpiricalAttribute):
-    """
-    A empirical measurement is a special kind of attribute which results from a quality of serviceunit observation
-    from a subject individual or sample. Measurements can be connected to their subject by the 'has attribute' slot.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.EmpiricalMeasurement
-    class_class_curie: ClassVar[str] = "testlink:EmpiricalMeasurement"
-    class_name: ClassVar[str] = "empirical measurement"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.EmpiricalMeasurement
-
-    has_attribute_type: Union[str, OntologyClassId] = None
+    timepoint: Optional[Union[str, TimeType]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.has_attribute_type is None:
-            raise ValueError("has_attribute_type must be supplied")
-        if not isinstance(self.has_attribute_type, OntologyClassId):
-            self.has_attribute_type = OntologyClassId(self.has_attribute_type)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class EmpiricalModifier(EmpiricalAttribute):
-    """
-    Used to characterize and specify the observable abnormalities defined in the observable abnormality sub-ontology,
-    with respect to severity, laterality, and other aspects
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.EmpiricalModifier
-    class_class_curie: ClassVar[str] = "testlink:EmpiricalModifier"
-    class_name: ClassVar[str] = "empirical modifier"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.EmpiricalModifier
-
-    has_attribute_type: Union[str, OntologyClassId] = None
-
-@dataclass
-class EmpiricalCourse(EmpiricalAttribute):
-    """
-    The course a error typically takes from its onset, progression in time, and eventual resolution or death of the
-    affected individual
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.EmpiricalCourse
-    class_class_curie: ClassVar[str] = "testlink:EmpiricalCourse"
-    class_name: ClassVar[str] = "empirical course"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.EmpiricalCourse
-
-    has_attribute_type: Union[str, OntologyClassId] = None
-
-@dataclass
-class Onset(EmpiricalCourse):
-    """
-    The age group in which (error) symptom manifestations appear
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.Onset
-    class_class_curie: ClassVar[str] = "testlink:Onset"
-    class_name: ClassVar[str] = "onset"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.Onset
-
-    has_attribute_type: Union[str, OntologyClassId] = None
-
-@dataclass
-class EmpiricalEntity(NamedThing):
-    """
-    Any entity or process that exists in the empirical domain and outside the computational realm. Errors are placed
-    under computational entities
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.EmpiricalEntity
-    class_class_curie: ClassVar[str] = "testlink:EmpiricalEntity"
-    class_name: ClassVar[str] = "empirical entity"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.EmpiricalEntity
-
-    id: Union[str, EmpiricalEntityId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, EmpiricalEntityId):
-            self.id = EmpiricalEntityId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class EmpiricalTrial(EmpiricalEntity):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.EmpiricalTrial
-    class_class_curie: ClassVar[str] = "testlink:EmpiricalTrial"
-    class_name: ClassVar[str] = "empirical trial"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.EmpiricalTrial
-
-    id: Union[str, EmpiricalTrialId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, EmpiricalTrialId):
-            self.id = EmpiricalTrialId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class EmpiricalIntervention(EmpiricalEntity):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.EmpiricalIntervention
-    class_class_curie: ClassVar[str] = "testlink:EmpiricalIntervention"
-    class_name: ClassVar[str] = "empirical intervention"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.EmpiricalIntervention
-
-    id: Union[str, EmpiricalInterventionId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, EmpiricalInterventionId):
-            self.id = EmpiricalInterventionId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class EmpiricalFinding(ObservableFeature):
-    """
-    this category is currently considered broad enough to tag empirical lab measurements and other computational
-    attributes taken as 'empirical traits' with some statistical score, for example, a p value in service
-    associations.
-    """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.EmpiricalFinding
-    class_class_curie: ClassVar[str] = "testlink:EmpiricalFinding"
-    class_name: ClassVar[str] = "empirical finding"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.EmpiricalFinding
-
-    id: Union[str, EmpiricalFindingId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-    has_attribute: Optional[Union[Union[dict, EmpiricalAttribute], List[Union[dict, EmpiricalAttribute]]]] = empty_list()
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, EmpiricalFindingId):
-            self.id = EmpiricalFindingId(self.id)
-
-        if self.has_attribute is None:
-            self.has_attribute = []
-        if not isinstance(self.has_attribute, list):
-            self.has_attribute = [self.has_attribute]
-        self._normalize_inlined_slot(slot_name="has_attribute", slot_type=EmpiricalAttribute, key_name="has attribute type", inlined_as_list=True, keyed=False)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class OfflineMaintenance(EmpiricalIntervention):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.OfflineMaintenance
-    class_class_curie: ClassVar[str] = "testlink:OfflineMaintenance"
-    class_name: ClassVar[str] = "offline maintenance"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.OfflineMaintenance
-
-    id: Union[str, OfflineMaintenanceId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, OfflineMaintenanceId):
-            self.id = OfflineMaintenanceId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class SocioeconomicAttribute(Attribute):
-    """
-    Attributes relating to a socioeconomic manifestation
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.SocioeconomicAttribute
-    class_class_curie: ClassVar[str] = "testlink:SocioeconomicAttribute"
-    class_name: ClassVar[str] = "socioeconomic attribute"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.SocioeconomicAttribute
-
-    has_attribute_type: Union[str, OntologyClassId] = None
-
-@dataclass
-class Case(IndividualSystem):
-    """
-    An individual system that has a patient role in some empirical context.
-    """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.Case
-    class_class_curie: ClassVar[str] = "testlink:Case"
-    class_name: ClassVar[str] = "case"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.Case
-
-    id: Union[str, CaseId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, CaseId):
-            self.id = CaseId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class Cohort(StudyPopulation):
-    """
-    A group of individuals banded together or repaired as a group who share common characteristics. A cohort 'study'
-    is a particular form of longitudinal study that samples a cohort, performing a cross-section at intervals through
-    time.
-    """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.Cohort
-    class_class_curie: ClassVar[str] = "testlink:Cohort"
-    class_name: ClassVar[str] = "cohort"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.Cohort
-
-    id: Union[str, CohortId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, CohortId):
-            self.id = CohortId(self.id)
+        if self.timepoint is not None and not isinstance(self.timepoint, TimeType):
+            self.timepoint = TimeType(self.timepoint)
 
         super().__post_init__(**kwargs)
 
@@ -4191,193 +2600,6 @@ class ExposureEvent(YAMLRoot):
     timepoint: Optional[Union[str, TimeType]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.timepoint is not None and not isinstance(self.timepoint, TimeType):
-            self.timepoint = TimeType(self.timepoint)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ServiceBackgroundExposure(WorkloadEntity):
-    """
-    A service background exposure is where an individual's specific service background of serviceunits, sequence
-    variants or other pre-existing service conditions constitute a kind of 'exposure' to the system, leading to or
-    influencing an outcome.
-    """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ServiceBackgroundExposure
-    class_class_curie: ClassVar[str] = "testlink:ServiceBackgroundExposure"
-    class_name: ClassVar[str] = "service background exposure"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ServiceBackgroundExposure
-
-    id: Union[str, ServiceBackgroundExposureId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-    timepoint: Optional[Union[str, TimeType]] = None
-    has_componentservice_or_servicetype: Optional[Union[Union[dict, Componentservice], List[Union[dict, Componentservice]]]] = empty_list()
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, ServiceBackgroundExposureId):
-            self.id = ServiceBackgroundExposureId(self.id)
-
-        if self.timepoint is not None and not isinstance(self.timepoint, TimeType):
-            self.timepoint = TimeType(self.timepoint)
-
-        if self.has_componentservice_or_servicetype is None:
-            self.has_componentservice_or_servicetype = []
-        if not isinstance(self.has_componentservice_or_servicetype, list):
-            self.has_componentservice_or_servicetype = [self.has_componentservice_or_servicetype]
-        self.has_componentservice_or_servicetype = [v if isinstance(v, Componentservice) else Componentservice(**v) for v in self.has_componentservice_or_servicetype]
-
-        super().__post_init__(**kwargs)
-
-
-class FaultyEntityMixin(YAMLRoot):
-    """
-    A faulty (abnormal) structure or process.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.FaultyEntityMixin
-    class_class_curie: ClassVar[str] = "testlink:FaultyEntityMixin"
-    class_name: ClassVar[str] = "faulty entity mixin"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.FaultyEntityMixin
-
-
-@dataclass
-class FaultyProcess(ComputationalProcess):
-    """
-    A compulogic function or a process having an abnormal or deleterious effect at the subcomponent, component,
-    multi-component, node, or system level.
-    """
-    _inherited_slots: ClassVar[List[str]] = ["has_input", "has_output", "enabled_by"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.FaultyProcess
-    class_class_curie: ClassVar[str] = "testlink:FaultyProcess"
-    class_name: ClassVar[str] = "faulty process"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.FaultyProcess
-
-    id: Union[str, FaultyProcessId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, FaultyProcessId):
-            self.id = FaultyProcessId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ErrorOrObservableFeatureExposure(ErrorOrObservableFeature):
-    """
-    A error or observable feature exposure is where a error state is manifested which represents an precondition,
-    leading to or influencing an outcome, e.g. hypertension leading to a related error outcome such as cardiovascular
-    error.
-    """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ErrorOrObservableFeatureExposure
-    class_class_curie: ClassVar[str] = "testlink:ErrorOrObservableFeatureExposure"
-    class_name: ClassVar[str] = "error or observable feature exposure"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ErrorOrObservableFeatureExposure
-
-    id: Union[str, ErrorOrObservableFeatureExposureId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-    timepoint: Optional[Union[str, TimeType]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, ErrorOrObservableFeatureExposureId):
-            self.id = ErrorOrObservableFeatureExposureId(self.id)
-
-        if self.timepoint is not None and not isinstance(self.timepoint, TimeType):
-            self.timepoint = TimeType(self.timepoint)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class FaultyProcessExposure(FaultyProcess):
-    """
-    A faulty process, when viewed as an exposure, representing an precondition, leading to or influencing an outcome,
-    e.g. autoimmunity leading to disease.
-    """
-    _inherited_slots: ClassVar[List[str]] = ["has_input", "has_output", "enabled_by"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.FaultyProcessExposure
-    class_class_curie: ClassVar[str] = "testlink:FaultyProcessExposure"
-    class_name: ClassVar[str] = "faulty process exposure"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.FaultyProcessExposure
-
-    id: Union[str, FaultyProcessExposureId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-    timepoint: Optional[Union[str, TimeType]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, FaultyProcessExposureId):
-            self.id = FaultyProcessExposureId(self.id)
-
-        if self.timepoint is not None and not isinstance(self.timepoint, TimeType):
-            self.timepoint = TimeType(self.timepoint)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class FaultyDeploymentStructure(DeploymentEntity):
-    """
-    An deployment structure with the potential of have an abnormal or deleterious effect at the process, serviceunit,
-    multiserviceunit, or systemal level.
-    """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.FaultyDeploymentStructure
-    class_class_curie: ClassVar[str] = "testlink:FaultyDeploymentStructure"
-    class_name: ClassVar[str] = "faulty deployment structure"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.FaultyDeploymentStructure
-
-    id: Union[str, FaultyDeploymentStructureId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, FaultyDeploymentStructureId):
-            self.id = FaultyDeploymentStructureId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class FaultyDeploymentExposure(FaultyDeploymentStructure):
-    """
-    An abnormal deployment structure, when viewed as an exposure, representing an precondition, leading to or
-    influencing an outcome,
-    """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.FaultyDeploymentExposure
-    class_class_curie: ClassVar[str] = "testlink:FaultyDeploymentExposure"
-    class_name: ClassVar[str] = "faulty deployment exposure"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.FaultyDeploymentExposure
-
-    id: Union[str, FaultyDeploymentExposureId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-    timepoint: Optional[Union[str, TimeType]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, FaultyDeploymentExposureId):
-            self.id = FaultyDeploymentExposureId(self.id)
-
         if self.timepoint is not None and not isinstance(self.timepoint, TimeType):
             self.timepoint = TimeType(self.timepoint)
 
@@ -4408,508 +2630,6 @@ class OrchestrationExposure(ControlActor):
 
         if self.timepoint is not None and not isinstance(self.timepoint, TimeType):
             self.timepoint = TimeType(self.timepoint)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ComplexOrchestrationExposure(OrchestrationExposure):
-    """
-    A complex orchestration exposure is an intake of a orchestration cluster (e.g. gasoline), other than a
-    administrative operation.
-    """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ComplexOrchestrationExposure
-    class_class_curie: ClassVar[str] = "testlink:ComplexOrchestrationExposure"
-    class_name: ClassVar[str] = "complex orchestration exposure"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ComplexOrchestrationExposure
-
-    id: Union[str, ComplexOrchestrationExposureId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-    has_control_actor: Optional[Union[Union[str, ControlActorId], List[Union[str, ControlActorId]]]] = empty_list()
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, ComplexOrchestrationExposureId):
-            self.id = ComplexOrchestrationExposureId(self.id)
-
-        if self.has_control_actor is None:
-            self.has_control_actor = []
-        if not isinstance(self.has_control_actor, list):
-            self.has_control_actor = [self.has_control_actor]
-        self.has_control_actor = [v if isinstance(v, ControlActorId) else ControlActorId(v) for v in self.has_control_actor]
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class AdministrativeOperationalExposure(AdministrativeOperation):
-    """
-    A administrative operational exposure is an intake of a particular administrative operation.
-    """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.AdministrativeOperationalExposure
-    class_class_curie: ClassVar[str] = "testlink:AdministrativeOperationalExposure"
-    class_name: ClassVar[str] = "administrative operational exposure"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.AdministrativeOperationalExposure
-
-    id: Union[str, AdministrativeOperationalExposureId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-    timepoint: Optional[Union[str, TimeType]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, AdministrativeOperationalExposureId):
-            self.id = AdministrativeOperationalExposureId(self.id)
-
-        if self.timepoint is not None and not isinstance(self.timepoint, TimeType):
-            self.timepoint = TimeType(self.timepoint)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class AdministrativeOperationalToComponentserviceInteractionExposure(AdministrativeOperationalExposure):
-    """
-    administrative operational to componentservice interaction exposure is a administrative operational exposure is
-    where the interactions of the administrative operational with specific componentservices are known to constitute
-    an 'exposure' to the system, leading to or influencing an outcome.
-    """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.AdministrativeOperationalToComponentserviceInteractionExposure
-    class_class_curie: ClassVar[str] = "testlink:AdministrativeOperationalToComponentserviceInteractionExposure"
-    class_name: ClassVar[str] = "administrative operational to componentservice interaction exposure"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.AdministrativeOperationalToComponentserviceInteractionExposure
-
-    id: Union[str, AdministrativeOperationalToComponentserviceInteractionExposureId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-    has_componentservice_or_servicetype: Optional[Union[Union[dict, Componentservice], List[Union[dict, Componentservice]]]] = empty_list()
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, AdministrativeOperationalToComponentserviceInteractionExposureId):
-            self.id = AdministrativeOperationalToComponentserviceInteractionExposureId(self.id)
-
-        if self.has_componentservice_or_servicetype is None:
-            self.has_componentservice_or_servicetype = []
-        if not isinstance(self.has_componentservice_or_servicetype, list):
-            self.has_componentservice_or_servicetype = [self.has_componentservice_or_servicetype]
-        self.has_componentservice_or_servicetype = [v if isinstance(v, Componentservice) else Componentservice(**v) for v in self.has_componentservice_or_servicetype]
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class Repairing(NamedThing):
-    """
-    A repairing is targeted at a error or observability and may involve multiple administrative operational
-    'exposures', engineering devices and/or procedures
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.Repairing
-    class_class_curie: ClassVar[str] = "testlink:Repairing"
-    class_name: ClassVar[str] = "repairing"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.Repairing
-
-    id: Union[str, RepairingId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-    has_administrative_operation: Optional[Union[Union[str, AdministrativeOperationId], List[Union[str, AdministrativeOperationId]]]] = empty_list()
-    has_device: Optional[Union[Union[str, DeviceId], List[Union[str, DeviceId]]]] = empty_list()
-    has_procedure: Optional[Union[Union[str, ProcedureId], List[Union[str, ProcedureId]]]] = empty_list()
-    timepoint: Optional[Union[str, TimeType]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, RepairingId):
-            self.id = RepairingId(self.id)
-
-        if self.has_administrative_operation is None:
-            self.has_administrative_operation = []
-        if not isinstance(self.has_administrative_operation, list):
-            self.has_administrative_operation = [self.has_administrative_operation]
-        self.has_administrative_operation = [v if isinstance(v, AdministrativeOperationId) else AdministrativeOperationId(v) for v in self.has_administrative_operation]
-
-        if self.has_device is None:
-            self.has_device = []
-        if not isinstance(self.has_device, list):
-            self.has_device = [self.has_device]
-        self.has_device = [v if isinstance(v, DeviceId) else DeviceId(v) for v in self.has_device]
-
-        if self.has_procedure is None:
-            self.has_procedure = []
-        if not isinstance(self.has_procedure, list):
-            self.has_procedure = [self.has_procedure]
-        self.has_procedure = [v if isinstance(v, ProcedureId) else ProcedureId(v) for v in self.has_procedure]
-
-        if self.timepoint is not None and not isinstance(self.timepoint, TimeType):
-            self.timepoint = TimeType(self.timepoint)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class BioticExposure(SystemTaxon):
-    """
-    A biotic exposure is an intake of (sometimes faulty) computational systems (including viruses)
-    """
-    _inherited_slots: ClassVar[List[str]] = ["subclass_of"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.BioticExposure
-    class_class_curie: ClassVar[str] = "testlink:BioticExposure"
-    class_name: ClassVar[str] = "biotic exposure"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.BioticExposure
-
-    id: Union[str, BioticExposureId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-    timepoint: Optional[Union[str, TimeType]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, BioticExposureId):
-            self.id = BioticExposureId(self.id)
-
-        if self.timepoint is not None and not isinstance(self.timepoint, TimeType):
-            self.timepoint = TimeType(self.timepoint)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class GeographicExposure(GeographicLocation):
-    """
-    A geographic exposure is a factor relating to geographic proximity to some impactful entity.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.GeographicExposure
-    class_class_curie: ClassVar[str] = "testlink:GeographicExposure"
-    class_name: ClassVar[str] = "geographic exposure"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.GeographicExposure
-
-    id: Union[str, GeographicExposureId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-    timepoint: Optional[Union[str, TimeType]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, GeographicExposureId):
-            self.id = GeographicExposureId(self.id)
-
-        if self.timepoint is not None and not isinstance(self.timepoint, TimeType):
-            self.timepoint = TimeType(self.timepoint)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class EnvironmentalExposure(EnvironmentalProcess):
-    """
-    A environmental exposure is a factor relating to abiotic processes in the environment including atmospheric (heat,
-    cold, general pollution) and water-born contaminants
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.EnvironmentalExposure
-    class_class_curie: ClassVar[str] = "testlink:EnvironmentalExposure"
-    class_name: ClassVar[str] = "environmental exposure"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.EnvironmentalExposure
-
-    id: Union[str, EnvironmentalExposureId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-    timepoint: Optional[Union[str, TimeType]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, EnvironmentalExposureId):
-            self.id = EnvironmentalExposureId(self.id)
-
-        if self.timepoint is not None and not isinstance(self.timepoint, TimeType):
-            self.timepoint = TimeType(self.timepoint)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class BehavioralExposure(Behavior):
-    """
-    A behavioral exposure is a factor relating to behavior impacting an individual.
-    """
-    _inherited_slots: ClassVar[List[str]] = ["has_input", "has_output", "enabled_by"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.BehavioralExposure
-    class_class_curie: ClassVar[str] = "testlink:BehavioralExposure"
-    class_name: ClassVar[str] = "behavioral exposure"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.BehavioralExposure
-
-    id: Union[str, BehavioralExposureId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-    timepoint: Optional[Union[str, TimeType]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, BehavioralExposureId):
-            self.id = BehavioralExposureId(self.id)
-
-        if self.timepoint is not None and not isinstance(self.timepoint, TimeType):
-            self.timepoint = TimeType(self.timepoint)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class SocioeconomicExposure(Behavior):
-    """
-    A socioeconomic exposure is a factor relating to social and financial status of an affected individual (e.g.
-    poverty).
-    """
-    _inherited_slots: ClassVar[List[str]] = ["has_input", "has_output", "enabled_by"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.SocioeconomicExposure
-    class_class_curie: ClassVar[str] = "testlink:SocioeconomicExposure"
-    class_name: ClassVar[str] = "socioeconomic exposure"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.SocioeconomicExposure
-
-    id: Union[str, SocioeconomicExposureId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-    has_attribute: Union[Union[dict, SocioeconomicAttribute], List[Union[dict, SocioeconomicAttribute]]] = None
-    timepoint: Optional[Union[str, TimeType]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, SocioeconomicExposureId):
-            self.id = SocioeconomicExposureId(self.id)
-
-        if self.has_attribute is None:
-            raise ValueError("has_attribute must be supplied")
-        elif not isinstance(self.has_attribute, list):
-            self.has_attribute = [self.has_attribute]
-        elif len(self.has_attribute) == 0:
-            raise ValueError(f"has_attribute must be a non-empty list")
-        self._normalize_inlined_slot(slot_name="has_attribute", slot_type=SocioeconomicAttribute, key_name="has attribute type", inlined_as_list=True, keyed=False)
-
-        if self.timepoint is not None and not isinstance(self.timepoint, TimeType):
-            self.timepoint = TimeType(self.timepoint)
-
-        super().__post_init__(**kwargs)
-
-
-class Outcome(YAMLRoot):
-    """
-    An entity that has the role of being the consequence of an exposure event. This is an abstract mixin grouping of
-    various categories of possible computational or non-computational (e.g. empirical) outcomes.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.Outcome
-    class_class_curie: ClassVar[str] = "testlink:Outcome"
-    class_name: ClassVar[str] = "outcome"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.Outcome
-
-
-@dataclass
-class FaultyProcessOutcome(FaultyProcess):
-    """
-    An outcome resulting from an exposure event which is the manifestation of a faulty process.
-    """
-    _inherited_slots: ClassVar[List[str]] = ["has_input", "has_output", "enabled_by"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.FaultyProcessOutcome
-    class_class_curie: ClassVar[str] = "testlink:FaultyProcessOutcome"
-    class_name: ClassVar[str] = "faulty process outcome"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.FaultyProcessOutcome
-
-    id: Union[str, FaultyProcessOutcomeId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, FaultyProcessOutcomeId):
-            self.id = FaultyProcessOutcomeId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class FaultyDeploymentOutcome(FaultyDeploymentStructure):
-    """
-    An outcome resulting from an exposure event which is the manifestation of an abnormal deployment structure.
-    """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.FaultyDeploymentOutcome
-    class_class_curie: ClassVar[str] = "testlink:FaultyDeploymentOutcome"
-    class_name: ClassVar[str] = "faulty deployment outcome"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.FaultyDeploymentOutcome
-
-    id: Union[str, FaultyDeploymentOutcomeId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, FaultyDeploymentOutcomeId):
-            self.id = FaultyDeploymentOutcomeId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ErrorOrObservableFeatureOutcome(ErrorOrObservableFeature):
-    """
-    logical outcomes resulting from an exposure event which is the manifestation of a error or other characteristic
-    observability.
-    """
-    _inherited_slots: ClassVar[List[str]] = ["in_taxon"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ErrorOrObservableFeatureOutcome
-    class_class_curie: ClassVar[str] = "testlink:ErrorOrObservableFeatureOutcome"
-    class_name: ClassVar[str] = "error or observable feature outcome"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ErrorOrObservableFeatureOutcome
-
-    id: Union[str, ErrorOrObservableFeatureOutcomeId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, ErrorOrObservableFeatureOutcomeId):
-            self.id = ErrorOrObservableFeatureOutcomeId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class BehavioralOutcome(Behavior):
-    """
-    An outcome resulting from an exposure event which is the manifestation of individual behavior.
-    """
-    _inherited_slots: ClassVar[List[str]] = ["has_input", "has_output", "enabled_by"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.BehavioralOutcome
-    class_class_curie: ClassVar[str] = "testlink:BehavioralOutcome"
-    class_name: ClassVar[str] = "behavioral outcome"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.BehavioralOutcome
-
-    id: Union[str, BehavioralOutcomeId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, BehavioralOutcomeId):
-            self.id = BehavioralOutcomeId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class OfflineMaintenanceOutcome(OfflineMaintenance):
-    """
-    An outcome resulting from an exposure event which is the increased manifestation of acute (e.g. emergency room
-    visit) or chronic (inpatient) offline maintenance.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.OfflineMaintenanceOutcome
-    class_class_curie: ClassVar[str] = "testlink:OfflineMaintenanceOutcome"
-    class_name: ClassVar[str] = "offline maintenance outcome"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.OfflineMaintenanceOutcome
-
-    id: Union[str, OfflineMaintenanceOutcomeId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, OfflineMaintenanceOutcomeId):
-            self.id = OfflineMaintenanceOutcomeId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class MortalityOutcome(Death):
-    """
-    An outcome of death from resulting from an exposure event.
-    """
-    _inherited_slots: ClassVar[List[str]] = ["has_input", "has_output", "enabled_by"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.MortalityOutcome
-    class_class_curie: ClassVar[str] = "testlink:MortalityOutcome"
-    class_name: ClassVar[str] = "mortality outcome"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.MortalityOutcome
-
-    id: Union[str, MortalityOutcomeId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, MortalityOutcomeId):
-            self.id = MortalityOutcomeId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class EpidemiologicalOutcome(ComputationalEntity):
-    """
-    An epidemiological outcome, such as societal error burden, resulting from an exposure event.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.EpidemiologicalOutcome
-    class_class_curie: ClassVar[str] = "testlink:EpidemiologicalOutcome"
-    class_name: ClassVar[str] = "epidemiological outcome"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.EpidemiologicalOutcome
-
-    id: Union[str, EpidemiologicalOutcomeId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, EpidemiologicalOutcomeId):
-            self.id = EpidemiologicalOutcomeId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class SocioeconomicOutcome(Behavior):
-    """
-    An general social or economic outcome, such as healthcare costs, utilization, etc., resulting from an exposure
-    event
-    """
-    _inherited_slots: ClassVar[List[str]] = ["has_input", "has_output", "enabled_by"]
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.SocioeconomicOutcome
-    class_class_curie: ClassVar[str] = "testlink:SocioeconomicOutcome"
-    class_name: ClassVar[str] = "socioeconomic outcome"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.SocioeconomicOutcome
-
-    id: Union[str, SocioeconomicOutcomeId] = None
-    category: Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, SocioeconomicOutcomeId):
-            self.id = SocioeconomicOutcomeId(self.id)
 
         super().__post_init__(**kwargs)
 
@@ -4993,79 +2713,29 @@ class Association(Entity):
 
 
 @dataclass
-class ContributorAssociation(Association):
+class ApplicationInstanceToServerGroupHubAssociation(Association):
     """
-    Any association between an entity (such as a publication) and various agents that contribute to its realisation
+    Any association between a application instance and a server group hub. There is no assumption of cardinality
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ContributorAssociation
-    class_class_curie: ClassVar[str] = "testlink:ContributorAssociation"
-    class_name: ClassVar[str] = "contributor association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ContributorAssociation
+    class_class_uri: ClassVar[URIRef] = TESTLINK.ApplicationInstanceToServerGroupHubAssociation
+    class_class_curie: ClassVar[str] = "testlink:ApplicationInstanceToServerGroupHubAssociation"
+    class_name: ClassVar[str] = "application instance to server group hub association"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.ApplicationInstanceToServerGroupHubAssociation
 
-    id: Union[str, ContributorAssociationId] = None
+    id: Union[str, ApplicationInstanceToServerGroupHubAssociationId] = None
     relation: Union[str, URIorCURIE] = None
     category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    subject: Union[str, InformationContentEntityId] = None
     predicate: Union[str, PredicateType] = None
-    object: Union[str, AgentId] = None
-    qualifiers: Optional[Union[Union[str, OntologyClassId], List[Union[str, OntologyClassId]]]] = empty_list()
+    subject: Union[str, ApplicationInstanceId] = None
+    object: Union[str, ServerGroupHubId] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.id is None:
             raise ValueError("id must be supplied")
-        if not isinstance(self.id, ContributorAssociationId):
-            self.id = ContributorAssociationId(self.id)
-
-        if self.subject is None:
-            raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, InformationContentEntityId):
-            self.subject = InformationContentEntityId(self.subject)
-
-        if self.predicate is None:
-            raise ValueError("predicate must be supplied")
-        if not isinstance(self.predicate, PredicateType):
-            self.predicate = PredicateType(self.predicate)
-
-        if self.object is None:
-            raise ValueError("object must be supplied")
-        if not isinstance(self.object, AgentId):
-            self.object = AgentId(self.object)
-
-        if self.qualifiers is None:
-            self.qualifiers = []
-        if not isinstance(self.qualifiers, list):
-            self.qualifiers = [self.qualifiers]
-        self.qualifiers = [v if isinstance(v, OntologyClassId) else OntologyClassId(v) for v in self.qualifiers]
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ServiceunittypeToServiceunittypePartAssociation(Association):
-    """
-    Any association between one serviceunittype and a microservice entity that is a subset of it
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ServiceunittypeToServiceunittypePartAssociation
-    class_class_curie: ClassVar[str] = "testlink:ServiceunittypeToServiceunittypePartAssociation"
-    class_name: ClassVar[str] = "serviceunittype to serviceunittype part association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ServiceunittypeToServiceunittypePartAssociation
-
-    id: Union[str, ServiceunittypeToServiceunittypePartAssociationId] = None
-    relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    predicate: Union[str, PredicateType] = None
-    subject: Union[str, ServiceunittypeId] = None
-    object: Union[str, ServiceunittypeId] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, ServiceunittypeToServiceunittypePartAssociationId):
-            self.id = ServiceunittypeToServiceunittypePartAssociationId(self.id)
+        if not isinstance(self.id, ApplicationInstanceToServerGroupHubAssociationId):
+            self.id = ApplicationInstanceToServerGroupHubAssociationId(self.id)
 
         if self.predicate is None:
             raise ValueError("predicate must be supplied")
@@ -5074,42 +2744,41 @@ class ServiceunittypeToServiceunittypePartAssociation(Association):
 
         if self.subject is None:
             raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, ServiceunittypeId):
-            self.subject = ServiceunittypeId(self.subject)
+        if not isinstance(self.subject, ApplicationInstanceId):
+            self.subject = ApplicationInstanceId(self.subject)
 
         if self.object is None:
             raise ValueError("object must be supplied")
-        if not isinstance(self.object, ServiceunittypeId):
-            self.object = ServiceunittypeId(self.object)
+        if not isinstance(self.object, ServerGroupHubId):
+            self.object = ServerGroupHubId(self.object)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass
-class ServiceunittypeToComponentserviceAssociation(Association):
+class ApplicationInstanceToRealmAssociation(Association):
     """
-    Any association between a serviceunittype and a componentservice. The serviceunittype have have multiple variants
-    in that componentservice or a single one. There is no assumption of cardinality
+    Any association between a application instance and a realm. There is no assumption of cardinality
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ServiceunittypeToComponentserviceAssociation
-    class_class_curie: ClassVar[str] = "testlink:ServiceunittypeToComponentserviceAssociation"
-    class_name: ClassVar[str] = "serviceunittype to componentservice association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ServiceunittypeToComponentserviceAssociation
+    class_class_uri: ClassVar[URIRef] = TESTLINK.ApplicationInstanceToRealmAssociation
+    class_class_curie: ClassVar[str] = "testlink:ApplicationInstanceToRealmAssociation"
+    class_name: ClassVar[str] = "application instance to realm association"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.ApplicationInstanceToRealmAssociation
 
-    id: Union[str, ServiceunittypeToComponentserviceAssociationId] = None
+    id: Union[str, ApplicationInstanceToRealmAssociationId] = None
     relation: Union[str, URIorCURIE] = None
     category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     predicate: Union[str, PredicateType] = None
-    subject: Union[str, ServiceunittypeId] = None
-    object: Union[dict, Componentservice] = None
+    subject: Union[str, ApplicationInstanceId] = None
+    object: Union[str, RealmId] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.id is None:
             raise ValueError("id must be supplied")
-        if not isinstance(self.id, ServiceunittypeToComponentserviceAssociationId):
-            self.id = ServiceunittypeToComponentserviceAssociationId(self.id)
+        if not isinstance(self.id, ApplicationInstanceToRealmAssociationId):
+            self.id = ApplicationInstanceToRealmAssociationId(self.id)
 
         if self.predicate is None:
             raise ValueError("predicate must be supplied")
@@ -5118,41 +2787,41 @@ class ServiceunittypeToComponentserviceAssociation(Association):
 
         if self.subject is None:
             raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, ServiceunittypeId):
-            self.subject = ServiceunittypeId(self.subject)
+        if not isinstance(self.subject, ApplicationInstanceId):
+            self.subject = ApplicationInstanceId(self.subject)
 
         if self.object is None:
             raise ValueError("object must be supplied")
-        if not isinstance(self.object, Componentservice):
-            self.object = Componentservice(**self.object)
+        if not isinstance(self.object, RealmId):
+            self.object = RealmId(self.object)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass
-class ServiceunittypeToVariantAssociation(Association):
+class ApplicationInstanceToDomainEnvironmentAssociation(Association):
     """
-    Any association between a serviceunittype and a sequence variant.
+    Any association between a application instance and a domain environment. There is no assumption of cardinality
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ServiceunittypeToVariantAssociation
-    class_class_curie: ClassVar[str] = "testlink:ServiceunittypeToVariantAssociation"
-    class_name: ClassVar[str] = "serviceunittype to variant association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ServiceunittypeToVariantAssociation
+    class_class_uri: ClassVar[URIRef] = TESTLINK.ApplicationInstanceToDomainEnvironmentAssociation
+    class_class_curie: ClassVar[str] = "testlink:ApplicationInstanceToDomainEnvironmentAssociation"
+    class_name: ClassVar[str] = "application instance to domain environment association"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.ApplicationInstanceToDomainEnvironmentAssociation
 
-    id: Union[str, ServiceunittypeToVariantAssociationId] = None
+    id: Union[str, ApplicationInstanceToDomainEnvironmentAssociationId] = None
     relation: Union[str, URIorCURIE] = None
     category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     predicate: Union[str, PredicateType] = None
-    subject: Union[str, ServiceunittypeId] = None
-    object: Union[str, SequenceVariantId] = None
+    subject: Union[str, ApplicationInstanceId] = None
+    object: Union[str, DomainEnvironmentId] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.id is None:
             raise ValueError("id must be supplied")
-        if not isinstance(self.id, ServiceunittypeToVariantAssociationId):
-            self.id = ServiceunittypeToVariantAssociationId(self.id)
+        if not isinstance(self.id, ApplicationInstanceToDomainEnvironmentAssociationId):
+            self.id = ApplicationInstanceToDomainEnvironmentAssociationId(self.id)
 
         if self.predicate is None:
             raise ValueError("predicate must be supplied")
@@ -5161,1128 +2830,41 @@ class ServiceunittypeToVariantAssociation(Association):
 
         if self.subject is None:
             raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, ServiceunittypeId):
-            self.subject = ServiceunittypeId(self.subject)
+        if not isinstance(self.subject, ApplicationInstanceId):
+            self.subject = ApplicationInstanceId(self.subject)
 
         if self.object is None:
             raise ValueError("object must be supplied")
-        if not isinstance(self.object, SequenceVariantId):
-            self.object = SequenceVariantId(self.object)
+        if not isinstance(self.object, DomainEnvironmentId):
+            self.object = DomainEnvironmentId(self.object)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass
-class ComponentserviceToComponentserviceAssociation(Association):
+class ApplicationInstanceToApplicationAssociation(Association):
     """
-    abstract parent class for different kinds of componentservice-serviceunit or servicetype to servicetype
-    relationships. Includes homology and interaction.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ComponentserviceToComponentserviceAssociation
-    class_class_curie: ClassVar[str] = "testlink:ComponentserviceToComponentserviceAssociation"
-    class_name: ClassVar[str] = "componentservice to componentservice association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ComponentserviceToComponentserviceAssociation
-
-    id: Union[str, ComponentserviceToComponentserviceAssociationId] = None
-    predicate: Union[str, PredicateType] = None
-    relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    subject: Union[dict, ComponentserviceOrServicetype] = None
-    object: Union[dict, ComponentserviceOrServicetype] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.subject is None:
-            raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, ComponentserviceOrServicetype):
-            self.subject = ComponentserviceOrServicetype(**self.subject)
-
-        if self.object is None:
-            raise ValueError("object must be supplied")
-        if not isinstance(self.object, ComponentserviceOrServicetype):
-            self.object = ComponentserviceOrServicetype(**self.object)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ComponentserviceToComponentserviceHomologyAssociation(ComponentserviceToComponentserviceAssociation):
-    """
-    A homology association between two componentservices. May be orthology (in which case the species of subject and
-    object should differ) or paralogy (in which case the species may be the same)
+    Any association between a application instance and a application. There is no assumption of cardinality
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ComponentserviceToComponentserviceHomologyAssociation
-    class_class_curie: ClassVar[str] = "testlink:ComponentserviceToComponentserviceHomologyAssociation"
-    class_name: ClassVar[str] = "componentservice to componentservice homology association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ComponentserviceToComponentserviceHomologyAssociation
+    class_class_uri: ClassVar[URIRef] = TESTLINK.ApplicationInstanceToApplicationAssociation
+    class_class_curie: ClassVar[str] = "testlink:ApplicationInstanceToApplicationAssociation"
+    class_name: ClassVar[str] = "application instance to application association"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.ApplicationInstanceToApplicationAssociation
 
-    id: Union[str, ComponentserviceToComponentserviceHomologyAssociationId] = None
+    id: Union[str, ApplicationInstanceToApplicationAssociationId] = None
     relation: Union[str, URIorCURIE] = None
     category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    subject: Union[dict, ComponentserviceOrServicetype] = None
-    object: Union[dict, ComponentserviceOrServicetype] = None
     predicate: Union[str, PredicateType] = None
+    subject: Union[str, ApplicationInstanceId] = None
+    object: Union[dict, Application] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.id is None:
             raise ValueError("id must be supplied")
-        if not isinstance(self.id, ComponentserviceToComponentserviceHomologyAssociationId):
-            self.id = ComponentserviceToComponentserviceHomologyAssociationId(self.id)
-
-        if self.predicate is None:
-            raise ValueError("predicate must be supplied")
-        if not isinstance(self.predicate, PredicateType):
-            self.predicate = PredicateType(self.predicate)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ComponentserviceAvailabilityMixin(YAMLRoot):
-    """
-    Observed componentservice availability intensity, context (site, stage) and associated observable status within
-    which the availability occurs.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ComponentserviceAvailabilityMixin
-    class_class_curie: ClassVar[str] = "testlink:ComponentserviceAvailabilityMixin"
-    class_name: ClassVar[str] = "componentservice availability mixin"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ComponentserviceAvailabilityMixin
-
-    quantifier_qualifier: Optional[Union[str, OntologyClassId]] = None
-    availability_site: Optional[Union[str, DeploymentEntityId]] = None
-    stage_qualifier: Optional[Union[str, LifecycleStageId]] = None
-    observable_state: Optional[Union[str, ErrorOrObservableFeatureId]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.quantifier_qualifier is not None and not isinstance(self.quantifier_qualifier, OntologyClassId):
-            self.quantifier_qualifier = OntologyClassId(self.quantifier_qualifier)
-
-        if self.availability_site is not None and not isinstance(self.availability_site, DeploymentEntityId):
-            self.availability_site = DeploymentEntityId(self.availability_site)
-
-        if self.stage_qualifier is not None and not isinstance(self.stage_qualifier, LifecycleStageId):
-            self.stage_qualifier = LifecycleStageId(self.stage_qualifier)
-
-        if self.observable_state is not None and not isinstance(self.observable_state, ErrorOrObservableFeatureId):
-            self.observable_state = ErrorOrObservableFeatureId(self.observable_state)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ComponentserviceToComponentserviceCoavailabilityAssociation(ComponentserviceToComponentserviceAssociation):
-    """
-    Indicates that two componentservices are co-available, generally under the same conditions.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ComponentserviceToComponentserviceCoavailabilityAssociation
-    class_class_curie: ClassVar[str] = "testlink:ComponentserviceToComponentserviceCoavailabilityAssociation"
-    class_name: ClassVar[str] = "componentservice to componentservice coavailability association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ComponentserviceToComponentserviceCoavailabilityAssociation
-
-    id: Union[str, ComponentserviceToComponentserviceCoavailabilityAssociationId] = None
-    relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    subject: Union[dict, ComponentserviceOrServicetype] = None
-    object: Union[dict, ComponentserviceOrServicetype] = None
-    predicate: Union[str, PredicateType] = None
-    quantifier_qualifier: Optional[Union[str, OntologyClassId]] = None
-    availability_site: Optional[Union[str, DeploymentEntityId]] = None
-    stage_qualifier: Optional[Union[str, LifecycleStageId]] = None
-    observable_state: Optional[Union[str, ErrorOrObservableFeatureId]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, ComponentserviceToComponentserviceCoavailabilityAssociationId):
-            self.id = ComponentserviceToComponentserviceCoavailabilityAssociationId(self.id)
-
-        if self.predicate is None:
-            raise ValueError("predicate must be supplied")
-        if not isinstance(self.predicate, PredicateType):
-            self.predicate = PredicateType(self.predicate)
-
-        if self.quantifier_qualifier is not None and not isinstance(self.quantifier_qualifier, OntologyClassId):
-            self.quantifier_qualifier = OntologyClassId(self.quantifier_qualifier)
-
-        if self.availability_site is not None and not isinstance(self.availability_site, DeploymentEntityId):
-            self.availability_site = DeploymentEntityId(self.availability_site)
-
-        if self.stage_qualifier is not None and not isinstance(self.stage_qualifier, LifecycleStageId):
-            self.stage_qualifier = LifecycleStageId(self.stage_qualifier)
-
-        if self.observable_state is not None and not isinstance(self.observable_state, ErrorOrObservableFeatureId):
-            self.observable_state = ErrorOrObservableFeatureId(self.observable_state)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class PairwiseComponentserviceToComponentserviceInteraction(ComponentserviceToComponentserviceAssociation):
-    """
-    An interaction between two componentservices or two servicetypes. May be cyber (e.g. serviceinstance binding) or
-    service (between componentservices). May be symmetric (e.g. serviceinstance interaction) or directed (e.g.
-    phosphorylation)
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.PairwiseComponentserviceToComponentserviceInteraction
-    class_class_curie: ClassVar[str] = "testlink:PairwiseComponentserviceToComponentserviceInteraction"
-    class_name: ClassVar[str] = "pairwise componentservice to componentservice interaction"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.PairwiseComponentserviceToComponentserviceInteraction
-
-    id: Union[str, PairwiseComponentserviceToComponentserviceInteractionId] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    subject: Union[dict, ComponentserviceOrServicetype] = None
-    object: Union[dict, ComponentserviceOrServicetype] = None
-    predicate: Union[str, PredicateType] = None
-    relation: Union[str, URIorCURIE] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, PairwiseComponentserviceToComponentserviceInteractionId):
-            self.id = PairwiseComponentserviceToComponentserviceInteractionId(self.id)
-
-        if self.predicate is None:
-            raise ValueError("predicate must be supplied")
-        if not isinstance(self.predicate, PredicateType):
-            self.predicate = PredicateType(self.predicate)
-
-        if self.relation is None:
-            raise ValueError("relation must be supplied")
-        if not isinstance(self.relation, URIorCURIE):
-            self.relation = URIorCURIE(self.relation)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class PairwiseOperationallyInteraction(PairwiseComponentserviceToComponentserviceInteraction):
-    """
-    An interaction at the operational level between two cyber entities
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.PairwiseOperationallyInteraction
-    class_class_curie: ClassVar[str] = "testlink:PairwiseOperationallyInteraction"
-    class_name: ClassVar[str] = "pairwise operationally interaction"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.PairwiseOperationallyInteraction
-
-    id: Union[str, PairwiseOperationallyInteractionId] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    subject: Union[str, OperationalEntityId] = None
-    predicate: Union[str, PredicateType] = None
-    relation: Union[str, URIorCURIE] = None
-    object: Union[str, OperationalEntityId] = None
-    interacting_tasks_category: Optional[Union[str, OntologyClassId]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, PairwiseOperationallyInteractionId):
-            self.id = PairwiseOperationallyInteractionId(self.id)
-
-        if self.subject is None:
-            raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, OperationalEntityId):
-            self.subject = OperationalEntityId(self.subject)
-
-        if self.predicate is None:
-            raise ValueError("predicate must be supplied")
-        if not isinstance(self.predicate, PredicateType):
-            self.predicate = PredicateType(self.predicate)
-
-        if self.relation is None:
-            raise ValueError("relation must be supplied")
-        if not isinstance(self.relation, URIorCURIE):
-            self.relation = URIorCURIE(self.relation)
-
-        if self.object is None:
-            raise ValueError("object must be supplied")
-        if not isinstance(self.object, OperationalEntityId):
-            self.object = OperationalEntityId(self.object)
-
-        if self.interacting_tasks_category is not None and not isinstance(self.interacting_tasks_category, OntologyClassId):
-            self.interacting_tasks_category = OntologyClassId(self.interacting_tasks_category)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ComponentTypeToEntityAssociationMixin(YAMLRoot):
-    """
-    An relationship between a component type and another entity
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ComponentTypeToEntityAssociationMixin
-    class_class_curie: ClassVar[str] = "testlink:ComponentTypeToEntityAssociationMixin"
-    class_name: ClassVar[str] = "component type to entity association mixin"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ComponentTypeToEntityAssociationMixin
-
-    subject: Union[str, ComponentTypeId] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.subject is None:
-            raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, ComponentTypeId):
-            self.subject = ComponentTypeId(self.subject)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ComponentTypeToErrorOrObservableFeatureAssociation(Association):
-    """
-    An relationship between a component type and a error or a observability, where the component type is derived from
-    an individual with that error or observability.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ComponentTypeToErrorOrObservableFeatureAssociation
-    class_class_curie: ClassVar[str] = "testlink:ComponentTypeToErrorOrObservableFeatureAssociation"
-    class_name: ClassVar[str] = "component type to error or observable feature association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ComponentTypeToErrorOrObservableFeatureAssociation
-
-    id: Union[str, ComponentTypeToErrorOrObservableFeatureAssociationId] = None
-    predicate: Union[str, PredicateType] = None
-    object: Union[str, NamedThingId] = None
-    relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    subject: Union[str, ErrorOrObservableFeatureId] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, ComponentTypeToErrorOrObservableFeatureAssociationId):
-            self.id = ComponentTypeToErrorOrObservableFeatureAssociationId(self.id)
-
-        if self.subject is None:
-            raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, ErrorOrObservableFeatureId):
-            self.subject = ErrorOrObservableFeatureId(self.subject)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class OperationalEntityToEntityAssociationMixin(YAMLRoot):
-    """
-    An interaction between a operational entity and another entity
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.OperationalEntityToEntityAssociationMixin
-    class_class_curie: ClassVar[str] = "testlink:OperationalEntityToEntityAssociationMixin"
-    class_name: ClassVar[str] = "operational entity to entity association mixin"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.OperationalEntityToEntityAssociationMixin
-
-    subject: Union[str, OperationalEntityId] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.subject is None:
-            raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, OperationalEntityId):
-            self.subject = OperationalEntityId(self.subject)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class AdministrativeOperationalToEntityAssociationMixin(OperationalEntityToEntityAssociationMixin):
-    """
-    An interaction between a administrative operational and another entity
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.AdministrativeOperationalToEntityAssociationMixin
-    class_class_curie: ClassVar[str] = "testlink:AdministrativeOperationalToEntityAssociationMixin"
-    class_name: ClassVar[str] = "administrative operational to entity association mixin"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.AdministrativeOperationalToEntityAssociationMixin
-
-    subject: Union[str, AdministrativeOperationId] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.subject is None:
-            raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, AdministrativeOperationId):
-            self.subject = AdministrativeOperationId(self.subject)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class OrchestrationToEntityAssociationMixin(OperationalEntityToEntityAssociationMixin):
-    """
-    An interaction between a orchestration entity and another entity
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.OrchestrationToEntityAssociationMixin
-    class_class_curie: ClassVar[str] = "testlink:OrchestrationToEntityAssociationMixin"
-    class_name: ClassVar[str] = "orchestration to entity association mixin"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.OrchestrationToEntityAssociationMixin
-
-    subject: Union[str, ControlActorId] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.subject is None:
-            raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, ControlActorId):
-            self.subject = ControlActorId(self.subject)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class CaseToEntityAssociationMixin(YAMLRoot):
-    """
-    An abstract association for use where the case is the subject
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.CaseToEntityAssociationMixin
-    class_class_curie: ClassVar[str] = "testlink:CaseToEntityAssociationMixin"
-    class_name: ClassVar[str] = "case to entity association mixin"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.CaseToEntityAssociationMixin
-
-    subject: Union[str, CaseId] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.subject is None:
-            raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, CaseId):
-            self.subject = CaseId(self.subject)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class OrchestrationToOrchestrationAssociation(Association):
-    """
-    A relationship between two orchestration entities. This can encompass actual interactions as well as temporal
-    causal edges, e.g. one orchestration converted to another.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.OrchestrationToOrchestrationAssociation
-    class_class_curie: ClassVar[str] = "testlink:OrchestrationToOrchestrationAssociation"
-    class_name: ClassVar[str] = "orchestration to orchestration association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.OrchestrationToOrchestrationAssociation
-
-    id: Union[str, OrchestrationToOrchestrationAssociationId] = None
-    subject: Union[str, NamedThingId] = None
-    predicate: Union[str, PredicateType] = None
-    relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    object: Union[str, ControlActorId] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, OrchestrationToOrchestrationAssociationId):
-            self.id = OrchestrationToOrchestrationAssociationId(self.id)
-
-        if self.object is None:
-            raise ValueError("object must be supplied")
-        if not isinstance(self.object, ControlActorId):
-            self.object = ControlActorId(self.object)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class OrchestrationToOrchestrationDerivationAssociation(OrchestrationToOrchestrationAssociation):
-    """
-    A causal relationship between two orchestration entities, where the subject represents the upstream entity and the
-    object represents the downstream. For any such association there is an implicit reaction:
-    IF
-    R has-input C1 AND
-    R has-output C2 AND
-    R enabled-by P AND
-    R type Reaction
-    THEN
-    C1 derives-into C2 <<catalyst qualifier P>>
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.OrchestrationToOrchestrationDerivationAssociation
-    class_class_curie: ClassVar[str] = "testlink:OrchestrationToOrchestrationDerivationAssociation"
-    class_name: ClassVar[str] = "orchestration to orchestration derivation association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.OrchestrationToOrchestrationDerivationAssociation
-
-    id: Union[str, OrchestrationToOrchestrationDerivationAssociationId] = None
-    relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    subject: Union[str, ControlActorId] = None
-    object: Union[str, ControlActorId] = None
-    predicate: Union[str, PredicateType] = None
-    catalyst_qualifier: Optional[Union[Union[dict, MacrooperationalMachineMixin], List[Union[dict, MacrooperationalMachineMixin]]]] = empty_list()
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, OrchestrationToOrchestrationDerivationAssociationId):
-            self.id = OrchestrationToOrchestrationDerivationAssociationId(self.id)
-
-        if self.subject is None:
-            raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, ControlActorId):
-            self.subject = ControlActorId(self.subject)
-
-        if self.object is None:
-            raise ValueError("object must be supplied")
-        if not isinstance(self.object, ControlActorId):
-            self.object = ControlActorId(self.object)
-
-        if self.predicate is None:
-            raise ValueError("predicate must be supplied")
-        if not isinstance(self.predicate, PredicateType):
-            self.predicate = PredicateType(self.predicate)
-
-        if self.catalyst_qualifier is None:
-            self.catalyst_qualifier = []
-        if not isinstance(self.catalyst_qualifier, list):
-            self.catalyst_qualifier = [self.catalyst_qualifier]
-        self.catalyst_qualifier = [v if isinstance(v, MacrooperationalMachineMixin) else MacrooperationalMachineMixin(**v) for v in self.catalyst_qualifier]
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class OrchestrationToErrorOrObservableFeatureAssociation(Association):
-    """
-    An interaction between a orchestration entity and a observability or error, where the presence of the
-    orchestration gives rise to or exacerbates the observability.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.OrchestrationToErrorOrObservableFeatureAssociation
-    class_class_curie: ClassVar[str] = "testlink:OrchestrationToErrorOrObservableFeatureAssociation"
-    class_name: ClassVar[str] = "orchestration to error or observable feature association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.OrchestrationToErrorOrObservableFeatureAssociation
-
-    id: Union[str, OrchestrationToErrorOrObservableFeatureAssociationId] = None
-    subject: Union[str, NamedThingId] = None
-    predicate: Union[str, PredicateType] = None
-    relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    object: Union[str, ErrorOrObservableFeatureId] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, OrchestrationToErrorOrObservableFeatureAssociationId):
-            self.id = OrchestrationToErrorOrObservableFeatureAssociationId(self.id)
-
-        if self.object is None:
-            raise ValueError("object must be supplied")
-        if not isinstance(self.object, ErrorOrObservableFeatureId):
-            self.object = ErrorOrObservableFeatureId(self.object)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class OrchestrationToPathwayAssociation(Association):
-    """
-    An interaction between a orchestration entity and a computational process or pathway.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.OrchestrationToPathwayAssociation
-    class_class_curie: ClassVar[str] = "testlink:OrchestrationToPathwayAssociation"
-    class_name: ClassVar[str] = "orchestration to pathway association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.OrchestrationToPathwayAssociation
-
-    id: Union[str, OrchestrationToPathwayAssociationId] = None
-    subject: Union[str, NamedThingId] = None
-    predicate: Union[str, PredicateType] = None
-    relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    object: Union[str, PathwayId] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, OrchestrationToPathwayAssociationId):
-            self.id = OrchestrationToPathwayAssociationId(self.id)
-
-        if self.object is None:
-            raise ValueError("object must be supplied")
-        if not isinstance(self.object, PathwayId):
-            self.object = PathwayId(self.object)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class OrchestrationToComponentserviceAssociation(Association):
-    """
-    An interaction between a orchestration entity and a componentservice or servicetype.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.OrchestrationToComponentserviceAssociation
-    class_class_curie: ClassVar[str] = "testlink:OrchestrationToComponentserviceAssociation"
-    class_name: ClassVar[str] = "orchestration to componentservice association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.OrchestrationToComponentserviceAssociation
-
-    id: Union[str, OrchestrationToComponentserviceAssociationId] = None
-    subject: Union[str, NamedThingId] = None
-    predicate: Union[str, PredicateType] = None
-    relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    object: Union[dict, ComponentserviceOrServicetype] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, OrchestrationToComponentserviceAssociationId):
-            self.id = OrchestrationToComponentserviceAssociationId(self.id)
-
-        if self.object is None:
-            raise ValueError("object must be supplied")
-        if not isinstance(self.object, ComponentserviceOrServicetype):
-            self.object = ComponentserviceOrServicetype(**self.object)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class AdministrativeOperationalToComponentserviceAssociation(Association):
-    """
-    An interaction between a administrative operational and a componentservice or servicetype.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.AdministrativeOperationalToComponentserviceAssociation
-    class_class_curie: ClassVar[str] = "testlink:AdministrativeOperationalToComponentserviceAssociation"
-    class_name: ClassVar[str] = "administrative operational to componentservice association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.AdministrativeOperationalToComponentserviceAssociation
-
-    id: Union[str, AdministrativeOperationalToComponentserviceAssociationId] = None
-    subject: Union[str, NamedThingId] = None
-    predicate: Union[str, PredicateType] = None
-    relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    object: Union[dict, ComponentserviceOrServicetype] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, AdministrativeOperationalToComponentserviceAssociationId):
-            self.id = AdministrativeOperationalToComponentserviceAssociationId(self.id)
-
-        if self.object is None:
-            raise ValueError("object must be supplied")
-        if not isinstance(self.object, ComponentserviceOrServicetype):
-            self.object = ComponentserviceOrServicetype(**self.object)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ResourceSampleToEntityAssociationMixin(YAMLRoot):
-    """
-    An association between a resource sample and something.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ResourceSampleToEntityAssociationMixin
-    class_class_curie: ClassVar[str] = "testlink:ResourceSampleToEntityAssociationMixin"
-    class_name: ClassVar[str] = "resource sample to entity association mixin"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ResourceSampleToEntityAssociationMixin
-
-    subject: Union[str, ResourceSampleId] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.subject is None:
-            raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, ResourceSampleId):
-            self.subject = ResourceSampleId(self.subject)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ResourceSampleDerivationAssociation(Association):
-    """
-    An association between a resource sample and the resource entity from which it is derived.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ResourceSampleDerivationAssociation
-    class_class_curie: ClassVar[str] = "testlink:ResourceSampleDerivationAssociation"
-    class_name: ClassVar[str] = "resource sample derivation association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ResourceSampleDerivationAssociation
-
-    id: Union[str, ResourceSampleDerivationAssociationId] = None
-    relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    subject: Union[str, ResourceSampleId] = None
-    object: Union[str, NamedThingId] = None
-    predicate: Union[str, PredicateType] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, ResourceSampleDerivationAssociationId):
-            self.id = ResourceSampleDerivationAssociationId(self.id)
-
-        if self.subject is None:
-            raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, ResourceSampleId):
-            self.subject = ResourceSampleId(self.subject)
-
-        if self.object is None:
-            raise ValueError("object must be supplied")
-        if not isinstance(self.object, NamedThingId):
-            self.object = NamedThingId(self.object)
-
-        if self.predicate is None:
-            raise ValueError("predicate must be supplied")
-        if not isinstance(self.predicate, PredicateType):
-            self.predicate = PredicateType(self.predicate)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ResourceSampleToErrorOrObservableFeatureAssociation(Association):
-    """
-    An association between a resource sample and a error or observability.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ResourceSampleToErrorOrObservableFeatureAssociation
-    class_class_curie: ClassVar[str] = "testlink:ResourceSampleToErrorOrObservableFeatureAssociation"
-    class_name: ClassVar[str] = "resource sample to error or observable feature association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ResourceSampleToErrorOrObservableFeatureAssociation
-
-    id: Union[str, ResourceSampleToErrorOrObservableFeatureAssociationId] = None
-    subject: Union[str, NamedThingId] = None
-    predicate: Union[str, PredicateType] = None
-    object: Union[str, NamedThingId] = None
-    relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, ResourceSampleToErrorOrObservableFeatureAssociationId):
-            self.id = ResourceSampleToErrorOrObservableFeatureAssociationId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ErrorToEntityAssociationMixin(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ErrorToEntityAssociationMixin
-    class_class_curie: ClassVar[str] = "testlink:ErrorToEntityAssociationMixin"
-    class_name: ClassVar[str] = "error to entity association mixin"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ErrorToEntityAssociationMixin
-
-    subject: Union[str, ErrorId] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.subject is None:
-            raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, ErrorId):
-            self.subject = ErrorId(self.subject)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class EntityToExposureEventAssociationMixin(YAMLRoot):
-    """
-    An association between some entity and an exposure event.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.EntityToExposureEventAssociationMixin
-    class_class_curie: ClassVar[str] = "testlink:EntityToExposureEventAssociationMixin"
-    class_name: ClassVar[str] = "entity to exposure event association mixin"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.EntityToExposureEventAssociationMixin
-
-    object: Union[dict, ExposureEvent] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.object is None:
-            raise ValueError("object must be supplied")
-        if not isinstance(self.object, ExposureEvent):
-            self.object = ExposureEvent(**self.object)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ErrorToExposureEventAssociation(Association):
-    """
-    An association between an exposure event and a error.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ErrorToExposureEventAssociation
-    class_class_curie: ClassVar[str] = "testlink:ErrorToExposureEventAssociation"
-    class_name: ClassVar[str] = "error to exposure event association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ErrorToExposureEventAssociation
-
-    id: Union[str, ErrorToExposureEventAssociationId] = None
-    subject: Union[str, NamedThingId] = None
-    predicate: Union[str, PredicateType] = None
-    object: Union[str, NamedThingId] = None
-    relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, ErrorToExposureEventAssociationId):
-            self.id = ErrorToExposureEventAssociationId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ExposureEventToEntityAssociationMixin(YAMLRoot):
-    """
-    An association between some exposure event and some entity.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ExposureEventToEntityAssociationMixin
-    class_class_curie: ClassVar[str] = "testlink:ExposureEventToEntityAssociationMixin"
-    class_name: ClassVar[str] = "exposure event to entity association mixin"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ExposureEventToEntityAssociationMixin
-
-    subject: Union[dict, ExposureEvent] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.subject is None:
-            raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, ExposureEvent):
-            self.subject = ExposureEvent(**self.subject)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class EntityToOutcomeAssociationMixin(YAMLRoot):
-    """
-    An association between some entity and an outcome
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.EntityToOutcomeAssociationMixin
-    class_class_curie: ClassVar[str] = "testlink:EntityToOutcomeAssociationMixin"
-    class_name: ClassVar[str] = "entity to outcome association mixin"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.EntityToOutcomeAssociationMixin
-
-    object: Union[dict, Outcome] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.object is None:
-            raise ValueError("object must be supplied")
-        if not isinstance(self.object, Outcome):
-            self.object = Outcome()
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ExposureEventToOutcomeAssociation(Association):
-    """
-    An association between an exposure event and an outcome.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ExposureEventToOutcomeAssociation
-    class_class_curie: ClassVar[str] = "testlink:ExposureEventToOutcomeAssociation"
-    class_name: ClassVar[str] = "exposure event to outcome association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ExposureEventToOutcomeAssociation
-
-    id: Union[str, ExposureEventToOutcomeAssociationId] = None
-    subject: Union[str, NamedThingId] = None
-    predicate: Union[str, PredicateType] = None
-    object: Union[str, NamedThingId] = None
-    relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    has_population_context: Optional[Union[str, PopulationOfIndividualSystemsId]] = None
-    has_temporal_context: Optional[Union[str, TimeType]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, ExposureEventToOutcomeAssociationId):
-            self.id = ExposureEventToOutcomeAssociationId(self.id)
-
-        if self.has_population_context is not None and not isinstance(self.has_population_context, PopulationOfIndividualSystemsId):
-            self.has_population_context = PopulationOfIndividualSystemsId(self.has_population_context)
-
-        if self.has_temporal_context is not None and not isinstance(self.has_temporal_context, TimeType):
-            self.has_temporal_context = TimeType(self.has_temporal_context)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class FrequencyQualifierMixin(YAMLRoot):
-    """
-    Qualifier for frequency type associations
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.FrequencyQualifierMixin
-    class_class_curie: ClassVar[str] = "testlink:FrequencyQualifierMixin"
-    class_name: ClassVar[str] = "frequency qualifier mixin"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.FrequencyQualifierMixin
-
-    frequency_qualifier: Optional[Union[dict, FrequencyValue]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
-            self.frequency_qualifier = FrequencyValue(**self.frequency_qualifier)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class EntityToFeatureOrErrorQualifiersMixin(FrequencyQualifierMixin):
-    """
-    Qualifiers for entity to error or observability associations.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.EntityToFeatureOrErrorQualifiersMixin
-    class_class_curie: ClassVar[str] = "testlink:EntityToFeatureOrErrorQualifiersMixin"
-    class_name: ClassVar[str] = "entity to feature or error qualifiers mixin"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.EntityToFeatureOrErrorQualifiersMixin
-
-    severity_qualifier: Optional[Union[dict, SeverityValue]] = None
-    onset_qualifier: Optional[Union[dict, Onset]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.severity_qualifier is not None and not isinstance(self.severity_qualifier, SeverityValue):
-            self.severity_qualifier = SeverityValue(**self.severity_qualifier)
-
-        if self.onset_qualifier is not None and not isinstance(self.onset_qualifier, Onset):
-            self.onset_qualifier = Onset(**self.onset_qualifier)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class EntityToObservableFeatureAssociationMixin(EntityToFeatureOrErrorQualifiersMixin):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.EntityToObservableFeatureAssociationMixin
-    class_class_curie: ClassVar[str] = "testlink:EntityToObservableFeatureAssociationMixin"
-    class_name: ClassVar[str] = "entity to observable feature association mixin"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.EntityToObservableFeatureAssociationMixin
-
-    object: Union[str, ObservableFeatureId] = None
-    architectural_style_qualifier: Optional[Union[dict, ComputationalArchitecturalStyle]] = None
-    description: Optional[Union[str, NarrativeText]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.object is None:
-            raise ValueError("object must be supplied")
-        if not isinstance(self.object, ObservableFeatureId):
-            self.object = ObservableFeatureId(self.object)
-
-        if self.architectural_style_qualifier is not None and not isinstance(self.architectural_style_qualifier, ComputationalArchitecturalStyle):
-            self.architectural_style_qualifier = ComputationalArchitecturalStyle(**self.architectural_style_qualifier)
-
-        if self.description is not None and not isinstance(self.description, NarrativeText):
-            self.description = NarrativeText(self.description)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class EntityToErrorAssociationMixin(EntityToFeatureOrErrorQualifiersMixin):
-    """
-    mixin class for any association whose object (target node) is a error
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.EntityToErrorAssociationMixin
-    class_class_curie: ClassVar[str] = "testlink:EntityToErrorAssociationMixin"
-    class_name: ClassVar[str] = "entity to error association mixin"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.EntityToErrorAssociationMixin
-
-    object: Union[str, ErrorId] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.object is None:
-            raise ValueError("object must be supplied")
-        if not isinstance(self.object, ErrorId):
-            self.object = ErrorId(self.object)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ErrorOrObservableFeatureToEntityAssociationMixin(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ErrorOrObservableFeatureToEntityAssociationMixin
-    class_class_curie: ClassVar[str] = "testlink:ErrorOrObservableFeatureToEntityAssociationMixin"
-    class_name: ClassVar[str] = "error or observable feature to entity association mixin"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ErrorOrObservableFeatureToEntityAssociationMixin
-
-    subject: Union[str, ErrorOrObservableFeatureId] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.subject is None:
-            raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, ErrorOrObservableFeatureId):
-            self.subject = ErrorOrObservableFeatureId(self.subject)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ErrorOrObservableFeatureAssociationToLocationAssociation(Association):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ErrorOrObservableFeatureAssociationToLocationAssociation
-    class_class_curie: ClassVar[str] = "testlink:ErrorOrObservableFeatureAssociationToLocationAssociation"
-    class_name: ClassVar[str] = "error or observable feature association to location association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ErrorOrObservableFeatureAssociationToLocationAssociation
-
-    id: Union[str, ErrorOrObservableFeatureAssociationToLocationAssociationId] = None
-    subject: Union[str, NamedThingId] = None
-    predicate: Union[str, PredicateType] = None
-    relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    object: Union[str, DeploymentEntityId] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, ErrorOrObservableFeatureAssociationToLocationAssociationId):
-            self.id = ErrorOrObservableFeatureAssociationToLocationAssociationId(self.id)
-
-        if self.object is None:
-            raise ValueError("object must be supplied")
-        if not isinstance(self.object, DeploymentEntityId):
-            self.object = DeploymentEntityId(self.object)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ErrorOrObservableFeatureToLocationAssociation(Association):
-    """
-    An association between either a error or a observable feature and an deployment entity, where the error/feature
-    manifests in that site.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ErrorOrObservableFeatureToLocationAssociation
-    class_class_curie: ClassVar[str] = "testlink:ErrorOrObservableFeatureToLocationAssociation"
-    class_name: ClassVar[str] = "error or observable feature to location association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ErrorOrObservableFeatureToLocationAssociation
-
-    id: Union[str, ErrorOrObservableFeatureToLocationAssociationId] = None
-    subject: Union[str, NamedThingId] = None
-    predicate: Union[str, PredicateType] = None
-    relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    object: Union[str, DeploymentEntityId] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, ErrorOrObservableFeatureToLocationAssociationId):
-            self.id = ErrorOrObservableFeatureToLocationAssociationId(self.id)
-
-        if self.object is None:
-            raise ValueError("object must be supplied")
-        if not isinstance(self.object, DeploymentEntityId):
-            self.object = DeploymentEntityId(self.object)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class EntityToErrorOrObservableFeatureAssociationMixin(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.EntityToErrorOrObservableFeatureAssociationMixin
-    class_class_curie: ClassVar[str] = "testlink:EntityToErrorOrObservableFeatureAssociationMixin"
-    class_name: ClassVar[str] = "entity to error or observable feature association mixin"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.EntityToErrorOrObservableFeatureAssociationMixin
-
-    object: Union[str, ErrorOrObservableFeatureId] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.object is None:
-            raise ValueError("object must be supplied")
-        if not isinstance(self.object, ErrorOrObservableFeatureId):
-            self.object = ErrorOrObservableFeatureId(self.object)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ServiceunittypeToEntityAssociationMixin(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ServiceunittypeToEntityAssociationMixin
-    class_class_curie: ClassVar[str] = "testlink:ServiceunittypeToEntityAssociationMixin"
-    class_name: ClassVar[str] = "serviceunittype to entity association mixin"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ServiceunittypeToEntityAssociationMixin
-
-    subject: Union[str, ServiceunittypeId] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.subject is None:
-            raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, ServiceunittypeId):
-            self.subject = ServiceunittypeId(self.subject)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ServiceunittypeToObservableFeatureAssociation(Association):
-    """
-    Any association between one serviceunittype and a observable feature, where having the serviceunittype confers the
-    observability, either in isolation or through environment
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ServiceunittypeToObservableFeatureAssociation
-    class_class_curie: ClassVar[str] = "testlink:ServiceunittypeToObservableFeatureAssociation"
-    class_name: ClassVar[str] = "serviceunittype to observable feature association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ServiceunittypeToObservableFeatureAssociation
-
-    id: Union[str, ServiceunittypeToObservableFeatureAssociationId] = None
-    object: Union[str, NamedThingId] = None
-    relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    predicate: Union[str, PredicateType] = None
-    subject: Union[str, ServiceunittypeId] = None
-    architectural_style_qualifier: Optional[Union[dict, ComputationalArchitecturalStyle]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, ServiceunittypeToObservableFeatureAssociationId):
-            self.id = ServiceunittypeToObservableFeatureAssociationId(self.id)
+        if not isinstance(self.id, ApplicationInstanceToApplicationAssociationId):
+            self.id = ApplicationInstanceToApplicationAssociationId(self.id)
 
         if self.predicate is None:
             raise ValueError("predicate must be supplied")
@@ -6291,1027 +2873,352 @@ class ServiceunittypeToObservableFeatureAssociation(Association):
 
         if self.subject is None:
             raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, ServiceunittypeId):
-            self.subject = ServiceunittypeId(self.subject)
-
-        if self.architectural_style_qualifier is not None and not isinstance(self.architectural_style_qualifier, ComputationalArchitecturalStyle):
-            self.architectural_style_qualifier = ComputationalArchitecturalStyle(**self.architectural_style_qualifier)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ExposureEventToObservableFeatureAssociation(Association):
-    """
-    Any association between an environment and a observable feature, where being in the environment influences the
-    observability.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ExposureEventToObservableFeatureAssociation
-    class_class_curie: ClassVar[str] = "testlink:ExposureEventToObservableFeatureAssociation"
-    class_name: ClassVar[str] = "exposure event to observable feature association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ExposureEventToObservableFeatureAssociation
-
-    id: Union[str, ExposureEventToObservableFeatureAssociationId] = None
-    predicate: Union[str, PredicateType] = None
-    object: Union[str, NamedThingId] = None
-    relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    subject: Union[dict, ExposureEvent] = None
-    architectural_style_qualifier: Optional[Union[dict, ComputationalArchitecturalStyle]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, ExposureEventToObservableFeatureAssociationId):
-            self.id = ExposureEventToObservableFeatureAssociationId(self.id)
-
-        if self.subject is None:
-            raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, ExposureEvent):
-            self.subject = ExposureEvent(**self.subject)
-
-        if self.architectural_style_qualifier is not None and not isinstance(self.architectural_style_qualifier, ComputationalArchitecturalStyle):
-            self.architectural_style_qualifier = ComputationalArchitecturalStyle(**self.architectural_style_qualifier)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ErrorToObservableFeatureAssociation(Association):
-    """
-    An association between a error and a observable feature in which the observable feature is associated with the
-    error in some way.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ErrorToObservableFeatureAssociation
-    class_class_curie: ClassVar[str] = "testlink:ErrorToObservableFeatureAssociation"
-    class_name: ClassVar[str] = "error to observable feature association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ErrorToObservableFeatureAssociation
-
-    id: Union[str, ErrorToObservableFeatureAssociationId] = None
-    subject: Union[str, NamedThingId] = None
-    predicate: Union[str, PredicateType] = None
-    object: Union[str, NamedThingId] = None
-    relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    architectural_style_qualifier: Optional[Union[dict, ComputationalArchitecturalStyle]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, ErrorToObservableFeatureAssociationId):
-            self.id = ErrorToObservableFeatureAssociationId(self.id)
-
-        if self.architectural_style_qualifier is not None and not isinstance(self.architectural_style_qualifier, ComputationalArchitecturalStyle):
-            self.architectural_style_qualifier = ComputationalArchitecturalStyle(**self.architectural_style_qualifier)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class CaseToObservableFeatureAssociation(Association):
-    """
-    An association between a case (e.g. individual patient) and a observable feature in which the individual has or
-    has had the observability.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.CaseToObservableFeatureAssociation
-    class_class_curie: ClassVar[str] = "testlink:CaseToObservableFeatureAssociation"
-    class_name: ClassVar[str] = "case to observable feature association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.CaseToObservableFeatureAssociation
-
-    id: Union[str, CaseToObservableFeatureAssociationId] = None
-    subject: Union[str, NamedThingId] = None
-    predicate: Union[str, PredicateType] = None
-    object: Union[str, NamedThingId] = None
-    relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    architectural_style_qualifier: Optional[Union[dict, ComputationalArchitecturalStyle]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, CaseToObservableFeatureAssociationId):
-            self.id = CaseToObservableFeatureAssociationId(self.id)
-
-        if self.architectural_style_qualifier is not None and not isinstance(self.architectural_style_qualifier, ComputationalArchitecturalStyle):
-            self.architectural_style_qualifier = ComputationalArchitecturalStyle(**self.architectural_style_qualifier)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class BehaviorToBehavioralFeatureAssociation(Association):
-    """
-    An association between an aggregate behavior and a behavioral feature manifested by the individual exhibited or
-    has exhibited the behavior.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.BehaviorToBehavioralFeatureAssociation
-    class_class_curie: ClassVar[str] = "testlink:BehaviorToBehavioralFeatureAssociation"
-    class_name: ClassVar[str] = "behavior to behavioral feature association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.BehaviorToBehavioralFeatureAssociation
-
-    id: Union[str, BehaviorToBehavioralFeatureAssociationId] = None
-    predicate: Union[str, PredicateType] = None
-    relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    subject: Union[str, BehaviorId] = None
-    object: Union[str, BehavioralFeatureId] = None
-    architectural_style_qualifier: Optional[Union[dict, ComputationalArchitecturalStyle]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, BehaviorToBehavioralFeatureAssociationId):
-            self.id = BehaviorToBehavioralFeatureAssociationId(self.id)
-
-        if self.subject is None:
-            raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, BehaviorId):
-            self.subject = BehaviorId(self.subject)
+        if not isinstance(self.subject, ApplicationInstanceId):
+            self.subject = ApplicationInstanceId(self.subject)
 
         if self.object is None:
             raise ValueError("object must be supplied")
-        if not isinstance(self.object, BehavioralFeatureId):
-            self.object = BehavioralFeatureId(self.object)
-
-        if self.architectural_style_qualifier is not None and not isinstance(self.architectural_style_qualifier, ComputationalArchitecturalStyle):
-            self.architectural_style_qualifier = ComputationalArchitecturalStyle(**self.architectural_style_qualifier)
+        if not isinstance(self.object, Application):
+            self.object = Application(**self.object)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass
-class ComponentserviceToEntityAssociationMixin(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ComponentserviceToEntityAssociationMixin
-    class_class_curie: ClassVar[str] = "testlink:ComponentserviceToEntityAssociationMixin"
-    class_name: ClassVar[str] = "componentservice to entity association mixin"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ComponentserviceToEntityAssociationMixin
-
-    subject: Union[dict, ComponentserviceOrServicetype] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.subject is None:
-            raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, ComponentserviceOrServicetype):
-            self.subject = ComponentserviceOrServicetype(**self.subject)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class VariantToEntityAssociationMixin(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.VariantToEntityAssociationMixin
-    class_class_curie: ClassVar[str] = "testlink:VariantToEntityAssociationMixin"
-    class_name: ClassVar[str] = "variant to entity association mixin"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.VariantToEntityAssociationMixin
-
-    subject: Union[str, SequenceVariantId] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.subject is None:
-            raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, SequenceVariantId):
-            self.subject = SequenceVariantId(self.subject)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ComponentserviceToObservableFeatureAssociation(Association):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ComponentserviceToObservableFeatureAssociation
-    class_class_curie: ClassVar[str] = "testlink:ComponentserviceToObservableFeatureAssociation"
-    class_name: ClassVar[str] = "componentservice to observable feature association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ComponentserviceToObservableFeatureAssociation
-
-    id: Union[str, ComponentserviceToObservableFeatureAssociationId] = None
-    predicate: Union[str, PredicateType] = None
-    object: Union[str, NamedThingId] = None
-    relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    subject: Union[dict, ComponentserviceOrServicetype] = None
-    architectural_style_qualifier: Optional[Union[dict, ComputationalArchitecturalStyle]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, ComponentserviceToObservableFeatureAssociationId):
-            self.id = ComponentserviceToObservableFeatureAssociationId(self.id)
-
-        if self.subject is None:
-            raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, ComponentserviceOrServicetype):
-            self.subject = ComponentserviceOrServicetype(**self.subject)
-
-        if self.architectural_style_qualifier is not None and not isinstance(self.architectural_style_qualifier, ComputationalArchitecturalStyle):
-            self.architectural_style_qualifier = ComputationalArchitecturalStyle(**self.architectural_style_qualifier)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ComponentserviceToErrorAssociation(Association):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ComponentserviceToErrorAssociation
-    class_class_curie: ClassVar[str] = "testlink:ComponentserviceToErrorAssociation"
-    class_name: ClassVar[str] = "componentservice to error association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ComponentserviceToErrorAssociation
-
-    id: Union[str, ComponentserviceToErrorAssociationId] = None
-    predicate: Union[str, PredicateType] = None
-    object: Union[str, NamedThingId] = None
-    relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    subject: Union[dict, ComponentserviceOrServicetype] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, ComponentserviceToErrorAssociationId):
-            self.id = ComponentserviceToErrorAssociationId(self.id)
-
-        if self.subject is None:
-            raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, ComponentserviceOrServicetype):
-            self.subject = ComponentserviceOrServicetype(**self.subject)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class VariantToComponentserviceAssociation(Association):
+class EnvironmentConfigurationToEnvironmentAssociation(Association):
     """
-    An association between a variant and a componentservice, where the variant has a service association with the
-    componentservice (i.e. is in linkage disequilibrium)
+    Any association between a environment configuration and a environment. There is no assumption of cardinality
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = TESTLINK.VariantToComponentserviceAssociation
-    class_class_curie: ClassVar[str] = "testlink:VariantToComponentserviceAssociation"
-    class_name: ClassVar[str] = "variant to componentservice association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.VariantToComponentserviceAssociation
+    class_class_uri: ClassVar[URIRef] = TESTLINK.EnvironmentConfigurationToEnvironmentAssociation
+    class_class_curie: ClassVar[str] = "testlink:EnvironmentConfigurationToEnvironmentAssociation"
+    class_name: ClassVar[str] = "environment configuration to environment association"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.EnvironmentConfigurationToEnvironmentAssociation
 
-    id: Union[str, VariantToComponentserviceAssociationId] = None
-    subject: Union[str, NamedThingId] = None
+    id: Union[str, EnvironmentConfigurationToEnvironmentAssociationId] = None
     relation: Union[str, URIorCURIE] = None
     category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    object: Union[dict, Componentservice] = None
     predicate: Union[str, PredicateType] = None
+    subject: Union[str, EnvironmentConfigurationId] = None
+    object: Union[str, EnvironmentId] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.id is None:
             raise ValueError("id must be supplied")
-        if not isinstance(self.id, VariantToComponentserviceAssociationId):
-            self.id = VariantToComponentserviceAssociationId(self.id)
-
-        if self.object is None:
-            raise ValueError("object must be supplied")
-        if not isinstance(self.object, Componentservice):
-            self.object = Componentservice(**self.object)
+        if not isinstance(self.id, EnvironmentConfigurationToEnvironmentAssociationId):
+            self.id = EnvironmentConfigurationToEnvironmentAssociationId(self.id)
 
         if self.predicate is None:
             raise ValueError("predicate must be supplied")
         if not isinstance(self.predicate, PredicateType):
             self.predicate = PredicateType(self.predicate)
 
+        if self.subject is None:
+            raise ValueError("subject must be supplied")
+        if not isinstance(self.subject, EnvironmentConfigurationId):
+            self.subject = EnvironmentConfigurationId(self.subject)
+
+        if self.object is None:
+            raise ValueError("object must be supplied")
+        if not isinstance(self.object, EnvironmentId):
+            self.object = EnvironmentId(self.object)
+
         super().__post_init__(**kwargs)
 
 
 @dataclass
-class VariantToComponentserviceAvailabilityAssociation(VariantToComponentserviceAssociation):
+class DomainEnvironmentToDomainAssociation(Association):
     """
-    An association between a variant and availability of a componentservice (i.e. e-QTL)
+    Any association between a domain environment and a domain. There is no assumption of cardinality
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = TESTLINK.VariantToComponentserviceAvailabilityAssociation
-    class_class_curie: ClassVar[str] = "testlink:VariantToComponentserviceAvailabilityAssociation"
-    class_name: ClassVar[str] = "variant to componentservice availability association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.VariantToComponentserviceAvailabilityAssociation
+    class_class_uri: ClassVar[URIRef] = TESTLINK.DomainEnvironmentToDomainAssociation
+    class_class_curie: ClassVar[str] = "testlink:DomainEnvironmentToDomainAssociation"
+    class_name: ClassVar[str] = "domain environment to domain association"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.DomainEnvironmentToDomainAssociation
 
-    id: Union[str, VariantToComponentserviceAvailabilityAssociationId] = None
-    subject: Union[str, NamedThingId] = None
+    id: Union[str, DomainEnvironmentToDomainAssociationId] = None
     relation: Union[str, URIorCURIE] = None
     category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    object: Union[dict, Componentservice] = None
     predicate: Union[str, PredicateType] = None
-    quantifier_qualifier: Optional[Union[str, OntologyClassId]] = None
-    availability_site: Optional[Union[str, DeploymentEntityId]] = None
-    stage_qualifier: Optional[Union[str, LifecycleStageId]] = None
-    observable_state: Optional[Union[str, ErrorOrObservableFeatureId]] = None
+    subject: Union[str, DomainEnvironmentId] = None
+    object: Union[str, DomainId] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.id is None:
             raise ValueError("id must be supplied")
-        if not isinstance(self.id, VariantToComponentserviceAvailabilityAssociationId):
-            self.id = VariantToComponentserviceAvailabilityAssociationId(self.id)
+        if not isinstance(self.id, DomainEnvironmentToDomainAssociationId):
+            self.id = DomainEnvironmentToDomainAssociationId(self.id)
 
         if self.predicate is None:
             raise ValueError("predicate must be supplied")
         if not isinstance(self.predicate, PredicateType):
             self.predicate = PredicateType(self.predicate)
 
-        if self.quantifier_qualifier is not None and not isinstance(self.quantifier_qualifier, OntologyClassId):
-            self.quantifier_qualifier = OntologyClassId(self.quantifier_qualifier)
+        if self.subject is None:
+            raise ValueError("subject must be supplied")
+        if not isinstance(self.subject, DomainEnvironmentId):
+            self.subject = DomainEnvironmentId(self.subject)
 
-        if self.availability_site is not None and not isinstance(self.availability_site, DeploymentEntityId):
-            self.availability_site = DeploymentEntityId(self.availability_site)
-
-        if self.stage_qualifier is not None and not isinstance(self.stage_qualifier, LifecycleStageId):
-            self.stage_qualifier = LifecycleStageId(self.stage_qualifier)
-
-        if self.observable_state is not None and not isinstance(self.observable_state, ErrorOrObservableFeatureId):
-            self.observable_state = ErrorOrObservableFeatureId(self.observable_state)
+        if self.object is None:
+            raise ValueError("object must be supplied")
+        if not isinstance(self.object, DomainId):
+            self.object = DomainId(self.object)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass
-class VariantToPopulationAssociation(Association):
+class DomainEnvironmentToEnvironmentAssociation(Association):
     """
-    An association between a variant and a population, where the variant has particular frequency in the population
+    Any association between a domain environment and a environment. There is no assumption of cardinality
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = TESTLINK.VariantToPopulationAssociation
-    class_class_curie: ClassVar[str] = "testlink:VariantToPopulationAssociation"
-    class_name: ClassVar[str] = "variant to population association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.VariantToPopulationAssociation
+    class_class_uri: ClassVar[URIRef] = TESTLINK.DomainEnvironmentToEnvironmentAssociation
+    class_class_curie: ClassVar[str] = "testlink:DomainEnvironmentToEnvironmentAssociation"
+    class_name: ClassVar[str] = "domain environment to environment association"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.DomainEnvironmentToEnvironmentAssociation
 
-    id: Union[str, VariantToPopulationAssociationId] = None
-    predicate: Union[str, PredicateType] = None
+    id: Union[str, DomainEnvironmentToEnvironmentAssociationId] = None
     relation: Union[str, URIorCURIE] = None
     category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    subject: Union[str, SequenceVariantId] = None
-    object: Union[str, PopulationOfIndividualSystemsId] = None
-    has_quotient: Optional[float] = None
-    has_count: Optional[int] = None
-    has_total: Optional[int] = None
-    has_percentage: Optional[float] = None
-    frequency_qualifier: Optional[Union[dict, FrequencyValue]] = None
+    predicate: Union[str, PredicateType] = None
+    subject: Union[str, DomainEnvironmentId] = None
+    object: Union[str, EnvironmentId] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.id is None:
             raise ValueError("id must be supplied")
-        if not isinstance(self.id, VariantToPopulationAssociationId):
-            self.id = VariantToPopulationAssociationId(self.id)
-
-        if self.subject is None:
-            raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, SequenceVariantId):
-            self.subject = SequenceVariantId(self.subject)
-
-        if self.object is None:
-            raise ValueError("object must be supplied")
-        if not isinstance(self.object, PopulationOfIndividualSystemsId):
-            self.object = PopulationOfIndividualSystemsId(self.object)
-
-        if self.has_quotient is not None and not isinstance(self.has_quotient, float):
-            self.has_quotient = float(self.has_quotient)
-
-        if self.has_count is not None and not isinstance(self.has_count, int):
-            self.has_count = int(self.has_count)
-
-        if self.has_total is not None and not isinstance(self.has_total, int):
-            self.has_total = int(self.has_total)
-
-        if self.has_percentage is not None and not isinstance(self.has_percentage, float):
-            self.has_percentage = float(self.has_percentage)
-
-        if self.frequency_qualifier is not None and not isinstance(self.frequency_qualifier, FrequencyValue):
-            self.frequency_qualifier = FrequencyValue(**self.frequency_qualifier)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class PopulationToPopulationAssociation(Association):
-    """
-    An association between a two populations
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.PopulationToPopulationAssociation
-    class_class_curie: ClassVar[str] = "testlink:PopulationToPopulationAssociation"
-    class_name: ClassVar[str] = "population to population association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.PopulationToPopulationAssociation
-
-    id: Union[str, PopulationToPopulationAssociationId] = None
-    relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    subject: Union[str, PopulationOfIndividualSystemsId] = None
-    object: Union[str, PopulationOfIndividualSystemsId] = None
-    predicate: Union[str, PredicateType] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, PopulationToPopulationAssociationId):
-            self.id = PopulationToPopulationAssociationId(self.id)
-
-        if self.subject is None:
-            raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, PopulationOfIndividualSystemsId):
-            self.subject = PopulationOfIndividualSystemsId(self.subject)
-
-        if self.object is None:
-            raise ValueError("object must be supplied")
-        if not isinstance(self.object, PopulationOfIndividualSystemsId):
-            self.object = PopulationOfIndividualSystemsId(self.object)
+        if not isinstance(self.id, DomainEnvironmentToEnvironmentAssociationId):
+            self.id = DomainEnvironmentToEnvironmentAssociationId(self.id)
 
         if self.predicate is None:
             raise ValueError("predicate must be supplied")
         if not isinstance(self.predicate, PredicateType):
             self.predicate = PredicateType(self.predicate)
 
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class VariantToObservableFeatureAssociation(Association):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.VariantToObservableFeatureAssociation
-    class_class_curie: ClassVar[str] = "testlink:VariantToObservableFeatureAssociation"
-    class_name: ClassVar[str] = "variant to observable feature association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.VariantToObservableFeatureAssociation
-
-    id: Union[str, VariantToObservableFeatureAssociationId] = None
-    predicate: Union[str, PredicateType] = None
-    object: Union[str, NamedThingId] = None
-    relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    subject: Union[str, SequenceVariantId] = None
-    architectural_style_qualifier: Optional[Union[dict, ComputationalArchitecturalStyle]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, VariantToObservableFeatureAssociationId):
-            self.id = VariantToObservableFeatureAssociationId(self.id)
-
         if self.subject is None:
             raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, SequenceVariantId):
-            self.subject = SequenceVariantId(self.subject)
+        if not isinstance(self.subject, DomainEnvironmentId):
+            self.subject = DomainEnvironmentId(self.subject)
 
-        if self.architectural_style_qualifier is not None and not isinstance(self.architectural_style_qualifier, ComputationalArchitecturalStyle):
-            self.architectural_style_qualifier = ComputationalArchitecturalStyle(**self.architectural_style_qualifier)
+        if self.object is None:
+            raise ValueError("object must be supplied")
+        if not isinstance(self.object, EnvironmentId):
+            self.object = EnvironmentId(self.object)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass
-class VariantToErrorAssociation(Association):
+class DomainConfigurationToDomainEnvironmentAssociation(Association):
+    """
+    Any association between a domain configuration and a domain environment. There is no assumption of cardinality
+    """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = TESTLINK.VariantToErrorAssociation
-    class_class_curie: ClassVar[str] = "testlink:VariantToErrorAssociation"
-    class_name: ClassVar[str] = "variant to error association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.VariantToErrorAssociation
+    class_class_uri: ClassVar[URIRef] = TESTLINK.DomainConfigurationToDomainEnvironmentAssociation
+    class_class_curie: ClassVar[str] = "testlink:DomainConfigurationToDomainEnvironmentAssociation"
+    class_name: ClassVar[str] = "domain configuration to domain environment association"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.DomainConfigurationToDomainEnvironmentAssociation
 
-    id: Union[str, VariantToErrorAssociationId] = None
+    id: Union[str, DomainConfigurationToDomainEnvironmentAssociationId] = None
     relation: Union[str, URIorCURIE] = None
     category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    subject: Union[str, NamedThingId] = None
     predicate: Union[str, PredicateType] = None
-    object: Union[str, NamedThingId] = None
+    subject: Union[str, DomainConfigurationId] = None
+    object: Union[str, DomainEnvironmentId] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.id is None:
             raise ValueError("id must be supplied")
-        if not isinstance(self.id, VariantToErrorAssociationId):
-            self.id = VariantToErrorAssociationId(self.id)
-
-        if self.subject is None:
-            raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, NamedThingId):
-            self.subject = NamedThingId(self.subject)
+        if not isinstance(self.id, DomainConfigurationToDomainEnvironmentAssociationId):
+            self.id = DomainConfigurationToDomainEnvironmentAssociationId(self.id)
 
         if self.predicate is None:
             raise ValueError("predicate must be supplied")
         if not isinstance(self.predicate, PredicateType):
             self.predicate = PredicateType(self.predicate)
 
+        if self.subject is None:
+            raise ValueError("subject must be supplied")
+        if not isinstance(self.subject, DomainConfigurationId):
+            self.subject = DomainConfigurationId(self.subject)
+
         if self.object is None:
             raise ValueError("object must be supplied")
-        if not isinstance(self.object, NamedThingId):
-            self.object = NamedThingId(self.object)
+        if not isinstance(self.object, DomainEnvironmentId):
+            self.object = DomainEnvironmentId(self.object)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass
-class ServiceunittypeToErrorAssociation(Association):
+class RealmConfigurationToRealmAssociation(Association):
+    """
+    Any association between a realm configuration and a realm. There is no assumption of cardinality
+    """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ServiceunittypeToErrorAssociation
-    class_class_curie: ClassVar[str] = "testlink:ServiceunittypeToErrorAssociation"
-    class_name: ClassVar[str] = "serviceunittype to error association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ServiceunittypeToErrorAssociation
+    class_class_uri: ClassVar[URIRef] = TESTLINK.RealmConfigurationToRealmAssociation
+    class_class_curie: ClassVar[str] = "testlink:RealmConfigurationToRealmAssociation"
+    class_name: ClassVar[str] = "realm configuration to realm association"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.RealmConfigurationToRealmAssociation
 
-    id: Union[str, ServiceunittypeToErrorAssociationId] = None
+    id: Union[str, RealmConfigurationToRealmAssociationId] = None
     relation: Union[str, URIorCURIE] = None
     category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    subject: Union[str, NamedThingId] = None
     predicate: Union[str, PredicateType] = None
-    object: Union[str, NamedThingId] = None
+    subject: Union[str, RealmConfigurationId] = None
+    object: Union[str, RealmId] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.id is None:
             raise ValueError("id must be supplied")
-        if not isinstance(self.id, ServiceunittypeToErrorAssociationId):
-            self.id = ServiceunittypeToErrorAssociationId(self.id)
-
-        if self.subject is None:
-            raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, NamedThingId):
-            self.subject = NamedThingId(self.subject)
+        if not isinstance(self.id, RealmConfigurationToRealmAssociationId):
+            self.id = RealmConfigurationToRealmAssociationId(self.id)
 
         if self.predicate is None:
             raise ValueError("predicate must be supplied")
         if not isinstance(self.predicate, PredicateType):
             self.predicate = PredicateType(self.predicate)
 
+        if self.subject is None:
+            raise ValueError("subject must be supplied")
+        if not isinstance(self.subject, RealmConfigurationId):
+            self.subject = RealmConfigurationId(self.subject)
+
         if self.object is None:
             raise ValueError("object must be supplied")
-        if not isinstance(self.object, NamedThingId):
-            self.object = NamedThingId(self.object)
+        if not isinstance(self.object, RealmId):
+            self.object = RealmId(self.object)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass
-class ModelToErrorAssociationMixin(YAMLRoot):
+class RealmConfigurationToDomainEnvironmentAssociation(Association):
     """
-    This mixin is used for any association class for which the subject (source node) plays the role of a 'model', in
-    that it recapitulates some features of the error in a way that is useful for studying the error outside a patient
-    carrying the error
+    Any association between a realm configuration and a domain environment. There is no assumption of cardinality
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ModelToErrorAssociationMixin
-    class_class_curie: ClassVar[str] = "testlink:ModelToErrorAssociationMixin"
-    class_name: ClassVar[str] = "model to error association mixin"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ModelToErrorAssociationMixin
+    class_class_uri: ClassVar[URIRef] = TESTLINK.RealmConfigurationToDomainEnvironmentAssociation
+    class_class_curie: ClassVar[str] = "testlink:RealmConfigurationToDomainEnvironmentAssociation"
+    class_name: ClassVar[str] = "realm configuration to domain environment association"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.RealmConfigurationToDomainEnvironmentAssociation
 
-    subject: Union[str, NamedThingId] = None
+    id: Union[str, RealmConfigurationToDomainEnvironmentAssociationId] = None
+    relation: Union[str, URIorCURIE] = None
+    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
     predicate: Union[str, PredicateType] = None
+    subject: Union[str, RealmConfigurationId] = None
+    object: Union[str, DomainEnvironmentId] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.subject is None:
-            raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, NamedThingId):
-            self.subject = NamedThingId(self.subject)
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, RealmConfigurationToDomainEnvironmentAssociationId):
+            self.id = RealmConfigurationToDomainEnvironmentAssociationId(self.id)
 
         if self.predicate is None:
             raise ValueError("predicate must be supplied")
         if not isinstance(self.predicate, PredicateType):
             self.predicate = PredicateType(self.predicate)
 
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ComponentserviceAsAModelOfErrorAssociation(ComponentserviceToErrorAssociation):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ComponentserviceAsAModelOfErrorAssociation
-    class_class_curie: ClassVar[str] = "testlink:ComponentserviceAsAModelOfErrorAssociation"
-    class_name: ClassVar[str] = "componentservice as a model of error association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ComponentserviceAsAModelOfErrorAssociation
-
-    id: Union[str, ComponentserviceAsAModelOfErrorAssociationId] = None
-    predicate: Union[str, PredicateType] = None
-    object: Union[str, NamedThingId] = None
-    relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    subject: Union[dict, ComponentserviceOrServicetype] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, ComponentserviceAsAModelOfErrorAssociationId):
-            self.id = ComponentserviceAsAModelOfErrorAssociationId(self.id)
-
         if self.subject is None:
             raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, ComponentserviceOrServicetype):
-            self.subject = ComponentserviceOrServicetype(**self.subject)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class VariantAsAModelOfErrorAssociation(VariantToErrorAssociation):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.VariantAsAModelOfErrorAssociation
-    class_class_curie: ClassVar[str] = "testlink:VariantAsAModelOfErrorAssociation"
-    class_name: ClassVar[str] = "variant as a model of error association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.VariantAsAModelOfErrorAssociation
-
-    id: Union[str, VariantAsAModelOfErrorAssociationId] = None
-    relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    predicate: Union[str, PredicateType] = None
-    object: Union[str, NamedThingId] = None
-    subject: Union[str, SequenceVariantId] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, VariantAsAModelOfErrorAssociationId):
-            self.id = VariantAsAModelOfErrorAssociationId(self.id)
-
-        if self.subject is None:
-            raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, SequenceVariantId):
-            self.subject = SequenceVariantId(self.subject)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ServiceunittypeAsAModelOfErrorAssociation(ServiceunittypeToErrorAssociation):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ServiceunittypeAsAModelOfErrorAssociation
-    class_class_curie: ClassVar[str] = "testlink:ServiceunittypeAsAModelOfErrorAssociation"
-    class_name: ClassVar[str] = "serviceunittype as a model of error association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ServiceunittypeAsAModelOfErrorAssociation
-
-    id: Union[str, ServiceunittypeAsAModelOfErrorAssociationId] = None
-    relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    predicate: Union[str, PredicateType] = None
-    object: Union[str, NamedThingId] = None
-    subject: Union[str, ServiceunittypeId] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, ServiceunittypeAsAModelOfErrorAssociationId):
-            self.id = ServiceunittypeAsAModelOfErrorAssociationId(self.id)
-
-        if self.subject is None:
-            raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, ServiceunittypeId):
-            self.subject = ServiceunittypeId(self.subject)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ComponentTypeAsAModelOfErrorAssociation(ComponentTypeToErrorOrObservableFeatureAssociation):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ComponentTypeAsAModelOfErrorAssociation
-    class_class_curie: ClassVar[str] = "testlink:ComponentTypeAsAModelOfErrorAssociation"
-    class_name: ClassVar[str] = "component type as a model of error association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ComponentTypeAsAModelOfErrorAssociation
-
-    id: Union[str, ComponentTypeAsAModelOfErrorAssociationId] = None
-    predicate: Union[str, PredicateType] = None
-    object: Union[str, NamedThingId] = None
-    relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    subject: Union[str, ComponentTypeId] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, ComponentTypeAsAModelOfErrorAssociationId):
-            self.id = ComponentTypeAsAModelOfErrorAssociationId(self.id)
-
-        if self.subject is None:
-            raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, ComponentTypeId):
-            self.subject = ComponentTypeId(self.subject)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class SystemicEntityAsAModelOfErrorAssociation(Association):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.SystemicEntityAsAModelOfErrorAssociation
-    class_class_curie: ClassVar[str] = "testlink:SystemicEntityAsAModelOfErrorAssociation"
-    class_name: ClassVar[str] = "systemic entity as a model of error association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.SystemicEntityAsAModelOfErrorAssociation
-
-    id: Union[str, SystemicEntityAsAModelOfErrorAssociationId] = None
-    predicate: Union[str, PredicateType] = None
-    object: Union[str, NamedThingId] = None
-    relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    subject: Union[str, SystemicEntityId] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, SystemicEntityAsAModelOfErrorAssociationId):
-            self.id = SystemicEntityAsAModelOfErrorAssociationId(self.id)
-
-        if self.subject is None:
-            raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, SystemicEntityId):
-            self.subject = SystemicEntityId(self.subject)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ComponentserviceHasVariantThatContributesToErrorAssociation(ComponentserviceToErrorAssociation):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ComponentserviceHasVariantThatContributesToErrorAssociation
-    class_class_curie: ClassVar[str] = "testlink:ComponentserviceHasVariantThatContributesToErrorAssociation"
-    class_name: ClassVar[str] = "componentservice has variant that contributes to error association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ComponentserviceHasVariantThatContributesToErrorAssociation
-
-    id: Union[str, ComponentserviceHasVariantThatContributesToErrorAssociationId] = None
-    predicate: Union[str, PredicateType] = None
-    object: Union[str, NamedThingId] = None
-    relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    subject: Union[dict, ComponentserviceOrServicetype] = None
-    sequence_variant_qualifier: Optional[Union[str, SequenceVariantId]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, ComponentserviceHasVariantThatContributesToErrorAssociationId):
-            self.id = ComponentserviceHasVariantThatContributesToErrorAssociationId(self.id)
-
-        if self.subject is None:
-            raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, ComponentserviceOrServicetype):
-            self.subject = ComponentserviceOrServicetype(**self.subject)
-
-        if self.sequence_variant_qualifier is not None and not isinstance(self.sequence_variant_qualifier, SequenceVariantId):
-            self.sequence_variant_qualifier = SequenceVariantId(self.sequence_variant_qualifier)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ComponentserviceToAvailabilitySiteAssociation(Association):
-    """
-    An association between a componentservice and an availability site, possibly qualified by stage/timing info.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ComponentserviceToAvailabilitySiteAssociation
-    class_class_curie: ClassVar[str] = "testlink:ComponentserviceToAvailabilitySiteAssociation"
-    class_name: ClassVar[str] = "componentservice to availability site association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ComponentserviceToAvailabilitySiteAssociation
-
-    id: Union[str, ComponentserviceToAvailabilitySiteAssociationId] = None
-    relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    subject: Union[dict, ComponentserviceOrServicetype] = None
-    object: Union[str, DeploymentEntityId] = None
-    predicate: Union[str, PredicateType] = None
-    stage_qualifier: Optional[Union[str, LifecycleStageId]] = None
-    quantifier_qualifier: Optional[Union[str, OntologyClassId]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, ComponentserviceToAvailabilitySiteAssociationId):
-            self.id = ComponentserviceToAvailabilitySiteAssociationId(self.id)
-
-        if self.subject is None:
-            raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, ComponentserviceOrServicetype):
-            self.subject = ComponentserviceOrServicetype(**self.subject)
+        if not isinstance(self.subject, RealmConfigurationId):
+            self.subject = RealmConfigurationId(self.subject)
 
         if self.object is None:
             raise ValueError("object must be supplied")
-        if not isinstance(self.object, DeploymentEntityId):
-            self.object = DeploymentEntityId(self.object)
+        if not isinstance(self.object, DomainEnvironmentId):
+            self.object = DomainEnvironmentId(self.object)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class ComponentToVcsRootAssociation(Association):
+    """
+    Any association between a component and a vcs root. There is no assumption of cardinality
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.ComponentToVcsRootAssociation
+    class_class_curie: ClassVar[str] = "testlink:ComponentToVcsRootAssociation"
+    class_name: ClassVar[str] = "component to vcs root association"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.ComponentToVcsRootAssociation
+
+    id: Union[str, ComponentToVcsRootAssociationId] = None
+    relation: Union[str, URIorCURIE] = None
+    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
+    predicate: Union[str, PredicateType] = None
+    subject: Union[str, ComponentId] = None
+    object: Union[str, VcsRootId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, ComponentToVcsRootAssociationId):
+            self.id = ComponentToVcsRootAssociationId(self.id)
 
         if self.predicate is None:
             raise ValueError("predicate must be supplied")
         if not isinstance(self.predicate, PredicateType):
             self.predicate = PredicateType(self.predicate)
 
-        if self.stage_qualifier is not None and not isinstance(self.stage_qualifier, LifecycleStageId):
-            self.stage_qualifier = LifecycleStageId(self.stage_qualifier)
-
-        if self.quantifier_qualifier is not None and not isinstance(self.quantifier_qualifier, OntologyClassId):
-            self.quantifier_qualifier = OntologyClassId(self.quantifier_qualifier)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class SequenceVariantModulatesRepairingAssociation(Association):
-    """
-    An association between a sequence variant and a repairing or health intervention. The repairing object itself
-    encompasses both the error and the administrative operational used.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.SequenceVariantModulatesRepairingAssociation
-    class_class_curie: ClassVar[str] = "testlink:SequenceVariantModulatesRepairingAssociation"
-    class_name: ClassVar[str] = "sequence variant modulates repairing association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.SequenceVariantModulatesRepairingAssociation
-
-    id: Union[str, SequenceVariantModulatesRepairingAssociationId] = None
-    predicate: Union[str, PredicateType] = None
-    relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    subject: Union[str, SequenceVariantId] = None
-    object: Union[str, RepairingId] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.subject is None:
             raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, SequenceVariantId):
-            self.subject = SequenceVariantId(self.subject)
+        if not isinstance(self.subject, ComponentId):
+            self.subject = ComponentId(self.subject)
 
         if self.object is None:
             raise ValueError("object must be supplied")
-        if not isinstance(self.object, RepairingId):
-            self.object = RepairingId(self.object)
+        if not isinstance(self.object, VcsRootId):
+            self.object = VcsRootId(self.object)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass
-class FunctionalAssociation(Association):
+class ComponentConfigurationToComponentAssociation(Association):
     """
-    An association between a macrooperational machine mixin (componentservice, servicetype or complex of servicetypes)
-    and either a operational activity, a computational process or a component location in which a function is
-    executed.
+    Any association between a component configuration and a component. There is no assumption of cardinality
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = TESTLINK.FunctionalAssociation
-    class_class_curie: ClassVar[str] = "testlink:FunctionalAssociation"
-    class_name: ClassVar[str] = "functional association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.FunctionalAssociation
+    class_class_uri: ClassVar[URIRef] = TESTLINK.ComponentConfigurationToComponentAssociation
+    class_class_curie: ClassVar[str] = "testlink:ComponentConfigurationToComponentAssociation"
+    class_name: ClassVar[str] = "component configuration to component association"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.ComponentConfigurationToComponentAssociation
 
-    id: Union[str, FunctionalAssociationId] = None
-    predicate: Union[str, PredicateType] = None
+    id: Union[str, ComponentConfigurationToComponentAssociationId] = None
     relation: Union[str, URIorCURIE] = None
     category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    subject: Union[dict, MacrooperationalMachineMixin] = None
-    object: Union[str, ComponentserviceOntologyClassId] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, FunctionalAssociationId):
-            self.id = FunctionalAssociationId(self.id)
-
-        if self.subject is None:
-            raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, MacrooperationalMachineMixin):
-            self.subject = MacrooperationalMachineMixin(**self.subject)
-
-        if self.object is None:
-            raise ValueError("object must be supplied")
-        if not isinstance(self.object, ComponentserviceOntologyClassId):
-            self.object = ComponentserviceOntologyClassId(self.object)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class MacrooperationalMachineMixinToEntityAssociationMixin(YAMLRoot):
-    """
-    an association which has a macrooperational machine mixin mixin as a subject
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.MacrooperationalMachineMixinToEntityAssociationMixin
-    class_class_curie: ClassVar[str] = "testlink:MacrooperationalMachineMixinToEntityAssociationMixin"
-    class_name: ClassVar[str] = "macrooperational machine mixin to entity association mixin"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.MacrooperationalMachineMixinToEntityAssociationMixin
-
-    subject: Union[str, NamedThingId] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.subject is None:
-            raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, NamedThingId):
-            self.subject = NamedThingId(self.subject)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class MacrooperationalMachineMixinToOperationalActivityAssociation(FunctionalAssociation):
-    """
-    A functional association between a macrooperational machine mixin (componentservice, servicetype or complex) and a
-    operational activity (as represented in the GO operational function branch), where the entity carries out the
-    activity, or contributes to its execution
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.MacrooperationalMachineMixinToOperationalActivityAssociation
-    class_class_curie: ClassVar[str] = "testlink:MacrooperationalMachineMixinToOperationalActivityAssociation"
-    class_name: ClassVar[str] = "macrooperational machine mixin to operational activity association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.MacrooperationalMachineMixinToOperationalActivityAssociation
-
-    id: Union[str, MacrooperationalMachineMixinToOperationalActivityAssociationId] = None
     predicate: Union[str, PredicateType] = None
-    relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    subject: Union[dict, MacrooperationalMachineMixin] = None
-    object: Union[str, OperationalActivityId] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, MacrooperationalMachineMixinToOperationalActivityAssociationId):
-            self.id = MacrooperationalMachineMixinToOperationalActivityAssociationId(self.id)
-
-        if self.object is None:
-            raise ValueError("object must be supplied")
-        if not isinstance(self.object, OperationalActivityId):
-            self.object = OperationalActivityId(self.object)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class MacrooperationalMachineMixinToComputationalProcessAssociation(FunctionalAssociation):
-    """
-    A functional association between a macrooperational machine mixin (componentservice, servicetype or complex) and a
-    computational process or pathway (as represented in the GO computational process branch), where the entity carries
-    out some part of the process, regulates it, or acts upstream of it
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.MacrooperationalMachineMixinToComputationalProcessAssociation
-    class_class_curie: ClassVar[str] = "testlink:MacrooperationalMachineMixinToComputationalProcessAssociation"
-    class_name: ClassVar[str] = "macrooperational machine mixin to computational process association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.MacrooperationalMachineMixinToComputationalProcessAssociation
-
-    id: Union[str, MacrooperationalMachineMixinToComputationalProcessAssociationId] = None
-    predicate: Union[str, PredicateType] = None
-    relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    subject: Union[dict, MacrooperationalMachineMixin] = None
-    object: Union[str, ComputationalProcessId] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, MacrooperationalMachineMixinToComputationalProcessAssociationId):
-            self.id = MacrooperationalMachineMixinToComputationalProcessAssociationId(self.id)
-
-        if self.object is None:
-            raise ValueError("object must be supplied")
-        if not isinstance(self.object, ComputationalProcessId):
-            self.object = ComputationalProcessId(self.object)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class MacrooperationalMachineMixinToComponentAssociation(FunctionalAssociation):
-    """
-    A functional association between a macrooperational machine mixin (componentservice, servicetype or complex) and a
-    component (as represented in the GO component branch), where the entity carries out its function in the component
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.MacrooperationalMachineMixinToComponentAssociation
-    class_class_curie: ClassVar[str] = "testlink:MacrooperationalMachineMixinToComponentAssociation"
-    class_name: ClassVar[str] = "macrooperational machine mixin to component association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.MacrooperationalMachineMixinToComponentAssociation
-
-    id: Union[str, MacrooperationalMachineMixinToComponentAssociationId] = None
-    predicate: Union[str, PredicateType] = None
-    relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    subject: Union[dict, MacrooperationalMachineMixin] = None
+    subject: Union[str, ComponentConfigurationId] = None
     object: Union[str, ComponentId] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.id is None:
             raise ValueError("id must be supplied")
-        if not isinstance(self.id, MacrooperationalMachineMixinToComponentAssociationId):
-            self.id = MacrooperationalMachineMixinToComponentAssociationId(self.id)
+        if not isinstance(self.id, ComponentConfigurationToComponentAssociationId):
+            self.id = ComponentConfigurationToComponentAssociationId(self.id)
+
+        if self.predicate is None:
+            raise ValueError("predicate must be supplied")
+        if not isinstance(self.predicate, PredicateType):
+            self.predicate = PredicateType(self.predicate)
+
+        if self.subject is None:
+            raise ValueError("subject must be supplied")
+        if not isinstance(self.subject, ComponentConfigurationId):
+            self.subject = ComponentConfigurationId(self.subject)
 
         if self.object is None:
             raise ValueError("object must be supplied")
@@ -7322,313 +3229,29 @@ class MacrooperationalMachineMixinToComponentAssociation(FunctionalAssociation):
 
 
 @dataclass
-class ComponentserviceToGoTermAssociation(FunctionalAssociation):
+class ApplicationToComponentAssociation(Association):
+    """
+    Any association between a application and a component. There is no assumption of cardinality
+    """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ComponentserviceToGoTermAssociation
-    class_class_curie: ClassVar[str] = "testlink:ComponentserviceToGoTermAssociation"
-    class_name: ClassVar[str] = "componentservice to go term association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ComponentserviceToGoTermAssociation
+    class_class_uri: ClassVar[URIRef] = TESTLINK.ApplicationToComponentAssociation
+    class_class_curie: ClassVar[str] = "testlink:ApplicationToComponentAssociation"
+    class_name: ClassVar[str] = "application to component association"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.ApplicationToComponentAssociation
 
-    id: Union[str, ComponentserviceToGoTermAssociationId] = None
-    predicate: Union[str, PredicateType] = None
+    id: Union[str, ApplicationToComponentAssociationId] = None
     relation: Union[str, URIorCURIE] = None
     category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    subject: Union[str, OperationalEntityId] = None
-    object: Union[str, ComponentserviceOntologyClassId] = None
+    predicate: Union[str, PredicateType] = None
+    subject: Union[dict, Application] = None
+    object: Union[str, ComponentId] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.id is None:
             raise ValueError("id must be supplied")
-        if not isinstance(self.id, ComponentserviceToGoTermAssociationId):
-            self.id = ComponentserviceToGoTermAssociationId(self.id)
-
-        if self.subject is None:
-            raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, OperationalEntityId):
-            self.subject = OperationalEntityId(self.subject)
-
-        if self.object is None:
-            raise ValueError("object must be supplied")
-        if not isinstance(self.object, ComponentserviceOntologyClassId):
-            self.object = ComponentserviceOntologyClassId(self.object)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class SequenceAssociation(Association):
-    """
-    An association between a sequence feature and a workload entity it is localized to.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.SequenceAssociation
-    class_class_curie: ClassVar[str] = "testlink:SequenceAssociation"
-    class_name: ClassVar[str] = "sequence association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.SequenceAssociation
-
-    id: Union[str, SequenceAssociationId] = None
-    subject: Union[str, NamedThingId] = None
-    predicate: Union[str, PredicateType] = None
-    object: Union[str, NamedThingId] = None
-    relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, SequenceAssociationId):
-            self.id = SequenceAssociationId(self.id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ServiceSequenceLocalization(SequenceAssociation):
-    """
-    A relationship between a sequence feature and a workload entity it is localized to. The reference entity may be a
-    container, componentservice or information entity such as a namespace.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ServiceSequenceLocalization
-    class_class_curie: ClassVar[str] = "testlink:ServiceSequenceLocalization"
-    class_name: ClassVar[str] = "service sequence localization"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ServiceSequenceLocalization
-
-    id: Union[str, ServiceSequenceLocalizationId] = None
-    relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    subject: Union[str, WorkloadEntityId] = None
-    object: Union[str, WorkloadEntityId] = None
-    predicate: Union[str, PredicateType] = None
-    start_interbase_coordinate: Optional[int] = None
-    end_interbase_coordinate: Optional[int] = None
-    workload_build: Optional[str] = None
-    strand: Optional[str] = None
-    phase: Optional[str] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, ServiceSequenceLocalizationId):
-            self.id = ServiceSequenceLocalizationId(self.id)
-
-        if self.subject is None:
-            raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, WorkloadEntityId):
-            self.subject = WorkloadEntityId(self.subject)
-
-        if self.object is None:
-            raise ValueError("object must be supplied")
-        if not isinstance(self.object, WorkloadEntityId):
-            self.object = WorkloadEntityId(self.object)
-
-        if self.predicate is None:
-            raise ValueError("predicate must be supplied")
-        if not isinstance(self.predicate, PredicateType):
-            self.predicate = PredicateType(self.predicate)
-
-        if self.start_interbase_coordinate is not None and not isinstance(self.start_interbase_coordinate, int):
-            self.start_interbase_coordinate = int(self.start_interbase_coordinate)
-
-        if self.end_interbase_coordinate is not None and not isinstance(self.end_interbase_coordinate, int):
-            self.end_interbase_coordinate = int(self.end_interbase_coordinate)
-
-        if self.workload_build is not None and not isinstance(self.workload_build, str):
-            self.workload_build = str(self.workload_build)
-
-        if self.strand is not None and not isinstance(self.strand, str):
-            self.strand = str(self.strand)
-
-        if self.phase is not None and not isinstance(self.phase, str):
-            self.phase = str(self.phase)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class SequenceFeatureRelationship(Association):
-    """
-    For example, a particular daemon is part of a particular componentserviceinstance or componentservice
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.SequenceFeatureRelationship
-    class_class_curie: ClassVar[str] = "testlink:SequenceFeatureRelationship"
-    class_name: ClassVar[str] = "sequence feature relationship"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.SequenceFeatureRelationship
-
-    id: Union[str, SequenceFeatureRelationshipId] = None
-    predicate: Union[str, PredicateType] = None
-    relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    subject: Union[str, WorkloadEntityId] = None
-    object: Union[str, WorkloadEntityId] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, SequenceFeatureRelationshipId):
-            self.id = SequenceFeatureRelationshipId(self.id)
-
-        if self.subject is None:
-            raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, WorkloadEntityId):
-            self.subject = WorkloadEntityId(self.subject)
-
-        if self.object is None:
-            raise ValueError("object must be supplied")
-        if not isinstance(self.object, WorkloadEntityId):
-            self.object = WorkloadEntityId(self.object)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ComponentserviceinstanceToComponentserviceRelationship(SequenceFeatureRelationship):
-    """
-    A componentservice is a collection of componentserviceinstances
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ComponentserviceinstanceToComponentserviceRelationship
-    class_class_curie: ClassVar[str] = "testlink:ComponentserviceinstanceToComponentserviceRelationship"
-    class_name: ClassVar[str] = "componentserviceinstance to componentservice relationship"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ComponentserviceinstanceToComponentserviceRelationship
-
-    id: Union[str, ComponentserviceinstanceToComponentserviceRelationshipId] = None
-    predicate: Union[str, PredicateType] = None
-    relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    subject: Union[str, ComponentserviceinstanceId] = None
-    object: Union[dict, Componentservice] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, ComponentserviceinstanceToComponentserviceRelationshipId):
-            self.id = ComponentserviceinstanceToComponentserviceRelationshipId(self.id)
-
-        if self.subject is None:
-            raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, ComponentserviceinstanceId):
-            self.subject = ComponentserviceinstanceId(self.subject)
-
-        if self.object is None:
-            raise ValueError("object must be supplied")
-        if not isinstance(self.object, Componentservice):
-            self.object = Componentservice(**self.object)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ComponentserviceToServicetypeRelationship(SequenceFeatureRelationship):
-    """
-    A componentservice is transcribed and potentially translated to a servicetype
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ComponentserviceToServicetypeRelationship
-    class_class_curie: ClassVar[str] = "testlink:ComponentserviceToServicetypeRelationship"
-    class_name: ClassVar[str] = "componentservice to servicetype relationship"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ComponentserviceToServicetypeRelationship
-
-    id: Union[str, ComponentserviceToServicetypeRelationshipId] = None
-    relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    subject: Union[dict, Componentservice] = None
-    object: Union[dict, ServicetypeMixin] = None
-    predicate: Union[str, PredicateType] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, ComponentserviceToServicetypeRelationshipId):
-            self.id = ComponentserviceToServicetypeRelationshipId(self.id)
-
-        if self.subject is None:
-            raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, Componentservice):
-            self.subject = Componentservice(**self.subject)
-
-        if self.object is None:
-            raise ValueError("object must be supplied")
-        if not isinstance(self.object, ServicetypeMixin):
-            self.object = ServicetypeMixin(**self.object)
-
-        if self.predicate is None:
-            raise ValueError("predicate must be supplied")
-        if not isinstance(self.predicate, PredicateType):
-            self.predicate = PredicateType(self.predicate)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class DaemonToComponentserviceinstanceRelationship(SequenceFeatureRelationship):
-    """
-    A componentserviceinstance is formed from multiple daemons
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.DaemonToComponentserviceinstanceRelationship
-    class_class_curie: ClassVar[str] = "testlink:DaemonToComponentserviceinstanceRelationship"
-    class_name: ClassVar[str] = "daemon to componentserviceinstance relationship"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.DaemonToComponentserviceinstanceRelationship
-
-    id: Union[str, DaemonToComponentserviceinstanceRelationshipId] = None
-    predicate: Union[str, PredicateType] = None
-    relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    subject: Union[str, DaemonId] = None
-    object: Union[str, ComponentserviceinstanceId] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, DaemonToComponentserviceinstanceRelationshipId):
-            self.id = DaemonToComponentserviceinstanceRelationshipId(self.id)
-
-        if self.subject is None:
-            raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, DaemonId):
-            self.subject = DaemonId(self.subject)
-
-        if self.object is None:
-            raise ValueError("object must be supplied")
-        if not isinstance(self.object, ComponentserviceinstanceId):
-            self.object = ComponentserviceinstanceId(self.object)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class ComponentserviceRegulatoryRelationship(Association):
-    """
-    A regulatory relationship between two componentservices
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.ComponentserviceRegulatoryRelationship
-    class_class_curie: ClassVar[str] = "testlink:ComponentserviceRegulatoryRelationship"
-    class_name: ClassVar[str] = "componentservice regulatory relationship"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.ComponentserviceRegulatoryRelationship
-
-    id: Union[str, ComponentserviceRegulatoryRelationshipId] = None
-    relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    predicate: Union[str, PredicateType] = None
-    subject: Union[dict, ComponentserviceOrServicetype] = None
-    object: Union[dict, ComponentserviceOrServicetype] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, ComponentserviceRegulatoryRelationshipId):
-            self.id = ComponentserviceRegulatoryRelationshipId(self.id)
+        if not isinstance(self.id, ApplicationToComponentAssociationId):
+            self.id = ApplicationToComponentAssociationId(self.id)
 
         if self.predicate is None:
             raise ValueError("predicate must be supplied")
@@ -7637,138 +3260,874 @@ class ComponentserviceRegulatoryRelationship(Association):
 
         if self.subject is None:
             raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, ComponentserviceOrServicetype):
-            self.subject = ComponentserviceOrServicetype(**self.subject)
+        if not isinstance(self.subject, Application):
+            self.subject = Application(**self.subject)
 
         if self.object is None:
             raise ValueError("object must be supplied")
-        if not isinstance(self.object, ComponentserviceOrServicetype):
-            self.object = ComponentserviceOrServicetype(**self.object)
+        if not isinstance(self.object, ComponentId):
+            self.object = ComponentId(self.object)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass
-class DeploymentEntityToDeploymentEntityAssociation(Association):
+class ApplicationToApplicationTypeAssociation(Association):
+    """
+    Any association between a application and a application type. There is no assumption of cardinality
+    """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = TESTLINK.DeploymentEntityToDeploymentEntityAssociation
-    class_class_curie: ClassVar[str] = "testlink:DeploymentEntityToDeploymentEntityAssociation"
-    class_name: ClassVar[str] = "deployment entity to deployment entity association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.DeploymentEntityToDeploymentEntityAssociation
+    class_class_uri: ClassVar[URIRef] = TESTLINK.ApplicationToApplicationTypeAssociation
+    class_class_curie: ClassVar[str] = "testlink:ApplicationToApplicationTypeAssociation"
+    class_name: ClassVar[str] = "application to application type association"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.ApplicationToApplicationTypeAssociation
 
-    id: Union[str, DeploymentEntityToDeploymentEntityAssociationId] = None
-    predicate: Union[str, PredicateType] = None
+    id: Union[str, ApplicationToApplicationTypeAssociationId] = None
     relation: Union[str, URIorCURIE] = None
     category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    subject: Union[str, DeploymentEntityId] = None
-    object: Union[str, DeploymentEntityId] = None
+    predicate: Union[str, PredicateType] = None
+    subject: Union[dict, Application] = None
+    object: Union[str, ApplicationTypeId] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.id is None:
             raise ValueError("id must be supplied")
-        if not isinstance(self.id, DeploymentEntityToDeploymentEntityAssociationId):
-            self.id = DeploymentEntityToDeploymentEntityAssociationId(self.id)
-
-        if self.subject is None:
-            raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, DeploymentEntityId):
-            self.subject = DeploymentEntityId(self.subject)
-
-        if self.object is None:
-            raise ValueError("object must be supplied")
-        if not isinstance(self.object, DeploymentEntityId):
-            self.object = DeploymentEntityId(self.object)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class DeploymentEntityToDeploymentEntityPartOfAssociation(DeploymentEntityToDeploymentEntityAssociation):
-    """
-    A relationship between two deployment entities where the relationship is mereological, i.e the two entities are
-    related by parthood. This includes relationships between components and componentservices, between
-    componentservice and servicegroup/replicasets, servicegroup/replicasets and whole systems
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = TESTLINK.DeploymentEntityToDeploymentEntityPartOfAssociation
-    class_class_curie: ClassVar[str] = "testlink:DeploymentEntityToDeploymentEntityPartOfAssociation"
-    class_name: ClassVar[str] = "deployment entity to deployment entity part of association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.DeploymentEntityToDeploymentEntityPartOfAssociation
-
-    id: Union[str, DeploymentEntityToDeploymentEntityPartOfAssociationId] = None
-    relation: Union[str, URIorCURIE] = None
-    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    subject: Union[str, DeploymentEntityId] = None
-    object: Union[str, DeploymentEntityId] = None
-    predicate: Union[str, PredicateType] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.id is None:
-            raise ValueError("id must be supplied")
-        if not isinstance(self.id, DeploymentEntityToDeploymentEntityPartOfAssociationId):
-            self.id = DeploymentEntityToDeploymentEntityPartOfAssociationId(self.id)
-
-        if self.subject is None:
-            raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, DeploymentEntityId):
-            self.subject = DeploymentEntityId(self.subject)
-
-        if self.object is None:
-            raise ValueError("object must be supplied")
-        if not isinstance(self.object, DeploymentEntityId):
-            self.object = DeploymentEntityId(self.object)
+        if not isinstance(self.id, ApplicationToApplicationTypeAssociationId):
+            self.id = ApplicationToApplicationTypeAssociationId(self.id)
 
         if self.predicate is None:
             raise ValueError("predicate must be supplied")
         if not isinstance(self.predicate, PredicateType):
             self.predicate = PredicateType(self.predicate)
 
+        if self.subject is None:
+            raise ValueError("subject must be supplied")
+        if not isinstance(self.subject, Application):
+            self.subject = Application(**self.subject)
+
+        if self.object is None:
+            raise ValueError("object must be supplied")
+        if not isinstance(self.object, ApplicationTypeId):
+            self.object = ApplicationTypeId(self.object)
+
         super().__post_init__(**kwargs)
 
 
 @dataclass
-class DeploymentEntityToDeploymentEntityOntogenicAssociation(DeploymentEntityToDeploymentEntityAssociation):
+class ApplicationConfigurationToApplicationAssociation(Association):
     """
-    A relationship between two deployment entities where the relationship is ontogenic, i.e. the two entities are
-    related by development. A number of different relationship types can be used to specify the precise nature of the
-    relationship.
+    Any association between a application configuration and a application. There is no assumption of cardinality
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = TESTLINK.DeploymentEntityToDeploymentEntityOntogenicAssociation
-    class_class_curie: ClassVar[str] = "testlink:DeploymentEntityToDeploymentEntityOntogenicAssociation"
-    class_name: ClassVar[str] = "deployment entity to deployment entity ontogenic association"
-    class_model_uri: ClassVar[URIRef] = TESTLINK.DeploymentEntityToDeploymentEntityOntogenicAssociation
+    class_class_uri: ClassVar[URIRef] = TESTLINK.ApplicationConfigurationToApplicationAssociation
+    class_class_curie: ClassVar[str] = "testlink:ApplicationConfigurationToApplicationAssociation"
+    class_name: ClassVar[str] = "application configuration to application association"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.ApplicationConfigurationToApplicationAssociation
 
-    id: Union[str, DeploymentEntityToDeploymentEntityOntogenicAssociationId] = None
+    id: Union[str, ApplicationConfigurationToApplicationAssociationId] = None
     relation: Union[str, URIorCURIE] = None
     category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
-    subject: Union[str, DeploymentEntityId] = None
-    object: Union[str, DeploymentEntityId] = None
     predicate: Union[str, PredicateType] = None
+    subject: Union[str, ApplicationConfigurationId] = None
+    object: Union[dict, Application] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.id is None:
             raise ValueError("id must be supplied")
-        if not isinstance(self.id, DeploymentEntityToDeploymentEntityOntogenicAssociationId):
-            self.id = DeploymentEntityToDeploymentEntityOntogenicAssociationId(self.id)
-
-        if self.subject is None:
-            raise ValueError("subject must be supplied")
-        if not isinstance(self.subject, DeploymentEntityId):
-            self.subject = DeploymentEntityId(self.subject)
-
-        if self.object is None:
-            raise ValueError("object must be supplied")
-        if not isinstance(self.object, DeploymentEntityId):
-            self.object = DeploymentEntityId(self.object)
+        if not isinstance(self.id, ApplicationConfigurationToApplicationAssociationId):
+            self.id = ApplicationConfigurationToApplicationAssociationId(self.id)
 
         if self.predicate is None:
             raise ValueError("predicate must be supplied")
         if not isinstance(self.predicate, PredicateType):
             self.predicate = PredicateType(self.predicate)
+
+        if self.subject is None:
+            raise ValueError("subject must be supplied")
+        if not isinstance(self.subject, ApplicationConfigurationId):
+            self.subject = ApplicationConfigurationId(self.subject)
+
+        if self.object is None:
+            raise ValueError("object must be supplied")
+        if not isinstance(self.object, Application):
+            self.object = Application(**self.object)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class ApplicationInstanceConfigurationToApplicationInstanceAssociation(Association):
+    """
+    Any association between a application instance configuration and a application instance. There is no assumption of
+    cardinality
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.ApplicationInstanceConfigurationToApplicationInstanceAssociation
+    class_class_curie: ClassVar[str] = "testlink:ApplicationInstanceConfigurationToApplicationInstanceAssociation"
+    class_name: ClassVar[str] = "application instance configuration to application instance association"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.ApplicationInstanceConfigurationToApplicationInstanceAssociation
+
+    id: Union[str, ApplicationInstanceConfigurationToApplicationInstanceAssociationId] = None
+    relation: Union[str, URIorCURIE] = None
+    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
+    predicate: Union[str, PredicateType] = None
+    subject: Union[str, ApplicationInstanceConfigurationId] = None
+    object: Union[str, ApplicationInstanceId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, ApplicationInstanceConfigurationToApplicationInstanceAssociationId):
+            self.id = ApplicationInstanceConfigurationToApplicationInstanceAssociationId(self.id)
+
+        if self.predicate is None:
+            raise ValueError("predicate must be supplied")
+        if not isinstance(self.predicate, PredicateType):
+            self.predicate = PredicateType(self.predicate)
+
+        if self.subject is None:
+            raise ValueError("subject must be supplied")
+        if not isinstance(self.subject, ApplicationInstanceConfigurationId):
+            self.subject = ApplicationInstanceConfigurationId(self.subject)
+
+        if self.object is None:
+            raise ValueError("object must be supplied")
+        if not isinstance(self.object, ApplicationInstanceId):
+            self.object = ApplicationInstanceId(self.object)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class ApplicationUserLoginToApplicationUserAssociation(Association):
+    """
+    Any association between a application user login and a application user. There is no assumption of cardinality
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.ApplicationUserLoginToApplicationUserAssociation
+    class_class_curie: ClassVar[str] = "testlink:ApplicationUserLoginToApplicationUserAssociation"
+    class_name: ClassVar[str] = "application user login to application user association"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.ApplicationUserLoginToApplicationUserAssociation
+
+    id: Union[str, ApplicationUserLoginToApplicationUserAssociationId] = None
+    relation: Union[str, URIorCURIE] = None
+    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
+    predicate: Union[str, PredicateType] = None
+    subject: Union[str, ApplicationUserLoginId] = None
+    object: Union[str, ApplicationUserId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, ApplicationUserLoginToApplicationUserAssociationId):
+            self.id = ApplicationUserLoginToApplicationUserAssociationId(self.id)
+
+        if self.predicate is None:
+            raise ValueError("predicate must be supplied")
+        if not isinstance(self.predicate, PredicateType):
+            self.predicate = PredicateType(self.predicate)
+
+        if self.subject is None:
+            raise ValueError("subject must be supplied")
+        if not isinstance(self.subject, ApplicationUserLoginId):
+            self.subject = ApplicationUserLoginId(self.subject)
+
+        if self.object is None:
+            raise ValueError("object must be supplied")
+        if not isinstance(self.object, ApplicationUserId):
+            self.object = ApplicationUserId(self.object)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class EmailToApplicationUserAssociation(Association):
+    """
+    Any association between a email and a application user. There is no assumption of cardinality
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.EmailToApplicationUserAssociation
+    class_class_curie: ClassVar[str] = "testlink:EmailToApplicationUserAssociation"
+    class_name: ClassVar[str] = "email to application user association"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.EmailToApplicationUserAssociation
+
+    id: Union[str, EmailToApplicationUserAssociationId] = None
+    relation: Union[str, URIorCURIE] = None
+    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
+    predicate: Union[str, PredicateType] = None
+    subject: Union[str, EmailId] = None
+    object: Union[str, ApplicationUserId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, EmailToApplicationUserAssociationId):
+            self.id = EmailToApplicationUserAssociationId(self.id)
+
+        if self.predicate is None:
+            raise ValueError("predicate must be supplied")
+        if not isinstance(self.predicate, PredicateType):
+            self.predicate = PredicateType(self.predicate)
+
+        if self.subject is None:
+            raise ValueError("subject must be supplied")
+        if not isinstance(self.subject, EmailId):
+            self.subject = EmailId(self.subject)
+
+        if self.object is None:
+            raise ValueError("object must be supplied")
+        if not isinstance(self.object, ApplicationUserId):
+            self.object = ApplicationUserId(self.object)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class ComponentOwnerToApplicationUserAssociation(Association):
+    """
+    Any association between a component owner and a application user. There is no assumption of cardinality
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.ComponentOwnerToApplicationUserAssociation
+    class_class_curie: ClassVar[str] = "testlink:ComponentOwnerToApplicationUserAssociation"
+    class_name: ClassVar[str] = "component owner to application user association"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.ComponentOwnerToApplicationUserAssociation
+
+    id: Union[str, ComponentOwnerToApplicationUserAssociationId] = None
+    relation: Union[str, URIorCURIE] = None
+    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
+    predicate: Union[str, PredicateType] = None
+    subject: Union[str, ComponentOwnerId] = None
+    object: Union[str, ApplicationUserId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, ComponentOwnerToApplicationUserAssociationId):
+            self.id = ComponentOwnerToApplicationUserAssociationId(self.id)
+
+        if self.predicate is None:
+            raise ValueError("predicate must be supplied")
+        if not isinstance(self.predicate, PredicateType):
+            self.predicate = PredicateType(self.predicate)
+
+        if self.subject is None:
+            raise ValueError("subject must be supplied")
+        if not isinstance(self.subject, ComponentOwnerId):
+            self.subject = ComponentOwnerId(self.subject)
+
+        if self.object is None:
+            raise ValueError("object must be supplied")
+        if not isinstance(self.object, ApplicationUserId):
+            self.object = ApplicationUserId(self.object)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class ComponentOwnerToComponentAssociation(Association):
+    """
+    Any association between a component owner and a component. There is no assumption of cardinality
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.ComponentOwnerToComponentAssociation
+    class_class_curie: ClassVar[str] = "testlink:ComponentOwnerToComponentAssociation"
+    class_name: ClassVar[str] = "component owner to component association"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.ComponentOwnerToComponentAssociation
+
+    id: Union[str, ComponentOwnerToComponentAssociationId] = None
+    relation: Union[str, URIorCURIE] = None
+    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
+    predicate: Union[str, PredicateType] = None
+    subject: Union[str, ComponentOwnerId] = None
+    object: Union[str, ComponentId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, ComponentOwnerToComponentAssociationId):
+            self.id = ComponentOwnerToComponentAssociationId(self.id)
+
+        if self.predicate is None:
+            raise ValueError("predicate must be supplied")
+        if not isinstance(self.predicate, PredicateType):
+            self.predicate = PredicateType(self.predicate)
+
+        if self.subject is None:
+            raise ValueError("subject must be supplied")
+        if not isinstance(self.subject, ComponentOwnerId):
+            self.subject = ComponentOwnerId(self.subject)
+
+        if self.object is None:
+            raise ValueError("object must be supplied")
+        if not isinstance(self.object, ComponentId):
+            self.object = ComponentId(self.object)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class BuildToApplicationUserLoginAssociation(Association):
+    """
+    Any association between a build and a application user login. There is no assumption of cardinality
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.BuildToApplicationUserLoginAssociation
+    class_class_curie: ClassVar[str] = "testlink:BuildToApplicationUserLoginAssociation"
+    class_name: ClassVar[str] = "build to application user login association"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.BuildToApplicationUserLoginAssociation
+
+    id: Union[str, BuildToApplicationUserLoginAssociationId] = None
+    relation: Union[str, URIorCURIE] = None
+    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
+    predicate: Union[str, PredicateType] = None
+    subject: Union[str, BuildId] = None
+    object: Union[str, ApplicationUserLoginId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, BuildToApplicationUserLoginAssociationId):
+            self.id = BuildToApplicationUserLoginAssociationId(self.id)
+
+        if self.predicate is None:
+            raise ValueError("predicate must be supplied")
+        if not isinstance(self.predicate, PredicateType):
+            self.predicate = PredicateType(self.predicate)
+
+        if self.subject is None:
+            raise ValueError("subject must be supplied")
+        if not isinstance(self.subject, BuildId):
+            self.subject = BuildId(self.subject)
+
+        if self.object is None:
+            raise ValueError("object must be supplied")
+        if not isinstance(self.object, ApplicationUserLoginId):
+            self.object = ApplicationUserLoginId(self.object)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class BuildToVcsRootAssociation(Association):
+    """
+    Any association between a build and a vcs root. There is no assumption of cardinality
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.BuildToVcsRootAssociation
+    class_class_curie: ClassVar[str] = "testlink:BuildToVcsRootAssociation"
+    class_name: ClassVar[str] = "build to vcs root association"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.BuildToVcsRootAssociation
+
+    id: Union[str, BuildToVcsRootAssociationId] = None
+    relation: Union[str, URIorCURIE] = None
+    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
+    predicate: Union[str, PredicateType] = None
+    subject: Union[str, BuildId] = None
+    object: Union[str, VcsRootId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, BuildToVcsRootAssociationId):
+            self.id = BuildToVcsRootAssociationId(self.id)
+
+        if self.predicate is None:
+            raise ValueError("predicate must be supplied")
+        if not isinstance(self.predicate, PredicateType):
+            self.predicate = PredicateType(self.predicate)
+
+        if self.subject is None:
+            raise ValueError("subject must be supplied")
+        if not isinstance(self.subject, BuildId):
+            self.subject = BuildId(self.subject)
+
+        if self.object is None:
+            raise ValueError("object must be supplied")
+        if not isinstance(self.object, VcsRootId):
+            self.object = VcsRootId(self.object)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class BuildToProjectAssociation(Association):
+    """
+    Any association between a build and a project. There is no assumption of cardinality
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.BuildToProjectAssociation
+    class_class_curie: ClassVar[str] = "testlink:BuildToProjectAssociation"
+    class_name: ClassVar[str] = "build to project association"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.BuildToProjectAssociation
+
+    id: Union[str, BuildToProjectAssociationId] = None
+    relation: Union[str, URIorCURIE] = None
+    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
+    predicate: Union[str, PredicateType] = None
+    subject: Union[str, BuildId] = None
+    object: Union[str, ProjectId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, BuildToProjectAssociationId):
+            self.id = BuildToProjectAssociationId(self.id)
+
+        if self.predicate is None:
+            raise ValueError("predicate must be supplied")
+        if not isinstance(self.predicate, PredicateType):
+            self.predicate = PredicateType(self.predicate)
+
+        if self.subject is None:
+            raise ValueError("subject must be supplied")
+        if not isinstance(self.subject, BuildId):
+            self.subject = BuildId(self.subject)
+
+        if self.object is None:
+            raise ValueError("object must be supplied")
+        if not isinstance(self.object, ProjectId):
+            self.object = ProjectId(self.object)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class BuildToApplicationInstanceAssociation(Association):
+    """
+    Any association between a build and a application instance. There is no assumption of cardinality
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.BuildToApplicationInstanceAssociation
+    class_class_curie: ClassVar[str] = "testlink:BuildToApplicationInstanceAssociation"
+    class_name: ClassVar[str] = "build to application instance association"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.BuildToApplicationInstanceAssociation
+
+    id: Union[str, BuildToApplicationInstanceAssociationId] = None
+    relation: Union[str, URIorCURIE] = None
+    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
+    predicate: Union[str, PredicateType] = None
+    subject: Union[str, BuildId] = None
+    object: Union[str, ApplicationInstanceId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, BuildToApplicationInstanceAssociationId):
+            self.id = BuildToApplicationInstanceAssociationId(self.id)
+
+        if self.predicate is None:
+            raise ValueError("predicate must be supplied")
+        if not isinstance(self.predicate, PredicateType):
+            self.predicate = PredicateType(self.predicate)
+
+        if self.subject is None:
+            raise ValueError("subject must be supplied")
+        if not isinstance(self.subject, BuildId):
+            self.subject = BuildId(self.subject)
+
+        if self.object is None:
+            raise ValueError("object must be supplied")
+        if not isinstance(self.object, ApplicationInstanceId):
+            self.object = ApplicationInstanceId(self.object)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class BuildConfigurationToBuildAssociation(Association):
+    """
+    Any association between a build configuration and a build. There is no assumption of cardinality
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.BuildConfigurationToBuildAssociation
+    class_class_curie: ClassVar[str] = "testlink:BuildConfigurationToBuildAssociation"
+    class_name: ClassVar[str] = "build configuration to build association"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.BuildConfigurationToBuildAssociation
+
+    id: Union[str, BuildConfigurationToBuildAssociationId] = None
+    relation: Union[str, URIorCURIE] = None
+    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
+    predicate: Union[str, PredicateType] = None
+    subject: Union[str, BuildConfigurationId] = None
+    object: Union[str, BuildId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, BuildConfigurationToBuildAssociationId):
+            self.id = BuildConfigurationToBuildAssociationId(self.id)
+
+        if self.predicate is None:
+            raise ValueError("predicate must be supplied")
+        if not isinstance(self.predicate, PredicateType):
+            self.predicate = PredicateType(self.predicate)
+
+        if self.subject is None:
+            raise ValueError("subject must be supplied")
+        if not isinstance(self.subject, BuildConfigurationId):
+            self.subject = BuildConfigurationId(self.subject)
+
+        if self.object is None:
+            raise ValueError("object must be supplied")
+        if not isinstance(self.object, BuildId):
+            self.object = BuildId(self.object)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class DeploymentToBuildAssociation(Association):
+    """
+    Any association between a deployment and a build. There is no assumption of cardinality
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.DeploymentToBuildAssociation
+    class_class_curie: ClassVar[str] = "testlink:DeploymentToBuildAssociation"
+    class_name: ClassVar[str] = "deployment to build association"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.DeploymentToBuildAssociation
+
+    id: Union[str, DeploymentToBuildAssociationId] = None
+    relation: Union[str, URIorCURIE] = None
+    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
+    predicate: Union[str, PredicateType] = None
+    subject: Union[str, DeploymentId] = None
+    object: Union[str, BuildId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, DeploymentToBuildAssociationId):
+            self.id = DeploymentToBuildAssociationId(self.id)
+
+        if self.predicate is None:
+            raise ValueError("predicate must be supplied")
+        if not isinstance(self.predicate, PredicateType):
+            self.predicate = PredicateType(self.predicate)
+
+        if self.subject is None:
+            raise ValueError("subject must be supplied")
+        if not isinstance(self.subject, DeploymentId):
+            self.subject = DeploymentId(self.subject)
+
+        if self.object is None:
+            raise ValueError("object must be supplied")
+        if not isinstance(self.object, BuildId):
+            self.object = BuildId(self.object)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class DeploymentToApplicationUserLoginAssociation(Association):
+    """
+    Any association between a deployment and a application user login. There is no assumption of cardinality
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.DeploymentToApplicationUserLoginAssociation
+    class_class_curie: ClassVar[str] = "testlink:DeploymentToApplicationUserLoginAssociation"
+    class_name: ClassVar[str] = "deployment to application user login association"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.DeploymentToApplicationUserLoginAssociation
+
+    id: Union[str, DeploymentToApplicationUserLoginAssociationId] = None
+    relation: Union[str, URIorCURIE] = None
+    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
+    predicate: Union[str, PredicateType] = None
+    subject: Union[str, DeploymentId] = None
+    object: Union[str, ApplicationUserLoginId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, DeploymentToApplicationUserLoginAssociationId):
+            self.id = DeploymentToApplicationUserLoginAssociationId(self.id)
+
+        if self.predicate is None:
+            raise ValueError("predicate must be supplied")
+        if not isinstance(self.predicate, PredicateType):
+            self.predicate = PredicateType(self.predicate)
+
+        if self.subject is None:
+            raise ValueError("subject must be supplied")
+        if not isinstance(self.subject, DeploymentId):
+            self.subject = DeploymentId(self.subject)
+
+        if self.object is None:
+            raise ValueError("object must be supplied")
+        if not isinstance(self.object, ApplicationUserLoginId):
+            self.object = ApplicationUserLoginId(self.object)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class DeploymentConfigurationToDeploymentAssociation(Association):
+    """
+    Any association between a deployment configuration and a deployment. There is no assumption of cardinality
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.DeploymentConfigurationToDeploymentAssociation
+    class_class_curie: ClassVar[str] = "testlink:DeploymentConfigurationToDeploymentAssociation"
+    class_name: ClassVar[str] = "deployment configuration to deployment association"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.DeploymentConfigurationToDeploymentAssociation
+
+    id: Union[str, DeploymentConfigurationToDeploymentAssociationId] = None
+    relation: Union[str, URIorCURIE] = None
+    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
+    predicate: Union[str, PredicateType] = None
+    subject: Union[str, DeploymentConfigurationId] = None
+    object: Union[str, DeploymentId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, DeploymentConfigurationToDeploymentAssociationId):
+            self.id = DeploymentConfigurationToDeploymentAssociationId(self.id)
+
+        if self.predicate is None:
+            raise ValueError("predicate must be supplied")
+        if not isinstance(self.predicate, PredicateType):
+            self.predicate = PredicateType(self.predicate)
+
+        if self.subject is None:
+            raise ValueError("subject must be supplied")
+        if not isinstance(self.subject, DeploymentConfigurationId):
+            self.subject = DeploymentConfigurationId(self.subject)
+
+        if self.object is None:
+            raise ValueError("object must be supplied")
+        if not isinstance(self.object, DeploymentId):
+            self.object = DeploymentId(self.object)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class ServerGroupToServerTypeAssociation(Association):
+    """
+    Any association between a server group and a server type. There is no assumption of cardinality
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.ServerGroupToServerTypeAssociation
+    class_class_curie: ClassVar[str] = "testlink:ServerGroupToServerTypeAssociation"
+    class_name: ClassVar[str] = "server group to server type association"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.ServerGroupToServerTypeAssociation
+
+    id: Union[str, ServerGroupToServerTypeAssociationId] = None
+    relation: Union[str, URIorCURIE] = None
+    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
+    predicate: Union[str, PredicateType] = None
+    subject: Union[str, ServerGroupId] = None
+    object: Union[str, ServerTypeId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, ServerGroupToServerTypeAssociationId):
+            self.id = ServerGroupToServerTypeAssociationId(self.id)
+
+        if self.predicate is None:
+            raise ValueError("predicate must be supplied")
+        if not isinstance(self.predicate, PredicateType):
+            self.predicate = PredicateType(self.predicate)
+
+        if self.subject is None:
+            raise ValueError("subject must be supplied")
+        if not isinstance(self.subject, ServerGroupId):
+            self.subject = ServerGroupId(self.subject)
+
+        if self.object is None:
+            raise ValueError("object must be supplied")
+        if not isinstance(self.object, ServerTypeId):
+            self.object = ServerTypeId(self.object)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class ServerHubToServerAssociation(Association):
+    """
+    Any association between a server hub and a server. There is no assumption of cardinality
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.ServerHubToServerAssociation
+    class_class_curie: ClassVar[str] = "testlink:ServerHubToServerAssociation"
+    class_name: ClassVar[str] = "server hub to server association"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.ServerHubToServerAssociation
+
+    id: Union[str, ServerHubToServerAssociationId] = None
+    relation: Union[str, URIorCURIE] = None
+    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
+    predicate: Union[str, PredicateType] = None
+    subject: Union[str, ServerHubId] = None
+    object: Union[str, ServerId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, ServerHubToServerAssociationId):
+            self.id = ServerHubToServerAssociationId(self.id)
+
+        if self.predicate is None:
+            raise ValueError("predicate must be supplied")
+        if not isinstance(self.predicate, PredicateType):
+            self.predicate = PredicateType(self.predicate)
+
+        if self.subject is None:
+            raise ValueError("subject must be supplied")
+        if not isinstance(self.subject, ServerHubId):
+            self.subject = ServerHubId(self.subject)
+
+        if self.object is None:
+            raise ValueError("object must be supplied")
+        if not isinstance(self.object, ServerId):
+            self.object = ServerId(self.object)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class ServerHubToServerGroupHubAssociation(Association):
+    """
+    Any association between a server hub and a server group hub. There is no assumption of cardinality
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.ServerHubToServerGroupHubAssociation
+    class_class_curie: ClassVar[str] = "testlink:ServerHubToServerGroupHubAssociation"
+    class_name: ClassVar[str] = "server hub to server group hub association"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.ServerHubToServerGroupHubAssociation
+
+    id: Union[str, ServerHubToServerGroupHubAssociationId] = None
+    relation: Union[str, URIorCURIE] = None
+    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
+    predicate: Union[str, PredicateType] = None
+    subject: Union[str, ServerHubId] = None
+    object: Union[str, ServerGroupHubId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, ServerHubToServerGroupHubAssociationId):
+            self.id = ServerHubToServerGroupHubAssociationId(self.id)
+
+        if self.predicate is None:
+            raise ValueError("predicate must be supplied")
+        if not isinstance(self.predicate, PredicateType):
+            self.predicate = PredicateType(self.predicate)
+
+        if self.subject is None:
+            raise ValueError("subject must be supplied")
+        if not isinstance(self.subject, ServerHubId):
+            self.subject = ServerHubId(self.subject)
+
+        if self.object is None:
+            raise ValueError("object must be supplied")
+        if not isinstance(self.object, ServerGroupHubId):
+            self.object = ServerGroupHubId(self.object)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class ServerGroupHubToDomainEnvironmentAssociation(Association):
+    """
+    Any association between a server group hub and a domain environment. There is no assumption of cardinality
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.ServerGroupHubToDomainEnvironmentAssociation
+    class_class_curie: ClassVar[str] = "testlink:ServerGroupHubToDomainEnvironmentAssociation"
+    class_name: ClassVar[str] = "server group hub to domain environment association"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.ServerGroupHubToDomainEnvironmentAssociation
+
+    id: Union[str, ServerGroupHubToDomainEnvironmentAssociationId] = None
+    relation: Union[str, URIorCURIE] = None
+    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
+    predicate: Union[str, PredicateType] = None
+    subject: Union[str, ServerGroupHubId] = None
+    object: Union[str, DomainEnvironmentId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, ServerGroupHubToDomainEnvironmentAssociationId):
+            self.id = ServerGroupHubToDomainEnvironmentAssociationId(self.id)
+
+        if self.predicate is None:
+            raise ValueError("predicate must be supplied")
+        if not isinstance(self.predicate, PredicateType):
+            self.predicate = PredicateType(self.predicate)
+
+        if self.subject is None:
+            raise ValueError("subject must be supplied")
+        if not isinstance(self.subject, ServerGroupHubId):
+            self.subject = ServerGroupHubId(self.subject)
+
+        if self.object is None:
+            raise ValueError("object must be supplied")
+        if not isinstance(self.object, DomainEnvironmentId):
+            self.object = DomainEnvironmentId(self.object)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class ServerGroupHubToServerGroupAssociation(Association):
+    """
+    Any association between a server group hub and a server group. There is no assumption of cardinality
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = TESTLINK.ServerGroupHubToServerGroupAssociation
+    class_class_curie: ClassVar[str] = "testlink:ServerGroupHubToServerGroupAssociation"
+    class_name: ClassVar[str] = "server group hub to server group association"
+    class_model_uri: ClassVar[URIRef] = TESTLINK.ServerGroupHubToServerGroupAssociation
+
+    id: Union[str, ServerGroupHubToServerGroupAssociationId] = None
+    relation: Union[str, URIorCURIE] = None
+    category: Union[Union[str, AssociationId], List[Union[str, AssociationId]]] = None
+    predicate: Union[str, PredicateType] = None
+    subject: Union[str, ServerGroupHubId] = None
+    object: Union[str, ServerGroupId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.id is None:
+            raise ValueError("id must be supplied")
+        if not isinstance(self.id, ServerGroupHubToServerGroupAssociationId):
+            self.id = ServerGroupHubToServerGroupAssociationId(self.id)
+
+        if self.predicate is None:
+            raise ValueError("predicate must be supplied")
+        if not isinstance(self.predicate, PredicateType):
+            self.predicate = PredicateType(self.predicate)
+
+        if self.subject is None:
+            raise ValueError("subject must be supplied")
+        if not isinstance(self.subject, ServerGroupHubId):
+            self.subject = ServerGroupHubId(self.subject)
+
+        if self.object is None:
+            raise ValueError("object must be supplied")
+        if not isinstance(self.object, ServerGroupId):
+            self.object = ServerGroupId(self.object)
 
         super().__post_init__(**kwargs)
 
@@ -7816,32 +4175,20 @@ slots.category = Slot(uri=TESTLINK.category, name="category", curie=TESTLINK.cur
 slots.name = Slot(uri=RDFS.label, name="name", curie=RDFS.curie('label'),
                    model_uri=TESTLINK.name, domain=None, range=Optional[Union[str, LabelType]])
 
+slots.first_name = Slot(uri=TESTLINK.first_name, name="first name", curie=TESTLINK.curie('first_name'),
+                   model_uri=TESTLINK.first_name, domain=NamedThing, range=Optional[Union[str, LabelType]])
+
+slots.last_name = Slot(uri=TESTLINK.last_name, name="last name", curie=TESTLINK.curie('last_name'),
+                   model_uri=TESTLINK.last_name, domain=NamedThing, range=Optional[Union[str, LabelType]])
+
 slots.source = Slot(uri=TESTLINK.source, name="source", curie=TESTLINK.curie('source'),
                    model_uri=TESTLINK.source, domain=None, range=Optional[Union[str, LabelType]])
-
-slots.filler = Slot(uri=TESTLINK.filler, name="filler", curie=TESTLINK.curie('filler'),
-                   model_uri=TESTLINK.filler, domain=NamedThing, range=Optional[Union[str, NamedThingId]])
-
-slots.symbol = Slot(uri=TESTLINK.symbol, name="symbol", curie=TESTLINK.curie('symbol'),
-                   model_uri=TESTLINK.symbol, domain=NamedThing, range=Optional[str])
-
-slots.synonym = Slot(uri=TESTLINK.synonym, name="synonym", curie=TESTLINK.curie('synonym'),
-                   model_uri=TESTLINK.synonym, domain=NamedThing, range=Optional[Union[Union[str, LabelType], List[Union[str, LabelType]]]])
-
-slots.has_topic = Slot(uri=TESTLINK.has_topic, name="has topic", curie=TESTLINK.curie('has_topic'),
-                   model_uri=TESTLINK.has_topic, domain=NamedThing, range=Optional[Union[str, OntologyClassId]])
 
 slots.xref = Slot(uri=TESTLINK.xref, name="xref", curie=TESTLINK.curie('xref'),
                    model_uri=TESTLINK.xref, domain=NamedThing, range=Optional[Union[Union[str, IriType], List[Union[str, IriType]]]])
 
-slots.full_name = Slot(uri=TESTLINK.full_name, name="full name", curie=TESTLINK.curie('full_name'),
-                   model_uri=TESTLINK.full_name, domain=NamedThing, range=Optional[Union[str, LabelType]])
-
 slots.description = Slot(uri=DCT.description, name="description", curie=DCT.curie('description'),
                    model_uri=TESTLINK.description, domain=None, range=Optional[Union[str, NarrativeText]])
-
-slots.systematic_synonym = Slot(uri=SIO['000122'], name="systematic synonym", curie=SIO.curie('000122'),
-                   model_uri=TESTLINK.systematic_synonym, domain=NamedThing, range=Optional[Union[Union[str, LabelType], List[Union[str, LabelType]]]])
 
 slots.affiliation = Slot(uri=TESTLINK.affiliation, name="affiliation", curie=TESTLINK.curie('affiliation'),
                    model_uri=TESTLINK.affiliation, domain=Agent, range=Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]])
@@ -7849,50 +4196,26 @@ slots.affiliation = Slot(uri=TESTLINK.affiliation, name="affiliation", curie=TES
 slots.address = Slot(uri=TESTLINK.address, name="address", curie=TESTLINK.curie('address'),
                    model_uri=TESTLINK.address, domain=NamedThing, range=Optional[str])
 
-slots.latitude = Slot(uri=TESTLINK.latitude, name="latitude", curie=TESTLINK.curie('latitude'),
-                   model_uri=TESTLINK.latitude, domain=NamedThing, range=Optional[float])
-
-slots.longitude = Slot(uri=TESTLINK.longitude, name="longitude", curie=TESTLINK.curie('longitude'),
-                   model_uri=TESTLINK.longitude, domain=NamedThing, range=Optional[float])
-
 slots.timepoint = Slot(uri=TESTLINK.timepoint, name="timepoint", curie=TESTLINK.curie('timepoint'),
                    model_uri=TESTLINK.timepoint, domain=NamedThing, range=Optional[Union[str, TimeType]])
 
 slots.creation_date = Slot(uri=TESTLINK.creation_date, name="creation date", curie=TESTLINK.curie('creation_date'),
                    model_uri=TESTLINK.creation_date, domain=NamedThing, range=Optional[Union[str, XSDDate]])
 
+slots.created = Slot(uri=TESTLINK.created, name="created", curie=TESTLINK.curie('created'),
+                   model_uri=TESTLINK.created, domain=NamedThing, range=Optional[Union[str, XSDDate]])
+
+slots.release_date = Slot(uri=TESTLINK.release_date, name="release date", curie=TESTLINK.curie('release_date'),
+                   model_uri=TESTLINK.release_date, domain=NamedThing, range=Optional[Union[str, XSDDate]])
+
 slots.update_date = Slot(uri=TESTLINK.update_date, name="update date", curie=TESTLINK.curie('update_date'),
                    model_uri=TESTLINK.update_date, domain=NamedThing, range=Optional[Union[str, XSDDate]])
 
-slots.aggregate_statistic = Slot(uri=TESTLINK.aggregate_statistic, name="aggregate statistic", curie=TESTLINK.curie('aggregate_statistic'),
-                   model_uri=TESTLINK.aggregate_statistic, domain=NamedThing, range=Optional[str])
-
-slots.has_count = Slot(uri=TESTLINK.has_count, name="has count", curie=TESTLINK.curie('has_count'),
-                   model_uri=TESTLINK.has_count, domain=NamedThing, range=Optional[int])
-
-slots.has_total = Slot(uri=TESTLINK.has_total, name="has total", curie=TESTLINK.curie('has_total'),
-                   model_uri=TESTLINK.has_total, domain=NamedThing, range=Optional[int])
-
-slots.has_quotient = Slot(uri=TESTLINK.has_quotient, name="has quotient", curie=TESTLINK.curie('has_quotient'),
-                   model_uri=TESTLINK.has_quotient, domain=NamedThing, range=Optional[float])
-
-slots.has_percentage = Slot(uri=TESTLINK.has_percentage, name="has percentage", curie=TESTLINK.curie('has_percentage'),
-                   model_uri=TESTLINK.has_percentage, domain=NamedThing, range=Optional[float])
+slots.updated = Slot(uri=TESTLINK.updated, name="updated", curie=TESTLINK.curie('updated'),
+                   model_uri=TESTLINK.updated, domain=NamedThing, range=Optional[Union[str, XSDDate]])
 
 slots.has_dataset = Slot(uri=DCT.source, name="has dataset", curie=DCT.curie('source'),
                    model_uri=TESTLINK.has_dataset, domain=DatasetVersion, range=Optional[Union[str, DatasetId]])
-
-slots.source_web_page = Slot(uri=TESTLINK.source_web_page, name="source web page", curie=TESTLINK.curie('source_web_page'),
-                   model_uri=TESTLINK.source_web_page, domain=None, range=Optional[str])
-
-slots.source_logo = Slot(uri=SCHEMA.logo, name="source logo", curie=SCHEMA.curie('logo'),
-                   model_uri=TESTLINK.source_logo, domain=None, range=Optional[str])
-
-slots.retrieved_on = Slot(uri=TESTLINK.retrieved_on, name="retrieved on", curie=TESTLINK.curie('retrieved_on'),
-                   model_uri=TESTLINK.retrieved_on, domain=Dataset, range=Optional[Union[str, XSDDate]])
-
-slots.version_of = Slot(uri=TESTLINK.version_of, name="version of", curie=TESTLINK.curie('version_of'),
-                   model_uri=TESTLINK.version_of, domain=DatasetVersion, range=Optional[Union[str, DatasetId]])
 
 slots.version = Slot(uri=TESTLINK.version, name="version", curie=TESTLINK.curie('version'),
                    model_uri=TESTLINK.version, domain=Dataset, range=Optional[str])
@@ -7905,9 +4228,6 @@ slots.rights = Slot(uri=TESTLINK.rights, name="rights", curie=TESTLINK.curie('ri
 
 slots.format = Slot(uri=TESTLINK.format, name="format", curie=TESTLINK.curie('format'),
                    model_uri=TESTLINK.format, domain=InformationContentEntity, range=Optional[str])
-
-slots.created_with = Slot(uri=TESTLINK.created_with, name="created_with", curie=TESTLINK.curie('created_with'),
-                   model_uri=TESTLINK.created_with, domain=Dataset, range=Optional[str])
 
 slots.download_url = Slot(uri=DCAT.downloadURL, name="download url", curie=DCAT.curie('downloadURL'),
                    model_uri=TESTLINK.download_url, domain=None, range=Optional[str])
@@ -7924,23 +4244,8 @@ slots.ingest_date = Slot(uri=PAV.version, name="ingest date", curie=PAV.curie('v
 slots.has_distribution = Slot(uri=DCT.distribution, name="has distribution", curie=DCT.curie('distribution'),
                    model_uri=TESTLINK.has_distribution, domain=DatasetVersion, range=Optional[Union[str, DatasetDistributionId]])
 
-slots.published_in = Slot(uri=TESTLINK.published_in, name="published in", curie=TESTLINK.curie('published_in'),
-                   model_uri=TESTLINK.published_in, domain=Publication, range=Optional[Union[str, URIorCURIE]])
-
-slots.iso_abbreviation = Slot(uri=TESTLINK.iso_abbreviation, name="iso abbreviation", curie=TESTLINK.curie('iso_abbreviation'),
-                   model_uri=TESTLINK.iso_abbreviation, domain=Publication, range=Optional[str])
-
 slots.authors = Slot(uri=TESTLINK.authors, name="authors", curie=TESTLINK.curie('authors'),
                    model_uri=TESTLINK.authors, domain=Publication, range=Optional[Union[str, List[str]]])
-
-slots.volume = Slot(uri=TESTLINK.volume, name="volume", curie=TESTLINK.curie('volume'),
-                   model_uri=TESTLINK.volume, domain=Publication, range=Optional[str])
-
-slots.chapter = Slot(uri=TESTLINK.chapter, name="chapter", curie=TESTLINK.curie('chapter'),
-                   model_uri=TESTLINK.chapter, domain=BookChapter, range=Optional[str])
-
-slots.issue = Slot(uri=TESTLINK.issue, name="issue", curie=TESTLINK.curie('issue'),
-                   model_uri=TESTLINK.issue, domain=Publication, range=Optional[str])
 
 slots.pages = Slot(uri=TESTLINK.pages, name="pages", curie=TESTLINK.curie('pages'),
                    model_uri=TESTLINK.pages, domain=Publication, range=Optional[Union[str, List[str]]])
@@ -7951,446 +4256,29 @@ slots.summary = Slot(uri=TESTLINK.summary, name="summary", curie=TESTLINK.curie(
 slots.keywords = Slot(uri=TESTLINK.keywords, name="keywords", curie=TESTLINK.curie('keywords'),
                    model_uri=TESTLINK.keywords, domain=Publication, range=Optional[Union[str, List[str]]])
 
-slots.sumo_terms = Slot(uri=TESTLINK.sumo_terms, name="sumo terms", curie=TESTLINK.curie('sumo_terms'),
-                   model_uri=TESTLINK.sumo_terms, domain=Publication, range=Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]])
+slots.lcsh_terms = Slot(uri=TESTLINK.lcsh_terms, name="lcsh terms", curie=TESTLINK.curie('lcsh_terms'),
+                   model_uri=TESTLINK.lcsh_terms, domain=Publication, range=Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]])
 
 slots.has_computational_sequence = Slot(uri=TESTLINK.has_computational_sequence, name="has computational sequence", curie=TESTLINK.curie('has_computational_sequence'),
                    model_uri=TESTLINK.has_computational_sequence, domain=NamedThing, range=Optional[Union[str, ComputationalSequence]])
 
-slots.has_componentservice_or_servicetype = Slot(uri=TESTLINK.has_componentservice_or_servicetype, name="has componentservice or servicetype", curie=TESTLINK.curie('has_componentservice_or_servicetype'),
-                   model_uri=TESTLINK.has_componentservice_or_servicetype, domain=NamedThing, range=Optional[Union[Union[dict, "Componentservice"], List[Union[dict, "Componentservice"]]]])
-
-slots.has_componentservice = Slot(uri=TESTLINK.has_componentservice, name="has componentservice", curie=TESTLINK.curie('has_componentservice'),
-                   model_uri=TESTLINK.has_componentservice, domain=NamedThing, range=Optional[Union[Union[dict, "Componentservice"], List[Union[dict, "Componentservice"]]]])
-
 slots.has_homogeneity = Slot(uri=TESTLINK.has_homogeneity, name="has homogeneity", curie=TESTLINK.curie('has_homogeneity'),
                    model_uri=TESTLINK.has_homogeneity, domain=WorkloadEntity, range=Optional[Union[dict, "Homogeneity"]])
-
-slots.has_control_plane = Slot(uri=TESTLINK.has_control_plane, name="has control plane", curie=TESTLINK.curie('has_control_plane'),
-                   model_uri=TESTLINK.has_control_plane, domain=NamedThing, range=Optional[Union[str, List[str]]])
-
-slots.is_controller = Slot(uri=TESTLINK.is_controller, name="is controller", curie=TESTLINK.curie('is_controller'),
-                   model_uri=TESTLINK.is_controller, domain=Controller, range=Optional[Union[bool, Bool]])
 
 slots.has_control_actor = Slot(uri=TESTLINK.has_control_actor, name="has control actor", curie=TESTLINK.curie('has_control_actor'),
                    model_uri=TESTLINK.has_control_actor, domain=NamedThing, range=Optional[Union[Union[str, ControlActorId], List[Union[str, ControlActorId]]]])
 
-slots.has_administrative_operation = Slot(uri=TESTLINK.has_administrative_operation, name="has administrative operation", curie=TESTLINK.curie('has_administrative_operation'),
-                   model_uri=TESTLINK.has_administrative_operation, domain=NamedThing, range=Optional[Union[Union[str, AdministrativeOperationId], List[Union[str, AdministrativeOperationId]]]])
-
-slots.has_device = Slot(uri=TESTLINK.has_device, name="has device", curie=TESTLINK.curie('has_device'),
-                   model_uri=TESTLINK.has_device, domain=NamedThing, range=Optional[Union[Union[str, DeviceId], List[Union[str, DeviceId]]]])
-
-slots.has_procedure = Slot(uri=TESTLINK.has_procedure, name="has procedure", curie=TESTLINK.curie('has_procedure'),
-                   model_uri=TESTLINK.has_procedure, domain=NamedThing, range=Optional[Union[Union[str, ProcedureId], List[Union[str, ProcedureId]]]])
-
-slots.has_gateway = Slot(uri=TESTLINK.has_gateway, name="has gateway", curie=TESTLINK.curie('has_gateway'),
-                   model_uri=TESTLINK.has_gateway, domain=None, range=Optional[Union[str, SystemicEntityId]])
-
-slots.has_stressor = Slot(uri=TESTLINK.has_stressor, name="has stressor", curie=TESTLINK.curie('has_stressor'),
-                   model_uri=TESTLINK.has_stressor, domain=None, range=Optional[str])
-
-slots.has_route = Slot(uri=TESTLINK.has_route, name="has route", curie=TESTLINK.curie('has_route'),
-                   model_uri=TESTLINK.has_route, domain=None, range=Optional[str])
-
-slots.has_population_context = Slot(uri=TESTLINK.has_population_context, name="has population context", curie=TESTLINK.curie('has_population_context'),
-                   model_uri=TESTLINK.has_population_context, domain=Association, range=Optional[Union[str, PopulationOfIndividualSystemsId]])
-
-slots.has_temporal_context = Slot(uri=TESTLINK.has_temporal_context, name="has temporal context", curie=TESTLINK.curie('has_temporal_context'),
-                   model_uri=TESTLINK.has_temporal_context, domain=Association, range=Optional[Union[str, TimeType]])
-
 slots.related_to = Slot(uri=TESTLINK.related_to, name="related to", curie=TESTLINK.curie('related_to'),
                    model_uri=TESTLINK.related_to, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
-slots.superclass_of = Slot(uri=TESTLINK.superclass_of, name="superclass of", curie=TESTLINK.curie('superclass_of'),
-                   model_uri=TESTLINK.superclass_of, domain=OntologyClass, range=Optional[Union[Union[str, OntologyClassId], List[Union[str, OntologyClassId]]]])
-
-slots.subclass_of = Slot(uri=RDFS.subClassOf, name="subclass of", curie=RDFS.curie('subClassOf'),
-                   model_uri=TESTLINK.subclass_of, domain=OntologyClass, range=Optional[Union[Union[str, OntologyClassId], List[Union[str, OntologyClassId]]]])
-
-slots.same_as = Slot(uri=TESTLINK.same_as, name="same as", curie=TESTLINK.curie('same_as'),
-                   model_uri=TESTLINK.same_as, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.close_match = Slot(uri=TESTLINK.close_match, name="close match", curie=TESTLINK.curie('close_match'),
-                   model_uri=TESTLINK.close_match, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.exact_match = Slot(uri=TESTLINK.exact_match, name="exact match", curie=TESTLINK.curie('exact_match'),
-                   model_uri=TESTLINK.exact_match, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.broad_match = Slot(uri=TESTLINK.broad_match, name="broad match", curie=TESTLINK.curie('broad_match'),
-                   model_uri=TESTLINK.broad_match, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.narrow_match = Slot(uri=TESTLINK.narrow_match, name="narrow match", curie=TESTLINK.curie('narrow_match'),
-                   model_uri=TESTLINK.narrow_match, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
 slots.contributor = Slot(uri=TESTLINK.contributor, name="contributor", curie=TESTLINK.curie('contributor'),
                    model_uri=TESTLINK.contributor, domain=InformationContentEntity, range=Optional[Union[Union[str, AgentId], List[Union[str, AgentId]]]])
-
-slots.provider = Slot(uri=TESTLINK.provider, name="provider", curie=TESTLINK.curie('provider'),
-                   model_uri=TESTLINK.provider, domain=InformationContentEntity, range=Optional[Union[Union[str, AgentId], List[Union[str, AgentId]]]])
-
-slots.publisher = Slot(uri=TESTLINK.publisher, name="publisher", curie=TESTLINK.curie('publisher'),
-                   model_uri=TESTLINK.publisher, domain=Publication, range=Optional[Union[Union[str, AgentId], List[Union[str, AgentId]]]])
-
-slots.editor = Slot(uri=TESTLINK.editor, name="editor", curie=TESTLINK.curie('editor'),
-                   model_uri=TESTLINK.editor, domain=Publication, range=Optional[Union[Union[str, AgentId], List[Union[str, AgentId]]]])
 
 slots.author = Slot(uri=TESTLINK.author, name="author", curie=TESTLINK.curie('author'),
                    model_uri=TESTLINK.author, domain=Publication, range=Optional[Union[Union[str, AgentId], List[Union[str, AgentId]]]])
 
 slots.interacts_with = Slot(uri=TESTLINK.interacts_with, name="interacts with", curie=TESTLINK.curie('interacts_with'),
                    model_uri=TESTLINK.interacts_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.cyber_interaction_with = Slot(uri=TESTLINK.cyber_interaction_with, name="cyber interaction with", curie=TESTLINK.curie('cyber_interaction_with'),
-                   model_uri=TESTLINK.cyber_interaction_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.operationally_interacts_with = Slot(uri=TESTLINK.operationally_interacts_with, name="operationally interacts with", curie=TESTLINK.curie('operationally_interacts_with'),
-                   model_uri=TESTLINK.operationally_interacts_with, domain=OperationalEntity, range=Optional[Union[Union[str, OperationalEntityId], List[Union[str, OperationalEntityId]]]])
-
-slots.service_interacts_with = Slot(uri=TESTLINK.service_interacts_with, name="service interacts with", curie=TESTLINK.curie('service_interacts_with'),
-                   model_uri=TESTLINK.service_interacts_with, domain=Componentservice, range=Optional[Union[Union[dict, "Componentservice"], List[Union[dict, "Componentservice"]]]])
-
-slots.affects = Slot(uri=TESTLINK.affects, name="affects", curie=TESTLINK.curie('affects'),
-                   model_uri=TESTLINK.affects, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.affected_by = Slot(uri=TESTLINK.affected_by, name="affected by", curie=TESTLINK.curie('affected_by'),
-                   model_uri=TESTLINK.affected_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.control_role_mixin = Slot(uri=TESTLINK.control_role_mixin, name="control role mixin", curie=TESTLINK.curie('control_role_mixin'),
-                   model_uri=TESTLINK.control_role_mixin, domain=None, range=Optional[str])
-
-slots.computational_role_mixin = Slot(uri=TESTLINK.computational_role_mixin, name="computational role mixin", curie=TESTLINK.curie('computational_role_mixin'),
-                   model_uri=TESTLINK.computational_role_mixin, domain=None, range=Optional[str])
-
-slots.affects_abundance_of = Slot(uri=TESTLINK.affects_abundance_of, name="affects abundance of", curie=TESTLINK.curie('affects_abundance_of'),
-                   model_uri=TESTLINK.affects_abundance_of, domain=OperationalEntity, range=Optional[Union[Union[str, OperationalEntityId], List[Union[str, OperationalEntityId]]]])
-
-slots.increases_abundance_of = Slot(uri=TESTLINK.increases_abundance_of, name="increases abundance of", curie=TESTLINK.curie('increases_abundance_of'),
-                   model_uri=TESTLINK.increases_abundance_of, domain=OperationalEntity, range=Optional[Union[Union[str, OperationalEntityId], List[Union[str, OperationalEntityId]]]])
-
-slots.decreases_abundance_of = Slot(uri=TESTLINK.decreases_abundance_of, name="decreases abundance of", curie=TESTLINK.curie('decreases_abundance_of'),
-                   model_uri=TESTLINK.decreases_abundance_of, domain=OperationalEntity, range=Optional[Union[Union[str, OperationalEntityId], List[Union[str, OperationalEntityId]]]])
-
-slots.affects_activity_of = Slot(uri=TESTLINK.affects_activity_of, name="affects activity of", curie=TESTLINK.curie('affects_activity_of'),
-                   model_uri=TESTLINK.affects_activity_of, domain=OperationalEntity, range=Optional[Union[Union[str, OperationalEntityId], List[Union[str, OperationalEntityId]]]])
-
-slots.increases_activity_of = Slot(uri=TESTLINK.increases_activity_of, name="increases activity of", curie=TESTLINK.curie('increases_activity_of'),
-                   model_uri=TESTLINK.increases_activity_of, domain=OperationalEntity, range=Optional[Union[Union[str, OperationalEntityId], List[Union[str, OperationalEntityId]]]])
-
-slots.decreases_activity_of = Slot(uri=TESTLINK.decreases_activity_of, name="decreases activity of", curie=TESTLINK.curie('decreases_activity_of'),
-                   model_uri=TESTLINK.decreases_activity_of, domain=OperationalEntity, range=Optional[Union[Union[str, OperationalEntityId], List[Union[str, OperationalEntityId]]]])
-
-slots.affects_availability_of = Slot(uri=TESTLINK.affects_availability_of, name="affects availability of", curie=TESTLINK.curie('affects_availability_of'),
-                   model_uri=TESTLINK.affects_availability_of, domain=OperationalEntity, range=Optional[Union[Union[str, WorkloadEntityId], List[Union[str, WorkloadEntityId]]]])
-
-slots.increases_availability_of = Slot(uri=TESTLINK.increases_availability_of, name="increases availability of", curie=TESTLINK.curie('increases_availability_of'),
-                   model_uri=TESTLINK.increases_availability_of, domain=OperationalEntity, range=Optional[Union[Union[str, WorkloadEntityId], List[Union[str, WorkloadEntityId]]]])
-
-slots.decreases_availability_of = Slot(uri=TESTLINK.decreases_availability_of, name="decreases availability of", curie=TESTLINK.curie('decreases_availability_of'),
-                   model_uri=TESTLINK.decreases_availability_of, domain=OperationalEntity, range=Optional[Union[Union[str, WorkloadEntityId], List[Union[str, WorkloadEntityId]]]])
-
-slots.affects_assignment_of = Slot(uri=TESTLINK.affects_assignment_of, name="affects assignment of", curie=TESTLINK.curie('affects_assignment_of'),
-                   model_uri=TESTLINK.affects_assignment_of, domain=OperationalEntity, range=Optional[Union[Union[str, OperationalEntityId], List[Union[str, OperationalEntityId]]]])
-
-slots.increases_assignment_of = Slot(uri=TESTLINK.increases_assignment_of, name="increases assignment of", curie=TESTLINK.curie('increases_assignment_of'),
-                   model_uri=TESTLINK.increases_assignment_of, domain=OperationalEntity, range=Optional[Union[Union[str, OperationalEntityId], List[Union[str, OperationalEntityId]]]])
-
-slots.decreases_assignment_of = Slot(uri=TESTLINK.decreases_assignment_of, name="decreases assignment of", curie=TESTLINK.curie('decreases_assignment_of'),
-                   model_uri=TESTLINK.decreases_assignment_of, domain=OperationalEntity, range=Optional[Union[Union[str, OperationalEntityId], List[Union[str, OperationalEntityId]]]])
-
-slots.affects_localization_of = Slot(uri=TESTLINK.affects_localization_of, name="affects localization of", curie=TESTLINK.curie('affects_localization_of'),
-                   model_uri=TESTLINK.affects_localization_of, domain=OperationalEntity, range=Optional[Union[Union[str, OperationalEntityId], List[Union[str, OperationalEntityId]]]])
-
-slots.increases_localization_of = Slot(uri=TESTLINK.increases_localization_of, name="increases localization of", curie=TESTLINK.curie('increases_localization_of'),
-                   model_uri=TESTLINK.increases_localization_of, domain=OperationalEntity, range=Optional[Union[Union[str, OperationalEntityId], List[Union[str, OperationalEntityId]]]])
-
-slots.decreases_localization_of = Slot(uri=TESTLINK.decreases_localization_of, name="decreases localization of", curie=TESTLINK.curie('decreases_localization_of'),
-                   model_uri=TESTLINK.decreases_localization_of, domain=OperationalEntity, range=Optional[Union[Union[str, OperationalEntityId], List[Union[str, OperationalEntityId]]]])
-
-slots.affects_supervision_of = Slot(uri=TESTLINK.affects_supervision_of, name="affects supervision of", curie=TESTLINK.curie('affects_supervision_of'),
-                   model_uri=TESTLINK.affects_supervision_of, domain=OperationalEntity, range=Optional[Union[Union[str, OperationalEntityId], List[Union[str, OperationalEntityId]]]])
-
-slots.increases_supervision_of = Slot(uri=TESTLINK.increases_supervision_of, name="increases supervision of", curie=TESTLINK.curie('increases_supervision_of'),
-                   model_uri=TESTLINK.increases_supervision_of, domain=OperationalEntity, range=Optional[Union[Union[str, OperationalEntityId], List[Union[str, OperationalEntityId]]]])
-
-slots.decreases_supervision_of = Slot(uri=TESTLINK.decreases_supervision_of, name="decreases supervision of", curie=TESTLINK.curie('decreases_supervision_of'),
-                   model_uri=TESTLINK.decreases_supervision_of, domain=OperationalEntity, range=Optional[Union[Union[str, OperationalEntityId], List[Union[str, OperationalEntityId]]]])
-
-slots.affects_operational_modification_of = Slot(uri=TESTLINK.affects_operational_modification_of, name="affects operational modification of", curie=TESTLINK.curie('affects_operational_modification_of'),
-                   model_uri=TESTLINK.affects_operational_modification_of, domain=OperationalEntity, range=Optional[Union[Union[str, OperationalEntityId], List[Union[str, OperationalEntityId]]]])
-
-slots.increases_operational_modification_of = Slot(uri=TESTLINK.increases_operational_modification_of, name="increases operational modification of", curie=TESTLINK.curie('increases_operational_modification_of'),
-                   model_uri=TESTLINK.increases_operational_modification_of, domain=OperationalEntity, range=Optional[Union[Union[str, OperationalEntityId], List[Union[str, OperationalEntityId]]]])
-
-slots.decreases_operational_modification_of = Slot(uri=TESTLINK.decreases_operational_modification_of, name="decreases operational modification of", curie=TESTLINK.curie('decreases_operational_modification_of'),
-                   model_uri=TESTLINK.decreases_operational_modification_of, domain=OperationalEntity, range=Optional[Union[Union[str, OperationalEntityId], List[Union[str, OperationalEntityId]]]])
-
-slots.affects_instantiation_of = Slot(uri=TESTLINK.affects_instantiation_of, name="affects instantiation of", curie=TESTLINK.curie('affects_instantiation_of'),
-                   model_uri=TESTLINK.affects_instantiation_of, domain=OperationalEntity, range=Optional[Union[Union[str, OperationalEntityId], List[Union[str, OperationalEntityId]]]])
-
-slots.increases_instantiation_of = Slot(uri=TESTLINK.increases_instantiation_of, name="increases instantiation of", curie=TESTLINK.curie('increases_instantiation_of'),
-                   model_uri=TESTLINK.increases_instantiation_of, domain=OperationalEntity, range=Optional[Union[Union[str, OperationalEntityId], List[Union[str, OperationalEntityId]]]])
-
-slots.decreases_instantiation_of = Slot(uri=TESTLINK.decreases_instantiation_of, name="decreases instantiation of", curie=TESTLINK.curie('decreases_instantiation_of'),
-                   model_uri=TESTLINK.decreases_instantiation_of, domain=OperationalEntity, range=Optional[Union[Union[str, OperationalEntityId], List[Union[str, OperationalEntityId]]]])
-
-slots.affects_degradation_of = Slot(uri=TESTLINK.affects_degradation_of, name="affects degradation of", curie=TESTLINK.curie('affects_degradation_of'),
-                   model_uri=TESTLINK.affects_degradation_of, domain=OperationalEntity, range=Optional[Union[Union[str, OperationalEntityId], List[Union[str, OperationalEntityId]]]])
-
-slots.increases_degradation_of = Slot(uri=TESTLINK.increases_degradation_of, name="increases degradation of", curie=TESTLINK.curie('increases_degradation_of'),
-                   model_uri=TESTLINK.increases_degradation_of, domain=OperationalEntity, range=Optional[Union[Union[str, OperationalEntityId], List[Union[str, OperationalEntityId]]]])
-
-slots.decreases_degradation_of = Slot(uri=TESTLINK.decreases_degradation_of, name="decreases degradation of", curie=TESTLINK.curie('decreases_degradation_of'),
-                   model_uri=TESTLINK.decreases_degradation_of, domain=OperationalEntity, range=Optional[Union[Union[str, OperationalEntityId], List[Union[str, OperationalEntityId]]]])
-
-slots.affects_updates_rate_of = Slot(uri=TESTLINK.affects_updates_rate_of, name="affects updates rate of", curie=TESTLINK.curie('affects_updates_rate_of'),
-                   model_uri=TESTLINK.affects_updates_rate_of, domain=OperationalEntity, range=Optional[Union[Union[str, WorkloadEntityId], List[Union[str, WorkloadEntityId]]]])
-
-slots.increases_updates_rate_of = Slot(uri=TESTLINK.increases_updates_rate_of, name="increases updates rate of", curie=TESTLINK.curie('increases_updates_rate_of'),
-                   model_uri=TESTLINK.increases_updates_rate_of, domain=OperationalEntity, range=Optional[Union[Union[str, WorkloadEntityId], List[Union[str, WorkloadEntityId]]]])
-
-slots.decreases_updates_rate_of = Slot(uri=TESTLINK.decreases_updates_rate_of, name="decreases updates rate of", curie=TESTLINK.curie('decreases_updates_rate_of'),
-                   model_uri=TESTLINK.decreases_updates_rate_of, domain=OperationalEntity, range=Optional[Union[Union[str, WorkloadEntityId], List[Union[str, WorkloadEntityId]]]])
-
-slots.affects_response_to = Slot(uri=TESTLINK.affects_response_to, name="affects response to", curie=TESTLINK.curie('affects_response_to'),
-                   model_uri=TESTLINK.affects_response_to, domain=OperationalEntity, range=Optional[Union[Union[str, OperationalEntityId], List[Union[str, OperationalEntityId]]]])
-
-slots.increases_response_to = Slot(uri=TESTLINK.increases_response_to, name="increases response to", curie=TESTLINK.curie('increases_response_to'),
-                   model_uri=TESTLINK.increases_response_to, domain=OperationalEntity, range=Optional[Union[Union[str, OperationalEntityId], List[Union[str, OperationalEntityId]]]])
-
-slots.decreases_response_to = Slot(uri=TESTLINK.decreases_response_to, name="decreases response to", curie=TESTLINK.curie('decreases_response_to'),
-                   model_uri=TESTLINK.decreases_response_to, domain=OperationalEntity, range=Optional[Union[Union[str, OperationalEntityId], List[Union[str, OperationalEntityId]]]])
-
-slots.affects_splicing_of = Slot(uri=TESTLINK.affects_splicing_of, name="affects splicing of", curie=TESTLINK.curie('affects_splicing_of'),
-                   model_uri=TESTLINK.affects_splicing_of, domain=OperationalEntity, range=Optional[Union[Union[str, ComponentserviceinstanceId], List[Union[str, ComponentserviceinstanceId]]]])
-
-slots.increases_splicing_of = Slot(uri=TESTLINK.increases_splicing_of, name="increases splicing of", curie=TESTLINK.curie('increases_splicing_of'),
-                   model_uri=TESTLINK.increases_splicing_of, domain=OperationalEntity, range=Optional[Union[Union[str, ComponentserviceinstanceId], List[Union[str, ComponentserviceinstanceId]]]])
-
-slots.decreases_splicing_of = Slot(uri=TESTLINK.decreases_splicing_of, name="decreases splicing of", curie=TESTLINK.curie('decreases_splicing_of'),
-                   model_uri=TESTLINK.decreases_splicing_of, domain=OperationalEntity, range=Optional[Union[Union[str, ComponentserviceinstanceId], List[Union[str, ComponentserviceinstanceId]]]])
-
-slots.affects_stability_of = Slot(uri=TESTLINK.affects_stability_of, name="affects stability of", curie=TESTLINK.curie('affects_stability_of'),
-                   model_uri=TESTLINK.affects_stability_of, domain=OperationalEntity, range=Optional[Union[Union[str, OperationalEntityId], List[Union[str, OperationalEntityId]]]])
-
-slots.increases_stability_of = Slot(uri=TESTLINK.increases_stability_of, name="increases stability of", curie=TESTLINK.curie('increases_stability_of'),
-                   model_uri=TESTLINK.increases_stability_of, domain=OperationalEntity, range=Optional[Union[Union[str, OperationalEntityId], List[Union[str, OperationalEntityId]]]])
-
-slots.decreases_stability_of = Slot(uri=TESTLINK.decreases_stability_of, name="decreases stability of", curie=TESTLINK.curie('decreases_stability_of'),
-                   model_uri=TESTLINK.decreases_stability_of, domain=OperationalEntity, range=Optional[Union[Union[str, OperationalEntityId], List[Union[str, OperationalEntityId]]]])
-
-slots.affects_transport_of = Slot(uri=TESTLINK.affects_transport_of, name="affects transport of", curie=TESTLINK.curie('affects_transport_of'),
-                   model_uri=TESTLINK.affects_transport_of, domain=OperationalEntity, range=Optional[Union[Union[str, OperationalEntityId], List[Union[str, OperationalEntityId]]]])
-
-slots.increases_transport_of = Slot(uri=TESTLINK.increases_transport_of, name="increases transport of", curie=TESTLINK.curie('increases_transport_of'),
-                   model_uri=TESTLINK.increases_transport_of, domain=OperationalEntity, range=Optional[Union[Union[str, OperationalEntityId], List[Union[str, OperationalEntityId]]]])
-
-slots.decreases_transport_of = Slot(uri=TESTLINK.decreases_transport_of, name="decreases transport of", curie=TESTLINK.curie('decreases_transport_of'),
-                   model_uri=TESTLINK.decreases_transport_of, domain=OperationalEntity, range=Optional[Union[Union[str, OperationalEntityId], List[Union[str, OperationalEntityId]]]])
-
-slots.affects_output_of = Slot(uri=TESTLINK.affects_output_of, name="affects output of", curie=TESTLINK.curie('affects_output_of'),
-                   model_uri=TESTLINK.affects_output_of, domain=OperationalEntity, range=Optional[Union[Union[str, OperationalEntityId], List[Union[str, OperationalEntityId]]]])
-
-slots.increases_output_of = Slot(uri=TESTLINK.increases_output_of, name="increases output of", curie=TESTLINK.curie('increases_output_of'),
-                   model_uri=TESTLINK.increases_output_of, domain=OperationalEntity, range=Optional[Union[Union[str, OperationalEntityId], List[Union[str, OperationalEntityId]]]])
-
-slots.decreases_output_of = Slot(uri=TESTLINK.decreases_output_of, name="decreases output of", curie=TESTLINK.curie('decreases_output_of'),
-                   model_uri=TESTLINK.decreases_output_of, domain=OperationalEntity, range=Optional[Union[Union[str, OperationalEntityId], List[Union[str, OperationalEntityId]]]])
-
-slots.affects_uptake_of = Slot(uri=TESTLINK.affects_uptake_of, name="affects uptake of", curie=TESTLINK.curie('affects_uptake_of'),
-                   model_uri=TESTLINK.affects_uptake_of, domain=OperationalEntity, range=Optional[Union[Union[str, OperationalEntityId], List[Union[str, OperationalEntityId]]]])
-
-slots.increases_uptake_of = Slot(uri=TESTLINK.increases_uptake_of, name="increases uptake of", curie=TESTLINK.curie('increases_uptake_of'),
-                   model_uri=TESTLINK.increases_uptake_of, domain=OperationalEntity, range=Optional[Union[Union[str, OperationalEntityId], List[Union[str, OperationalEntityId]]]])
-
-slots.decreases_uptake_of = Slot(uri=TESTLINK.decreases_uptake_of, name="decreases uptake of", curie=TESTLINK.curie('decreases_uptake_of'),
-                   model_uri=TESTLINK.decreases_uptake_of, domain=OperationalEntity, range=Optional[Union[Union[str, OperationalEntityId], List[Union[str, OperationalEntityId]]]])
-
-slots.regulates = Slot(uri=TESTLINK.regulates, name="regulates", curie=TESTLINK.curie('regulates'),
-                   model_uri=TESTLINK.regulates, domain=None, range=Optional[Union[dict, "CyberEssenceOrOccurrent"]])
-
-slots.regulated_by = Slot(uri=TESTLINK.regulated_by, name="regulated by", curie=TESTLINK.curie('regulated_by'),
-                   model_uri=TESTLINK.regulated_by, domain=None, range=Optional[Union[dict, "CyberEssenceOrOccurrent"]])
-
-slots.positively_regulates = Slot(uri=TESTLINK.positively_regulates, name="positively regulates", curie=TESTLINK.curie('positively_regulates'),
-                   model_uri=TESTLINK.positively_regulates, domain=None, range=Optional[Union[dict, "CyberEssenceOrOccurrent"]])
-
-slots.positively_regulated_by = Slot(uri=TESTLINK.positively_regulated_by, name="positively regulated by", curie=TESTLINK.curie('positively_regulated_by'),
-                   model_uri=TESTLINK.positively_regulated_by, domain=None, range=Optional[Union[dict, "CyberEssenceOrOccurrent"]])
-
-slots.negatively_regulates = Slot(uri=TESTLINK.negatively_regulates, name="negatively regulates", curie=TESTLINK.curie('negatively_regulates'),
-                   model_uri=TESTLINK.negatively_regulates, domain=None, range=Optional[Union[dict, "CyberEssenceOrOccurrent"]])
-
-slots.negatively_regulated_by = Slot(uri=TESTLINK.negatively_regulated_by, name="negatively regulated by", curie=TESTLINK.curie('negatively_regulated_by'),
-                   model_uri=TESTLINK.negatively_regulated_by, domain=None, range=Optional[Union[dict, "CyberEssenceOrOccurrent"]])
-
-slots.regulates_process_to_process = Slot(uri=TESTLINK.regulates_process_to_process, name="regulates, process to process", curie=TESTLINK.curie('regulates_process_to_process'),
-                   model_uri=TESTLINK.regulates_process_to_process, domain=None, range=Optional[Union[Union[dict, "Occurrent"], List[Union[dict, "Occurrent"]]]])
-
-slots.regulated_by_process_to_process = Slot(uri=TESTLINK.regulated_by_process_to_process, name="regulated by, process to process", curie=TESTLINK.curie('regulated_by_process_to_process'),
-                   model_uri=TESTLINK.regulated_by_process_to_process, domain=None, range=Optional[Union[Union[dict, "Occurrent"], List[Union[dict, "Occurrent"]]]])
-
-slots.positively_regulates_process_to_process = Slot(uri=TESTLINK.positively_regulates_process_to_process, name="positively regulates, process to process", curie=TESTLINK.curie('positively_regulates_process_to_process'),
-                   model_uri=TESTLINK.positively_regulates_process_to_process, domain=None, range=Optional[Union[Union[dict, "Occurrent"], List[Union[dict, "Occurrent"]]]])
-
-slots.positively_regulated_by_process_to_process = Slot(uri=TESTLINK.positively_regulated_by_process_to_process, name="positively regulated by, process to process", curie=TESTLINK.curie('positively_regulated_by_process_to_process'),
-                   model_uri=TESTLINK.positively_regulated_by_process_to_process, domain=None, range=Optional[Union[Union[dict, "Occurrent"], List[Union[dict, "Occurrent"]]]])
-
-slots.negatively_regulates_process_to_process = Slot(uri=TESTLINK.negatively_regulates_process_to_process, name="negatively regulates, process to process", curie=TESTLINK.curie('negatively_regulates_process_to_process'),
-                   model_uri=TESTLINK.negatively_regulates_process_to_process, domain=None, range=Optional[Union[Union[dict, "Occurrent"], List[Union[dict, "Occurrent"]]]])
-
-slots.negatively_regulated_by_process_to_process = Slot(uri=TESTLINK.negatively_regulated_by_process_to_process, name="negatively regulated by, process to process", curie=TESTLINK.curie('negatively_regulated_by_process_to_process'),
-                   model_uri=TESTLINK.negatively_regulated_by_process_to_process, domain=None, range=Optional[Union[Union[dict, "Occurrent"], List[Union[dict, "Occurrent"]]]])
-
-slots.regulates_entity_to_entity = Slot(uri=TESTLINK.regulates_entity_to_entity, name="regulates, entity to entity", curie=TESTLINK.curie('regulates_entity_to_entity'),
-                   model_uri=TESTLINK.regulates_entity_to_entity, domain=OperationalEntity, range=Optional[Union[Union[str, OperationalEntityId], List[Union[str, OperationalEntityId]]]])
-
-slots.regulated_by_entity_to_entity = Slot(uri=TESTLINK.regulated_by_entity_to_entity, name="regulated by, entity to entity", curie=TESTLINK.curie('regulated_by_entity_to_entity'),
-                   model_uri=TESTLINK.regulated_by_entity_to_entity, domain=OperationalEntity, range=Optional[Union[Union[str, OperationalEntityId], List[Union[str, OperationalEntityId]]]])
-
-slots.positively_regulates_entity_to_entity = Slot(uri=TESTLINK.positively_regulates_entity_to_entity, name="positively regulates, entity to entity", curie=TESTLINK.curie('positively_regulates_entity_to_entity'),
-                   model_uri=TESTLINK.positively_regulates_entity_to_entity, domain=OperationalEntity, range=Optional[Union[Union[str, OperationalEntityId], List[Union[str, OperationalEntityId]]]])
-
-slots.positively_regulated_by_entity_to_entity = Slot(uri=TESTLINK.positively_regulated_by_entity_to_entity, name="positively regulated by, entity to entity", curie=TESTLINK.curie('positively_regulated_by_entity_to_entity'),
-                   model_uri=TESTLINK.positively_regulated_by_entity_to_entity, domain=OperationalEntity, range=Optional[Union[Union[str, OperationalEntityId], List[Union[str, OperationalEntityId]]]])
-
-slots.negatively_regulates_entity_to_entity = Slot(uri=TESTLINK.negatively_regulates_entity_to_entity, name="negatively regulates, entity to entity", curie=TESTLINK.curie('negatively_regulates_entity_to_entity'),
-                   model_uri=TESTLINK.negatively_regulates_entity_to_entity, domain=OperationalEntity, range=Optional[Union[Union[str, OperationalEntityId], List[Union[str, OperationalEntityId]]]])
-
-slots.negatively_regulated_by_entity_to_entity = Slot(uri=TESTLINK.negatively_regulated_by_entity_to_entity, name="negatively regulated by, entity to entity", curie=TESTLINK.curie('negatively_regulated_by_entity_to_entity'),
-                   model_uri=TESTLINK.negatively_regulated_by_entity_to_entity, domain=OperationalEntity, range=Optional[Union[Union[str, OperationalEntityId], List[Union[str, OperationalEntityId]]]])
-
-slots.disrupts = Slot(uri=TESTLINK.disrupts, name="disrupts", curie=TESTLINK.curie('disrupts'),
-                   model_uri=TESTLINK.disrupts, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.disrupted_by = Slot(uri=TESTLINK.disrupted_by, name="disrupted by", curie=TESTLINK.curie('disrupted_by'),
-                   model_uri=TESTLINK.disrupted_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.has_servicetype = Slot(uri=TESTLINK.has_servicetype, name="has servicetype", curie=TESTLINK.curie('has_servicetype'),
-                   model_uri=TESTLINK.has_servicetype, domain=Componentservice, range=Optional[Union[Union[dict, "ServicetypeMixin"], List[Union[dict, "ServicetypeMixin"]]]])
-
-slots.homologous_to = Slot(uri=TESTLINK.homologous_to, name="homologous to", curie=TESTLINK.curie('homologous_to'),
-                   model_uri=TESTLINK.homologous_to, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.paralogous_to = Slot(uri=TESTLINK.paralogous_to, name="paralogous to", curie=TESTLINK.curie('paralogous_to'),
-                   model_uri=TESTLINK.paralogous_to, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.orthologous_to = Slot(uri=TESTLINK.orthologous_to, name="orthologous to", curie=TESTLINK.curie('orthologous_to'),
-                   model_uri=TESTLINK.orthologous_to, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.xenologous_to = Slot(uri=TESTLINK.xenologous_to, name="xenologous to", curie=TESTLINK.curie('xenologous_to'),
-                   model_uri=TESTLINK.xenologous_to, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.coexists_with = Slot(uri=TESTLINK.coexists_with, name="coexists with", curie=TESTLINK.curie('coexists_with'),
-                   model_uri=TESTLINK.coexists_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.in_pathway_with = Slot(uri=TESTLINK.in_pathway_with, name="in pathway with", curie=TESTLINK.curie('in_pathway_with'),
-                   model_uri=TESTLINK.in_pathway_with, domain=None, range=Optional[Union[Union[dict, "ComponentserviceOrServicetype"], List[Union[dict, "ComponentserviceOrServicetype"]]]])
-
-slots.in_complex_with = Slot(uri=TESTLINK.in_complex_with, name="in complex with", curie=TESTLINK.curie('in_complex_with'),
-                   model_uri=TESTLINK.in_complex_with, domain=None, range=Optional[Union[Union[dict, "ComponentserviceOrServicetype"], List[Union[dict, "ComponentserviceOrServicetype"]]]])
-
-slots.in_serviceunit_population_with = Slot(uri=TESTLINK.in_serviceunit_population_with, name="in serviceunit population with", curie=TESTLINK.curie('in_serviceunit_population_with'),
-                   model_uri=TESTLINK.in_serviceunit_population_with, domain=None, range=Optional[Union[Union[dict, "ComponentserviceOrServicetype"], List[Union[dict, "ComponentserviceOrServicetype"]]]])
-
-slots.colocalizes_with = Slot(uri=TESTLINK.colocalizes_with, name="colocalizes with", curie=TESTLINK.curie('colocalizes_with'),
-                   model_uri=TESTLINK.colocalizes_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.service_association = Slot(uri=TESTLINK.service_association, name="service association", curie=TESTLINK.curie('service_association'),
-                   model_uri=TESTLINK.service_association, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.componentservice_associated_with_condition = Slot(uri=TESTLINK.componentservice_associated_with_condition, name="componentservice associated with condition", curie=TESTLINK.curie('componentservice_associated_with_condition'),
-                   model_uri=TESTLINK.componentservice_associated_with_condition, domain=Componentservice, range=Optional[Union[Union[str, ErrorOrObservableFeatureId], List[Union[str, ErrorOrObservableFeatureId]]]])
-
-slots.condition_associated_with_componentservice = Slot(uri=TESTLINK.condition_associated_with_componentservice, name="condition associated with componentservice", curie=TESTLINK.curie('condition_associated_with_componentservice'),
-                   model_uri=TESTLINK.condition_associated_with_componentservice, domain=ErrorOrObservableFeature, range=Optional[Union[Union[dict, "Componentservice"], List[Union[dict, "Componentservice"]]]])
-
-slots.affects_risk_for = Slot(uri=TESTLINK.affects_risk_for, name="affects risk for", curie=TESTLINK.curie('affects_risk_for'),
-                   model_uri=TESTLINK.affects_risk_for, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.predisposes = Slot(uri=TESTLINK.predisposes, name="predisposes", curie=TESTLINK.curie('predisposes'),
-                   model_uri=TESTLINK.predisposes, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.contributes_to = Slot(uri=TESTLINK.contributes_to, name="contributes to", curie=TESTLINK.curie('contributes_to'),
-                   model_uri=TESTLINK.contributes_to, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.causes = Slot(uri=TESTLINK.causes, name="causes", curie=TESTLINK.curie('causes'),
-                   model_uri=TESTLINK.causes, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.caused_by = Slot(uri=TESTLINK.caused_by, name="caused by", curie=TESTLINK.curie('caused_by'),
-                   model_uri=TESTLINK.caused_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.ameliorates = Slot(uri=TESTLINK.ameliorates, name="ameliorates", curie=TESTLINK.curie('ameliorates'),
-                   model_uri=TESTLINK.ameliorates, domain=ComputationalEntity, range=Optional[Union[Union[str, ErrorOrObservableFeatureId], List[Union[str, ErrorOrObservableFeatureId]]]])
-
-slots.exacerbates = Slot(uri=TESTLINK.exacerbates, name="exacerbates", curie=TESTLINK.curie('exacerbates'),
-                   model_uri=TESTLINK.exacerbates, domain=ComputationalEntity, range=Optional[Union[Union[str, ErrorOrObservableFeatureId], List[Union[str, ErrorOrObservableFeatureId]]]])
-
-slots.repairs = Slot(uri=TESTLINK.repairs, name="repairs", curie=TESTLINK.curie('repairs'),
-                   model_uri=TESTLINK.repairs, domain=Repairing, range=Optional[Union[Union[str, ErrorOrObservableFeatureId], List[Union[str, ErrorOrObservableFeatureId]]]])
-
-slots.repaired_by = Slot(uri=TESTLINK.repaired_by, name="repaired by", curie=TESTLINK.curie('repaired_by'),
-                   model_uri=TESTLINK.repaired_by, domain=ErrorOrObservableFeature, range=Optional[Union[Union[str, RepairingId], List[Union[str, RepairingId]]]])
-
-slots.approved_to_repair = Slot(uri=TESTLINK.approved_to_repair, name="approved to repair", curie=TESTLINK.curie('approved_to_repair'),
-                   model_uri=TESTLINK.approved_to_repair, domain=Repairing, range=Optional[Union[Union[str, ErrorOrObservableFeatureId], List[Union[str, ErrorOrObservableFeatureId]]]])
-
-slots.approved_for_repairing_by = Slot(uri=TESTLINK.approved_for_repairing_by, name="approved for repairing by", curie=TESTLINK.curie('approved_for_repairing_by'),
-                   model_uri=TESTLINK.approved_for_repairing_by, domain=ErrorOrObservableFeature, range=Optional[Union[Union[str, RepairingId], List[Union[str, RepairingId]]]])
-
-slots.prevents = Slot(uri=TESTLINK.prevents, name="prevents", curie=TESTLINK.curie('prevents'),
-                   model_uri=TESTLINK.prevents, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.prevented_by = Slot(uri=TESTLINK.prevented_by, name="prevented by", curie=TESTLINK.curie('prevented_by'),
-                   model_uri=TESTLINK.prevented_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.correlated_with = Slot(uri=TESTLINK.correlated_with, name="correlated with", curie=TESTLINK.curie('correlated_with'),
-                   model_uri=TESTLINK.correlated_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.positively_correlated_with = Slot(uri=TESTLINK.positively_correlated_with, name="positively correlated with", curie=TESTLINK.curie('positively_correlated_with'),
-                   model_uri=TESTLINK.positively_correlated_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.negatively_correlated_with = Slot(uri=TESTLINK.negatively_correlated_with, name="negatively correlated with", curie=TESTLINK.curie('negatively_correlated_with'),
-                   model_uri=TESTLINK.negatively_correlated_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.coavailable_with = Slot(uri=TESTLINK.coavailable_with, name="coavailable with", curie=TESTLINK.curie('coavailable_with'),
-                   model_uri=TESTLINK.coavailable_with, domain=None, range=Optional[Union[Union[dict, "ComponentserviceOrServicetype"], List[Union[dict, "ComponentserviceOrServicetype"]]]])
-
-slots.has_marker = Slot(uri=TESTLINK.has_marker, name="has marker", curie=TESTLINK.curie('has_marker'),
-                   model_uri=TESTLINK.has_marker, domain=ErrorOrObservableFeature, range=Optional[Union[Union[str, OperationalEntityId], List[Union[str, OperationalEntityId]]]])
-
-slots.marker_for = Slot(uri=TESTLINK.marker_for, name="marker for", curie=TESTLINK.curie('marker_for'),
-                   model_uri=TESTLINK.marker_for, domain=OperationalEntity, range=Optional[Union[Union[str, ErrorOrObservableFeatureId], List[Union[str, ErrorOrObservableFeatureId]]]])
-
-slots.available_in = Slot(uri=TESTLINK.available_in, name="available in", curie=TESTLINK.curie('available_in'),
-                   model_uri=TESTLINK.available_in, domain=None, range=Optional[Union[Union[str, DeploymentEntityId], List[Union[str, DeploymentEntityId]]]])
-
-slots.unavailable_in = Slot(uri=TESTLINK.unavailable_in, name="unavailable in", curie=TESTLINK.curie('unavailable_in'),
-                   model_uri=TESTLINK.unavailable_in, domain=DeploymentEntity, range=Optional[Union[Union[dict, "ComponentserviceOrServicetype"], List[Union[dict, "ComponentserviceOrServicetype"]]]])
-
-slots.has_observability = Slot(uri=TESTLINK.has_observability, name="has observability", curie=TESTLINK.curie('has_observability'),
-                   model_uri=TESTLINK.has_observability, domain=ComputationalEntity, range=Optional[Union[Union[str, ObservableFeatureId], List[Union[str, ObservableFeatureId]]]])
-
-slots.occurs_in = Slot(uri=TESTLINK.occurs_in, name="occurs in", curie=TESTLINK.curie('occurs_in'),
-                   model_uri=TESTLINK.occurs_in, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.located_in = Slot(uri=TESTLINK.located_in, name="located in", curie=TESTLINK.curie('located_in'),
-                   model_uri=TESTLINK.located_in, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.location_of = Slot(uri=TESTLINK.location_of, name="location of", curie=TESTLINK.curie('location_of'),
-                   model_uri=TESTLINK.location_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.similar_to = Slot(uri=TESTLINK.similar_to, name="similar to", curie=TESTLINK.curie('similar_to'),
-                   model_uri=TESTLINK.similar_to, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.orchestrationly_similar_to = Slot(uri=TESTLINK.orchestrationly_similar_to, name="orchestrationly similar to", curie=TESTLINK.curie('orchestrationly_similar_to'),
-                   model_uri=TESTLINK.orchestrationly_similar_to, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.has_sequence_location = Slot(uri=TESTLINK.has_sequence_location, name="has sequence location", curie=TESTLINK.curie('has_sequence_location'),
-                   model_uri=TESTLINK.has_sequence_location, domain=WorkloadEntity, range=Optional[Union[Union[str, WorkloadEntityId], List[Union[str, WorkloadEntityId]]]])
-
-slots.model_of = Slot(uri=TESTLINK.model_of, name="model of", curie=TESTLINK.curie('model_of'),
-                   model_uri=TESTLINK.model_of, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.overlaps = Slot(uri=TESTLINK.overlaps, name="overlaps", curie=TESTLINK.curie('overlaps'),
                    model_uri=TESTLINK.overlaps, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
@@ -8413,29 +4301,11 @@ slots.has_participant = Slot(uri=TESTLINK.has_participant, name="has participant
 slots.participates_in = Slot(uri=TESTLINK.participates_in, name="participates in", curie=TESTLINK.curie('participates_in'),
                    model_uri=TESTLINK.participates_in, domain=NamedThing, range=Optional[Union[Union[dict, "Occurrent"], List[Union[dict, "Occurrent"]]]])
 
-slots.actively_involved_in = Slot(uri=TESTLINK.actively_involved_in, name="actively involved in", curie=TESTLINK.curie('actively_involved_in'),
-                   model_uri=TESTLINK.actively_involved_in, domain=NamedThing, range=Optional[Union[Union[dict, "Occurrent"], List[Union[dict, "Occurrent"]]]])
-
-slots.capable_of = Slot(uri=TESTLINK.capable_of, name="capable of", curie=TESTLINK.curie('capable_of'),
-                   model_uri=TESTLINK.capable_of, domain=NamedThing, range=Optional[Union[Union[dict, "Occurrent"], List[Union[dict, "Occurrent"]]]])
-
 slots.enables = Slot(uri=TESTLINK.enables, name="enables", curie=TESTLINK.curie('enables'),
                    model_uri=TESTLINK.enables, domain=CyberEntity, range=Optional[Union[Union[str, ComputationalProcessOrActivityId], List[Union[str, ComputationalProcessOrActivityId]]]])
 
 slots.enabled_by = Slot(uri=TESTLINK.enabled_by, name="enabled by", curie=TESTLINK.curie('enabled_by'),
                    model_uri=TESTLINK.enabled_by, domain=ComputationalProcessOrActivity, range=Optional[Union[Union[str, CyberEntityId], List[Union[str, CyberEntityId]]]])
-
-slots.derives_into = Slot(uri=TESTLINK.derives_into, name="derives into", curie=TESTLINK.curie('derives_into'),
-                   model_uri=TESTLINK.derives_into, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.derives_from = Slot(uri=TESTLINK.derives_from, name="derives from", curie=TESTLINK.curie('derives_from'),
-                   model_uri=TESTLINK.derives_from, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.is_controller_of = Slot(uri=TESTLINK.is_controller_of, name="is controller of", curie=TESTLINK.curie('is_controller_of'),
-                   model_uri=TESTLINK.is_controller_of, domain=ControlActor, range=Optional[Union[Union[str, ControlActorId], List[Union[str, ControlActorId]]]])
-
-slots.has_controller = Slot(uri=TESTLINK.has_controller, name="has controller", curie=TESTLINK.curie('has_controller'),
-                   model_uri=TESTLINK.has_controller, domain=ControlActor, range=Optional[Union[Union[str, ControlActorId], List[Union[str, ControlActorId]]]])
 
 slots.notification_component_of = Slot(uri=TESTLINK.notification_component_of, name="notification component of", curie=TESTLINK.curie('notification_component_of'),
                    model_uri=TESTLINK.notification_component_of, domain=NotificationComponent, range=Optional[Union[Union[str, NotificationId], List[Union[str, NotificationId]]]])
@@ -8449,113 +4319,122 @@ slots.data_of = Slot(uri=TESTLINK.data_of, name="data of", curie=TESTLINK.curie(
 slots.has_data = Slot(uri=TESTLINK.has_data, name="has data", curie=TESTLINK.curie('has_data'),
                    model_uri=TESTLINK.has_data, domain=Notification, range=Optional[Union[Union[str, DataId], List[Union[str, DataId]]]])
 
-slots.is_active_ingredient_of = Slot(uri=TESTLINK.is_active_ingredient_of, name="is active ingredient of", curie=TESTLINK.curie('is_active_ingredient_of'),
-                   model_uri=TESTLINK.is_active_ingredient_of, domain=ControlActor, range=Optional[Union[Union[str, AdministrativeOperationId], List[Union[str, AdministrativeOperationId]]]], mappings = [RO["0002249"]])
-
-slots.has_active_ingredient = Slot(uri=TESTLINK.has_active_ingredient, name="has active ingredient", curie=TESTLINK.curie('has_active_ingredient'),
-                   model_uri=TESTLINK.has_active_ingredient, domain=AdministrativeOperation, range=Optional[Union[Union[str, ControlActorId], List[Union[str, ControlActorId]]]], mappings = [RO["0002248"]])
-
-slots.is_excipient_of = Slot(uri=TESTLINK.is_excipient_of, name="is excipient of", curie=TESTLINK.curie('is_excipient_of'),
-                   model_uri=TESTLINK.is_excipient_of, domain=ControlActor, range=Optional[Union[Union[str, AdministrativeOperationId], List[Union[str, AdministrativeOperationId]]]], mappings = [WIKIDATA.Q902638])
-
-slots.has_excipient = Slot(uri=TESTLINK.has_excipient, name="has excipient", curie=TESTLINK.curie('has_excipient'),
-                   model_uri=TESTLINK.has_excipient, domain=AdministrativeOperation, range=Optional[Union[Union[str, ControlActorId], List[Union[str, ControlActorId]]]], mappings = [WIKIDATA.Q902638])
-
-slots.manifestation_of = Slot(uri=TESTLINK.manifestation_of, name="manifestation of", curie=TESTLINK.curie('manifestation_of'),
-                   model_uri=TESTLINK.manifestation_of, domain=NamedThing, range=Optional[Union[Union[str, ErrorId], List[Union[str, ErrorId]]]])
-
 slots.produces = Slot(uri=TESTLINK.produces, name="produces", curie=TESTLINK.curie('produces'),
                    model_uri=TESTLINK.produces, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
 slots.produced_by = Slot(uri=TESTLINK.produced_by, name="produced by", curie=TESTLINK.curie('produced_by'),
                    model_uri=TESTLINK.produced_by, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
 
-slots.temporally_related_to = Slot(uri=TESTLINK.temporally_related_to, name="temporally related to", curie=TESTLINK.curie('temporally_related_to'),
-                   model_uri=TESTLINK.temporally_related_to, domain=None, range=Optional[Union[Union[dict, "Occurrent"], List[Union[dict, "Occurrent"]]]])
-
-slots.precedes = Slot(uri=TESTLINK.precedes, name="precedes", curie=TESTLINK.curie('precedes'),
-                   model_uri=TESTLINK.precedes, domain=None, range=Optional[Union[Union[dict, "Occurrent"], List[Union[dict, "Occurrent"]]]])
-
-slots.preceded_by = Slot(uri=TESTLINK.preceded_by, name="preceded by", curie=TESTLINK.curie('preceded_by'),
-                   model_uri=TESTLINK.preceded_by, domain=None, range=Optional[Union[Union[dict, "Occurrent"], List[Union[dict, "Occurrent"]]]])
-
-slots.directly_interacts_with = Slot(uri=TESTLINK.directly_interacts_with, name="directly interacts with", curie=TESTLINK.curie('directly_interacts_with'),
-                   model_uri=TESTLINK.directly_interacts_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.affects_availability_in = Slot(uri=TESTLINK.affects_availability_in, name="affects availability in", curie=TESTLINK.curie('affects_availability_in'),
-                   model_uri=TESTLINK.affects_availability_in, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.has_variant_part = Slot(uri=TESTLINK.has_variant_part, name="has variant part", curie=TESTLINK.curie('has_variant_part'),
-                   model_uri=TESTLINK.has_variant_part, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.related_condition = Slot(uri=TESTLINK.related_condition, name="related condition", curie=TESTLINK.curie('related_condition'),
-                   model_uri=TESTLINK.related_condition, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.is_sequence_variant_of = Slot(uri=TESTLINK.is_sequence_variant_of, name="is sequence variant of", curie=TESTLINK.curie('is_sequence_variant_of'),
-                   model_uri=TESTLINK.is_sequence_variant_of, domain=SequenceVariant, range=Optional[Union[Union[str, WorkloadEntityId], List[Union[str, WorkloadEntityId]]]])
-
-slots.is_missense_variant_of = Slot(uri=TESTLINK.is_missense_variant_of, name="is missense variant of", curie=TESTLINK.curie('is_missense_variant_of'),
-                   model_uri=TESTLINK.is_missense_variant_of, domain=SequenceVariant, range=Optional[Union[Union[dict, Componentservice], List[Union[dict, Componentservice]]]])
-
-slots.is_synonymous_variant_of = Slot(uri=TESTLINK.is_synonymous_variant_of, name="is synonymous variant of", curie=TESTLINK.curie('is_synonymous_variant_of'),
-                   model_uri=TESTLINK.is_synonymous_variant_of, domain=SequenceVariant, range=Optional[Union[Union[dict, Componentservice], List[Union[dict, Componentservice]]]])
-
-slots.is_nonsense_variant_of = Slot(uri=TESTLINK.is_nonsense_variant_of, name="is nonsense variant of", curie=TESTLINK.curie('is_nonsense_variant_of'),
-                   model_uri=TESTLINK.is_nonsense_variant_of, domain=SequenceVariant, range=Optional[Union[Union[dict, Componentservice], List[Union[dict, Componentservice]]]])
-
-slots.is_protocol_variant_of = Slot(uri=TESTLINK.is_protocol_variant_of, name="is protocol variant of", curie=TESTLINK.curie('is_protocol_variant_of'),
-                   model_uri=TESTLINK.is_protocol_variant_of, domain=SequenceVariant, range=Optional[Union[Union[dict, Componentservice], List[Union[dict, Componentservice]]]])
-
-slots.is_splice_site_variant_of = Slot(uri=TESTLINK.is_splice_site_variant_of, name="is splice site variant of", curie=TESTLINK.curie('is_splice_site_variant_of'),
-                   model_uri=TESTLINK.is_splice_site_variant_of, domain=SequenceVariant, range=Optional[Union[Union[dict, Componentservice], List[Union[dict, Componentservice]]]])
-
-slots.is_nearby_variant_of = Slot(uri=TESTLINK.is_nearby_variant_of, name="is nearby variant of", curie=TESTLINK.curie('is_nearby_variant_of'),
-                   model_uri=TESTLINK.is_nearby_variant_of, domain=SequenceVariant, range=Optional[Union[Union[dict, Componentservice], List[Union[dict, Componentservice]]]])
-
-slots.is_non_coding_variant_of = Slot(uri=TESTLINK.is_non_coding_variant_of, name="is non coding variant of", curie=TESTLINK.curie('is_non_coding_variant_of'),
-                   model_uri=TESTLINK.is_non_coding_variant_of, domain=SequenceVariant, range=Optional[Union[Union[dict, Componentservice], List[Union[dict, Componentservice]]]])
-
-slots.error_has_basis_in = Slot(uri=TESTLINK.error_has_basis_in, name="error has basis in", curie=TESTLINK.curie('error_has_basis_in'),
-                   model_uri=TESTLINK.error_has_basis_in, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.causes_adverse_event = Slot(uri=TESTLINK.causes_adverse_event, name="causes adverse event", curie=TESTLINK.curie('causes_adverse_event'),
-                   model_uri=TESTLINK.causes_adverse_event, domain=AdministrativeOperation, range=Optional[Union[Union[str, ErrorOrObservableFeatureId], List[Union[str, ErrorOrObservableFeatureId]]]])
-
-slots.contraindicated_for = Slot(uri=TESTLINK.contraindicated_for, name="contraindicated for", curie=TESTLINK.curie('contraindicated_for'),
-                   model_uri=TESTLINK.contraindicated_for, domain=AdministrativeOperation, range=Optional[Union[Union[str, ErrorOrObservableFeatureId], List[Union[str, ErrorOrObservableFeatureId]]]])
-
-slots.has_not_completed = Slot(uri=TESTLINK.has_not_completed, name="has not completed", curie=TESTLINK.curie('has_not_completed'),
-                   model_uri=TESTLINK.has_not_completed, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.has_completed = Slot(uri=TESTLINK.has_completed, name="has completed", curie=TESTLINK.curie('has_completed'),
-                   model_uri=TESTLINK.has_completed, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.decreases_operational_interaction = Slot(uri=TESTLINK.decreases_operational_interaction, name="decreases operational interaction", curie=TESTLINK.curie('decreases_operational_interaction'),
-                   model_uri=TESTLINK.decreases_operational_interaction, domain=OperationalEntity, range=Optional[Union[Union[str, OperationalEntityId], List[Union[str, OperationalEntityId]]]])
-
-slots.increases_operational_interaction = Slot(uri=TESTLINK.increases_operational_interaction, name="increases operational interaction", curie=TESTLINK.curie('increases_operational_interaction'),
-                   model_uri=TESTLINK.increases_operational_interaction, domain=OperationalEntity, range=Optional[Union[Union[str, OperationalEntityId], List[Union[str, OperationalEntityId]]]])
-
-slots.in_linkage_disequilibrium_with = Slot(uri=TESTLINK.in_linkage_disequilibrium_with, name="in linkage disequilibrium with", curie=TESTLINK.curie('in_linkage_disequilibrium_with'),
-                   model_uri=TESTLINK.in_linkage_disequilibrium_with, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.has_increased_amount = Slot(uri=TESTLINK.has_increased_amount, name="has increased amount", curie=TESTLINK.curie('has_increased_amount'),
-                   model_uri=TESTLINK.has_increased_amount, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.has_decreased_amount = Slot(uri=TESTLINK.has_decreased_amount, name="has decreased amount", curie=TESTLINK.curie('has_decreased_amount'),
-                   model_uri=TESTLINK.has_decreased_amount, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.lacks_part = Slot(uri=TESTLINK.lacks_part, name="lacks part", curie=TESTLINK.curie('lacks_part'),
-                   model_uri=TESTLINK.lacks_part, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
-slots.develops_from = Slot(uri=TESTLINK.develops_from, name="develops from", curie=TESTLINK.curie('develops_from'),
-                   model_uri=TESTLINK.develops_from, domain=NamedThing, range=Optional[Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]]])
-
 slots.in_taxon = Slot(uri=TESTLINK.in_taxon, name="in taxon", curie=TESTLINK.curie('in_taxon'),
                    model_uri=TESTLINK.in_taxon, domain=None, range=Optional[Union[Union[str, SystemTaxonId], List[Union[str, SystemTaxonId]]]])
 
-slots.has_operational_consequence = Slot(uri=TESTLINK.has_operational_consequence, name="has operational consequence", curie=TESTLINK.curie('has_operational_consequence'),
-                   model_uri=TESTLINK.has_operational_consequence, domain=NamedThing, range=Optional[Union[Union[str, OntologyClassId], List[Union[str, OntologyClassId]]]])
+slots.internal_version = Slot(uri=TESTLINK.internal_version, name="internal version", curie=TESTLINK.curie('internal_version'),
+                   model_uri=TESTLINK.internal_version, domain=Dataset, range=Optional[str])
+
+slots.vcs_revision = Slot(uri=TESTLINK.vcs_revision, name="vcs revision", curie=TESTLINK.curie('vcs_revision'),
+                   model_uri=TESTLINK.vcs_revision, domain=Dataset, range=Optional[str])
+
+slots.enabled = Slot(uri=TESTLINK.enabled, name="enabled", curie=TESTLINK.curie('enabled'),
+                   model_uri=TESTLINK.enabled, domain=NamedThing, range=Optional[Union[bool, Bool]])
+
+slots.archived = Slot(uri=TESTLINK.archived, name="archived", curie=TESTLINK.curie('archived'),
+                   model_uri=TESTLINK.archived, domain=NamedThing, range=Optional[Union[bool, Bool]])
+
+slots.note = Slot(uri=TESTLINK.note, name="note", curie=TESTLINK.curie('note'),
+                   model_uri=TESTLINK.note, domain=NamedThing, range=Optional[Union[str, NarrativeText]])
+
+slots.fqdn = Slot(uri=TESTLINK.fqdn, name="fqdn", curie=TESTLINK.curie('fqdn'),
+                   model_uri=TESTLINK.fqdn, domain=None, range=Optional[Union[str, LabelType]])
+
+slots.value = Slot(uri=TESTLINK.value, name="value", curie=TESTLINK.curie('value'),
+                   model_uri=TESTLINK.value, domain=NamedThing, range=Optional[Union[dict, QuantityValue]])
+
+slots.project_id = Slot(uri=TESTLINK.project_id, name="project id", curie=TESTLINK.curie('project_id'),
+                   model_uri=TESTLINK.project_id, domain=None, range=URIRef)
+
+slots.ticket_id = Slot(uri=TESTLINK.ticket_id, name="ticket id", curie=TESTLINK.curie('ticket_id'),
+                   model_uri=TESTLINK.ticket_id, domain=None, range=URIRef)
+
+slots.environment = Slot(uri=TESTLINK.environment, name="environment", curie=TESTLINK.curie('environment'),
+                   model_uri=TESTLINK.environment, domain=None, range=Optional[Union[str, LabelType]])
+
+slots.component = Slot(uri=TESTLINK.component, name="component", curie=TESTLINK.curie('component'),
+                   model_uri=TESTLINK.component, domain=None, range=Optional[Union[str, LabelType]])
+
+slots.component_fixed = Slot(uri=TESTLINK.component_fixed, name="component fixed", curie=TESTLINK.curie('component_fixed'),
+                   model_uri=TESTLINK.component_fixed, domain=None, range=Optional[Union[str, LabelType]])
+
+slots.tag = Slot(uri=TESTLINK.tag, name="tag", curie=TESTLINK.curie('tag'),
+                   model_uri=TESTLINK.tag, domain=None, range=Optional[Union[str, LabelType]])
+
+slots.tag_name = Slot(uri=TESTLINK.tag_name, name="tag name", curie=TESTLINK.curie('tag_name'),
+                   model_uri=TESTLINK.tag_name, domain=None, range=Optional[Union[str, LabelType]])
+
+slots.g_c_number = Slot(uri=TESTLINK.g_c_number, name="g c number", curie=TESTLINK.curie('g_c_number'),
+                   model_uri=TESTLINK.g_c_number, domain=None, range=Optional[Union[str, LabelType]])
+
+slots.global_version = Slot(uri=TESTLINK.global_version, name="global version", curie=TESTLINK.curie('global_version'),
+                   model_uri=TESTLINK.global_version, domain=Dataset, range=Optional[str])
+
+slots.login = Slot(uri=TESTLINK.login, name="login", curie=TESTLINK.curie('login'),
+                   model_uri=TESTLINK.login, domain=None, range=Optional[str])
+
+slots.user_login = Slot(uri=TESTLINK.user_login, name="user login", curie=TESTLINK.curie('user_login'),
+                   model_uri=TESTLINK.user_login, domain=None, range=Optional[str])
+
+slots.build_number = Slot(uri=TESTLINK.build_number, name="build number", curie=TESTLINK.curie('build_number'),
+                   model_uri=TESTLINK.build_number, domain=None, range=URIRef)
+
+slots.production_build_number = Slot(uri=TESTLINK.production_build_number, name="production build number", curie=TESTLINK.curie('production_build_number'),
+                   model_uri=TESTLINK.production_build_number, domain=None, range=URIRef)
+
+slots.release_id = Slot(uri=TESTLINK.release_id, name="release id", curie=TESTLINK.curie('release_id'),
+                   model_uri=TESTLINK.release_id, domain=None, range=URIRef)
+
+slots.production_release_id = Slot(uri=TESTLINK.production_release_id, name="production release id", curie=TESTLINK.curie('production_release_id'),
+                   model_uri=TESTLINK.production_release_id, domain=None, range=URIRef)
+
+slots.svn_tag_url = Slot(uri=TESTLINK.svn_tag_url, name="svn tag url", curie=TESTLINK.curie('svn_tag_url'),
+                   model_uri=TESTLINK.svn_tag_url, domain=None, range=Optional[Union[str, IriType]])
+
+slots.environment_id = Slot(uri=TESTLINK.environment_id, name="environment id", curie=TESTLINK.curie('environment_id'),
+                   model_uri=TESTLINK.environment_id, domain=None, range=URIRef)
+
+slots.application_id = Slot(uri=TESTLINK.application_id, name="application id", curie=TESTLINK.curie('application_id'),
+                   model_uri=TESTLINK.application_id, domain=None, range=URIRef)
+
+slots.application_instance_id = Slot(uri=TESTLINK.application_instance_id, name="application instance id", curie=TESTLINK.curie('application_instance_id'),
+                   model_uri=TESTLINK.application_instance_id, domain=None, range=URIRef)
+
+slots.user_name = Slot(uri=TESTLINK.user_name, name="user name", curie=TESTLINK.curie('user_name'),
+                   model_uri=TESTLINK.user_name, domain=None, range=Optional[Union[str, LabelType]])
+
+slots.domain_name = Slot(uri=TESTLINK.domain_name, name="domain name", curie=TESTLINK.curie('domain_name'),
+                   model_uri=TESTLINK.domain_name, domain=None, range=Optional[Union[str, LabelType]])
+
+slots.application_user = Slot(uri=TESTLINK.application_user, name="application user", curie=TESTLINK.curie('application_user'),
+                   model_uri=TESTLINK.application_user, domain=None, range=Optional[Union[str, LabelType]])
+
+slots.application_user_login = Slot(uri=TESTLINK.application_user_login, name="application user login", curie=TESTLINK.curie('application_user_login'),
+                   model_uri=TESTLINK.application_user_login, domain=None, range=Optional[str])
+
+slots.component_id = Slot(uri=TESTLINK.component_id, name="component id", curie=TESTLINK.curie('component_id'),
+                   model_uri=TESTLINK.component_id, domain=None, range=URIRef)
+
+slots.application_user_id = Slot(uri=TESTLINK.application_user_id, name="application user id", curie=TESTLINK.curie('application_user_id'),
+                   model_uri=TESTLINK.application_user_id, domain=None, range=URIRef)
+
+slots.application_user_login_id = Slot(uri=TESTLINK.application_user_login_id, name="application user login id", curie=TESTLINK.curie('application_user_login_id'),
+                   model_uri=TESTLINK.application_user_login_id, domain=None, range=URIRef)
+
+slots.vcs_root_id = Slot(uri=TESTLINK.vcs_root_id, name="vcs root id", curie=TESTLINK.curie('vcs_root_id'),
+                   model_uri=TESTLINK.vcs_root_id, domain=None, range=URIRef)
+
+slots.location = Slot(uri=TESTLINK.location, name="location", curie=TESTLINK.curie('location'),
+                   model_uri=TESTLINK.location, domain=NamedThing, range=Optional[str])
+
+slots.vcs_location = Slot(uri=TESTLINK.vcs_location, name="vcs location", curie=TESTLINK.curie('vcs_location'),
+                   model_uri=TESTLINK.vcs_location, domain=NamedThing, range=Optional[str])
 
 slots.association_slot = Slot(uri=TESTLINK.association_slot, name="association slot", curie=TESTLINK.curie('association_slot'),
                    model_uri=TESTLINK.association_slot, domain=Association, range=Optional[str])
@@ -8572,50 +4451,17 @@ slots.object = Slot(uri=RDF.object, name="object", curie=RDF.curie('object'),
 slots.predicate = Slot(uri=RDF.predicate, name="predicate", curie=RDF.curie('predicate'),
                    model_uri=TESTLINK.predicate, domain=Association, range=Union[str, PredicateType])
 
-slots.edge_label = Slot(uri=RDF.predicate, name="edge label", curie=RDF.curie('predicate'),
-                   model_uri=TESTLINK.edge_label, domain=Association, range=Union[str, PredicateType])
-
 slots.relation = Slot(uri=TESTLINK.relation, name="relation", curie=TESTLINK.curie('relation'),
                    model_uri=TESTLINK.relation, domain=Association, range=Union[str, URIorCURIE])
 
 slots.negated = Slot(uri=TESTLINK.negated, name="negated", curie=TESTLINK.curie('negated'),
                    model_uri=TESTLINK.negated, domain=Association, range=Optional[Union[bool, Bool]])
 
-slots.has_confidence_level = Slot(uri=TESTLINK.has_confidence_level, name="has confidence level", curie=TESTLINK.curie('has_confidence_level'),
-                   model_uri=TESTLINK.has_confidence_level, domain=Association, range=Optional[Union[str, ConfidenceLevelId]])
-
-slots.has_evidence = Slot(uri=TESTLINK.has_evidence, name="has evidence", curie=TESTLINK.curie('has_evidence'),
-                   model_uri=TESTLINK.has_evidence, domain=Association, range=Optional[Union[str, EvidenceTypeId]])
-
 slots.provided_by = Slot(uri=TESTLINK.provided_by, name="provided by", curie=TESTLINK.curie('provided_by'),
                    model_uri=TESTLINK.provided_by, domain=Association, range=Optional[Union[Union[str, AgentId], List[Union[str, AgentId]]]])
 
 slots.association_type = Slot(uri=TESTLINK.association_type, name="association type", curie=TESTLINK.curie('association_type'),
                    model_uri=TESTLINK.association_type, domain=Association, range=Optional[Union[str, OntologyClassId]])
-
-slots.chi_squared_statistic = Slot(uri=TESTLINK.chi_squared_statistic, name="chi squared statistic", curie=TESTLINK.curie('chi_squared_statistic'),
-                   model_uri=TESTLINK.chi_squared_statistic, domain=Association, range=Optional[float])
-
-slots.p_value = Slot(uri=TESTLINK.p_value, name="p value", curie=TESTLINK.curie('p_value'),
-                   model_uri=TESTLINK.p_value, domain=Association, range=Optional[float])
-
-slots.interacting_tasks_category = Slot(uri=TESTLINK.interacting_tasks_category, name="interacting tasks category", curie=TESTLINK.curie('interacting_tasks_category'),
-                   model_uri=TESTLINK.interacting_tasks_category, domain=Association, range=Optional[Union[str, OntologyClassId]])
-
-slots.quantifier_qualifier = Slot(uri=TESTLINK.quantifier_qualifier, name="quantifier qualifier", curie=TESTLINK.curie('quantifier_qualifier'),
-                   model_uri=TESTLINK.quantifier_qualifier, domain=Association, range=Optional[Union[str, OntologyClassId]])
-
-slots.catalyst_qualifier = Slot(uri=TESTLINK.catalyst_qualifier, name="catalyst qualifier", curie=TESTLINK.curie('catalyst_qualifier'),
-                   model_uri=TESTLINK.catalyst_qualifier, domain=Association, range=Optional[Union[Union[dict, MacrooperationalMachineMixin], List[Union[dict, MacrooperationalMachineMixin]]]])
-
-slots.availability_site = Slot(uri=TESTLINK.availability_site, name="availability site", curie=TESTLINK.curie('availability_site'),
-                   model_uri=TESTLINK.availability_site, domain=Association, range=Optional[Union[str, DeploymentEntityId]])
-
-slots.stage_qualifier = Slot(uri=TESTLINK.stage_qualifier, name="stage qualifier", curie=TESTLINK.curie('stage_qualifier'),
-                   model_uri=TESTLINK.stage_qualifier, domain=Association, range=Optional[Union[str, LifecycleStageId]])
-
-slots.observable_state = Slot(uri=TESTLINK.observable_state, name="observable state", curie=TESTLINK.curie('observable_state'),
-                   model_uri=TESTLINK.observable_state, domain=Association, range=Optional[Union[str, ErrorOrObservableFeatureId]])
 
 slots.qualifiers = Slot(uri=TESTLINK.qualifiers, name="qualifiers", curie=TESTLINK.curie('qualifiers'),
                    model_uri=TESTLINK.qualifiers, domain=Association, range=Optional[Union[Union[str, OntologyClassId], List[Union[str, OntologyClassId]]]])
@@ -8626,44 +4472,14 @@ slots.frequency_qualifier = Slot(uri=TESTLINK.frequency_qualifier, name="frequen
 slots.severity_qualifier = Slot(uri=TESTLINK.severity_qualifier, name="severity qualifier", curie=TESTLINK.curie('severity_qualifier'),
                    model_uri=TESTLINK.severity_qualifier, domain=Association, range=Optional[Union[dict, SeverityValue]])
 
-slots.architectural_style_qualifier = Slot(uri=TESTLINK.architectural_style_qualifier, name="architectural style qualifier", curie=TESTLINK.curie('architectural_style_qualifier'),
-                   model_uri=TESTLINK.architectural_style_qualifier, domain=Association, range=Optional[Union[dict, ComputationalArchitecturalStyle]])
-
-slots.onset_qualifier = Slot(uri=TESTLINK.onset_qualifier, name="onset qualifier", curie=TESTLINK.curie('onset_qualifier'),
-                   model_uri=TESTLINK.onset_qualifier, domain=Association, range=Optional[Union[dict, Onset]])
-
-slots.empirical_modifier_qualifier = Slot(uri=TESTLINK.empirical_modifier_qualifier, name="empirical modifier qualifier", curie=TESTLINK.curie('empirical_modifier_qualifier'),
-                   model_uri=TESTLINK.empirical_modifier_qualifier, domain=Association, range=Optional[Union[dict, EmpiricalModifier]])
-
-slots.sequence_variant_qualifier = Slot(uri=TESTLINK.sequence_variant_qualifier, name="sequence variant qualifier", curie=TESTLINK.curie('sequence_variant_qualifier'),
-                   model_uri=TESTLINK.sequence_variant_qualifier, domain=Association, range=Optional[Union[str, SequenceVariantId]])
-
 slots.publications = Slot(uri=TESTLINK.publications, name="publications", curie=TESTLINK.curie('publications'),
                    model_uri=TESTLINK.publications, domain=Association, range=Optional[Union[Union[str, PublicationId], List[Union[str, PublicationId]]]])
 
-slots.sequence_localization_attribute = Slot(uri=TESTLINK.sequence_localization_attribute, name="sequence localization attribute", curie=TESTLINK.curie('sequence_localization_attribute'),
-                   model_uri=TESTLINK.sequence_localization_attribute, domain=ServiceSequenceLocalization, range=Optional[str])
-
-slots.interbase_coordinate = Slot(uri=TESTLINK.interbase_coordinate, name="interbase coordinate", curie=TESTLINK.curie('interbase_coordinate'),
-                   model_uri=TESTLINK.interbase_coordinate, domain=ServiceSequenceLocalization, range=Optional[int])
-
-slots.start_interbase_coordinate = Slot(uri=TESTLINK.start_interbase_coordinate, name="start interbase coordinate", curie=TESTLINK.curie('start_interbase_coordinate'),
-                   model_uri=TESTLINK.start_interbase_coordinate, domain=ServiceSequenceLocalization, range=Optional[int])
-
-slots.end_interbase_coordinate = Slot(uri=TESTLINK.end_interbase_coordinate, name="end interbase coordinate", curie=TESTLINK.curie('end_interbase_coordinate'),
-                   model_uri=TESTLINK.end_interbase_coordinate, domain=ServiceSequenceLocalization, range=Optional[int])
-
-slots.workload_build = Slot(uri=TESTLINK.workload_build, name="workload build", curie=TESTLINK.curie('workload_build'),
-                   model_uri=TESTLINK.workload_build, domain=ServiceSequenceLocalization, range=Optional[str])
-
-slots.strand = Slot(uri=TESTLINK.strand, name="strand", curie=TESTLINK.curie('strand'),
-                   model_uri=TESTLINK.strand, domain=ServiceSequenceLocalization, range=Optional[str])
-
-slots.phase = Slot(uri=TESTLINK.phase, name="phase", curie=TESTLINK.curie('phase'),
-                   model_uri=TESTLINK.phase, domain=CodingSequence, range=Optional[str])
-
 slots.has_taxonomic_rank = Slot(uri=TESTLINK.has_taxonomic_rank, name="has taxonomic rank", curie=TESTLINK.curie('has_taxonomic_rank'),
                    model_uri=TESTLINK.has_taxonomic_rank, domain=None, range=Optional[Union[str, TaxonomicRankId]], mappings = [WIKIDATA.P105])
+
+slots.subclass_of = Slot(uri=TESTLINK.subclass_of, name="subclass of", curie=TESTLINK.curie('subclass_of'),
+                   model_uri=TESTLINK.subclass_of, domain=None, range=Optional[Union[str, SystemTaxonId]])
 
 slots.attribute_name = Slot(uri=TESTLINK.name, name="attribute_name", curie=TESTLINK.curie('name'),
                    model_uri=TESTLINK.attribute_name, domain=Attribute, range=Optional[Union[str, LabelType]])
@@ -8671,11 +4487,26 @@ slots.attribute_name = Slot(uri=TESTLINK.name, name="attribute_name", curie=TEST
 slots.named_thing_category = Slot(uri=TESTLINK.category, name="named thing_category", curie=TESTLINK.curie('category'),
                    model_uri=TESTLINK.named_thing_category, domain=NamedThing, range=Union[Union[str, NamedThingId], List[Union[str, NamedThingId]]])
 
+slots.operational_activity_has_input = Slot(uri=TESTLINK.has_input, name="operational activity_has input", curie=TESTLINK.curie('has_input'),
+                   model_uri=TESTLINK.operational_activity_has_input, domain=OperationalActivity, range=Optional[Union[Union[str, ControlActorId], List[Union[str, ControlActorId]]]])
+
+slots.operational_activity_has_output = Slot(uri=TESTLINK.has_output, name="operational activity_has output", curie=TESTLINK.curie('has_output'),
+                   model_uri=TESTLINK.operational_activity_has_output, domain=OperationalActivity, range=Optional[Union[Union[str, ControlActorId], List[Union[str, ControlActorId]]]])
+
+slots.operational_activity_enabled_by = Slot(uri=TESTLINK.enabled_by, name="operational activity_enabled by", curie=TESTLINK.curie('enabled_by'),
+                   model_uri=TESTLINK.operational_activity_enabled_by, domain=OperationalActivity, range=Optional[Union[Union[dict, "MacrooperationalMachineMixin"], List[Union[dict, "MacrooperationalMachineMixin"]]]])
+
+slots.systemic_entity_has_attribute = Slot(uri=TESTLINK.has_attribute, name="systemic entity_has attribute", curie=TESTLINK.curie('has_attribute'),
+                   model_uri=TESTLINK.systemic_entity_has_attribute, domain=SystemicEntity, range=Optional[Union[Union[dict, Attribute], List[Union[dict, Attribute]]]])
+
+slots.macrooperational_machine_mixin_name = Slot(uri=TESTLINK.name, name="macrooperational machine mixin_name", curie=TESTLINK.curie('name'),
+                   model_uri=TESTLINK.macrooperational_machine_mixin_name, domain=None, range=Optional[Union[str, SymbolType]])
+
 slots.system_taxon_has_taxonomic_rank = Slot(uri=TESTLINK.has_taxonomic_rank, name="system taxon_has taxonomic rank", curie=TESTLINK.curie('has_taxonomic_rank'),
                    model_uri=TESTLINK.system_taxon_has_taxonomic_rank, domain=SystemTaxon, range=Optional[Union[str, TaxonomicRankId]], mappings = [WIKIDATA.P105])
 
 slots.system_taxon_subclass_of = Slot(uri=TESTLINK.subclass_of, name="system taxon_subclass of", curie=TESTLINK.curie('subclass_of'),
-                   model_uri=TESTLINK.system_taxon_subclass_of, domain=SystemTaxon, range=Optional[Union[Union[str, SystemTaxonId], List[Union[str, SystemTaxonId]]]])
+                   model_uri=TESTLINK.system_taxon_subclass_of, domain=SystemTaxon, range=Optional[Union[str, SystemTaxonId]])
 
 slots.agent_id = Slot(uri=TESTLINK.id, name="agent_id", curie=TESTLINK.curie('id'),
                    model_uri=TESTLINK.agent_id, domain=Agent, range=Union[str, AgentId])
@@ -8695,449 +4526,305 @@ slots.publication_type = Slot(uri=DCT.type, name="publication_type", curie=DCT.c
 slots.publication_pages = Slot(uri=TESTLINK.pages, name="publication_pages", curie=TESTLINK.curie('pages'),
                    model_uri=TESTLINK.publication_pages, domain=Publication, range=Optional[Union[str, List[str]]])
 
-slots.book_id = Slot(uri=TESTLINK.id, name="book_id", curie=TESTLINK.curie('id'),
-                   model_uri=TESTLINK.book_id, domain=Book, range=Union[str, BookId])
-
-slots.book_type = Slot(uri=TESTLINK.type, name="book_type", curie=TESTLINK.curie('type'),
-                   model_uri=TESTLINK.book_type, domain=Book, range=str)
-
-slots.book_chapter_published_in = Slot(uri=TESTLINK.published_in, name="book chapter_published in", curie=TESTLINK.curie('published_in'),
-                   model_uri=TESTLINK.book_chapter_published_in, domain=BookChapter, range=Union[str, URIorCURIE])
-
-slots.serial_id = Slot(uri=TESTLINK.id, name="serial_id", curie=TESTLINK.curie('id'),
-                   model_uri=TESTLINK.serial_id, domain=Serial, range=Union[str, SerialId])
-
-slots.serial_type = Slot(uri=TESTLINK.type, name="serial_type", curie=TESTLINK.curie('type'),
-                   model_uri=TESTLINK.serial_type, domain=Serial, range=str)
-
-slots.article_published_in = Slot(uri=TESTLINK.published_in, name="article_published in", curie=TESTLINK.curie('published_in'),
-                   model_uri=TESTLINK.article_published_in, domain=Article, range=Union[str, URIorCURIE])
-
-slots.article_iso_abbreviation = Slot(uri=TESTLINK.iso_abbreviation, name="article_iso abbreviation", curie=TESTLINK.curie('iso_abbreviation'),
-                   model_uri=TESTLINK.article_iso_abbreviation, domain=Article, range=Optional[str])
-
-slots.operational_activity_has_input = Slot(uri=TESTLINK.has_input, name="operational activity_has input", curie=TESTLINK.curie('has_input'),
-                   model_uri=TESTLINK.operational_activity_has_input, domain=OperationalActivity, range=Optional[Union[Union[str, ControlActorId], List[Union[str, ControlActorId]]]])
-
-slots.operational_activity_has_output = Slot(uri=TESTLINK.has_output, name="operational activity_has output", curie=TESTLINK.curie('has_output'),
-                   model_uri=TESTLINK.operational_activity_has_output, domain=OperationalActivity, range=Optional[Union[Union[str, ControlActorId], List[Union[str, ControlActorId]]]])
-
-slots.operational_activity_enabled_by = Slot(uri=TESTLINK.enabled_by, name="operational activity_enabled by", curie=TESTLINK.curie('enabled_by'),
-                   model_uri=TESTLINK.operational_activity_enabled_by, domain=OperationalActivity, range=Optional[Union[Union[dict, "MacrooperationalMachineMixin"], List[Union[dict, "MacrooperationalMachineMixin"]]]])
-
-slots.systemic_entity_has_attribute = Slot(uri=TESTLINK.has_attribute, name="systemic entity_has attribute", curie=TESTLINK.curie('has_attribute'),
-                   model_uri=TESTLINK.systemic_entity_has_attribute, domain=SystemicEntity, range=Optional[Union[Union[dict, Attribute], List[Union[dict, Attribute]]]])
-
-slots.macrooperational_machine_mixin_name = Slot(uri=TESTLINK.name, name="macrooperational machine mixin_name", curie=TESTLINK.curie('name'),
-                   model_uri=TESTLINK.macrooperational_machine_mixin_name, domain=None, range=Optional[Union[str, SymbolType]])
-
-slots.sequence_variant_has_componentservice = Slot(uri=TESTLINK.has_componentservice, name="sequence variant_has componentservice", curie=TESTLINK.curie('has_componentservice'),
-                   model_uri=TESTLINK.sequence_variant_has_componentservice, domain=SequenceVariant, range=Optional[Union[Union[dict, Componentservice], List[Union[dict, Componentservice]]]])
-
-slots.sequence_variant_has_computational_sequence = Slot(uri=TESTLINK.has_computational_sequence, name="sequence variant_has computational sequence", curie=TESTLINK.curie('has_computational_sequence'),
-                   model_uri=TESTLINK.sequence_variant_has_computational_sequence, domain=SequenceVariant, range=Optional[Union[str, ComputationalSequence]])
-
-slots.sequence_variant_id = Slot(uri=TESTLINK.id, name="sequence variant_id", curie=TESTLINK.curie('id'),
-                   model_uri=TESTLINK.sequence_variant_id, domain=SequenceVariant, range=Union[str, SequenceVariantId])
-
-slots.empirical_measurement_has_attribute_type = Slot(uri=TESTLINK.has_attribute_type, name="empirical measurement_has attribute type", curie=TESTLINK.curie('has_attribute_type'),
-                   model_uri=TESTLINK.empirical_measurement_has_attribute_type, domain=EmpiricalMeasurement, range=Union[str, OntologyClassId])
-
-slots.empirical_finding_has_attribute = Slot(uri=TESTLINK.has_attribute, name="empirical finding_has attribute", curie=TESTLINK.curie('has_attribute'),
-                   model_uri=TESTLINK.empirical_finding_has_attribute, domain=EmpiricalFinding, range=Optional[Union[Union[dict, EmpiricalAttribute], List[Union[dict, EmpiricalAttribute]]]])
-
-slots.socioeconomic_exposure_has_attribute = Slot(uri=TESTLINK.has_attribute, name="socioeconomic exposure_has attribute", curie=TESTLINK.curie('has_attribute'),
-                   model_uri=TESTLINK.socioeconomic_exposure_has_attribute, domain=SocioeconomicExposure, range=Union[Union[dict, SocioeconomicAttribute], List[Union[dict, SocioeconomicAttribute]]])
-
 slots.association_type = Slot(uri=TESTLINK.type, name="association_type", curie=TESTLINK.curie('type'),
                    model_uri=TESTLINK.association_type, domain=Association, range=Optional[str])
 
 slots.association_category = Slot(uri=TESTLINK.category, name="association_category", curie=TESTLINK.curie('category'),
                    model_uri=TESTLINK.association_category, domain=Association, range=Union[Union[str, AssociationId], List[Union[str, AssociationId]]])
 
-slots.contributor_association_subject = Slot(uri=TESTLINK.subject, name="contributor association_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.contributor_association_subject, domain=ContributorAssociation, range=Union[str, InformationContentEntityId])
+slots.application_instance_to_server_group_hub_association_predicate = Slot(uri=TESTLINK.predicate, name="application instance to server group hub association_predicate", curie=TESTLINK.curie('predicate'),
+                   model_uri=TESTLINK.application_instance_to_server_group_hub_association_predicate, domain=ApplicationInstanceToServerGroupHubAssociation, range=Union[str, PredicateType])
 
-slots.contributor_association_predicate = Slot(uri=TESTLINK.predicate, name="contributor association_predicate", curie=TESTLINK.curie('predicate'),
-                   model_uri=TESTLINK.contributor_association_predicate, domain=ContributorAssociation, range=Union[str, PredicateType])
+slots.application_instance_to_server_group_hub_association_subject = Slot(uri=TESTLINK.subject, name="application instance to server group hub association_subject", curie=TESTLINK.curie('subject'),
+                   model_uri=TESTLINK.application_instance_to_server_group_hub_association_subject, domain=ApplicationInstanceToServerGroupHubAssociation, range=Union[str, ApplicationInstanceId])
 
-slots.contributor_association_object = Slot(uri=TESTLINK.object, name="contributor association_object", curie=TESTLINK.curie('object'),
-                   model_uri=TESTLINK.contributor_association_object, domain=ContributorAssociation, range=Union[str, AgentId])
+slots.application_instance_to_server_group_hub_association_object = Slot(uri=TESTLINK.object, name="application instance to server group hub association_object", curie=TESTLINK.curie('object'),
+                   model_uri=TESTLINK.application_instance_to_server_group_hub_association_object, domain=ApplicationInstanceToServerGroupHubAssociation, range=Union[str, ServerGroupHubId])
 
-slots.contributor_association_qualifiers = Slot(uri=TESTLINK.qualifiers, name="contributor association_qualifiers", curie=TESTLINK.curie('qualifiers'),
-                   model_uri=TESTLINK.contributor_association_qualifiers, domain=ContributorAssociation, range=Optional[Union[Union[str, OntologyClassId], List[Union[str, OntologyClassId]]]])
+slots.application_instance_to_realm_association_predicate = Slot(uri=TESTLINK.predicate, name="application instance to realm association_predicate", curie=TESTLINK.curie('predicate'),
+                   model_uri=TESTLINK.application_instance_to_realm_association_predicate, domain=ApplicationInstanceToRealmAssociation, range=Union[str, PredicateType])
 
-slots.serviceunittype_to_serviceunittype_part_association_predicate = Slot(uri=TESTLINK.predicate, name="serviceunittype to serviceunittype part association_predicate", curie=TESTLINK.curie('predicate'),
-                   model_uri=TESTLINK.serviceunittype_to_serviceunittype_part_association_predicate, domain=ServiceunittypeToServiceunittypePartAssociation, range=Union[str, PredicateType])
+slots.application_instance_to_realm_association_subject = Slot(uri=TESTLINK.subject, name="application instance to realm association_subject", curie=TESTLINK.curie('subject'),
+                   model_uri=TESTLINK.application_instance_to_realm_association_subject, domain=ApplicationInstanceToRealmAssociation, range=Union[str, ApplicationInstanceId])
 
-slots.serviceunittype_to_serviceunittype_part_association_subject = Slot(uri=TESTLINK.subject, name="serviceunittype to serviceunittype part association_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.serviceunittype_to_serviceunittype_part_association_subject, domain=ServiceunittypeToServiceunittypePartAssociation, range=Union[str, ServiceunittypeId])
+slots.application_instance_to_realm_association_object = Slot(uri=TESTLINK.object, name="application instance to realm association_object", curie=TESTLINK.curie('object'),
+                   model_uri=TESTLINK.application_instance_to_realm_association_object, domain=ApplicationInstanceToRealmAssociation, range=Union[str, RealmId])
 
-slots.serviceunittype_to_serviceunittype_part_association_object = Slot(uri=TESTLINK.object, name="serviceunittype to serviceunittype part association_object", curie=TESTLINK.curie('object'),
-                   model_uri=TESTLINK.serviceunittype_to_serviceunittype_part_association_object, domain=ServiceunittypeToServiceunittypePartAssociation, range=Union[str, ServiceunittypeId])
+slots.application_instance_to_domain_environment_association_predicate = Slot(uri=TESTLINK.predicate, name="application instance to domain environment association_predicate", curie=TESTLINK.curie('predicate'),
+                   model_uri=TESTLINK.application_instance_to_domain_environment_association_predicate, domain=ApplicationInstanceToDomainEnvironmentAssociation, range=Union[str, PredicateType])
 
-slots.serviceunittype_to_componentservice_association_predicate = Slot(uri=TESTLINK.predicate, name="serviceunittype to componentservice association_predicate", curie=TESTLINK.curie('predicate'),
-                   model_uri=TESTLINK.serviceunittype_to_componentservice_association_predicate, domain=ServiceunittypeToComponentserviceAssociation, range=Union[str, PredicateType])
+slots.application_instance_to_domain_environment_association_subject = Slot(uri=TESTLINK.subject, name="application instance to domain environment association_subject", curie=TESTLINK.curie('subject'),
+                   model_uri=TESTLINK.application_instance_to_domain_environment_association_subject, domain=ApplicationInstanceToDomainEnvironmentAssociation, range=Union[str, ApplicationInstanceId])
 
-slots.serviceunittype_to_componentservice_association_subject = Slot(uri=TESTLINK.subject, name="serviceunittype to componentservice association_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.serviceunittype_to_componentservice_association_subject, domain=ServiceunittypeToComponentserviceAssociation, range=Union[str, ServiceunittypeId])
+slots.application_instance_to_domain_environment_association_object = Slot(uri=TESTLINK.object, name="application instance to domain environment association_object", curie=TESTLINK.curie('object'),
+                   model_uri=TESTLINK.application_instance_to_domain_environment_association_object, domain=ApplicationInstanceToDomainEnvironmentAssociation, range=Union[str, DomainEnvironmentId])
 
-slots.serviceunittype_to_componentservice_association_object = Slot(uri=TESTLINK.object, name="serviceunittype to componentservice association_object", curie=TESTLINK.curie('object'),
-                   model_uri=TESTLINK.serviceunittype_to_componentservice_association_object, domain=ServiceunittypeToComponentserviceAssociation, range=Union[dict, Componentservice])
+slots.application_instance_to_application_association_predicate = Slot(uri=TESTLINK.predicate, name="application instance to application association_predicate", curie=TESTLINK.curie('predicate'),
+                   model_uri=TESTLINK.application_instance_to_application_association_predicate, domain=ApplicationInstanceToApplicationAssociation, range=Union[str, PredicateType])
 
-slots.serviceunittype_to_variant_association_predicate = Slot(uri=TESTLINK.predicate, name="serviceunittype to variant association_predicate", curie=TESTLINK.curie('predicate'),
-                   model_uri=TESTLINK.serviceunittype_to_variant_association_predicate, domain=ServiceunittypeToVariantAssociation, range=Union[str, PredicateType])
+slots.application_instance_to_application_association_subject = Slot(uri=TESTLINK.subject, name="application instance to application association_subject", curie=TESTLINK.curie('subject'),
+                   model_uri=TESTLINK.application_instance_to_application_association_subject, domain=ApplicationInstanceToApplicationAssociation, range=Union[str, ApplicationInstanceId])
 
-slots.serviceunittype_to_variant_association_subject = Slot(uri=TESTLINK.subject, name="serviceunittype to variant association_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.serviceunittype_to_variant_association_subject, domain=ServiceunittypeToVariantAssociation, range=Union[str, ServiceunittypeId])
+slots.application_instance_to_application_association_object = Slot(uri=TESTLINK.object, name="application instance to application association_object", curie=TESTLINK.curie('object'),
+                   model_uri=TESTLINK.application_instance_to_application_association_object, domain=ApplicationInstanceToApplicationAssociation, range=Union[dict, Application])
 
-slots.serviceunittype_to_variant_association_object = Slot(uri=TESTLINK.object, name="serviceunittype to variant association_object", curie=TESTLINK.curie('object'),
-                   model_uri=TESTLINK.serviceunittype_to_variant_association_object, domain=ServiceunittypeToVariantAssociation, range=Union[str, SequenceVariantId])
+slots.environment_configuration_to_environment_association_predicate = Slot(uri=TESTLINK.predicate, name="environment configuration to environment association_predicate", curie=TESTLINK.curie('predicate'),
+                   model_uri=TESTLINK.environment_configuration_to_environment_association_predicate, domain=EnvironmentConfigurationToEnvironmentAssociation, range=Union[str, PredicateType])
 
-slots.componentservice_to_componentservice_association_subject = Slot(uri=TESTLINK.subject, name="componentservice to componentservice association_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.componentservice_to_componentservice_association_subject, domain=ComponentserviceToComponentserviceAssociation, range=Union[dict, ComponentserviceOrServicetype])
+slots.environment_configuration_to_environment_association_subject = Slot(uri=TESTLINK.subject, name="environment configuration to environment association_subject", curie=TESTLINK.curie('subject'),
+                   model_uri=TESTLINK.environment_configuration_to_environment_association_subject, domain=EnvironmentConfigurationToEnvironmentAssociation, range=Union[str, EnvironmentConfigurationId])
 
-slots.componentservice_to_componentservice_association_object = Slot(uri=TESTLINK.object, name="componentservice to componentservice association_object", curie=TESTLINK.curie('object'),
-                   model_uri=TESTLINK.componentservice_to_componentservice_association_object, domain=ComponentserviceToComponentserviceAssociation, range=Union[dict, ComponentserviceOrServicetype])
+slots.environment_configuration_to_environment_association_object = Slot(uri=TESTLINK.object, name="environment configuration to environment association_object", curie=TESTLINK.curie('object'),
+                   model_uri=TESTLINK.environment_configuration_to_environment_association_object, domain=EnvironmentConfigurationToEnvironmentAssociation, range=Union[str, EnvironmentId])
 
-slots.componentservice_to_componentservice_homology_association_predicate = Slot(uri=TESTLINK.predicate, name="componentservice to componentservice homology association_predicate", curie=TESTLINK.curie('predicate'),
-                   model_uri=TESTLINK.componentservice_to_componentservice_homology_association_predicate, domain=ComponentserviceToComponentserviceHomologyAssociation, range=Union[str, PredicateType])
+slots.domain_environment_to_domain_association_predicate = Slot(uri=TESTLINK.predicate, name="domain environment to domain association_predicate", curie=TESTLINK.curie('predicate'),
+                   model_uri=TESTLINK.domain_environment_to_domain_association_predicate, domain=DomainEnvironmentToDomainAssociation, range=Union[str, PredicateType])
 
-slots.componentservice_availability_mixin_quantifier_qualifier = Slot(uri=TESTLINK.quantifier_qualifier, name="componentservice availability mixin_quantifier qualifier", curie=TESTLINK.curie('quantifier_qualifier'),
-                   model_uri=TESTLINK.componentservice_availability_mixin_quantifier_qualifier, domain=ComponentserviceAvailabilityMixin, range=Optional[Union[str, OntologyClassId]])
+slots.domain_environment_to_domain_association_subject = Slot(uri=TESTLINK.subject, name="domain environment to domain association_subject", curie=TESTLINK.curie('subject'),
+                   model_uri=TESTLINK.domain_environment_to_domain_association_subject, domain=DomainEnvironmentToDomainAssociation, range=Union[str, DomainEnvironmentId])
 
-slots.componentservice_to_componentservice_coavailability_association_predicate = Slot(uri=TESTLINK.predicate, name="componentservice to componentservice coavailability association_predicate", curie=TESTLINK.curie('predicate'),
-                   model_uri=TESTLINK.componentservice_to_componentservice_coavailability_association_predicate, domain=ComponentserviceToComponentserviceCoavailabilityAssociation, range=Union[str, PredicateType])
+slots.domain_environment_to_domain_association_object = Slot(uri=TESTLINK.object, name="domain environment to domain association_object", curie=TESTLINK.curie('object'),
+                   model_uri=TESTLINK.domain_environment_to_domain_association_object, domain=DomainEnvironmentToDomainAssociation, range=Union[str, DomainId])
 
-slots.pairwise_componentservice_to_componentservice_interaction_predicate = Slot(uri=TESTLINK.predicate, name="pairwise componentservice to componentservice interaction_predicate", curie=TESTLINK.curie('predicate'),
-                   model_uri=TESTLINK.pairwise_componentservice_to_componentservice_interaction_predicate, domain=PairwiseComponentserviceToComponentserviceInteraction, range=Union[str, PredicateType])
+slots.domain_environment_to_environment_association_predicate = Slot(uri=TESTLINK.predicate, name="domain environment to environment association_predicate", curie=TESTLINK.curie('predicate'),
+                   model_uri=TESTLINK.domain_environment_to_environment_association_predicate, domain=DomainEnvironmentToEnvironmentAssociation, range=Union[str, PredicateType])
 
-slots.pairwise_componentservice_to_componentservice_interaction_relation = Slot(uri=TESTLINK.relation, name="pairwise componentservice to componentservice interaction_relation", curie=TESTLINK.curie('relation'),
-                   model_uri=TESTLINK.pairwise_componentservice_to_componentservice_interaction_relation, domain=PairwiseComponentserviceToComponentserviceInteraction, range=Union[str, URIorCURIE])
+slots.domain_environment_to_environment_association_subject = Slot(uri=TESTLINK.subject, name="domain environment to environment association_subject", curie=TESTLINK.curie('subject'),
+                   model_uri=TESTLINK.domain_environment_to_environment_association_subject, domain=DomainEnvironmentToEnvironmentAssociation, range=Union[str, DomainEnvironmentId])
 
-slots.pairwise_operationally_interaction_subject = Slot(uri=TESTLINK.subject, name="pairwise operationally interaction_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.pairwise_operationally_interaction_subject, domain=PairwiseOperationallyInteraction, range=Union[str, OperationalEntityId])
+slots.domain_environment_to_environment_association_object = Slot(uri=TESTLINK.object, name="domain environment to environment association_object", curie=TESTLINK.curie('object'),
+                   model_uri=TESTLINK.domain_environment_to_environment_association_object, domain=DomainEnvironmentToEnvironmentAssociation, range=Union[str, EnvironmentId])
 
-slots.pairwise_operationally_interaction_id = Slot(uri=TESTLINK.id, name="pairwise operationally interaction_id", curie=TESTLINK.curie('id'),
-                   model_uri=TESTLINK.pairwise_operationally_interaction_id, domain=PairwiseOperationallyInteraction, range=Union[str, PairwiseOperationallyInteractionId])
+slots.domain_configuration_to_domain_environment_association_predicate = Slot(uri=TESTLINK.predicate, name="domain configuration to domain environment association_predicate", curie=TESTLINK.curie('predicate'),
+                   model_uri=TESTLINK.domain_configuration_to_domain_environment_association_predicate, domain=DomainConfigurationToDomainEnvironmentAssociation, range=Union[str, PredicateType])
 
-slots.pairwise_operationally_interaction_predicate = Slot(uri=TESTLINK.predicate, name="pairwise operationally interaction_predicate", curie=TESTLINK.curie('predicate'),
-                   model_uri=TESTLINK.pairwise_operationally_interaction_predicate, domain=PairwiseOperationallyInteraction, range=Union[str, PredicateType])
+slots.domain_configuration_to_domain_environment_association_subject = Slot(uri=TESTLINK.subject, name="domain configuration to domain environment association_subject", curie=TESTLINK.curie('subject'),
+                   model_uri=TESTLINK.domain_configuration_to_domain_environment_association_subject, domain=DomainConfigurationToDomainEnvironmentAssociation, range=Union[str, DomainConfigurationId])
 
-slots.pairwise_operationally_interaction_relation = Slot(uri=TESTLINK.relation, name="pairwise operationally interaction_relation", curie=TESTLINK.curie('relation'),
-                   model_uri=TESTLINK.pairwise_operationally_interaction_relation, domain=PairwiseOperationallyInteraction, range=Union[str, URIorCURIE])
+slots.domain_configuration_to_domain_environment_association_object = Slot(uri=TESTLINK.object, name="domain configuration to domain environment association_object", curie=TESTLINK.curie('object'),
+                   model_uri=TESTLINK.domain_configuration_to_domain_environment_association_object, domain=DomainConfigurationToDomainEnvironmentAssociation, range=Union[str, DomainEnvironmentId])
 
-slots.pairwise_operationally_interaction_object = Slot(uri=TESTLINK.object, name="pairwise operationally interaction_object", curie=TESTLINK.curie('object'),
-                   model_uri=TESTLINK.pairwise_operationally_interaction_object, domain=PairwiseOperationallyInteraction, range=Union[str, OperationalEntityId])
+slots.realm_configuration_to_realm_association_predicate = Slot(uri=TESTLINK.predicate, name="realm configuration to realm association_predicate", curie=TESTLINK.curie('predicate'),
+                   model_uri=TESTLINK.realm_configuration_to_realm_association_predicate, domain=RealmConfigurationToRealmAssociation, range=Union[str, PredicateType])
 
-slots.component_type_to_entity_association_mixin_subject = Slot(uri=TESTLINK.subject, name="component type to entity association mixin_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.component_type_to_entity_association_mixin_subject, domain=None, range=Union[str, ComponentTypeId])
+slots.realm_configuration_to_realm_association_subject = Slot(uri=TESTLINK.subject, name="realm configuration to realm association_subject", curie=TESTLINK.curie('subject'),
+                   model_uri=TESTLINK.realm_configuration_to_realm_association_subject, domain=RealmConfigurationToRealmAssociation, range=Union[str, RealmConfigurationId])
 
-slots.component_type_to_error_or_observable_feature_association_subject = Slot(uri=TESTLINK.subject, name="component type to error or observable feature association_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.component_type_to_error_or_observable_feature_association_subject, domain=ComponentTypeToErrorOrObservableFeatureAssociation, range=Union[str, ErrorOrObservableFeatureId])
+slots.realm_configuration_to_realm_association_object = Slot(uri=TESTLINK.object, name="realm configuration to realm association_object", curie=TESTLINK.curie('object'),
+                   model_uri=TESTLINK.realm_configuration_to_realm_association_object, domain=RealmConfigurationToRealmAssociation, range=Union[str, RealmId])
 
-slots.operational_entity_to_entity_association_mixin_subject = Slot(uri=TESTLINK.subject, name="operational entity to entity association mixin_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.operational_entity_to_entity_association_mixin_subject, domain=None, range=Union[str, OperationalEntityId])
+slots.realm_configuration_to_domain_environment_association_predicate = Slot(uri=TESTLINK.predicate, name="realm configuration to domain environment association_predicate", curie=TESTLINK.curie('predicate'),
+                   model_uri=TESTLINK.realm_configuration_to_domain_environment_association_predicate, domain=RealmConfigurationToDomainEnvironmentAssociation, range=Union[str, PredicateType])
 
-slots.administrative_operational_to_entity_association_mixin_subject = Slot(uri=TESTLINK.subject, name="administrative operational to entity association mixin_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.administrative_operational_to_entity_association_mixin_subject, domain=None, range=Union[str, AdministrativeOperationId])
+slots.realm_configuration_to_domain_environment_association_subject = Slot(uri=TESTLINK.subject, name="realm configuration to domain environment association_subject", curie=TESTLINK.curie('subject'),
+                   model_uri=TESTLINK.realm_configuration_to_domain_environment_association_subject, domain=RealmConfigurationToDomainEnvironmentAssociation, range=Union[str, RealmConfigurationId])
 
-slots.orchestration_to_entity_association_mixin_subject = Slot(uri=TESTLINK.subject, name="orchestration to entity association mixin_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.orchestration_to_entity_association_mixin_subject, domain=None, range=Union[str, ControlActorId])
+slots.realm_configuration_to_domain_environment_association_object = Slot(uri=TESTLINK.object, name="realm configuration to domain environment association_object", curie=TESTLINK.curie('object'),
+                   model_uri=TESTLINK.realm_configuration_to_domain_environment_association_object, domain=RealmConfigurationToDomainEnvironmentAssociation, range=Union[str, DomainEnvironmentId])
 
-slots.case_to_entity_association_mixin_subject = Slot(uri=TESTLINK.subject, name="case to entity association mixin_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.case_to_entity_association_mixin_subject, domain=None, range=Union[str, CaseId])
+slots.component_to_vcs_root_association_predicate = Slot(uri=TESTLINK.predicate, name="component to vcs root association_predicate", curie=TESTLINK.curie('predicate'),
+                   model_uri=TESTLINK.component_to_vcs_root_association_predicate, domain=ComponentToVcsRootAssociation, range=Union[str, PredicateType])
 
-slots.orchestration_to_orchestration_association_object = Slot(uri=TESTLINK.object, name="orchestration to orchestration association_object", curie=TESTLINK.curie('object'),
-                   model_uri=TESTLINK.orchestration_to_orchestration_association_object, domain=OrchestrationToOrchestrationAssociation, range=Union[str, ControlActorId])
+slots.component_to_vcs_root_association_subject = Slot(uri=TESTLINK.subject, name="component to vcs root association_subject", curie=TESTLINK.curie('subject'),
+                   model_uri=TESTLINK.component_to_vcs_root_association_subject, domain=ComponentToVcsRootAssociation, range=Union[str, ComponentId])
 
-slots.orchestration_to_orchestration_derivation_association_subject = Slot(uri=TESTLINK.subject, name="orchestration to orchestration derivation association_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.orchestration_to_orchestration_derivation_association_subject, domain=OrchestrationToOrchestrationDerivationAssociation, range=Union[str, ControlActorId])
+slots.component_to_vcs_root_association_object = Slot(uri=TESTLINK.object, name="component to vcs root association_object", curie=TESTLINK.curie('object'),
+                   model_uri=TESTLINK.component_to_vcs_root_association_object, domain=ComponentToVcsRootAssociation, range=Union[str, VcsRootId])
 
-slots.orchestration_to_orchestration_derivation_association_object = Slot(uri=TESTLINK.object, name="orchestration to orchestration derivation association_object", curie=TESTLINK.curie('object'),
-                   model_uri=TESTLINK.orchestration_to_orchestration_derivation_association_object, domain=OrchestrationToOrchestrationDerivationAssociation, range=Union[str, ControlActorId])
+slots.component_configuration_to_component_association_predicate = Slot(uri=TESTLINK.predicate, name="component configuration to component association_predicate", curie=TESTLINK.curie('predicate'),
+                   model_uri=TESTLINK.component_configuration_to_component_association_predicate, domain=ComponentConfigurationToComponentAssociation, range=Union[str, PredicateType])
 
-slots.orchestration_to_orchestration_derivation_association_predicate = Slot(uri=TESTLINK.predicate, name="orchestration to orchestration derivation association_predicate", curie=TESTLINK.curie('predicate'),
-                   model_uri=TESTLINK.orchestration_to_orchestration_derivation_association_predicate, domain=OrchestrationToOrchestrationDerivationAssociation, range=Union[str, PredicateType])
+slots.component_configuration_to_component_association_subject = Slot(uri=TESTLINK.subject, name="component configuration to component association_subject", curie=TESTLINK.curie('subject'),
+                   model_uri=TESTLINK.component_configuration_to_component_association_subject, domain=ComponentConfigurationToComponentAssociation, range=Union[str, ComponentConfigurationId])
 
-slots.orchestration_to_orchestration_derivation_association_catalyst_qualifier = Slot(uri=TESTLINK.catalyst_qualifier, name="orchestration to orchestration derivation association_catalyst qualifier", curie=TESTLINK.curie('catalyst_qualifier'),
-                   model_uri=TESTLINK.orchestration_to_orchestration_derivation_association_catalyst_qualifier, domain=OrchestrationToOrchestrationDerivationAssociation, range=Optional[Union[Union[dict, MacrooperationalMachineMixin], List[Union[dict, MacrooperationalMachineMixin]]]])
+slots.component_configuration_to_component_association_object = Slot(uri=TESTLINK.object, name="component configuration to component association_object", curie=TESTLINK.curie('object'),
+                   model_uri=TESTLINK.component_configuration_to_component_association_object, domain=ComponentConfigurationToComponentAssociation, range=Union[str, ComponentId])
 
-slots.orchestration_to_error_or_observable_feature_association_object = Slot(uri=TESTLINK.object, name="orchestration to error or observable feature association_object", curie=TESTLINK.curie('object'),
-                   model_uri=TESTLINK.orchestration_to_error_or_observable_feature_association_object, domain=OrchestrationToErrorOrObservableFeatureAssociation, range=Union[str, ErrorOrObservableFeatureId])
+slots.application_to_component_association_predicate = Slot(uri=TESTLINK.predicate, name="application to component association_predicate", curie=TESTLINK.curie('predicate'),
+                   model_uri=TESTLINK.application_to_component_association_predicate, domain=ApplicationToComponentAssociation, range=Union[str, PredicateType])
 
-slots.orchestration_to_pathway_association_object = Slot(uri=TESTLINK.object, name="orchestration to pathway association_object", curie=TESTLINK.curie('object'),
-                   model_uri=TESTLINK.orchestration_to_pathway_association_object, domain=OrchestrationToPathwayAssociation, range=Union[str, PathwayId])
+slots.application_to_component_association_subject = Slot(uri=TESTLINK.subject, name="application to component association_subject", curie=TESTLINK.curie('subject'),
+                   model_uri=TESTLINK.application_to_component_association_subject, domain=ApplicationToComponentAssociation, range=Union[dict, Application])
 
-slots.orchestration_to_componentservice_association_object = Slot(uri=TESTLINK.object, name="orchestration to componentservice association_object", curie=TESTLINK.curie('object'),
-                   model_uri=TESTLINK.orchestration_to_componentservice_association_object, domain=OrchestrationToComponentserviceAssociation, range=Union[dict, ComponentserviceOrServicetype])
+slots.application_to_component_association_object = Slot(uri=TESTLINK.object, name="application to component association_object", curie=TESTLINK.curie('object'),
+                   model_uri=TESTLINK.application_to_component_association_object, domain=ApplicationToComponentAssociation, range=Union[str, ComponentId])
 
-slots.administrative_operational_to_componentservice_association_object = Slot(uri=TESTLINK.object, name="administrative operational to componentservice association_object", curie=TESTLINK.curie('object'),
-                   model_uri=TESTLINK.administrative_operational_to_componentservice_association_object, domain=AdministrativeOperationalToComponentserviceAssociation, range=Union[dict, ComponentserviceOrServicetype])
+slots.application_to_application_type_association_predicate = Slot(uri=TESTLINK.predicate, name="application to application type association_predicate", curie=TESTLINK.curie('predicate'),
+                   model_uri=TESTLINK.application_to_application_type_association_predicate, domain=ApplicationToApplicationTypeAssociation, range=Union[str, PredicateType])
 
-slots.resource_sample_to_entity_association_mixin_subject = Slot(uri=TESTLINK.subject, name="resource sample to entity association mixin_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.resource_sample_to_entity_association_mixin_subject, domain=None, range=Union[str, ResourceSampleId])
+slots.application_to_application_type_association_subject = Slot(uri=TESTLINK.subject, name="application to application type association_subject", curie=TESTLINK.curie('subject'),
+                   model_uri=TESTLINK.application_to_application_type_association_subject, domain=ApplicationToApplicationTypeAssociation, range=Union[dict, Application])
 
-slots.resource_sample_derivation_association_subject = Slot(uri=TESTLINK.subject, name="resource sample derivation association_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.resource_sample_derivation_association_subject, domain=ResourceSampleDerivationAssociation, range=Union[str, ResourceSampleId])
+slots.application_to_application_type_association_object = Slot(uri=TESTLINK.object, name="application to application type association_object", curie=TESTLINK.curie('object'),
+                   model_uri=TESTLINK.application_to_application_type_association_object, domain=ApplicationToApplicationTypeAssociation, range=Union[str, ApplicationTypeId])
 
-slots.resource_sample_derivation_association_object = Slot(uri=TESTLINK.object, name="resource sample derivation association_object", curie=TESTLINK.curie('object'),
-                   model_uri=TESTLINK.resource_sample_derivation_association_object, domain=ResourceSampleDerivationAssociation, range=Union[str, NamedThingId])
+slots.application_configuration_to_application_association_predicate = Slot(uri=TESTLINK.predicate, name="application configuration to application association_predicate", curie=TESTLINK.curie('predicate'),
+                   model_uri=TESTLINK.application_configuration_to_application_association_predicate, domain=ApplicationConfigurationToApplicationAssociation, range=Union[str, PredicateType])
 
-slots.resource_sample_derivation_association_predicate = Slot(uri=TESTLINK.predicate, name="resource sample derivation association_predicate", curie=TESTLINK.curie('predicate'),
-                   model_uri=TESTLINK.resource_sample_derivation_association_predicate, domain=ResourceSampleDerivationAssociation, range=Union[str, PredicateType])
+slots.application_configuration_to_application_association_subject = Slot(uri=TESTLINK.subject, name="application configuration to application association_subject", curie=TESTLINK.curie('subject'),
+                   model_uri=TESTLINK.application_configuration_to_application_association_subject, domain=ApplicationConfigurationToApplicationAssociation, range=Union[str, ApplicationConfigurationId])
 
-slots.error_to_entity_association_mixin_subject = Slot(uri=TESTLINK.subject, name="error to entity association mixin_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.error_to_entity_association_mixin_subject, domain=None, range=Union[str, ErrorId])
+slots.application_configuration_to_application_association_object = Slot(uri=TESTLINK.object, name="application configuration to application association_object", curie=TESTLINK.curie('object'),
+                   model_uri=TESTLINK.application_configuration_to_application_association_object, domain=ApplicationConfigurationToApplicationAssociation, range=Union[dict, Application])
 
-slots.entity_to_exposure_event_association_mixin_object = Slot(uri=TESTLINK.object, name="entity to exposure event association mixin_object", curie=TESTLINK.curie('object'),
-                   model_uri=TESTLINK.entity_to_exposure_event_association_mixin_object, domain=None, range=Union[dict, ExposureEvent])
+slots.application_instance_configuration_to_application_instance_association_predicate = Slot(uri=TESTLINK.predicate, name="application instance configuration to application instance association_predicate", curie=TESTLINK.curie('predicate'),
+                   model_uri=TESTLINK.application_instance_configuration_to_application_instance_association_predicate, domain=ApplicationInstanceConfigurationToApplicationInstanceAssociation, range=Union[str, PredicateType])
 
-slots.exposure_event_to_entity_association_mixin_subject = Slot(uri=TESTLINK.subject, name="exposure event to entity association mixin_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.exposure_event_to_entity_association_mixin_subject, domain=None, range=Union[dict, ExposureEvent])
+slots.application_instance_configuration_to_application_instance_association_subject = Slot(uri=TESTLINK.subject, name="application instance configuration to application instance association_subject", curie=TESTLINK.curie('subject'),
+                   model_uri=TESTLINK.application_instance_configuration_to_application_instance_association_subject, domain=ApplicationInstanceConfigurationToApplicationInstanceAssociation, range=Union[str, ApplicationInstanceConfigurationId])
 
-slots.entity_to_outcome_association_mixin_object = Slot(uri=TESTLINK.object, name="entity to outcome association mixin_object", curie=TESTLINK.curie('object'),
-                   model_uri=TESTLINK.entity_to_outcome_association_mixin_object, domain=None, range=Union[dict, Outcome])
+slots.application_instance_configuration_to_application_instance_association_object = Slot(uri=TESTLINK.object, name="application instance configuration to application instance association_object", curie=TESTLINK.curie('object'),
+                   model_uri=TESTLINK.application_instance_configuration_to_application_instance_association_object, domain=ApplicationInstanceConfigurationToApplicationInstanceAssociation, range=Union[str, ApplicationInstanceId])
 
-slots.entity_to_observable_feature_association_mixin_description = Slot(uri=TESTLINK.description, name="entity to observable feature association mixin_description", curie=TESTLINK.curie('description'),
-                   model_uri=TESTLINK.entity_to_observable_feature_association_mixin_description, domain=None, range=Optional[Union[str, NarrativeText]])
+slots.application_user_login_to_application_user_association_predicate = Slot(uri=TESTLINK.predicate, name="application user login to application user association_predicate", curie=TESTLINK.curie('predicate'),
+                   model_uri=TESTLINK.application_user_login_to_application_user_association_predicate, domain=ApplicationUserLoginToApplicationUserAssociation, range=Union[str, PredicateType])
 
-slots.entity_to_observable_feature_association_mixin_object = Slot(uri=TESTLINK.object, name="entity to observable feature association mixin_object", curie=TESTLINK.curie('object'),
-                   model_uri=TESTLINK.entity_to_observable_feature_association_mixin_object, domain=None, range=Union[str, ObservableFeatureId])
+slots.application_user_login_to_application_user_association_subject = Slot(uri=TESTLINK.subject, name="application user login to application user association_subject", curie=TESTLINK.curie('subject'),
+                   model_uri=TESTLINK.application_user_login_to_application_user_association_subject, domain=ApplicationUserLoginToApplicationUserAssociation, range=Union[str, ApplicationUserLoginId])
 
-slots.entity_to_error_association_mixin_object = Slot(uri=TESTLINK.object, name="entity to error association mixin_object", curie=TESTLINK.curie('object'),
-                   model_uri=TESTLINK.entity_to_error_association_mixin_object, domain=None, range=Union[str, ErrorId])
+slots.application_user_login_to_application_user_association_object = Slot(uri=TESTLINK.object, name="application user login to application user association_object", curie=TESTLINK.curie('object'),
+                   model_uri=TESTLINK.application_user_login_to_application_user_association_object, domain=ApplicationUserLoginToApplicationUserAssociation, range=Union[str, ApplicationUserId])
 
-slots.error_or_observable_feature_to_entity_association_mixin_subject = Slot(uri=TESTLINK.subject, name="error or observable feature to entity association mixin_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.error_or_observable_feature_to_entity_association_mixin_subject, domain=None, range=Union[str, ErrorOrObservableFeatureId])
+slots.email_to_application_user_association_predicate = Slot(uri=TESTLINK.predicate, name="email to application user association_predicate", curie=TESTLINK.curie('predicate'),
+                   model_uri=TESTLINK.email_to_application_user_association_predicate, domain=EmailToApplicationUserAssociation, range=Union[str, PredicateType])
 
-slots.error_or_observable_feature_association_to_location_association_object = Slot(uri=TESTLINK.object, name="error or observable feature association to location association_object", curie=TESTLINK.curie('object'),
-                   model_uri=TESTLINK.error_or_observable_feature_association_to_location_association_object, domain=ErrorOrObservableFeatureAssociationToLocationAssociation, range=Union[str, DeploymentEntityId])
+slots.email_to_application_user_association_subject = Slot(uri=TESTLINK.subject, name="email to application user association_subject", curie=TESTLINK.curie('subject'),
+                   model_uri=TESTLINK.email_to_application_user_association_subject, domain=EmailToApplicationUserAssociation, range=Union[str, EmailId])
 
-slots.error_or_observable_feature_to_location_association_object = Slot(uri=TESTLINK.object, name="error or observable feature to location association_object", curie=TESTLINK.curie('object'),
-                   model_uri=TESTLINK.error_or_observable_feature_to_location_association_object, domain=ErrorOrObservableFeatureToLocationAssociation, range=Union[str, DeploymentEntityId])
+slots.email_to_application_user_association_object = Slot(uri=TESTLINK.object, name="email to application user association_object", curie=TESTLINK.curie('object'),
+                   model_uri=TESTLINK.email_to_application_user_association_object, domain=EmailToApplicationUserAssociation, range=Union[str, ApplicationUserId])
 
-slots.entity_to_error_or_observable_feature_association_mixin_object = Slot(uri=TESTLINK.object, name="entity to error or observable feature association mixin_object", curie=TESTLINK.curie('object'),
-                   model_uri=TESTLINK.entity_to_error_or_observable_feature_association_mixin_object, domain=None, range=Union[str, ErrorOrObservableFeatureId])
+slots.component_owner_to_application_user_association_predicate = Slot(uri=TESTLINK.predicate, name="component owner to application user association_predicate", curie=TESTLINK.curie('predicate'),
+                   model_uri=TESTLINK.component_owner_to_application_user_association_predicate, domain=ComponentOwnerToApplicationUserAssociation, range=Union[str, PredicateType])
 
-slots.serviceunittype_to_entity_association_mixin_subject = Slot(uri=TESTLINK.subject, name="serviceunittype to entity association mixin_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.serviceunittype_to_entity_association_mixin_subject, domain=None, range=Union[str, ServiceunittypeId])
+slots.component_owner_to_application_user_association_subject = Slot(uri=TESTLINK.subject, name="component owner to application user association_subject", curie=TESTLINK.curie('subject'),
+                   model_uri=TESTLINK.component_owner_to_application_user_association_subject, domain=ComponentOwnerToApplicationUserAssociation, range=Union[str, ComponentOwnerId])
 
-slots.serviceunittype_to_observable_feature_association_predicate = Slot(uri=TESTLINK.predicate, name="serviceunittype to observable feature association_predicate", curie=TESTLINK.curie('predicate'),
-                   model_uri=TESTLINK.serviceunittype_to_observable_feature_association_predicate, domain=ServiceunittypeToObservableFeatureAssociation, range=Union[str, PredicateType])
+slots.component_owner_to_application_user_association_object = Slot(uri=TESTLINK.object, name="component owner to application user association_object", curie=TESTLINK.curie('object'),
+                   model_uri=TESTLINK.component_owner_to_application_user_association_object, domain=ComponentOwnerToApplicationUserAssociation, range=Union[str, ApplicationUserId])
 
-slots.serviceunittype_to_observable_feature_association_subject = Slot(uri=TESTLINK.subject, name="serviceunittype to observable feature association_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.serviceunittype_to_observable_feature_association_subject, domain=ServiceunittypeToObservableFeatureAssociation, range=Union[str, ServiceunittypeId])
+slots.component_owner_to_component_association_predicate = Slot(uri=TESTLINK.predicate, name="component owner to component association_predicate", curie=TESTLINK.curie('predicate'),
+                   model_uri=TESTLINK.component_owner_to_component_association_predicate, domain=ComponentOwnerToComponentAssociation, range=Union[str, PredicateType])
 
-slots.exposure_event_to_observable_feature_association_subject = Slot(uri=TESTLINK.subject, name="exposure event to observable feature association_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.exposure_event_to_observable_feature_association_subject, domain=ExposureEventToObservableFeatureAssociation, range=Union[dict, ExposureEvent])
+slots.component_owner_to_component_association_subject = Slot(uri=TESTLINK.subject, name="component owner to component association_subject", curie=TESTLINK.curie('subject'),
+                   model_uri=TESTLINK.component_owner_to_component_association_subject, domain=ComponentOwnerToComponentAssociation, range=Union[str, ComponentOwnerId])
 
-slots.behavior_to_behavioral_feature_association_subject = Slot(uri=TESTLINK.subject, name="behavior to behavioral feature association_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.behavior_to_behavioral_feature_association_subject, domain=BehaviorToBehavioralFeatureAssociation, range=Union[str, BehaviorId])
+slots.component_owner_to_component_association_object = Slot(uri=TESTLINK.object, name="component owner to component association_object", curie=TESTLINK.curie('object'),
+                   model_uri=TESTLINK.component_owner_to_component_association_object, domain=ComponentOwnerToComponentAssociation, range=Union[str, ComponentId])
 
-slots.behavior_to_behavioral_feature_association_object = Slot(uri=TESTLINK.object, name="behavior to behavioral feature association_object", curie=TESTLINK.curie('object'),
-                   model_uri=TESTLINK.behavior_to_behavioral_feature_association_object, domain=BehaviorToBehavioralFeatureAssociation, range=Union[str, BehavioralFeatureId])
+slots.build_to_application_user_login_association_predicate = Slot(uri=TESTLINK.predicate, name="build to application user login association_predicate", curie=TESTLINK.curie('predicate'),
+                   model_uri=TESTLINK.build_to_application_user_login_association_predicate, domain=BuildToApplicationUserLoginAssociation, range=Union[str, PredicateType])
 
-slots.componentservice_to_entity_association_mixin_subject = Slot(uri=TESTLINK.subject, name="componentservice to entity association mixin_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.componentservice_to_entity_association_mixin_subject, domain=None, range=Union[dict, ComponentserviceOrServicetype])
+slots.build_to_application_user_login_association_subject = Slot(uri=TESTLINK.subject, name="build to application user login association_subject", curie=TESTLINK.curie('subject'),
+                   model_uri=TESTLINK.build_to_application_user_login_association_subject, domain=BuildToApplicationUserLoginAssociation, range=Union[str, BuildId])
 
-slots.variant_to_entity_association_mixin_subject = Slot(uri=TESTLINK.subject, name="variant to entity association mixin_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.variant_to_entity_association_mixin_subject, domain=None, range=Union[str, SequenceVariantId])
+slots.build_to_application_user_login_association_object = Slot(uri=TESTLINK.object, name="build to application user login association_object", curie=TESTLINK.curie('object'),
+                   model_uri=TESTLINK.build_to_application_user_login_association_object, domain=BuildToApplicationUserLoginAssociation, range=Union[str, ApplicationUserLoginId])
 
-slots.componentservice_to_observable_feature_association_subject = Slot(uri=TESTLINK.subject, name="componentservice to observable feature association_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.componentservice_to_observable_feature_association_subject, domain=ComponentserviceToObservableFeatureAssociation, range=Union[dict, ComponentserviceOrServicetype])
+slots.build_to_vcs_root_association_predicate = Slot(uri=TESTLINK.predicate, name="build to vcs root association_predicate", curie=TESTLINK.curie('predicate'),
+                   model_uri=TESTLINK.build_to_vcs_root_association_predicate, domain=BuildToVcsRootAssociation, range=Union[str, PredicateType])
 
-slots.componentservice_to_error_association_subject = Slot(uri=TESTLINK.subject, name="componentservice to error association_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.componentservice_to_error_association_subject, domain=ComponentserviceToErrorAssociation, range=Union[dict, ComponentserviceOrServicetype])
+slots.build_to_vcs_root_association_subject = Slot(uri=TESTLINK.subject, name="build to vcs root association_subject", curie=TESTLINK.curie('subject'),
+                   model_uri=TESTLINK.build_to_vcs_root_association_subject, domain=BuildToVcsRootAssociation, range=Union[str, BuildId])
 
-slots.variant_to_componentservice_association_object = Slot(uri=TESTLINK.object, name="variant to componentservice association_object", curie=TESTLINK.curie('object'),
-                   model_uri=TESTLINK.variant_to_componentservice_association_object, domain=VariantToComponentserviceAssociation, range=Union[dict, Componentservice])
+slots.build_to_vcs_root_association_object = Slot(uri=TESTLINK.object, name="build to vcs root association_object", curie=TESTLINK.curie('object'),
+                   model_uri=TESTLINK.build_to_vcs_root_association_object, domain=BuildToVcsRootAssociation, range=Union[str, VcsRootId])
 
-slots.variant_to_componentservice_association_predicate = Slot(uri=TESTLINK.predicate, name="variant to componentservice association_predicate", curie=TESTLINK.curie('predicate'),
-                   model_uri=TESTLINK.variant_to_componentservice_association_predicate, domain=VariantToComponentserviceAssociation, range=Union[str, PredicateType])
+slots.build_to_project_association_predicate = Slot(uri=TESTLINK.predicate, name="build to project association_predicate", curie=TESTLINK.curie('predicate'),
+                   model_uri=TESTLINK.build_to_project_association_predicate, domain=BuildToProjectAssociation, range=Union[str, PredicateType])
 
-slots.variant_to_componentservice_availability_association_predicate = Slot(uri=TESTLINK.predicate, name="variant to componentservice availability association_predicate", curie=TESTLINK.curie('predicate'),
-                   model_uri=TESTLINK.variant_to_componentservice_availability_association_predicate, domain=VariantToComponentserviceAvailabilityAssociation, range=Union[str, PredicateType])
+slots.build_to_project_association_subject = Slot(uri=TESTLINK.subject, name="build to project association_subject", curie=TESTLINK.curie('subject'),
+                   model_uri=TESTLINK.build_to_project_association_subject, domain=BuildToProjectAssociation, range=Union[str, BuildId])
 
-slots.variant_to_population_association_subject = Slot(uri=TESTLINK.subject, name="variant to population association_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.variant_to_population_association_subject, domain=VariantToPopulationAssociation, range=Union[str, SequenceVariantId])
+slots.build_to_project_association_object = Slot(uri=TESTLINK.object, name="build to project association_object", curie=TESTLINK.curie('object'),
+                   model_uri=TESTLINK.build_to_project_association_object, domain=BuildToProjectAssociation, range=Union[str, ProjectId])
 
-slots.variant_to_population_association_object = Slot(uri=TESTLINK.object, name="variant to population association_object", curie=TESTLINK.curie('object'),
-                   model_uri=TESTLINK.variant_to_population_association_object, domain=VariantToPopulationAssociation, range=Union[str, PopulationOfIndividualSystemsId])
+slots.build_to_application_instance_association_predicate = Slot(uri=TESTLINK.predicate, name="build to application instance association_predicate", curie=TESTLINK.curie('predicate'),
+                   model_uri=TESTLINK.build_to_application_instance_association_predicate, domain=BuildToApplicationInstanceAssociation, range=Union[str, PredicateType])
 
-slots.variant_to_population_association_has_quotient = Slot(uri=TESTLINK.has_quotient, name="variant to population association_has quotient", curie=TESTLINK.curie('has_quotient'),
-                   model_uri=TESTLINK.variant_to_population_association_has_quotient, domain=VariantToPopulationAssociation, range=Optional[float])
+slots.build_to_application_instance_association_subject = Slot(uri=TESTLINK.subject, name="build to application instance association_subject", curie=TESTLINK.curie('subject'),
+                   model_uri=TESTLINK.build_to_application_instance_association_subject, domain=BuildToApplicationInstanceAssociation, range=Union[str, BuildId])
 
-slots.variant_to_population_association_has_count = Slot(uri=TESTLINK.has_count, name="variant to population association_has count", curie=TESTLINK.curie('has_count'),
-                   model_uri=TESTLINK.variant_to_population_association_has_count, domain=VariantToPopulationAssociation, range=Optional[int])
+slots.build_to_application_instance_association_object = Slot(uri=TESTLINK.object, name="build to application instance association_object", curie=TESTLINK.curie('object'),
+                   model_uri=TESTLINK.build_to_application_instance_association_object, domain=BuildToApplicationInstanceAssociation, range=Union[str, ApplicationInstanceId])
 
-slots.variant_to_population_association_has_total = Slot(uri=TESTLINK.has_total, name="variant to population association_has total", curie=TESTLINK.curie('has_total'),
-                   model_uri=TESTLINK.variant_to_population_association_has_total, domain=VariantToPopulationAssociation, range=Optional[int])
+slots.build_configuration_to_build_association_predicate = Slot(uri=TESTLINK.predicate, name="build configuration to build association_predicate", curie=TESTLINK.curie('predicate'),
+                   model_uri=TESTLINK.build_configuration_to_build_association_predicate, domain=BuildConfigurationToBuildAssociation, range=Union[str, PredicateType])
 
-slots.population_to_population_association_subject = Slot(uri=TESTLINK.subject, name="population to population association_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.population_to_population_association_subject, domain=PopulationToPopulationAssociation, range=Union[str, PopulationOfIndividualSystemsId])
+slots.build_configuration_to_build_association_subject = Slot(uri=TESTLINK.subject, name="build configuration to build association_subject", curie=TESTLINK.curie('subject'),
+                   model_uri=TESTLINK.build_configuration_to_build_association_subject, domain=BuildConfigurationToBuildAssociation, range=Union[str, BuildConfigurationId])
 
-slots.population_to_population_association_object = Slot(uri=TESTLINK.object, name="population to population association_object", curie=TESTLINK.curie('object'),
-                   model_uri=TESTLINK.population_to_population_association_object, domain=PopulationToPopulationAssociation, range=Union[str, PopulationOfIndividualSystemsId])
+slots.build_configuration_to_build_association_object = Slot(uri=TESTLINK.object, name="build configuration to build association_object", curie=TESTLINK.curie('object'),
+                   model_uri=TESTLINK.build_configuration_to_build_association_object, domain=BuildConfigurationToBuildAssociation, range=Union[str, BuildId])
 
-slots.population_to_population_association_predicate = Slot(uri=TESTLINK.predicate, name="population to population association_predicate", curie=TESTLINK.curie('predicate'),
-                   model_uri=TESTLINK.population_to_population_association_predicate, domain=PopulationToPopulationAssociation, range=Union[str, PredicateType])
+slots.deployment_to_build_association_predicate = Slot(uri=TESTLINK.predicate, name="deployment to build association_predicate", curie=TESTLINK.curie('predicate'),
+                   model_uri=TESTLINK.deployment_to_build_association_predicate, domain=DeploymentToBuildAssociation, range=Union[str, PredicateType])
 
-slots.variant_to_observable_feature_association_subject = Slot(uri=TESTLINK.subject, name="variant to observable feature association_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.variant_to_observable_feature_association_subject, domain=VariantToObservableFeatureAssociation, range=Union[str, SequenceVariantId])
+slots.deployment_to_build_association_subject = Slot(uri=TESTLINK.subject, name="deployment to build association_subject", curie=TESTLINK.curie('subject'),
+                   model_uri=TESTLINK.deployment_to_build_association_subject, domain=DeploymentToBuildAssociation, range=Union[str, DeploymentId])
 
-slots.variant_to_error_association_subject = Slot(uri=TESTLINK.subject, name="variant to error association_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.variant_to_error_association_subject, domain=VariantToErrorAssociation, range=Union[str, NamedThingId])
+slots.deployment_to_build_association_object = Slot(uri=TESTLINK.object, name="deployment to build association_object", curie=TESTLINK.curie('object'),
+                   model_uri=TESTLINK.deployment_to_build_association_object, domain=DeploymentToBuildAssociation, range=Union[str, BuildId])
 
-slots.variant_to_error_association_predicate = Slot(uri=TESTLINK.predicate, name="variant to error association_predicate", curie=TESTLINK.curie('predicate'),
-                   model_uri=TESTLINK.variant_to_error_association_predicate, domain=VariantToErrorAssociation, range=Union[str, PredicateType])
+slots.deployment_to_application_user_login_association_predicate = Slot(uri=TESTLINK.predicate, name="deployment to application user login association_predicate", curie=TESTLINK.curie('predicate'),
+                   model_uri=TESTLINK.deployment_to_application_user_login_association_predicate, domain=DeploymentToApplicationUserLoginAssociation, range=Union[str, PredicateType])
 
-slots.variant_to_error_association_object = Slot(uri=TESTLINK.object, name="variant to error association_object", curie=TESTLINK.curie('object'),
-                   model_uri=TESTLINK.variant_to_error_association_object, domain=VariantToErrorAssociation, range=Union[str, NamedThingId])
+slots.deployment_to_application_user_login_association_subject = Slot(uri=TESTLINK.subject, name="deployment to application user login association_subject", curie=TESTLINK.curie('subject'),
+                   model_uri=TESTLINK.deployment_to_application_user_login_association_subject, domain=DeploymentToApplicationUserLoginAssociation, range=Union[str, DeploymentId])
 
-slots.serviceunittype_to_error_association_subject = Slot(uri=TESTLINK.subject, name="serviceunittype to error association_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.serviceunittype_to_error_association_subject, domain=ServiceunittypeToErrorAssociation, range=Union[str, NamedThingId])
+slots.deployment_to_application_user_login_association_object = Slot(uri=TESTLINK.object, name="deployment to application user login association_object", curie=TESTLINK.curie('object'),
+                   model_uri=TESTLINK.deployment_to_application_user_login_association_object, domain=DeploymentToApplicationUserLoginAssociation, range=Union[str, ApplicationUserLoginId])
 
-slots.serviceunittype_to_error_association_predicate = Slot(uri=TESTLINK.predicate, name="serviceunittype to error association_predicate", curie=TESTLINK.curie('predicate'),
-                   model_uri=TESTLINK.serviceunittype_to_error_association_predicate, domain=ServiceunittypeToErrorAssociation, range=Union[str, PredicateType])
+slots.deployment_configuration_to_deployment_association_predicate = Slot(uri=TESTLINK.predicate, name="deployment configuration to deployment association_predicate", curie=TESTLINK.curie('predicate'),
+                   model_uri=TESTLINK.deployment_configuration_to_deployment_association_predicate, domain=DeploymentConfigurationToDeploymentAssociation, range=Union[str, PredicateType])
 
-slots.serviceunittype_to_error_association_object = Slot(uri=TESTLINK.object, name="serviceunittype to error association_object", curie=TESTLINK.curie('object'),
-                   model_uri=TESTLINK.serviceunittype_to_error_association_object, domain=ServiceunittypeToErrorAssociation, range=Union[str, NamedThingId])
+slots.deployment_configuration_to_deployment_association_subject = Slot(uri=TESTLINK.subject, name="deployment configuration to deployment association_subject", curie=TESTLINK.curie('subject'),
+                   model_uri=TESTLINK.deployment_configuration_to_deployment_association_subject, domain=DeploymentConfigurationToDeploymentAssociation, range=Union[str, DeploymentConfigurationId])
 
-slots.model_to_error_association_mixin_subject = Slot(uri=TESTLINK.subject, name="model to error association mixin_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.model_to_error_association_mixin_subject, domain=None, range=Union[str, NamedThingId])
+slots.deployment_configuration_to_deployment_association_object = Slot(uri=TESTLINK.object, name="deployment configuration to deployment association_object", curie=TESTLINK.curie('object'),
+                   model_uri=TESTLINK.deployment_configuration_to_deployment_association_object, domain=DeploymentConfigurationToDeploymentAssociation, range=Union[str, DeploymentId])
 
-slots.model_to_error_association_mixin_predicate = Slot(uri=TESTLINK.predicate, name="model to error association mixin_predicate", curie=TESTLINK.curie('predicate'),
-                   model_uri=TESTLINK.model_to_error_association_mixin_predicate, domain=None, range=Union[str, PredicateType])
+slots.server_group_to_server_type_association_predicate = Slot(uri=TESTLINK.predicate, name="server group to server type association_predicate", curie=TESTLINK.curie('predicate'),
+                   model_uri=TESTLINK.server_group_to_server_type_association_predicate, domain=ServerGroupToServerTypeAssociation, range=Union[str, PredicateType])
 
-slots.componentservice_as_a_model_of_error_association_subject = Slot(uri=TESTLINK.subject, name="componentservice as a model of error association_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.componentservice_as_a_model_of_error_association_subject, domain=ComponentserviceAsAModelOfErrorAssociation, range=Union[dict, ComponentserviceOrServicetype])
+slots.server_group_to_server_type_association_subject = Slot(uri=TESTLINK.subject, name="server group to server type association_subject", curie=TESTLINK.curie('subject'),
+                   model_uri=TESTLINK.server_group_to_server_type_association_subject, domain=ServerGroupToServerTypeAssociation, range=Union[str, ServerGroupId])
 
-slots.variant_as_a_model_of_error_association_subject = Slot(uri=TESTLINK.subject, name="variant as a model of error association_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.variant_as_a_model_of_error_association_subject, domain=VariantAsAModelOfErrorAssociation, range=Union[str, SequenceVariantId])
+slots.server_group_to_server_type_association_object = Slot(uri=TESTLINK.object, name="server group to server type association_object", curie=TESTLINK.curie('object'),
+                   model_uri=TESTLINK.server_group_to_server_type_association_object, domain=ServerGroupToServerTypeAssociation, range=Union[str, ServerTypeId])
 
-slots.serviceunittype_as_a_model_of_error_association_subject = Slot(uri=TESTLINK.subject, name="serviceunittype as a model of error association_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.serviceunittype_as_a_model_of_error_association_subject, domain=ServiceunittypeAsAModelOfErrorAssociation, range=Union[str, ServiceunittypeId])
+slots.server_hub_to_server_association_predicate = Slot(uri=TESTLINK.predicate, name="server hub to server association_predicate", curie=TESTLINK.curie('predicate'),
+                   model_uri=TESTLINK.server_hub_to_server_association_predicate, domain=ServerHubToServerAssociation, range=Union[str, PredicateType])
 
-slots.component_type_as_a_model_of_error_association_subject = Slot(uri=TESTLINK.subject, name="component type as a model of error association_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.component_type_as_a_model_of_error_association_subject, domain=ComponentTypeAsAModelOfErrorAssociation, range=Union[str, ComponentTypeId])
+slots.server_hub_to_server_association_subject = Slot(uri=TESTLINK.subject, name="server hub to server association_subject", curie=TESTLINK.curie('subject'),
+                   model_uri=TESTLINK.server_hub_to_server_association_subject, domain=ServerHubToServerAssociation, range=Union[str, ServerHubId])
 
-slots.systemic_entity_as_a_model_of_error_association_subject = Slot(uri=TESTLINK.subject, name="systemic entity as a model of error association_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.systemic_entity_as_a_model_of_error_association_subject, domain=SystemicEntityAsAModelOfErrorAssociation, range=Union[str, SystemicEntityId])
+slots.server_hub_to_server_association_object = Slot(uri=TESTLINK.object, name="server hub to server association_object", curie=TESTLINK.curie('object'),
+                   model_uri=TESTLINK.server_hub_to_server_association_object, domain=ServerHubToServerAssociation, range=Union[str, ServerId])
 
-slots.componentservice_has_variant_that_contributes_to_error_association_subject = Slot(uri=TESTLINK.subject, name="componentservice has variant that contributes to error association_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.componentservice_has_variant_that_contributes_to_error_association_subject, domain=ComponentserviceHasVariantThatContributesToErrorAssociation, range=Union[dict, ComponentserviceOrServicetype])
+slots.server_hub_to_server_group_hub_association_predicate = Slot(uri=TESTLINK.predicate, name="server hub to server group hub association_predicate", curie=TESTLINK.curie('predicate'),
+                   model_uri=TESTLINK.server_hub_to_server_group_hub_association_predicate, domain=ServerHubToServerGroupHubAssociation, range=Union[str, PredicateType])
 
-slots.componentservice_to_availability_site_association_subject = Slot(uri=TESTLINK.subject, name="componentservice to availability site association_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.componentservice_to_availability_site_association_subject, domain=ComponentserviceToAvailabilitySiteAssociation, range=Union[dict, ComponentserviceOrServicetype])
+slots.server_hub_to_server_group_hub_association_subject = Slot(uri=TESTLINK.subject, name="server hub to server group hub association_subject", curie=TESTLINK.curie('subject'),
+                   model_uri=TESTLINK.server_hub_to_server_group_hub_association_subject, domain=ServerHubToServerGroupHubAssociation, range=Union[str, ServerHubId])
 
-slots.componentservice_to_availability_site_association_object = Slot(uri=TESTLINK.object, name="componentservice to availability site association_object", curie=TESTLINK.curie('object'),
-                   model_uri=TESTLINK.componentservice_to_availability_site_association_object, domain=ComponentserviceToAvailabilitySiteAssociation, range=Union[str, DeploymentEntityId])
+slots.server_hub_to_server_group_hub_association_object = Slot(uri=TESTLINK.object, name="server hub to server group hub association_object", curie=TESTLINK.curie('object'),
+                   model_uri=TESTLINK.server_hub_to_server_group_hub_association_object, domain=ServerHubToServerGroupHubAssociation, range=Union[str, ServerGroupHubId])
 
-slots.componentservice_to_availability_site_association_predicate = Slot(uri=TESTLINK.predicate, name="componentservice to availability site association_predicate", curie=TESTLINK.curie('predicate'),
-                   model_uri=TESTLINK.componentservice_to_availability_site_association_predicate, domain=ComponentserviceToAvailabilitySiteAssociation, range=Union[str, PredicateType])
+slots.server_group_hub_to_domain_environment_association_predicate = Slot(uri=TESTLINK.predicate, name="server group hub to domain environment association_predicate", curie=TESTLINK.curie('predicate'),
+                   model_uri=TESTLINK.server_group_hub_to_domain_environment_association_predicate, domain=ServerGroupHubToDomainEnvironmentAssociation, range=Union[str, PredicateType])
 
-slots.componentservice_to_availability_site_association_stage_qualifier = Slot(uri=TESTLINK.stage_qualifier, name="componentservice to availability site association_stage qualifier", curie=TESTLINK.curie('stage_qualifier'),
-                   model_uri=TESTLINK.componentservice_to_availability_site_association_stage_qualifier, domain=ComponentserviceToAvailabilitySiteAssociation, range=Optional[Union[str, LifecycleStageId]])
+slots.server_group_hub_to_domain_environment_association_subject = Slot(uri=TESTLINK.subject, name="server group hub to domain environment association_subject", curie=TESTLINK.curie('subject'),
+                   model_uri=TESTLINK.server_group_hub_to_domain_environment_association_subject, domain=ServerGroupHubToDomainEnvironmentAssociation, range=Union[str, ServerGroupHubId])
 
-slots.componentservice_to_availability_site_association_quantifier_qualifier = Slot(uri=TESTLINK.quantifier_qualifier, name="componentservice to availability site association_quantifier qualifier", curie=TESTLINK.curie('quantifier_qualifier'),
-                   model_uri=TESTLINK.componentservice_to_availability_site_association_quantifier_qualifier, domain=ComponentserviceToAvailabilitySiteAssociation, range=Optional[Union[str, OntologyClassId]])
+slots.server_group_hub_to_domain_environment_association_object = Slot(uri=TESTLINK.object, name="server group hub to domain environment association_object", curie=TESTLINK.curie('object'),
+                   model_uri=TESTLINK.server_group_hub_to_domain_environment_association_object, domain=ServerGroupHubToDomainEnvironmentAssociation, range=Union[str, DomainEnvironmentId])
 
-slots.sequence_variant_modulates_repairing_association_subject = Slot(uri=TESTLINK.subject, name="sequence variant modulates repairing association_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.sequence_variant_modulates_repairing_association_subject, domain=SequenceVariantModulatesRepairingAssociation, range=Union[str, SequenceVariantId])
+slots.server_group_hub_to_server_group_association_predicate = Slot(uri=TESTLINK.predicate, name="server group hub to server group association_predicate", curie=TESTLINK.curie('predicate'),
+                   model_uri=TESTLINK.server_group_hub_to_server_group_association_predicate, domain=ServerGroupHubToServerGroupAssociation, range=Union[str, PredicateType])
 
-slots.sequence_variant_modulates_repairing_association_object = Slot(uri=TESTLINK.object, name="sequence variant modulates repairing association_object", curie=TESTLINK.curie('object'),
-                   model_uri=TESTLINK.sequence_variant_modulates_repairing_association_object, domain=SequenceVariantModulatesRepairingAssociation, range=Union[str, RepairingId])
+slots.server_group_hub_to_server_group_association_subject = Slot(uri=TESTLINK.subject, name="server group hub to server group association_subject", curie=TESTLINK.curie('subject'),
+                   model_uri=TESTLINK.server_group_hub_to_server_group_association_subject, domain=ServerGroupHubToServerGroupAssociation, range=Union[str, ServerGroupHubId])
 
-slots.functional_association_subject = Slot(uri=TESTLINK.subject, name="functional association_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.functional_association_subject, domain=FunctionalAssociation, range=Union[dict, MacrooperationalMachineMixin])
-
-slots.functional_association_object = Slot(uri=TESTLINK.object, name="functional association_object", curie=TESTLINK.curie('object'),
-                   model_uri=TESTLINK.functional_association_object, domain=FunctionalAssociation, range=Union[str, ComponentserviceOntologyClassId])
-
-slots.macrooperational_machine_mixin_to_entity_association_mixin_subject = Slot(uri=TESTLINK.subject, name="macrooperational machine mixin to entity association mixin_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.macrooperational_machine_mixin_to_entity_association_mixin_subject, domain=None, range=Union[str, NamedThingId])
-
-slots.macrooperational_machine_mixin_to_operational_activity_association_object = Slot(uri=TESTLINK.object, name="macrooperational machine mixin to operational activity association_object", curie=TESTLINK.curie('object'),
-                   model_uri=TESTLINK.macrooperational_machine_mixin_to_operational_activity_association_object, domain=MacrooperationalMachineMixinToOperationalActivityAssociation, range=Union[str, OperationalActivityId])
-
-slots.macrooperational_machine_mixin_to_computational_process_association_object = Slot(uri=TESTLINK.object, name="macrooperational machine mixin to computational process association_object", curie=TESTLINK.curie('object'),
-                   model_uri=TESTLINK.macrooperational_machine_mixin_to_computational_process_association_object, domain=MacrooperationalMachineMixinToComputationalProcessAssociation, range=Union[str, ComputationalProcessId])
-
-slots.macrooperational_machine_mixin_to_component_association_object = Slot(uri=TESTLINK.object, name="macrooperational machine mixin to component association_object", curie=TESTLINK.curie('object'),
-                   model_uri=TESTLINK.macrooperational_machine_mixin_to_component_association_object, domain=MacrooperationalMachineMixinToComponentAssociation, range=Union[str, ComponentId])
-
-slots.componentservice_to_go_term_association_subject = Slot(uri=TESTLINK.subject, name="componentservice to go term association_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.componentservice_to_go_term_association_subject, domain=ComponentserviceToGoTermAssociation, range=Union[str, OperationalEntityId])
-
-slots.componentservice_to_go_term_association_object = Slot(uri=TESTLINK.object, name="componentservice to go term association_object", curie=TESTLINK.curie('object'),
-                   model_uri=TESTLINK.componentservice_to_go_term_association_object, domain=ComponentserviceToGoTermAssociation, range=Union[str, ComponentserviceOntologyClassId])
-
-slots.service_sequence_localization_subject = Slot(uri=TESTLINK.subject, name="service sequence localization_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.service_sequence_localization_subject, domain=ServiceSequenceLocalization, range=Union[str, WorkloadEntityId])
-
-slots.service_sequence_localization_object = Slot(uri=TESTLINK.object, name="service sequence localization_object", curie=TESTLINK.curie('object'),
-                   model_uri=TESTLINK.service_sequence_localization_object, domain=ServiceSequenceLocalization, range=Union[str, WorkloadEntityId])
-
-slots.service_sequence_localization_predicate = Slot(uri=TESTLINK.predicate, name="service sequence localization_predicate", curie=TESTLINK.curie('predicate'),
-                   model_uri=TESTLINK.service_sequence_localization_predicate, domain=ServiceSequenceLocalization, range=Union[str, PredicateType])
-
-slots.sequence_feature_relationship_subject = Slot(uri=TESTLINK.subject, name="sequence feature relationship_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.sequence_feature_relationship_subject, domain=SequenceFeatureRelationship, range=Union[str, WorkloadEntityId])
-
-slots.sequence_feature_relationship_object = Slot(uri=TESTLINK.object, name="sequence feature relationship_object", curie=TESTLINK.curie('object'),
-                   model_uri=TESTLINK.sequence_feature_relationship_object, domain=SequenceFeatureRelationship, range=Union[str, WorkloadEntityId])
-
-slots.componentserviceinstance_to_componentservice_relationship_subject = Slot(uri=TESTLINK.subject, name="componentserviceinstance to componentservice relationship_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.componentserviceinstance_to_componentservice_relationship_subject, domain=ComponentserviceinstanceToComponentserviceRelationship, range=Union[str, ComponentserviceinstanceId])
-
-slots.componentserviceinstance_to_componentservice_relationship_object = Slot(uri=TESTLINK.object, name="componentserviceinstance to componentservice relationship_object", curie=TESTLINK.curie('object'),
-                   model_uri=TESTLINK.componentserviceinstance_to_componentservice_relationship_object, domain=ComponentserviceinstanceToComponentserviceRelationship, range=Union[dict, Componentservice])
-
-slots.componentservice_to_servicetype_relationship_subject = Slot(uri=TESTLINK.subject, name="componentservice to servicetype relationship_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.componentservice_to_servicetype_relationship_subject, domain=ComponentserviceToServicetypeRelationship, range=Union[dict, Componentservice])
-
-slots.componentservice_to_servicetype_relationship_object = Slot(uri=TESTLINK.object, name="componentservice to servicetype relationship_object", curie=TESTLINK.curie('object'),
-                   model_uri=TESTLINK.componentservice_to_servicetype_relationship_object, domain=ComponentserviceToServicetypeRelationship, range=Union[dict, ServicetypeMixin])
-
-slots.componentservice_to_servicetype_relationship_predicate = Slot(uri=TESTLINK.predicate, name="componentservice to servicetype relationship_predicate", curie=TESTLINK.curie('predicate'),
-                   model_uri=TESTLINK.componentservice_to_servicetype_relationship_predicate, domain=ComponentserviceToServicetypeRelationship, range=Union[str, PredicateType])
-
-slots.daemon_to_componentserviceinstance_relationship_subject = Slot(uri=TESTLINK.subject, name="daemon to componentserviceinstance relationship_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.daemon_to_componentserviceinstance_relationship_subject, domain=DaemonToComponentserviceinstanceRelationship, range=Union[str, DaemonId])
-
-slots.daemon_to_componentserviceinstance_relationship_object = Slot(uri=TESTLINK.object, name="daemon to componentserviceinstance relationship_object", curie=TESTLINK.curie('object'),
-                   model_uri=TESTLINK.daemon_to_componentserviceinstance_relationship_object, domain=DaemonToComponentserviceinstanceRelationship, range=Union[str, ComponentserviceinstanceId])
-
-slots.componentservice_regulatory_relationship_predicate = Slot(uri=TESTLINK.predicate, name="componentservice regulatory relationship_predicate", curie=TESTLINK.curie('predicate'),
-                   model_uri=TESTLINK.componentservice_regulatory_relationship_predicate, domain=ComponentserviceRegulatoryRelationship, range=Union[str, PredicateType])
-
-slots.componentservice_regulatory_relationship_subject = Slot(uri=TESTLINK.subject, name="componentservice regulatory relationship_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.componentservice_regulatory_relationship_subject, domain=ComponentserviceRegulatoryRelationship, range=Union[dict, ComponentserviceOrServicetype])
-
-slots.componentservice_regulatory_relationship_object = Slot(uri=TESTLINK.object, name="componentservice regulatory relationship_object", curie=TESTLINK.curie('object'),
-                   model_uri=TESTLINK.componentservice_regulatory_relationship_object, domain=ComponentserviceRegulatoryRelationship, range=Union[dict, ComponentserviceOrServicetype])
-
-slots.deployment_entity_to_deployment_entity_association_subject = Slot(uri=TESTLINK.subject, name="deployment entity to deployment entity association_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.deployment_entity_to_deployment_entity_association_subject, domain=DeploymentEntityToDeploymentEntityAssociation, range=Union[str, DeploymentEntityId])
-
-slots.deployment_entity_to_deployment_entity_association_object = Slot(uri=TESTLINK.object, name="deployment entity to deployment entity association_object", curie=TESTLINK.curie('object'),
-                   model_uri=TESTLINK.deployment_entity_to_deployment_entity_association_object, domain=DeploymentEntityToDeploymentEntityAssociation, range=Union[str, DeploymentEntityId])
-
-slots.deployment_entity_to_deployment_entity_part_of_association_subject = Slot(uri=TESTLINK.subject, name="deployment entity to deployment entity part of association_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.deployment_entity_to_deployment_entity_part_of_association_subject, domain=DeploymentEntityToDeploymentEntityPartOfAssociation, range=Union[str, DeploymentEntityId])
-
-slots.deployment_entity_to_deployment_entity_part_of_association_object = Slot(uri=TESTLINK.object, name="deployment entity to deployment entity part of association_object", curie=TESTLINK.curie('object'),
-                   model_uri=TESTLINK.deployment_entity_to_deployment_entity_part_of_association_object, domain=DeploymentEntityToDeploymentEntityPartOfAssociation, range=Union[str, DeploymentEntityId])
-
-slots.deployment_entity_to_deployment_entity_part_of_association_predicate = Slot(uri=TESTLINK.predicate, name="deployment entity to deployment entity part of association_predicate", curie=TESTLINK.curie('predicate'),
-                   model_uri=TESTLINK.deployment_entity_to_deployment_entity_part_of_association_predicate, domain=DeploymentEntityToDeploymentEntityPartOfAssociation, range=Union[str, PredicateType])
-
-slots.deployment_entity_to_deployment_entity_ontogenic_association_subject = Slot(uri=TESTLINK.subject, name="deployment entity to deployment entity ontogenic association_subject", curie=TESTLINK.curie('subject'),
-                   model_uri=TESTLINK.deployment_entity_to_deployment_entity_ontogenic_association_subject, domain=DeploymentEntityToDeploymentEntityOntogenicAssociation, range=Union[str, DeploymentEntityId])
-
-slots.deployment_entity_to_deployment_entity_ontogenic_association_object = Slot(uri=TESTLINK.object, name="deployment entity to deployment entity ontogenic association_object", curie=TESTLINK.curie('object'),
-                   model_uri=TESTLINK.deployment_entity_to_deployment_entity_ontogenic_association_object, domain=DeploymentEntityToDeploymentEntityOntogenicAssociation, range=Union[str, DeploymentEntityId])
-
-slots.deployment_entity_to_deployment_entity_ontogenic_association_predicate = Slot(uri=TESTLINK.predicate, name="deployment entity to deployment entity ontogenic association_predicate", curie=TESTLINK.curie('predicate'),
-                   model_uri=TESTLINK.deployment_entity_to_deployment_entity_ontogenic_association_predicate, domain=DeploymentEntityToDeploymentEntityOntogenicAssociation, range=Union[str, PredicateType])
+slots.server_group_hub_to_server_group_association_object = Slot(uri=TESTLINK.object, name="server group hub to server group association_object", curie=TESTLINK.curie('object'),
+                   model_uri=TESTLINK.server_group_hub_to_server_group_association_object, domain=ServerGroupHubToServerGroupAssociation, range=Union[str, ServerGroupId])

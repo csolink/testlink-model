@@ -1,0 +1,18 @@
+digraph {
+	graph [bb="0,0,194.49,123"];
+	node [label="\N"];
+	application	 [height=0.5,
+		label=application,
+		pos="71.494,105",
+		width=1.7332];
+	"has control actor"	 [color=blue,
+		height=0.5,
+		label="control actor",
+		pos="71.494,18",
+		width=1.9859];
+	application -> "has control actor"	 [color=blue,
+		label="has control actor",
+		lp="132.99,61.5",
+		pos="e,71.494,36.003 71.494,86.974 71.494,75.192 71.494,59.561 71.494,46.158",
+		style=solid];
+}

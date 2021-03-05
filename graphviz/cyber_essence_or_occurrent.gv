@@ -1,0 +1,8 @@
+digraph {
+	graph [bb="0,0,276.88,36"];
+	node [label="\N"];
+	"cyber essence or occurrent"	 [height=0.5,
+		label="cyber essence or occurrent",
+		pos="138.44,18",
+		width=3.8455];
+}

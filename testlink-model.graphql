@@ -1,0 +1,1645 @@
+type Activity implements ActivityAndBehavior
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+  }
+
+interface ActivityAndBehavior
+  {
+  }
+
+interface AdministrativeEntity
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+  }
+
+type AdministrativeOperation implements Cluster, Application
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+    inTaxon: [SystemTaxon]
+    hasControlActor: [ControlActor]
+  }
+
+type Agent
+  {
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+    affiliation: [Uriorcurie]
+    address: String
+    id: String!
+    name: LabelType
+  }
+
+interface Annotation
+  {
+  }
+
+interface ApexInventoryArchive
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+    releaseDate: Date
+    tagName: LabelType
+  }
+
+interface Application
+  {
+    hasControlActor: [ControlActor]
+  }
+
+interface ApplicationConfiguration
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+    hasPart: [NamedThing]
+    hasQuantitativeValue: [QuantityValue]
+    version: String
+  }
+
+type ApplicationConfigurationToApplicationAssociation
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    negated: Boolean
+    relation: Uriorcurie!
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    type: String
+    category: [Association]!
+    predicate: PredicateType!
+    subject: ApplicationConfiguration!
+    object: Application!
+  }
+
+type ApplicationInstance
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+    inTaxon: [SystemTaxon]
+    hasComputationalSequence: ComputationalSequence
+    internalVersion: String
+  }
+
+interface ApplicationInstanceConfiguration
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+    hasPart: [NamedThing]
+    hasQuantitativeValue: [QuantityValue]
+    version: String
+  }
+
+type ApplicationInstanceConfigurationToApplicationInstanceAssociation
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    negated: Boolean
+    relation: Uriorcurie!
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    type: String
+    category: [Association]!
+    predicate: PredicateType!
+    subject: ApplicationInstanceConfiguration!
+    object: ApplicationInstance!
+  }
+
+type ApplicationInstanceToApplicationAssociation
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    negated: Boolean
+    relation: Uriorcurie!
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    type: String
+    category: [Association]!
+    predicate: PredicateType!
+    subject: ApplicationInstance!
+    object: Application!
+  }
+
+type ApplicationInstanceToDomainEnvironmentAssociation
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    negated: Boolean
+    relation: Uriorcurie!
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    type: String
+    category: [Association]!
+    predicate: PredicateType!
+    subject: ApplicationInstance!
+    object: DomainEnvironment!
+  }
+
+type ApplicationInstanceToRealmAssociation
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    negated: Boolean
+    relation: Uriorcurie!
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    type: String
+    category: [Association]!
+    predicate: PredicateType!
+    subject: ApplicationInstance!
+    object: Realm!
+  }
+
+type ApplicationInstanceToServerGroupHubAssociation
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    negated: Boolean
+    relation: Uriorcurie!
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    type: String
+    category: [Association]!
+    predicate: PredicateType!
+    subject: ApplicationInstance!
+    object: ServerGroupHub!
+  }
+
+type ApplicationToApplicationTypeAssociation
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    negated: Boolean
+    relation: Uriorcurie!
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    type: String
+    category: [Association]!
+    predicate: PredicateType!
+    subject: Application!
+    object: ApplicationType!
+  }
+
+type ApplicationToComponentAssociation
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    negated: Boolean
+    relation: Uriorcurie!
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    type: String
+    category: [Association]!
+    predicate: PredicateType!
+    subject: Application!
+    object: Component!
+  }
+
+type ApplicationType
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+    hasAttribute: [Attribute]
+  }
+
+type ApplicationUser
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+    firstName: LabelType
+    lastName: LabelType
+  }
+
+type ApplicationUserLogin
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+    userName: LabelType
+    domainName: LabelType
+  }
+
+type ApplicationUserLoginToApplicationUserAssociation
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    negated: Boolean
+    relation: Uriorcurie!
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    type: String
+    category: [Association]!
+    predicate: PredicateType!
+    subject: ApplicationUserLogin!
+    object: ApplicationUser!
+  }
+
+type Archive
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+  }
+
+type Association
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    subject: NamedThing!
+    predicate: PredicateType!
+    negated: Boolean
+    object: NamedThing!
+    relation: Uriorcurie!
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    type: String
+    category: [Association]!
+  }
+
+type Attribute
+  {
+    name: LabelType
+    hasAttributeType: OntologyClass!
+    hasQuantitativeValue: [QuantityValue]
+    hasQualitativeValue: NamedThing
+    iri: IriType
+    source: LabelType
+  }
+
+type AttributeType
+  {
+  }
+
+type Build
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+    created: Date
+    updated: Date
+    vcsLocation: String
+    vcsRevision: String
+    internalVersion: String
+  }
+
+interface BuildConfiguration
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+    hasPart: [NamedThing]
+    hasQuantitativeValue: [QuantityValue]
+    version: String
+  }
+
+type BuildConfigurationToBuildAssociation
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    negated: Boolean
+    relation: Uriorcurie!
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    type: String
+    category: [Association]!
+    predicate: PredicateType!
+    subject: BuildConfiguration!
+    object: Build!
+  }
+
+type BuildToApplicationInstanceAssociation
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    negated: Boolean
+    relation: Uriorcurie!
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    type: String
+    category: [Association]!
+    predicate: PredicateType!
+    subject: Build!
+    object: ApplicationInstance!
+  }
+
+type BuildToApplicationUserLoginAssociation
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    negated: Boolean
+    relation: Uriorcurie!
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    type: String
+    category: [Association]!
+    predicate: PredicateType!
+    subject: Build!
+    object: ApplicationUserLogin!
+  }
+
+type BuildToProjectAssociation
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    negated: Boolean
+    relation: Uriorcurie!
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    type: String
+    category: [Association]!
+    predicate: PredicateType!
+    subject: Build!
+    object: Project!
+  }
+
+type BuildToVcsRootAssociation
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    negated: Boolean
+    relation: Uriorcurie!
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    type: String
+    category: [Association]!
+    predicate: PredicateType!
+    subject: Build!
+    object: VcsRoot!
+  }
+
+interface Cluster
+  {
+    hasControlActor: [ControlActor]
+  }
+
+type Component implements Application
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+    hasAttribute: [Attribute]
+    inTaxon: [SystemTaxon]
+    vcsLocation: String
+    hasControlActor: [ControlActor]
+  }
+
+interface ComponentConfiguration
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+    hasPart: [NamedThing]
+    hasQuantitativeValue: [QuantityValue]
+    version: String
+  }
+
+type ComponentConfigurationToComponentAssociation
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    negated: Boolean
+    relation: Uriorcurie!
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    type: String
+    category: [Association]!
+    predicate: PredicateType!
+    subject: ComponentConfiguration!
+    object: Component!
+  }
+
+type ComponentOwner
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+  }
+
+type ComponentOwnerToApplicationUserAssociation
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    negated: Boolean
+    relation: Uriorcurie!
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    type: String
+    category: [Association]!
+    predicate: PredicateType!
+    subject: ComponentOwner!
+    object: ApplicationUser!
+  }
+
+type ComponentOwnerToComponentAssociation
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    negated: Boolean
+    relation: Uriorcurie!
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    type: String
+    category: [Association]!
+    predicate: PredicateType!
+    subject: ComponentOwner!
+    object: Component!
+  }
+
+type ComponentToVcsRootAssociation
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    negated: Boolean
+    relation: Uriorcurie!
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    type: String
+    category: [Association]!
+    predicate: PredicateType!
+    subject: Component!
+    object: VcsRoot!
+  }
+
+type ComponentType
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+    hasAttribute: [Attribute]
+  }
+
+interface ComputationalEntity
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+  }
+
+type ComputationalProcessOrActivity implements Occurrent
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+    hasInput: [NamedThing]
+    hasOutput: [NamedThing]
+    enabledBy: [CyberEntity]
+  }
+
+type Configuration
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+    hasPart: [NamedThing]
+    hasQuantitativeValue: [QuantityValue]
+    version: String
+  }
+
+type ConsumedResource implements Cluster, Application
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+    inTaxon: [SystemTaxon]
+    hasControlActor: [ControlActor]
+  }
+
+type ControlActor
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+    inTaxon: [SystemTaxon]
+  }
+
+type CyberEntity implements CyberEssence
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+  }
+
+interface CyberEssence
+  {
+  }
+
+interface CyberEssenceOrOccurrent
+  {
+  }
+
+type Data
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+    inTaxon: [SystemTaxon]
+  }
+
+type Dataset
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+  }
+
+type DatasetDistribution
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+    distributionDownloadUrl: String
+  }
+
+type DatasetVersion
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+    hasDataset: Dataset
+    ingestDate: String
+    hasDistribution: DatasetDistribution
+  }
+
+type Deployment implements Application, SystemicEntity
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+    hasAttribute: [Attribute]
+    inTaxon: [SystemTaxon]
+    applicationUserLogin: String
+    hasControlActor: [ControlActor]
+  }
+
+interface DeploymentConfiguration
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+    hasPart: [NamedThing]
+    hasQuantitativeValue: [QuantityValue]
+    version: String
+  }
+
+type DeploymentConfigurationToDeploymentAssociation
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    negated: Boolean
+    relation: Uriorcurie!
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    type: String
+    category: [Association]!
+    predicate: PredicateType!
+    subject: DeploymentConfiguration!
+    object: Deployment!
+  }
+
+type DeploymentEntity implements ThingWithTaxon, CyberEssence
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+    hasAttribute: [Attribute]
+    inTaxon: [SystemTaxon]
+  }
+
+type DeploymentToApplicationUserLoginAssociation
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    negated: Boolean
+    relation: Uriorcurie!
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    type: String
+    category: [Association]!
+    predicate: PredicateType!
+    subject: Deployment!
+    object: ApplicationUserLogin!
+  }
+
+type DeploymentToBuildAssociation
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    negated: Boolean
+    relation: Uriorcurie!
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    type: String
+    category: [Association]!
+    predicate: PredicateType!
+    subject: Deployment!
+    object: Build!
+  }
+
+interface DistributionLevel
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+    hasDataset: Dataset
+    ingestDate: String
+    hasDistribution: DatasetDistribution
+    downloadUrl: String
+  }
+
+type Domain
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+    fqdn: LabelType
+  }
+
+interface DomainConfiguration
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+    hasPart: [NamedThing]
+    hasQuantitativeValue: [QuantityValue]
+    version: String
+  }
+
+type DomainConfigurationToDomainEnvironmentAssociation
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    negated: Boolean
+    relation: Uriorcurie!
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    type: String
+    category: [Association]!
+    predicate: PredicateType!
+    subject: DomainConfiguration!
+    object: DomainEnvironment!
+  }
+
+interface DomainEnvironment
+  {
+    description: NarrativeText
+    category: [NamedThing]!
+    id: String!
+    name: LabelType
+    note: NarrativeText
+    enabled: Boolean
+    archived: Boolean
+  }
+
+type DomainEnvironmentToDomainAssociation
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    negated: Boolean
+    relation: Uriorcurie!
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    type: String
+    category: [Association]!
+    predicate: PredicateType!
+    subject: DomainEnvironment!
+    object: Domain!
+  }
+
+type DomainEnvironmentToEnvironmentAssociation
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    negated: Boolean
+    relation: Uriorcurie!
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    type: String
+    category: [Association]!
+    predicate: PredicateType!
+    subject: DomainEnvironment!
+    object: Environment!
+  }
+
+type Email
+  {
+    id: String!
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+    name: LabelType
+    enabled: Boolean
+  }
+
+type EmailToApplicationUserAssociation
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    negated: Boolean
+    relation: Uriorcurie!
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    type: String
+    category: [Association]!
+    predicate: PredicateType!
+    subject: Email!
+    object: ApplicationUser!
+  }
+
+interface Entity
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+  }
+
+interface Environment
+  {
+    description: NarrativeText
+    category: [NamedThing]!
+    id: String!
+    name: LabelType
+    note: NarrativeText
+    enabled: Boolean
+    archived: Boolean
+  }
+
+interface EnvironmentConfiguration
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+    hasPart: [NamedThing]
+    hasQuantitativeValue: [QuantityValue]
+    version: String
+  }
+
+type EnvironmentConfigurationToEnvironmentAssociation
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    negated: Boolean
+    relation: Uriorcurie!
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    type: String
+    category: [Association]!
+    predicate: PredicateType!
+    subject: EnvironmentConfiguration!
+    object: Environment!
+  }
+
+interface Event
+  {
+    timepoint: TimeType
+  }
+
+interface ExposureEvent
+  {
+    timepoint: TimeType
+  }
+
+type FrequencyValue
+  {
+    name: LabelType
+    hasAttributeType: OntologyClass!
+    hasQuantitativeValue: [QuantityValue]
+    hasQualitativeValue: NamedThing
+    iri: IriType
+    source: LabelType
+  }
+
+type Homogeneity
+  {
+    name: LabelType
+    hasAttributeType: OntologyClass!
+    hasQuantitativeValue: [QuantityValue]
+    hasQualitativeValue: NamedThing
+    iri: IriType
+    source: LabelType
+  }
+
+type Hub
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+  }
+
+interface InformationContentEntity
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+  }
+
+type Inventory
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+    created: Date
+    componentFixed: LabelType
+    tag: LabelType
+    tagName: LabelType
+    userLogin: String
+    svnTagUrl: IriType
+  }
+
+interface MacrooperationalMachineMixin
+  {
+    name: SymbolType
+  }
+
+type NamedThing
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+  }
+
+type Notification implements Application
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+    inTaxon: [SystemTaxon]
+    hasData: [Data]
+    hasControlActor: [ControlActor]
+  }
+
+type NotificationComponent
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+    inTaxon: [SystemTaxon]
+  }
+
+interface Occurrent
+  {
+  }
+
+type OntologyClass
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+  }
+
+type OperationalActivity implements Occurrent
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+    hasInput: [ControlActor]
+    hasOutput: [ControlActor]
+    enabledBy: [MacrooperationalMachineMixin]
+  }
+
+type OperationalEntity implements ThingWithTaxon, CyberEssence
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+    inTaxon: [SystemTaxon]
+  }
+
+type OrchestrationExposure implements ExposureEvent
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+    inTaxon: [SystemTaxon]
+    timepoint: TimeType
+  }
+
+type Project
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+  }
+
+type Publication
+  {
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+    authors: [String]
+    pages: [String]
+    summary: String
+    keywords: [String]
+    lcshTerms: [Uriorcurie]
+    xref: [IriType]
+    id: String!
+    name: LabelType
+    type: String!
+  }
+
+type QuantityValue
+  {
+    hasUnit: Unit
+    hasNumericValue: Double
+  }
+
+type Realm
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+  }
+
+interface RealmConfiguration
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+    license: String
+    rights: String
+    format: String
+    creationDate: Date
+    hasPart: [NamedThing]
+    hasQuantitativeValue: [QuantityValue]
+    version: String
+  }
+
+type RealmConfigurationToDomainEnvironmentAssociation
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    negated: Boolean
+    relation: Uriorcurie!
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    type: String
+    category: [Association]!
+    predicate: PredicateType!
+    subject: RealmConfiguration!
+    object: DomainEnvironment!
+  }
+
+type RealmConfigurationToRealmAssociation
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    negated: Boolean
+    relation: Uriorcurie!
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    type: String
+    category: [Association]!
+    predicate: PredicateType!
+    subject: RealmConfiguration!
+    object: Realm!
+  }
+
+type RelationshipType
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+  }
+
+type Server
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+  }
+
+type ServerGroup
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+    inTaxon: [SystemTaxon]
+    hasComputationalSequence: ComputationalSequence
+    hasHomogeneity: Homogeneity
+  }
+
+interface ServerGroupHub
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+  }
+
+type ServerGroupHubToDomainEnvironmentAssociation
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    negated: Boolean
+    relation: Uriorcurie!
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    type: String
+    category: [Association]!
+    predicate: PredicateType!
+    subject: ServerGroupHub!
+    object: DomainEnvironment!
+  }
+
+type ServerGroupHubToServerGroupAssociation
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    negated: Boolean
+    relation: Uriorcurie!
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    type: String
+    category: [Association]!
+    predicate: PredicateType!
+    subject: ServerGroupHub!
+    object: ServerGroup!
+  }
+
+type ServerGroupToServerTypeAssociation
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    negated: Boolean
+    relation: Uriorcurie!
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    type: String
+    category: [Association]!
+    predicate: PredicateType!
+    subject: ServerGroup!
+    object: ServerType!
+  }
+
+interface ServerHub
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+  }
+
+type ServerHubToServerAssociation
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    negated: Boolean
+    relation: Uriorcurie!
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    type: String
+    category: [Association]!
+    predicate: PredicateType!
+    subject: ServerHub!
+    object: Server!
+  }
+
+type ServerHubToServerGroupHubAssociation
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    negated: Boolean
+    relation: Uriorcurie!
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    type: String
+    category: [Association]!
+    predicate: PredicateType!
+    subject: ServerHub!
+    object: ServerGroupHub!
+  }
+
+type ServerType
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+    hasAttribute: [Attribute]
+  }
+
+type SeverityValue
+  {
+    name: LabelType
+    hasAttributeType: OntologyClass!
+    hasQuantitativeValue: [QuantityValue]
+    hasQualitativeValue: NamedThing
+    iri: IriType
+    source: LabelType
+  }
+
+type SystemTaxon
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+    hasTaxonomicRank: TaxonomicRank
+    subclassOf: SystemTaxon
+  }
+
+interface SystemicEntity
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+    hasAttribute: [Attribute]
+  }
+
+type TaxonomicRank
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+  }
+
+interface ThingWithTaxon
+  {
+    inTaxon: [SystemTaxon]
+  }
+
+type VcsRoot
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+    location: String
+  }
+
+type Workload
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+    inTaxon: [SystemTaxon]
+    hasComputationalSequence: ComputationalSequence
+  }
+
+type WorkloadEntity
+  {
+    id: String!
+    name: LabelType
+    enabled: Boolean
+    archived: Boolean
+    description: NarrativeText
+    note: NarrativeText
+    category: [NamedThing]!
+    inTaxon: [SystemTaxon]
+    hasComputationalSequence: ComputationalSequence
+  }
+
+

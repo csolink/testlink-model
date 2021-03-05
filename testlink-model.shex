@@ -1,0 +1,1267 @@
+BASE <https://w3id.org/testlink/vocab/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX pav: <http://purl.org/pav/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX metatype: <https://w3id.org/biolink/biolinkml/meta/types/>
+
+
+<CategoryType> IRI
+
+<IriType> IRI
+
+<LabelType> xsd:string
+
+<PredicateType> IRI
+
+<NarrativeText> xsd:string
+
+<SymbolType> xsd:string
+
+<Frequency> <https://www.ebi.ac.uk/ols/ontologies/uo0000105>
+
+<Unit> <https://www.ebi.ac.uk/ols/ontologies/uo0000000>
+
+<TimeType> xsd:dateTime
+
+<ComputationalSequence> xsd:string
+
+metatype:String xsd:string
+
+metatype:Integer xsd:integer
+
+metatype:Boolean xsd:boolean
+
+metatype:Float xsd:float
+
+metatype:Double xsd:double
+
+metatype:Decimal xsd:decimal
+
+metatype:Time xsd:dateTime
+
+metatype:Date xsd:date
+
+metatype:Datetime xsd:dateTime
+
+metatype:Uriorcurie IRI
+
+metatype:Uri IRI
+
+metatype:Ncname xsd:string
+
+metatype:Objectidentifier IRI
+
+metatype:Nodeidentifier NONLITERAL
+
+<Activity> CLOSED {
+    (  $<Activity_tes> (  &<NamedThing_tes> ;
+          rdf:type [ <NamedThing> ] ? ;
+          &<ActivityAndBehavior_tes> ;
+          rdf:type [ <ActivityAndBehavior> ] ?
+       ) ;
+       rdf:type [ <Activity> ]
+    )
+}
+
+<ActivityAndBehavior> {
+    (  $<ActivityAndBehavior_tes> (  &<Occurrent_tes> ;
+          rdf:type [ <Occurrent> ] ?
+       ) ;
+       rdf:type [ <ActivityAndBehavior> ] ?
+    )
+}
+
+<AdministrativeEntity>  (
+    @<Agent> OR @<ApplicationUser> OR @<ApplicationUserLogin> OR @<ComponentOwner> OR @<Domain> OR @<Email> OR @<Hub> OR @<Project>
+    OR @<Realm> OR @<VcsRoot>
+)
+
+<AdministrativeEntity_struct> {
+    (  $<AdministrativeEntity_tes> (  &<NamedThing_tes> ;
+          rdf:type [ <NamedThing> ] ?
+       ) ;
+       rdf:type [ <AdministrativeEntity> ]
+    )
+}
+
+<AdministrativeOperation> CLOSED {
+    (  $<AdministrativeOperation_tes> (  &<OperationalEntity_tes> ;
+          rdf:type [ <OperationalEntity> ] ? ;
+          &<Cluster_tes> ;
+          rdf:type [ <Cluster> ] ? ;
+          &<Application_tes> ;
+          rdf:type [ <Application> ] ? ;
+          <has_control_actor> @<ControlActor> *
+       ) ;
+       rdf:type [ <AdministrativeOperation> ]
+    )
+}
+
+<Agent> CLOSED {
+    (  $<Agent_tes> (  &<AdministrativeEntity_tes> ;
+          rdf:type [ <AdministrativeEntity> ] ? ;
+          <affiliation> @metatype:Uriorcurie * ;
+          <address> @metatype:String ? ;
+          <name> @<LabelType> ?
+       ) ;
+       rdf:type [ <Agent> ]
+    )
+}
+
+<Annotation>  (
+    @<Attribute> OR @<QuantityValue>
+)
+
+<Annotation_struct> {
+    (  $<Annotation_tes> rdf:type . * ;
+       rdf:type [ <Annotation> ] ?
+    )
+}
+
+<ApexInventoryArchive> {
+    (  $<ApexInventoryArchive_tes> (  &<Archive_tes> ;
+          rdf:type [ <Archive> ] ? ;
+          <release_date> @metatype:Date ? ;
+          <tag_name> @<LabelType> ?
+       ) ;
+       rdf:type [ <ApexInventoryArchive> ]
+    )
+}
+
+<Application> {
+    (  $<Application_tes> <has_control_actor> @<ControlActor> * ;
+       rdf:type [ <Application> ] ?
+    )
+}
+
+<ApplicationConfiguration> {
+    (  $<ApplicationConfiguration_tes> (  &<Configuration_tes> ;
+          rdf:type [ <Configuration> ] ?
+       ) ;
+       rdf:type [ <ApplicationConfiguration> ]
+    )
+}
+
+<ApplicationConfigurationToApplicationAssociation> CLOSED {
+    (  $<ApplicationConfigurationToApplicationAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          <predicate> @<PredicateType> ;
+          <subject> @<ApplicationConfiguration> ;
+          <object> @<Application>
+       ) ;
+       rdf:type [ <ApplicationConfigurationToApplicationAssociation> ]
+    )
+}
+
+<ApplicationInstance> CLOSED {
+    (  $<ApplicationInstance_tes> (  &<WorkloadEntity_tes> ;
+          rdf:type [ <WorkloadEntity> ] ? ;
+          <internal_version> @metatype:String ?
+       ) ;
+       rdf:type [ <ApplicationInstance> ]
+    )
+}
+
+<ApplicationInstanceConfiguration> {
+    (  $<ApplicationInstanceConfiguration_tes> (  &<Configuration_tes> ;
+          rdf:type [ <Configuration> ] ?
+       ) ;
+       rdf:type [ <ApplicationInstanceConfiguration> ]
+    )
+}
+
+<ApplicationInstanceConfigurationToApplicationInstanceAssociation> CLOSED {
+    (  $<ApplicationInstanceConfigurationToApplicationInstanceAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          <predicate> @<PredicateType> ;
+          <subject> @<ApplicationInstanceConfiguration> ;
+          <object> @<ApplicationInstance>
+       ) ;
+       rdf:type [ <ApplicationInstanceConfigurationToApplicationInstanceAssociation> ]
+    )
+}
+
+<ApplicationInstanceToApplicationAssociation> CLOSED {
+    (  $<ApplicationInstanceToApplicationAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          <predicate> @<PredicateType> ;
+          <subject> @<ApplicationInstance> ;
+          <object> @<Application>
+       ) ;
+       rdf:type [ <ApplicationInstanceToApplicationAssociation> ]
+    )
+}
+
+<ApplicationInstanceToDomainEnvironmentAssociation> CLOSED {
+    (  $<ApplicationInstanceToDomainEnvironmentAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          <predicate> @<PredicateType> ;
+          <subject> @<ApplicationInstance> ;
+          <object> @<DomainEnvironment>
+       ) ;
+       rdf:type [ <ApplicationInstanceToDomainEnvironmentAssociation> ]
+    )
+}
+
+<ApplicationInstanceToRealmAssociation> CLOSED {
+    (  $<ApplicationInstanceToRealmAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          <predicate> @<PredicateType> ;
+          <subject> @<ApplicationInstance> ;
+          <object> @<Realm>
+       ) ;
+       rdf:type [ <ApplicationInstanceToRealmAssociation> ]
+    )
+}
+
+<ApplicationInstanceToServerGroupHubAssociation> CLOSED {
+    (  $<ApplicationInstanceToServerGroupHubAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          <predicate> @<PredicateType> ;
+          <subject> @<ApplicationInstance> ;
+          <object> @<ServerGroupHub>
+       ) ;
+       rdf:type [ <ApplicationInstanceToServerGroupHubAssociation> ]
+    )
+}
+
+<ApplicationToApplicationTypeAssociation> CLOSED {
+    (  $<ApplicationToApplicationTypeAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          <predicate> @<PredicateType> ;
+          <subject> @<Application> ;
+          <object> @<ApplicationType>
+       ) ;
+       rdf:type [ <ApplicationToApplicationTypeAssociation> ]
+    )
+}
+
+<ApplicationToComponentAssociation> CLOSED {
+    (  $<ApplicationToComponentAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          <predicate> @<PredicateType> ;
+          <subject> @<Application> ;
+          <object> @<Component>
+       ) ;
+       rdf:type [ <ApplicationToComponentAssociation> ]
+    )
+}
+
+<ApplicationType> CLOSED {
+    (  $<ApplicationType_tes> (  &<SystemicEntity_tes> ;
+          rdf:type [ <SystemicEntity> ] ?
+       ) ;
+       rdf:type [ <ApplicationType> ]
+    )
+}
+
+<ApplicationUser> CLOSED {
+    (  $<ApplicationUser_tes> (  &<AdministrativeEntity_tes> ;
+          rdf:type [ <AdministrativeEntity> ] ? ;
+          <first_name> @<LabelType> ? ;
+          <last_name> @<LabelType> ?
+       ) ;
+       rdf:type [ <ApplicationUser> ]
+    )
+}
+
+<ApplicationUserLogin> CLOSED {
+    (  $<ApplicationUserLogin_tes> (  &<AdministrativeEntity_tes> ;
+          rdf:type [ <AdministrativeEntity> ] ? ;
+          <user_name> @<LabelType> ? ;
+          <domain_name> @<LabelType> ?
+       ) ;
+       rdf:type [ <ApplicationUserLogin> ]
+    )
+}
+
+<ApplicationUserLoginToApplicationUserAssociation> CLOSED {
+    (  $<ApplicationUserLoginToApplicationUserAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          <predicate> @<PredicateType> ;
+          <subject> @<ApplicationUserLogin> ;
+          <object> @<ApplicationUser>
+       ) ;
+       rdf:type [ <ApplicationUserLoginToApplicationUserAssociation> ]
+    )
+}
+
+<Archive>  (
+    CLOSED {
+       (  $<Archive_tes> (  &<Dataset_tes> ;
+             rdf:type [ <Dataset> ] ?
+          ) ;
+          rdf:type [ <Archive> ]
+       )
+    } OR @<ApexInventoryArchive>
+)
+
+<Association>  (
+    CLOSED {
+       (  $<Association_tes> (  &<Entity_tes> ;
+             rdf:type [ <Entity> ] ? ;
+             rdf:subject @<NamedThing> ;
+             rdf:predicate @<PredicateType> ;
+             <negated> @metatype:Boolean ? ;
+             rdf:object @<NamedThing> ;
+             <relation> @metatype:Uriorcurie ;
+             <qualifiers> @<OntologyClass> * ;
+             <publications> @<Publication> * ;
+             <type> @metatype:String ? ;
+             <category> @<Association> +
+          ) ;
+          rdf:type [ <Association> ]
+       )
+    } OR @<ApplicationConfigurationToApplicationAssociation> OR @<ApplicationInstanceConfigurationToApplicationInstanceAssociation>
+    OR @<ApplicationInstanceToApplicationAssociation> OR @<ApplicationInstanceToDomainEnvironmentAssociation> OR
+    @<ApplicationInstanceToRealmAssociation> OR @<ApplicationInstanceToServerGroupHubAssociation> OR
+    @<ApplicationToApplicationTypeAssociation> OR @<ApplicationToComponentAssociation> OR
+    @<ApplicationUserLoginToApplicationUserAssociation> OR @<BuildConfigurationToBuildAssociation> OR
+    @<BuildToApplicationInstanceAssociation> OR @<BuildToApplicationUserLoginAssociation> OR @<BuildToProjectAssociation> OR
+    @<BuildToVcsRootAssociation> OR @<ComponentConfigurationToComponentAssociation> OR
+    @<ComponentOwnerToApplicationUserAssociation> OR @<ComponentOwnerToComponentAssociation> OR @<ComponentToVcsRootAssociation> OR
+    @<DeploymentConfigurationToDeploymentAssociation> OR @<DeploymentToApplicationUserLoginAssociation> OR
+    @<DeploymentToBuildAssociation> OR @<DomainConfigurationToDomainEnvironmentAssociation> OR
+    @<DomainEnvironmentToDomainAssociation> OR @<DomainEnvironmentToEnvironmentAssociation> OR @<EmailToApplicationUserAssociation>
+    OR @<EnvironmentConfigurationToEnvironmentAssociation> OR @<RealmConfigurationToDomainEnvironmentAssociation> OR
+    @<RealmConfigurationToRealmAssociation> OR @<ServerGroupHubToDomainEnvironmentAssociation> OR
+    @<ServerGroupHubToServerGroupAssociation> OR @<ServerGroupToServerTypeAssociation> OR @<ServerHubToServerAssociation> OR
+    @<ServerHubToServerGroupHubAssociation>
+)
+
+<Attribute>  (
+    CLOSED {
+       (  $<Attribute_tes> (  &<Annotation_tes> ;
+             rdf:type [ <Annotation> ] ? ;
+             <name> @<LabelType> ? ;
+             <has_attribute_type> @<OntologyClass> ;
+             <has_quantitative_value> @<QuantityValue> * ;
+             <has_qualitative_value> @<NamedThing> ? ;
+             <iri> @<IriType> ? ;
+             <source> @<LabelType> ?
+          ) ;
+          rdf:type [ <Attribute> ] ?
+       )
+    } OR @<FrequencyValue> OR @<Homogeneity> OR @<SeverityValue>
+)
+
+<AttributeType> CLOSED {
+    (  $<AttributeType_tes> rdf:type . * ;
+       rdf:type [ <AttributeType> ] ?
+    )
+}
+
+<Build> CLOSED {
+    (  $<Build_tes> (  &<Dataset_tes> ;
+          rdf:type [ <Dataset> ] ? ;
+          <created> @metatype:Date ? ;
+          <updated> @metatype:Date ? ;
+          <vcs_location> @metatype:String ? ;
+          <vcs_revision> @metatype:String ? ;
+          <internal_version> @metatype:String ?
+       ) ;
+       rdf:type [ <Build> ]
+    )
+}
+
+<BuildConfiguration> {
+    (  $<BuildConfiguration_tes> (  &<Configuration_tes> ;
+          rdf:type [ <Configuration> ] ?
+       ) ;
+       rdf:type [ <BuildConfiguration> ]
+    )
+}
+
+<BuildConfigurationToBuildAssociation> CLOSED {
+    (  $<BuildConfigurationToBuildAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          <predicate> @<PredicateType> ;
+          <subject> @<BuildConfiguration> ;
+          <object> @<Build>
+       ) ;
+       rdf:type [ <BuildConfigurationToBuildAssociation> ]
+    )
+}
+
+<BuildToApplicationInstanceAssociation> CLOSED {
+    (  $<BuildToApplicationInstanceAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          <predicate> @<PredicateType> ;
+          <subject> @<Build> ;
+          <object> @<ApplicationInstance>
+       ) ;
+       rdf:type [ <BuildToApplicationInstanceAssociation> ]
+    )
+}
+
+<BuildToApplicationUserLoginAssociation> CLOSED {
+    (  $<BuildToApplicationUserLoginAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          <predicate> @<PredicateType> ;
+          <subject> @<Build> ;
+          <object> @<ApplicationUserLogin>
+       ) ;
+       rdf:type [ <BuildToApplicationUserLoginAssociation> ]
+    )
+}
+
+<BuildToProjectAssociation> CLOSED {
+    (  $<BuildToProjectAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          <predicate> @<PredicateType> ;
+          <subject> @<Build> ;
+          <object> @<Project>
+       ) ;
+       rdf:type [ <BuildToProjectAssociation> ]
+    )
+}
+
+<BuildToVcsRootAssociation> CLOSED {
+    (  $<BuildToVcsRootAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          <predicate> @<PredicateType> ;
+          <subject> @<Build> ;
+          <object> @<VcsRoot>
+       ) ;
+       rdf:type [ <BuildToVcsRootAssociation> ]
+    )
+}
+
+<Cluster> {
+    (  $<Cluster_tes> <has_control_actor> @<ControlActor> * ;
+       rdf:type [ <Cluster> ] ?
+    )
+}
+
+<Component> CLOSED {
+    (  $<Component_tes> (  &<DeploymentEntity_tes> ;
+          rdf:type [ <DeploymentEntity> ] ? ;
+          &<Application_tes> ;
+          rdf:type [ <Application> ] ? ;
+          <vcs_location> @metatype:String ? ;
+          <has_control_actor> @<ControlActor> *
+       ) ;
+       rdf:type [ <Component> ]
+    )
+}
+
+<ComponentConfiguration> {
+    (  $<ComponentConfiguration_tes> (  &<Configuration_tes> ;
+          rdf:type [ <Configuration> ] ?
+       ) ;
+       rdf:type [ <ComponentConfiguration> ]
+    )
+}
+
+<ComponentConfigurationToComponentAssociation> CLOSED {
+    (  $<ComponentConfigurationToComponentAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          <predicate> @<PredicateType> ;
+          <subject> @<ComponentConfiguration> ;
+          <object> @<Component>
+       ) ;
+       rdf:type [ <ComponentConfigurationToComponentAssociation> ]
+    )
+}
+
+<ComponentOwner> CLOSED {
+    (  $<ComponentOwner_tes> (  &<AdministrativeEntity_tes> ;
+          rdf:type [ <AdministrativeEntity> ] ?
+       ) ;
+       rdf:type [ <ComponentOwner> ]
+    )
+}
+
+<ComponentOwnerToApplicationUserAssociation> CLOSED {
+    (  $<ComponentOwnerToApplicationUserAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          <predicate> @<PredicateType> ;
+          <subject> @<ComponentOwner> ;
+          <object> @<ApplicationUser>
+       ) ;
+       rdf:type [ <ComponentOwnerToApplicationUserAssociation> ]
+    )
+}
+
+<ComponentOwnerToComponentAssociation> CLOSED {
+    (  $<ComponentOwnerToComponentAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          <predicate> @<PredicateType> ;
+          <subject> @<ComponentOwner> ;
+          <object> @<Component>
+       ) ;
+       rdf:type [ <ComponentOwnerToComponentAssociation> ]
+    )
+}
+
+<ComponentToVcsRootAssociation> CLOSED {
+    (  $<ComponentToVcsRootAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          <predicate> @<PredicateType> ;
+          <subject> @<Component> ;
+          <object> @<VcsRoot>
+       ) ;
+       rdf:type [ <ComponentToVcsRootAssociation> ]
+    )
+}
+
+<ComponentType> CLOSED {
+    (  $<ComponentType_tes> (  &<SystemicEntity_tes> ;
+          rdf:type [ <SystemicEntity> ] ?
+       ) ;
+       rdf:type [ <ComponentType> ]
+    )
+}
+
+<ComputationalEntity>  (
+    @<ComputationalProcessOrActivity> OR @<OperationalEntity> OR @<SystemicEntity>
+)
+
+<ComputationalEntity_struct> {
+    (  $<ComputationalEntity_tes> (  &<NamedThing_tes> ;
+          rdf:type [ <NamedThing> ] ?
+       ) ;
+       rdf:type [ <ComputationalEntity> ]
+    )
+}
+
+<ComputationalProcessOrActivity>  (
+    CLOSED {
+       (  $<ComputationalProcessOrActivity_tes> (  &<ComputationalEntity_tes> ;
+             rdf:type [ <ComputationalEntity> ] ? ;
+             &<Occurrent_tes> ;
+             rdf:type [ <Occurrent> ] ? ;
+             <has_input> @<NamedThing> * ;
+             <has_output> @<NamedThing> * ;
+             <enabled_by> @<CyberEntity> *
+          ) ;
+          rdf:type [ <ComputationalProcessOrActivity> ]
+       )
+    } OR @<OperationalActivity>
+)
+
+<Configuration>  (
+    CLOSED {
+       (  $<Configuration_tes> (  &<InformationContentEntity_tes> ;
+             rdf:type [ <InformationContentEntity> ] ? ;
+             <has_part> @<NamedThing> * ;
+             <has_quantitative_value> @<QuantityValue> * ;
+             <version> @metatype:String ?
+          ) ;
+          rdf:type [ <Configuration> ]
+       )
+    } OR @<ApplicationConfiguration> OR @<ApplicationInstanceConfiguration> OR @<BuildConfiguration> OR @<ComponentConfiguration>
+    OR @<DeploymentConfiguration> OR @<DomainConfiguration> OR @<EnvironmentConfiguration> OR @<RealmConfiguration>
+)
+
+<ConsumedResource> CLOSED {
+    (  $<ConsumedResource_tes> (  &<ControlActor_tes> ;
+          rdf:type [ <ControlActor> ] ? ;
+          &<Cluster_tes> ;
+          rdf:type [ <Cluster> ] ? ;
+          &<Application_tes> ;
+          rdf:type [ <Application> ] ? ;
+          <has_control_actor> @<ControlActor> *
+       ) ;
+       rdf:type [ <ConsumedResource> ]
+    )
+}
+
+<ControlActor>  (
+    CLOSED {
+       (  $<ControlActor_tes> (  &<OperationalEntity_tes> ;
+             rdf:type [ <OperationalEntity> ] ?
+          ) ;
+          rdf:type [ <ControlActor> ]
+       )
+    } OR @<ConsumedResource> OR @<NotificationComponent> OR @<OrchestrationExposure>
+)
+
+<CyberEntity> CLOSED {
+    (  $<CyberEntity_tes> (  &<NamedThing_tes> ;
+          rdf:type [ <NamedThing> ] ? ;
+          &<CyberEssence_tes> ;
+          rdf:type [ <CyberEssence> ] ?
+       ) ;
+       rdf:type [ <CyberEntity> ]
+    )
+}
+
+<CyberEssence> {
+    (  $<CyberEssence_tes> (  &<CyberEssenceOrOccurrent_tes> ;
+          rdf:type [ <CyberEssenceOrOccurrent> ] ?
+       ) ;
+       rdf:type [ <CyberEssence> ] ?
+    )
+}
+
+<CyberEssenceOrOccurrent>  (
+    @<CyberEssence> OR @<Occurrent>
+)
+
+<CyberEssenceOrOccurrent_struct> {
+    (  $<CyberEssenceOrOccurrent_tes> rdf:type . * ;
+       rdf:type [ <CyberEssenceOrOccurrent> ] ?
+    )
+}
+
+<Data> CLOSED {
+    (  $<Data_tes> (  &<NotificationComponent_tes> ;
+          rdf:type [ <NotificationComponent> ] ?
+       ) ;
+       rdf:type [ <Data> ]
+    )
+}
+
+<Dataset>  (
+    CLOSED {
+       (  $<Dataset_tes> (  &<InformationContentEntity_tes> ;
+             rdf:type [ <InformationContentEntity> ] ?
+          ) ;
+          rdf:type [ <Dataset> ]
+       )
+    } OR @<Archive> OR @<Build> OR @<DatasetVersion> OR @<Inventory>
+)
+
+<DatasetDistribution> CLOSED {
+    (  $<DatasetDistribution_tes> (  &<InformationContentEntity_tes> ;
+          rdf:type [ <InformationContentEntity> ] ? ;
+          <distribution_download_url> @metatype:String ?
+       ) ;
+       rdf:type [ <DatasetDistribution> ]
+    )
+}
+
+<DatasetVersion>  (
+    CLOSED {
+       (  $<DatasetVersion_tes> (  &<Dataset_tes> ;
+             rdf:type [ <Dataset> ] ? ;
+             dcterms:source @<Dataset> ? ;
+             pav:version @metatype:String ? ;
+             dcterms:distribution @<DatasetDistribution> ?
+          ) ;
+          rdf:type [ <DatasetVersion> ]
+       )
+    } OR @<DistributionLevel>
+)
+
+<Deployment> CLOSED {
+    (  $<Deployment_tes> (  &<DeploymentEntity_tes> ;
+          rdf:type [ <DeploymentEntity> ] ? ;
+          &<Application_tes> ;
+          rdf:type [ <Application> ] ? ;
+          &<SystemicEntity_tes> ;
+          rdf:type [ <SystemicEntity> ] ? ;
+          <has_control_actor> @<ControlActor> *
+       ) ;
+       rdf:type [ <Deployment> ]
+    )
+}
+
+<DeploymentConfiguration> {
+    (  $<DeploymentConfiguration_tes> (  &<Configuration_tes> ;
+          rdf:type [ <Configuration> ] ?
+       ) ;
+       rdf:type [ <DeploymentConfiguration> ]
+    )
+}
+
+<DeploymentConfigurationToDeploymentAssociation> CLOSED {
+    (  $<DeploymentConfigurationToDeploymentAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          <predicate> @<PredicateType> ;
+          <subject> @<DeploymentConfiguration> ;
+          <object> @<Deployment>
+       ) ;
+       rdf:type [ <DeploymentConfigurationToDeploymentAssociation> ]
+    )
+}
+
+<DeploymentEntity>  (
+    CLOSED {
+       (  $<DeploymentEntity_tes> (  &<SystemicEntity_tes> ;
+             rdf:type [ <SystemicEntity> ] ? ;
+             &<ThingWithTaxon_tes> ;
+             rdf:type [ <ThingWithTaxon> ] ? ;
+             &<CyberEssence_tes> ;
+             rdf:type [ <CyberEssence> ] ? ;
+             <in_taxon> @<SystemTaxon> *
+          ) ;
+          rdf:type [ <DeploymentEntity> ]
+       )
+    } OR @<Component> OR @<Deployment>
+)
+
+<DeploymentToApplicationUserLoginAssociation> CLOSED {
+    (  $<DeploymentToApplicationUserLoginAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          <predicate> @<PredicateType> ;
+          <subject> @<Deployment> ;
+          <object> @<ApplicationUserLogin>
+       ) ;
+       rdf:type [ <DeploymentToApplicationUserLoginAssociation> ]
+    )
+}
+
+<DeploymentToBuildAssociation> CLOSED {
+    (  $<DeploymentToBuildAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          <predicate> @<PredicateType> ;
+          <subject> @<Deployment> ;
+          <object> @<Build>
+       ) ;
+       rdf:type [ <DeploymentToBuildAssociation> ]
+    )
+}
+
+<DistributionLevel> {
+    (  $<DistributionLevel_tes> (  &<DatasetVersion_tes> ;
+          rdf:type [ <DatasetVersion> ] ? ;
+          dcat:downloadURL @metatype:String ?
+       ) ;
+       rdf:type [ <DistributionLevel> ]
+    )
+}
+
+<Domain> CLOSED {
+    (  $<Domain_tes> (  &<AdministrativeEntity_tes> ;
+          rdf:type [ <AdministrativeEntity> ] ? ;
+          <fqdn> @<LabelType> ?
+       ) ;
+       rdf:type [ <Domain> ]
+    )
+}
+
+<DomainConfiguration> {
+    (  $<DomainConfiguration_tes> (  &<Configuration_tes> ;
+          rdf:type [ <Configuration> ] ?
+       ) ;
+       rdf:type [ <DomainConfiguration> ]
+    )
+}
+
+<DomainConfigurationToDomainEnvironmentAssociation> CLOSED {
+    (  $<DomainConfigurationToDomainEnvironmentAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          <predicate> @<PredicateType> ;
+          <subject> @<DomainConfiguration> ;
+          <object> @<DomainEnvironment>
+       ) ;
+       rdf:type [ <DomainConfigurationToDomainEnvironmentAssociation> ]
+    )
+}
+
+<DomainEnvironment> {
+    (  $<DomainEnvironment_tes> (  &<Environment_tes> ;
+          rdf:type [ <Environment> ] ?
+       ) ;
+       rdf:type [ <DomainEnvironment> ]
+    )
+}
+
+<DomainEnvironmentToDomainAssociation> CLOSED {
+    (  $<DomainEnvironmentToDomainAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          <predicate> @<PredicateType> ;
+          <subject> @<DomainEnvironment> ;
+          <object> @<Domain>
+       ) ;
+       rdf:type [ <DomainEnvironmentToDomainAssociation> ]
+    )
+}
+
+<DomainEnvironmentToEnvironmentAssociation> CLOSED {
+    (  $<DomainEnvironmentToEnvironmentAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          <predicate> @<PredicateType> ;
+          <subject> @<DomainEnvironment> ;
+          <object> @<Environment>
+       ) ;
+       rdf:type [ <DomainEnvironmentToEnvironmentAssociation> ]
+    )
+}
+
+<Email> CLOSED {
+    (  $<Email_tes> (  &<AdministrativeEntity_tes> ;
+          rdf:type [ <AdministrativeEntity> ] ?
+       ) ;
+       rdf:type [ <Email> ]
+    )
+}
+
+<EmailToApplicationUserAssociation> CLOSED {
+    (  $<EmailToApplicationUserAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          <predicate> @<PredicateType> ;
+          <subject> @<Email> ;
+          <object> @<ApplicationUser>
+       ) ;
+       rdf:type [ <EmailToApplicationUserAssociation> ]
+    )
+}
+
+<Entity>  (
+    @<Association> OR @<NamedThing>
+)
+
+<Entity_struct> {
+    (  $<Entity_tes> (  rdfs:label @<LabelType> ? ;
+          <enabled> @metatype:Boolean ? ;
+          <archived> @metatype:Boolean ? ;
+          dcterms:description @<NarrativeText> ? ;
+          <note> @<NarrativeText> ?
+       ) ;
+       rdf:type [ <Entity> ]
+    )
+}
+
+<Environment>  (
+    {
+       (  $<Environment_tes> (  &<NamedThing_tes> ;
+             rdf:type [ <NamedThing> ] ?
+          ) ;
+          rdf:type [ <Environment> ]
+       )
+    } OR @<DomainEnvironment>
+)
+
+<EnvironmentConfiguration> {
+    (  $<EnvironmentConfiguration_tes> (  &<Configuration_tes> ;
+          rdf:type [ <Configuration> ] ?
+       ) ;
+       rdf:type [ <EnvironmentConfiguration> ]
+    )
+}
+
+<EnvironmentConfigurationToEnvironmentAssociation> CLOSED {
+    (  $<EnvironmentConfigurationToEnvironmentAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          <predicate> @<PredicateType> ;
+          <subject> @<EnvironmentConfiguration> ;
+          <object> @<Environment>
+       ) ;
+       rdf:type [ <EnvironmentConfigurationToEnvironmentAssociation> ]
+    )
+}
+
+<Event> {
+    (  $<Event_tes> <timepoint> @<TimeType> ? ;
+       rdf:type [ <Event> ] ?
+    )
+}
+
+<ExposureEvent> {
+    (  $<ExposureEvent_tes> <timepoint> @<TimeType> ? ;
+       rdf:type [ <ExposureEvent> ] ?
+    )
+}
+
+<FrequencyValue> CLOSED {
+    (  $<FrequencyValue_tes> (  &<Attribute_tes> ;
+          rdf:type [ <Attribute> ] ?
+       ) ;
+       rdf:type [ <FrequencyValue> ] ?
+    )
+}
+
+<Homogeneity> CLOSED {
+    (  $<Homogeneity_tes> (  &<Attribute_tes> ;
+          rdf:type [ <Attribute> ] ?
+       ) ;
+       rdf:type [ <Homogeneity> ] ?
+    )
+}
+
+<Hub>  (
+    CLOSED {
+       (  $<Hub_tes> (  &<AdministrativeEntity_tes> ;
+             rdf:type [ <AdministrativeEntity> ] ?
+          ) ;
+          rdf:type [ <Hub> ]
+       )
+    } OR @<ServerGroupHub> OR @<ServerHub>
+)
+
+<InformationContentEntity>  (
+    @<Configuration> OR @<Dataset> OR @<DatasetDistribution> OR @<Publication>
+)
+
+<InformationContentEntity_struct> {
+    (  $<InformationContentEntity_tes> (  &<NamedThing_tes> ;
+          rdf:type [ <NamedThing> ] ? ;
+          <license> @metatype:String ? ;
+          <rights> @metatype:String ? ;
+          <format> @metatype:String ? ;
+          <creation_date> @metatype:Date ?
+       ) ;
+       rdf:type [ <InformationContentEntity> ]
+    )
+}
+
+<Inventory> CLOSED {
+    (  $<Inventory_tes> (  &<Dataset_tes> ;
+          rdf:type [ <Dataset> ] ? ;
+          <created> @metatype:Date ? ;
+          <component_fixed> @<LabelType> ? ;
+          <tag> @<LabelType> ? ;
+          <tag_name> @<LabelType> ? ;
+          <user_login> @metatype:String ? ;
+          <svn_tag_url> @<IriType> ?
+       ) ;
+       rdf:type [ <Inventory> ]
+    )
+}
+
+<MacrooperationalMachineMixin> {
+    (  $<MacrooperationalMachineMixin_tes> <name> @<SymbolType> ? ;
+       rdf:type [ <MacrooperationalMachineMixin> ] ?
+    )
+}
+
+<NamedThing>  (
+    CLOSED {
+       (  $<NamedThing_tes> (  &<Entity_tes> ;
+             rdf:type [ <Entity> ] ? ;
+             <category> @<NamedThing> +
+          ) ;
+          rdf:type [ <NamedThing> ]
+       )
+    } OR @<Activity> OR @<AdministrativeEntity> OR @<ComputationalEntity> OR @<CyberEntity> OR @<Environment> OR
+    @<InformationContentEntity> OR @<OntologyClass> OR @<Server>
+)
+
+<Notification> CLOSED {
+    (  $<Notification_tes> (  &<OperationalEntity_tes> ;
+          rdf:type [ <OperationalEntity> ] ? ;
+          &<Application_tes> ;
+          rdf:type [ <Application> ] ? ;
+          <has_data> @<Data> * ;
+          <has_control_actor> @<ControlActor> *
+       ) ;
+       rdf:type [ <Notification> ]
+    )
+}
+
+<NotificationComponent>  (
+    CLOSED {
+       (  $<NotificationComponent_tes> (  &<ControlActor_tes> ;
+             rdf:type [ <ControlActor> ] ?
+          ) ;
+          rdf:type [ <NotificationComponent> ]
+       )
+    } OR @<Data>
+)
+
+<Occurrent>  (
+    {
+       (  $<Occurrent_tes> (  &<CyberEssenceOrOccurrent_tes> ;
+             rdf:type [ <CyberEssenceOrOccurrent> ] ?
+          ) ;
+          rdf:type [ <Occurrent> ] ?
+       )
+    } OR @<ActivityAndBehavior>
+)
+
+<OntologyClass>  (
+    CLOSED {
+       (  $<OntologyClass_tes> (  &<NamedThing_tes> ;
+             rdf:type [ <NamedThing> ] ?
+          ) ;
+          rdf:type [ <OntologyClass> ]
+       )
+    } OR @<RelationshipType> OR @<SystemTaxon> OR @<TaxonomicRank>
+)
+
+<OperationalActivity> CLOSED {
+    (  $<OperationalActivity_tes> (  &<ComputationalProcessOrActivity_tes> ;
+          rdf:type [ <ComputationalProcessOrActivity> ] ? ;
+          &<Occurrent_tes> ;
+          rdf:type [ <Occurrent> ] ? ;
+          <has_input> @<ControlActor> * ;
+          <has_output> @<ControlActor> * ;
+          <enabled_by> @<MacrooperationalMachineMixin> *
+       ) ;
+       rdf:type [ <OperationalActivity> ]
+    )
+}
+
+<OperationalEntity>  (
+    CLOSED {
+       (  $<OperationalEntity_tes> (  &<ComputationalEntity_tes> ;
+             rdf:type [ <ComputationalEntity> ] ? ;
+             &<ThingWithTaxon_tes> ;
+             rdf:type [ <ThingWithTaxon> ] ? ;
+             &<CyberEssence_tes> ;
+             rdf:type [ <CyberEssence> ] ? ;
+             <in_taxon> @<SystemTaxon> *
+          ) ;
+          rdf:type [ <OperationalEntity> ]
+       )
+    } OR @<AdministrativeOperation> OR @<ControlActor> OR @<Notification> OR @<WorkloadEntity>
+)
+
+<OrchestrationExposure> CLOSED {
+    (  $<OrchestrationExposure_tes> (  &<ControlActor_tes> ;
+          rdf:type [ <ControlActor> ] ? ;
+          &<ExposureEvent_tes> ;
+          rdf:type [ <ExposureEvent> ] ? ;
+          <timepoint> @<TimeType> ?
+       ) ;
+       rdf:type [ <OrchestrationExposure> ]
+    )
+}
+
+<Project> CLOSED {
+    (  $<Project_tes> (  &<AdministrativeEntity_tes> ;
+          rdf:type [ <AdministrativeEntity> ] ?
+       ) ;
+       rdf:type [ <Project> ]
+    )
+}
+
+<Publication> CLOSED {
+    (  $<Publication_tes> (  &<InformationContentEntity_tes> ;
+          rdf:type [ <InformationContentEntity> ] ? ;
+          <authors> @metatype:String * ;
+          <pages> @metatype:String * ;
+          <summary> @metatype:String ? ;
+          <keywords> @metatype:String * ;
+          <lcsh_terms> @metatype:Uriorcurie * ;
+          <xref> @<IriType> * ;
+          <name> @<LabelType> ? ;
+          dcterms:type @metatype:String
+       ) ;
+       rdf:type [ <Publication> ]
+    )
+}
+
+<QuantityValue> CLOSED {
+    (  $<QuantityValue_tes> (  &<Annotation_tes> ;
+          rdf:type [ <Annotation> ] ? ;
+          <has_unit> @<Unit> ? ;
+          <has_numeric_value> @metatype:Double ?
+       ) ;
+       rdf:type [ <QuantityValue> ] ?
+    )
+}
+
+<Realm> CLOSED {
+    (  $<Realm_tes> (  &<AdministrativeEntity_tes> ;
+          rdf:type [ <AdministrativeEntity> ] ?
+       ) ;
+       rdf:type [ <Realm> ]
+    )
+}
+
+<RealmConfiguration> {
+    (  $<RealmConfiguration_tes> (  &<Configuration_tes> ;
+          rdf:type [ <Configuration> ] ?
+       ) ;
+       rdf:type [ <RealmConfiguration> ]
+    )
+}
+
+<RealmConfigurationToDomainEnvironmentAssociation> CLOSED {
+    (  $<RealmConfigurationToDomainEnvironmentAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          <predicate> @<PredicateType> ;
+          <subject> @<RealmConfiguration> ;
+          <object> @<DomainEnvironment>
+       ) ;
+       rdf:type [ <RealmConfigurationToDomainEnvironmentAssociation> ]
+    )
+}
+
+<RealmConfigurationToRealmAssociation> CLOSED {
+    (  $<RealmConfigurationToRealmAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          <predicate> @<PredicateType> ;
+          <subject> @<RealmConfiguration> ;
+          <object> @<Realm>
+       ) ;
+       rdf:type [ <RealmConfigurationToRealmAssociation> ]
+    )
+}
+
+<RelationshipType> CLOSED {
+    (  $<RelationshipType_tes> (  &<OntologyClass_tes> ;
+          rdf:type [ <OntologyClass> ] ?
+       ) ;
+       rdf:type [ <RelationshipType> ]
+    )
+}
+
+<Server> CLOSED {
+    (  $<Server_tes> (  &<NamedThing_tes> ;
+          rdf:type [ <NamedThing> ] ?
+       ) ;
+       rdf:type [ <Server> ]
+    )
+}
+
+<ServerGroup> CLOSED {
+    (  $<ServerGroup_tes> (  &<WorkloadEntity_tes> ;
+          rdf:type [ <WorkloadEntity> ] ? ;
+          <has_homogeneity> @<Homogeneity> ?
+       ) ;
+       rdf:type [ <ServerGroup> ]
+    )
+}
+
+<ServerGroupHub> {
+    (  $<ServerGroupHub_tes> (  &<Hub_tes> ;
+          rdf:type [ <Hub> ] ?
+       ) ;
+       rdf:type [ <ServerGroupHub> ]
+    )
+}
+
+<ServerGroupHubToDomainEnvironmentAssociation> CLOSED {
+    (  $<ServerGroupHubToDomainEnvironmentAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          <predicate> @<PredicateType> ;
+          <subject> @<ServerGroupHub> ;
+          <object> @<DomainEnvironment>
+       ) ;
+       rdf:type [ <ServerGroupHubToDomainEnvironmentAssociation> ]
+    )
+}
+
+<ServerGroupHubToServerGroupAssociation> CLOSED {
+    (  $<ServerGroupHubToServerGroupAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          <predicate> @<PredicateType> ;
+          <subject> @<ServerGroupHub> ;
+          <object> @<ServerGroup>
+       ) ;
+       rdf:type [ <ServerGroupHubToServerGroupAssociation> ]
+    )
+}
+
+<ServerGroupToServerTypeAssociation> CLOSED {
+    (  $<ServerGroupToServerTypeAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          <predicate> @<PredicateType> ;
+          <subject> @<ServerGroup> ;
+          <object> @<ServerType>
+       ) ;
+       rdf:type [ <ServerGroupToServerTypeAssociation> ]
+    )
+}
+
+<ServerHub> {
+    (  $<ServerHub_tes> (  &<Hub_tes> ;
+          rdf:type [ <Hub> ] ?
+       ) ;
+       rdf:type [ <ServerHub> ]
+    )
+}
+
+<ServerHubToServerAssociation> CLOSED {
+    (  $<ServerHubToServerAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          <predicate> @<PredicateType> ;
+          <subject> @<ServerHub> ;
+          <object> @<Server>
+       ) ;
+       rdf:type [ <ServerHubToServerAssociation> ]
+    )
+}
+
+<ServerHubToServerGroupHubAssociation> CLOSED {
+    (  $<ServerHubToServerGroupHubAssociation_tes> (  &<Association_tes> ;
+          rdf:type [ <Association> ] ? ;
+          <predicate> @<PredicateType> ;
+          <subject> @<ServerHub> ;
+          <object> @<ServerGroupHub>
+       ) ;
+       rdf:type [ <ServerHubToServerGroupHubAssociation> ]
+    )
+}
+
+<ServerType> CLOSED {
+    (  $<ServerType_tes> (  &<SystemicEntity_tes> ;
+          rdf:type [ <SystemicEntity> ] ?
+       ) ;
+       rdf:type [ <ServerType> ]
+    )
+}
+
+<SeverityValue> CLOSED {
+    (  $<SeverityValue_tes> (  &<Attribute_tes> ;
+          rdf:type [ <Attribute> ] ?
+       ) ;
+       rdf:type [ <SeverityValue> ] ?
+    )
+}
+
+<SystemTaxon> CLOSED {
+    (  $<SystemTaxon_tes> (  &<OntologyClass_tes> ;
+          rdf:type [ <OntologyClass> ] ? ;
+          <has_taxonomic_rank> @<TaxonomicRank> ? ;
+          <subclass_of> @<SystemTaxon> ?
+       ) ;
+       rdf:type [ <SystemTaxon> ]
+    )
+}
+
+<SystemicEntity>  (
+    @<ApplicationType> OR @<ComponentType> OR @<DeploymentEntity> OR @<ServerType>
+)
+
+<SystemicEntity_struct> {
+    (  $<SystemicEntity_tes> (  &<ComputationalEntity_tes> ;
+          rdf:type [ <ComputationalEntity> ] ? ;
+          <has_attribute> @<Attribute> *
+       ) ;
+       rdf:type [ <SystemicEntity> ]
+    )
+}
+
+<TaxonomicRank> CLOSED {
+    (  $<TaxonomicRank_tes> (  &<OntologyClass_tes> ;
+          rdf:type [ <OntologyClass> ] ?
+       ) ;
+       rdf:type [ <TaxonomicRank> ]
+    )
+}
+
+<ThingWithTaxon> {
+    (  $<ThingWithTaxon_tes> <in_taxon> @<SystemTaxon> * ;
+       rdf:type [ <ThingWithTaxon> ] ?
+    )
+}
+
+<VcsRoot> CLOSED {
+    (  $<VcsRoot_tes> (  &<AdministrativeEntity_tes> ;
+          rdf:type [ <AdministrativeEntity> ] ? ;
+          <location> @metatype:String ?
+       ) ;
+       rdf:type [ <VcsRoot> ]
+    )
+}
+
+<Workload> CLOSED {
+    (  $<Workload_tes> (  &<WorkloadEntity_tes> ;
+          rdf:type [ <WorkloadEntity> ] ?
+       ) ;
+       rdf:type [ <Workload> ]
+    )
+}
+
+<WorkloadEntity>  (
+    CLOSED {
+       (  $<WorkloadEntity_tes> (  &<OperationalEntity_tes> ;
+             rdf:type [ <OperationalEntity> ] ? ;
+             <has_computational_sequence> @<ComputationalSequence> ?
+          ) ;
+          rdf:type [ <WorkloadEntity> ]
+       )
+    } OR @<ApplicationInstance> OR @<ServerGroup> OR @<Workload>
+)
+
+
+

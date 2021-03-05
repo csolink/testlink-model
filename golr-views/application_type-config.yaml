@@ -1,0 +1,31 @@
+id: application_type
+schema_generating: true
+description: A component type defines the set of components running the same software
+  and sharing the same configuration. It's a single point of configuration control.
+display_name: application type
+document_category: application type
+weight: 20
+fields:
+- id: id
+  description: A unique identifier for an entity. Must be either a CURIE shorthand
+    for a URI or a complete URI
+  display_name: id
+- id: name
+  description: A human-readable name for an attribute or entity.
+  display_name: name
+- id: enabled
+  display_name: enabled
+- id: archived
+  display_name: archived
+- id: description
+  description: a human-readable description of an entity
+  display_name: description
+- id: note
+  display_name: note
+- id: category
+  display_name: named thing_category
+  cardinality: multi
+- id: has_attribute
+  description: may often be an system attribute
+  display_name: systemic entity_has attribute
+  cardinality: multi

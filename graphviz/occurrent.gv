@@ -1,0 +1,14 @@
+digraph {
+	graph [bb="0,0,276.88,123"];
+	node [label="\N"];
+	occurrent	 [height=0.5,
+		label=occurrent,
+		pos="138.44,105",
+		width=1.5707];
+	"cyber essence or occurrent"	 [height=0.5,
+		pos="138.44,18",
+		width=3.8455];
+	occurrent -> "cyber essence or occurrent"	 [label=is_a,
+		lp="152.44,61.5",
+		pos="e,138.44,36.003 138.44,86.974 138.44,75.192 138.44,59.561 138.44,46.158"];
+}
