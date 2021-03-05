@@ -1,0 +1,21 @@
+digraph {
+	graph [bb="0,0,480.38,123"];
+	node [label="\N"];
+	"macrooperational machine mixin"	 [height=0.5,
+		label="macrooperational machine mixin",
+		pos="163.79,105",
+		width=4.5496];
+	name	 [height=0.5,
+		pos="163.79,18",
+		width=1.011];
+	"macrooperational machine mixin" -> name	 [color=blue,
+		label=name,
+		lp="183.79,61.5",
+		pos="e,163.79,36.003 163.79,86.974 163.79,75.192 163.79,59.561 163.79,46.158",
+		style=solid];
+	"macrooperational machine mixin_name"	 [color=blue,
+		height=0.5,
+		label="symbol type",
+		pos="412.79,105",
+		width=1.8776];
+}

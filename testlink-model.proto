@@ -1,0 +1,1292 @@
+// An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.
+message Activity
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  repeated category NamedThing = 7
+ }
+// A event intended for use in the diagnosis, cure, mitigation, repairing, or prevention of error
+message AdministrativeOperation
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  repeated category NamedThing = 7
+  repeated inTaxon SystemTaxon = 8
+  repeated hasControlActor ControlActor = 9
+ }
+// service, group, organization or project that provides a piece of information (i.e. a knowledge association)
+message Agent
+ {
+  optional enabled Boolean = 1
+  optional archived Boolean = 2
+  optional description NarrativeText = 3
+  optional note NarrativeText = 4
+  repeated category NamedThing = 5
+  repeated affiliation Uriorcurie = 6
+  optional address String = 7
+  id String = 8
+  optional name LabelType = 9
+ }
+// Any association between a application configuration and a application. There is no assumption of cardinality
+message ApplicationConfigurationToApplicationAssociation
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  optional negated Boolean = 7
+  relation Uriorcurie = 8
+  repeated qualifiers OntologyClass = 9
+  repeated publications Publication = 10
+  optional type String = 11
+  repeated category Association = 12
+  predicate PredicateType = 13
+  subject ApplicationConfiguration = 14
+  object Application = 15
+ }
+// The unit of service workload the component is capable of providing or protecting.
+message ApplicationInstance
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  repeated category NamedThing = 7
+  repeated inTaxon SystemTaxon = 8
+  optional hasComputationalSequence ComputationalSequence = 9
+  optional internalVersion String = 10
+ }
+// Any association between a application instance configuration and a application instance. There is no assumption of cardinality
+message ApplicationInstanceConfigurationToApplicationInstanceAssociation
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  optional negated Boolean = 7
+  relation Uriorcurie = 8
+  repeated qualifiers OntologyClass = 9
+  repeated publications Publication = 10
+  optional type String = 11
+  repeated category Association = 12
+  predicate PredicateType = 13
+  subject ApplicationInstanceConfiguration = 14
+  object ApplicationInstance = 15
+ }
+// Any association between a application instance and a application. There is no assumption of cardinality
+message ApplicationInstanceToApplicationAssociation
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  optional negated Boolean = 7
+  relation Uriorcurie = 8
+  repeated qualifiers OntologyClass = 9
+  repeated publications Publication = 10
+  optional type String = 11
+  repeated category Association = 12
+  predicate PredicateType = 13
+  subject ApplicationInstance = 14
+  object Application = 15
+ }
+// Any association between a application instance and a domain environment. There is no assumption of cardinality
+message ApplicationInstanceToDomainEnvironmentAssociation
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  optional negated Boolean = 7
+  relation Uriorcurie = 8
+  repeated qualifiers OntologyClass = 9
+  repeated publications Publication = 10
+  optional type String = 11
+  repeated category Association = 12
+  predicate PredicateType = 13
+  subject ApplicationInstance = 14
+  object DomainEnvironment = 15
+ }
+// Any association between a application instance and a realm. There is no assumption of cardinality
+message ApplicationInstanceToRealmAssociation
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  optional negated Boolean = 7
+  relation Uriorcurie = 8
+  repeated qualifiers OntologyClass = 9
+  repeated publications Publication = 10
+  optional type String = 11
+  repeated category Association = 12
+  predicate PredicateType = 13
+  subject ApplicationInstance = 14
+  object Realm = 15
+ }
+// Any association between a application instance and a server group hub. There is no assumption of cardinality
+message ApplicationInstanceToServerGroupHubAssociation
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  optional negated Boolean = 7
+  relation Uriorcurie = 8
+  repeated qualifiers OntologyClass = 9
+  repeated publications Publication = 10
+  optional type String = 11
+  repeated category Association = 12
+  predicate PredicateType = 13
+  subject ApplicationInstance = 14
+  object ServerGroupHub = 15
+ }
+// Any association between a application and a application type. There is no assumption of cardinality
+message ApplicationToApplicationTypeAssociation
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  optional negated Boolean = 7
+  relation Uriorcurie = 8
+  repeated qualifiers OntologyClass = 9
+  repeated publications Publication = 10
+  optional type String = 11
+  repeated category Association = 12
+  predicate PredicateType = 13
+  subject Application = 14
+  object ApplicationType = 15
+ }
+// Any association between a application and a component. There is no assumption of cardinality
+message ApplicationToComponentAssociation
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  optional negated Boolean = 7
+  relation Uriorcurie = 8
+  repeated qualifiers OntologyClass = 9
+  repeated publications Publication = 10
+  optional type String = 11
+  repeated category Association = 12
+  predicate PredicateType = 13
+  subject Application = 14
+  object Component = 15
+ }
+// A component type defines the set of components running the same software and sharing the same configuration. It's a single point of configuration control.
+message ApplicationType
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  repeated category NamedThing = 7
+  repeated hasAttribute Attribute = 8
+ }
+message ApplicationUser
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  repeated category NamedThing = 7
+  optional firstName LabelType = 8
+  optional lastName LabelType = 9
+ }
+message ApplicationUserLogin
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  repeated category NamedThing = 7
+  optional userName LabelType = 8
+  optional domainName LabelType = 9
+ }
+// Any association between a application user login and a application user. There is no assumption of cardinality
+message ApplicationUserLoginToApplicationUserAssociation
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  optional negated Boolean = 7
+  relation Uriorcurie = 8
+  repeated qualifiers OntologyClass = 9
+  repeated publications Publication = 10
+  optional type String = 11
+  repeated category Association = 12
+  predicate PredicateType = 13
+  subject ApplicationUserLogin = 14
+  object ApplicationUser = 15
+ }
+message Archive
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  repeated category NamedThing = 7
+  optional license String = 8
+  optional rights String = 9
+  optional format String = 10
+  optional creationDate Date = 11
+ }
+// A typed association between two entities, supported by evidence
+message Association
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  subject NamedThing = 7
+  predicate PredicateType = 8
+  optional negated Boolean = 9
+  object NamedThing = 10
+  relation Uriorcurie = 11
+  repeated qualifiers OntologyClass = 12
+  repeated publications Publication = 13
+  optional type String = 14
+  repeated category Association = 15
+ }
+// A property or characteristic of an entity. For example, an apple may have properties such as color, shape, age, crispiness. An environmental sample may have attributes such as depth, lat, long, resource.
+message Attribute
+ {
+  optional name LabelType = 1
+  hasAttributeType OntologyClass = 2
+  repeated hasQuantitativeValue QuantityValue = 3
+  optional hasQualitativeValue NamedThing = 4
+  optional iri IriType = 5
+  optional source LabelType = 6
+ }
+message Build
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  repeated category NamedThing = 7
+  optional license String = 8
+  optional rights String = 9
+  optional format String = 10
+  optional creationDate Date = 11
+  optional created Date = 12
+  optional updated Date = 13
+  optional vcsLocation String = 14
+  optional vcsRevision String = 15
+  optional internalVersion String = 16
+ }
+// Any association between a build configuration and a build. There is no assumption of cardinality
+message BuildConfigurationToBuildAssociation
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  optional negated Boolean = 7
+  relation Uriorcurie = 8
+  repeated qualifiers OntologyClass = 9
+  repeated publications Publication = 10
+  optional type String = 11
+  repeated category Association = 12
+  predicate PredicateType = 13
+  subject BuildConfiguration = 14
+  object Build = 15
+ }
+// Any association between a build and a application instance. There is no assumption of cardinality
+message BuildToApplicationInstanceAssociation
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  optional negated Boolean = 7
+  relation Uriorcurie = 8
+  repeated qualifiers OntologyClass = 9
+  repeated publications Publication = 10
+  optional type String = 11
+  repeated category Association = 12
+  predicate PredicateType = 13
+  subject Build = 14
+  object ApplicationInstance = 15
+ }
+// Any association between a build and a application user login. There is no assumption of cardinality
+message BuildToApplicationUserLoginAssociation
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  optional negated Boolean = 7
+  relation Uriorcurie = 8
+  repeated qualifiers OntologyClass = 9
+  repeated publications Publication = 10
+  optional type String = 11
+  repeated category Association = 12
+  predicate PredicateType = 13
+  subject Build = 14
+  object ApplicationUserLogin = 15
+ }
+// Any association between a build and a project. There is no assumption of cardinality
+message BuildToProjectAssociation
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  optional negated Boolean = 7
+  relation Uriorcurie = 8
+  repeated qualifiers OntologyClass = 9
+  repeated publications Publication = 10
+  optional type String = 11
+  repeated category Association = 12
+  predicate PredicateType = 13
+  subject Build = 14
+  object Project = 15
+ }
+// Any association between a build and a vcs root. There is no assumption of cardinality
+message BuildToVcsRootAssociation
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  optional negated Boolean = 7
+  relation Uriorcurie = 8
+  repeated qualifiers OntologyClass = 9
+  repeated publications Publication = 10
+  optional type String = 11
+  repeated category Association = 12
+  predicate PredicateType = 13
+  subject Build = 14
+  object VcsRoot = 15
+ }
+// The component is the smallest system entity, located in or around a serviceunit It can be deployed, isolated, and repaired independently. Each component belongs to one, and only one, serviceunit.
+message Component
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  repeated category NamedThing = 7
+  repeated hasAttribute Attribute = 8
+  repeated inTaxon SystemTaxon = 9
+  optional vcsLocation String = 10
+  repeated hasControlActor ControlActor = 11
+ }
+// Any association between a component configuration and a component. There is no assumption of cardinality
+message ComponentConfigurationToComponentAssociation
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  optional negated Boolean = 7
+  relation Uriorcurie = 8
+  repeated qualifiers OntologyClass = 9
+  repeated publications Publication = 10
+  optional type String = 11
+  repeated category Association = 12
+  predicate PredicateType = 13
+  subject ComponentConfiguration = 14
+  object Component = 15
+ }
+message ComponentOwner
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  repeated category NamedThing = 7
+ }
+// Any association between a component owner and a application user. There is no assumption of cardinality
+message ComponentOwnerToApplicationUserAssociation
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  optional negated Boolean = 7
+  relation Uriorcurie = 8
+  repeated qualifiers OntologyClass = 9
+  repeated publications Publication = 10
+  optional type String = 11
+  repeated category Association = 12
+  predicate PredicateType = 13
+  subject ComponentOwner = 14
+  object ApplicationUser = 15
+ }
+// Any association between a component owner and a component. There is no assumption of cardinality
+message ComponentOwnerToComponentAssociation
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  optional negated Boolean = 7
+  relation Uriorcurie = 8
+  repeated qualifiers OntologyClass = 9
+  repeated publications Publication = 10
+  optional type String = 11
+  repeated category Association = 12
+  predicate PredicateType = 13
+  subject ComponentOwner = 14
+  object Component = 15
+ }
+// Any association between a component and a vcs root. There is no assumption of cardinality
+message ComponentToVcsRootAssociation
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  optional negated Boolean = 7
+  relation Uriorcurie = 8
+  repeated qualifiers OntologyClass = 9
+  repeated publications Publication = 10
+  optional type String = 11
+  repeated category Association = 12
+  predicate PredicateType = 13
+  subject Component = 14
+  object VcsRoot = 15
+ }
+// A component type defines the set of components running the same software and sharing the same configuration. It's a single point of configuration control.
+message ComponentType
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  repeated category NamedThing = 7
+  repeated hasAttribute Attribute = 8
+ }
+// Either an individual operational activity, or a collection of causally connected operational activities
+message ComputationalProcessOrActivity
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  repeated category NamedThing = 7
+  repeated hasInput NamedThing = 8
+  repeated hasOutput NamedThing = 9
+  repeated enabledBy CyberEntity = 10
+ }
+// Configuration is the manner in which components are arranged to make up the computer system. Configuration consists of both hardware and software components.
+message Configuration
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  repeated category NamedThing = 7
+  optional license String = 8
+  optional rights String = 9
+  optional format String = 10
+  optional creationDate Date = 11
+  repeated hasPart NamedThing = 12
+  repeated hasQuantitativeValue QuantityValue = 13
+  optional version String = 14
+ }
+// A control actor (often a cluster) consumed for information, engineering or technical use.
+message ConsumedResource
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  repeated category NamedThing = 7
+  repeated inTaxon SystemTaxon = 8
+  repeated hasControlActor ControlActor = 9
+ }
+// May be a orchestration entity or a formulation with a orchestration entity as active ingredient, or a complex resource with multiple orchestration entities as part
+message ControlActor
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  repeated category NamedThing = 7
+  repeated inTaxon SystemTaxon = 8
+ }
+// An entity that has digital reality (a.k.a. cyber essence).
+message CyberEntity
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  repeated category NamedThing = 7
+ }
+message Data
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  repeated category NamedThing = 7
+  repeated inTaxon SystemTaxon = 8
+ }
+// an item that refers to a collection of data from a data source.
+message Dataset
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  repeated category NamedThing = 7
+  optional license String = 8
+  optional rights String = 9
+  optional format String = 10
+  optional creationDate Date = 11
+ }
+// an item that holds distribution level information about a dataset.
+message DatasetDistribution
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  repeated category NamedThing = 7
+  optional license String = 8
+  optional rights String = 9
+  optional format String = 10
+  optional creationDate Date = 11
+  optional distributionDownloadUrl String = 12
+ }
+message DatasetVersion
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  repeated category NamedThing = 7
+  optional license String = 8
+  optional rights String = 9
+  optional format String = 10
+  optional creationDate Date = 11
+  optional hasDataset Dataset = 12
+  optional ingestDate String = 13
+  optional hasDistribution DatasetDistribution = 14
+ }
+message Deployment
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  repeated category NamedThing = 7
+  repeated hasAttribute Attribute = 8
+  repeated inTaxon SystemTaxon = 9
+  optional applicationUserLogin String = 10
+  repeated hasControlActor ControlActor = 11
+ }
+// Any association between a deployment configuration and a deployment. There is no assumption of cardinality
+message DeploymentConfigurationToDeploymentAssociation
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  optional negated Boolean = 7
+  relation Uriorcurie = 8
+  repeated qualifiers OntologyClass = 9
+  repeated publications Publication = 10
+  optional type String = 11
+  repeated category Association = 12
+  predicate PredicateType = 13
+  subject DeploymentConfiguration = 14
+  object Deployment = 15
+ }
+// A process location, serviceunit type or gross deployment part
+message DeploymentEntity
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  repeated category NamedThing = 7
+  repeated hasAttribute Attribute = 8
+  repeated inTaxon SystemTaxon = 9
+ }
+// Any association between a deployment and a application user login. There is no assumption of cardinality
+message DeploymentToApplicationUserLoginAssociation
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  optional negated Boolean = 7
+  relation Uriorcurie = 8
+  repeated qualifiers OntologyClass = 9
+  repeated publications Publication = 10
+  optional type String = 11
+  repeated category Association = 12
+  predicate PredicateType = 13
+  subject Deployment = 14
+  object ApplicationUserLogin = 15
+ }
+// Any association between a deployment and a build. There is no assumption of cardinality
+message DeploymentToBuildAssociation
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  optional negated Boolean = 7
+  relation Uriorcurie = 8
+  repeated qualifiers OntologyClass = 9
+  repeated publications Publication = 10
+  optional type String = 11
+  repeated category Association = 12
+  predicate PredicateType = 13
+  subject Deployment = 14
+  object Build = 15
+ }
+message Domain
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  repeated category NamedThing = 7
+  optional fqdn LabelType = 8
+ }
+// Any association between a domain configuration and a domain environment. There is no assumption of cardinality
+message DomainConfigurationToDomainEnvironmentAssociation
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  optional negated Boolean = 7
+  relation Uriorcurie = 8
+  repeated qualifiers OntologyClass = 9
+  repeated publications Publication = 10
+  optional type String = 11
+  repeated category Association = 12
+  predicate PredicateType = 13
+  subject DomainConfiguration = 14
+  object DomainEnvironment = 15
+ }
+// Any association between a domain environment and a domain. There is no assumption of cardinality
+message DomainEnvironmentToDomainAssociation
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  optional negated Boolean = 7
+  relation Uriorcurie = 8
+  repeated qualifiers OntologyClass = 9
+  repeated publications Publication = 10
+  optional type String = 11
+  repeated category Association = 12
+  predicate PredicateType = 13
+  subject DomainEnvironment = 14
+  object Domain = 15
+ }
+// Any association between a domain environment and a environment. There is no assumption of cardinality
+message DomainEnvironmentToEnvironmentAssociation
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  optional negated Boolean = 7
+  relation Uriorcurie = 8
+  repeated qualifiers OntologyClass = 9
+  repeated publications Publication = 10
+  optional type String = 11
+  repeated category Association = 12
+  predicate PredicateType = 13
+  subject DomainEnvironment = 14
+  object Environment = 15
+ }
+// A text string identifier location for e-mail delivery.
+message Email
+ {
+  id String = 1
+  optional archived Boolean = 2
+  optional description NarrativeText = 3
+  optional note NarrativeText = 4
+  repeated category NamedThing = 5
+  optional name LabelType = 6
+  optional enabled Boolean = 7
+ }
+// Any association between a email and a application user. There is no assumption of cardinality
+message EmailToApplicationUserAssociation
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  optional negated Boolean = 7
+  relation Uriorcurie = 8
+  repeated qualifiers OntologyClass = 9
+  repeated publications Publication = 10
+  optional type String = 11
+  repeated category Association = 12
+  predicate PredicateType = 13
+  subject Email = 14
+  object ApplicationUser = 15
+ }
+// Any association between a environment configuration and a environment. There is no assumption of cardinality
+message EnvironmentConfigurationToEnvironmentAssociation
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  optional negated Boolean = 7
+  relation Uriorcurie = 8
+  repeated qualifiers OntologyClass = 9
+  repeated publications Publication = 10
+  optional type String = 11
+  repeated category Association = 12
+  predicate PredicateType = 13
+  subject EnvironmentConfiguration = 14
+  object Environment = 15
+ }
+// describes the frequency of occurrence of an event or condition
+message FrequencyValue
+ {
+  optional name LabelType = 1
+  hasAttributeType OntologyClass = 2
+  repeated hasQuantitativeValue QuantityValue = 3
+  optional hasQualitativeValue NamedThing = 4
+  optional iri IriType = 5
+  optional source LabelType = 6
+ }
+message Homogeneity
+ {
+  optional name LabelType = 1
+  hasAttributeType OntologyClass = 2
+  repeated hasQuantitativeValue QuantityValue = 3
+  optional hasQualitativeValue NamedThing = 4
+  optional iri IriType = 5
+  optional source LabelType = 6
+ }
+message Hub
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  repeated category NamedThing = 7
+ }
+message Inventory
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  repeated category NamedThing = 7
+  optional license String = 8
+  optional rights String = 9
+  optional format String = 10
+  optional creationDate Date = 11
+  optional created Date = 12
+  optional componentFixed LabelType = 13
+  optional tag LabelType = 14
+  optional tagName LabelType = 15
+  optional userLogin String = 16
+  optional svnTagUrl IriType = 17
+ }
+// a databased entity or concept/class
+message NamedThing
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  repeated category NamedThing = 7
+ }
+// A event consumed by a healthy system as a source of information
+message Notification
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  repeated category NamedThing = 7
+  repeated inTaxon SystemTaxon = 8
+  repeated hasData Data = 9
+  repeated hasControlActor ControlActor = 10
+ }
+message NotificationComponent
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  repeated category NamedThing = 7
+  repeated inTaxon SystemTaxon = 8
+ }
+// a concept or class in an ontology, vocabulary or thesaurus
+message OntologyClass
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  repeated category NamedThing = 7
+ }
+// An execution of a operational function carried out by a servicetype or macrooperational complex.
+message OperationalActivity
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  repeated category NamedThing = 7
+  repeated hasInput ControlActor = 8
+  repeated hasOutput ControlActor = 9
+  repeated enabledBy MacrooperationalMachineMixin = 10
+ }
+// A componentservice, servicetype, small task or macrotask (including serviceinstance complex)"
+message OperationalEntity
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  repeated category NamedThing = 7
+  repeated inTaxon SystemTaxon = 8
+ }
+// A orchestration exposure is an intake of a particular control actor, other than a administrative operation.
+message OrchestrationExposure
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  repeated category NamedThing = 7
+  repeated inTaxon SystemTaxon = 8
+  optional timepoint TimeType = 9
+ }
+message Project
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  repeated category NamedThing = 7
+ }
+// Any published piece of information. Can refer to a whole publication, its encompassing publication (i.e. journal or book) or to a part of a publication, if of significant knowledge scope (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web, as well as printed resources, either directly or in one of the Publication testlink category subclasses.
+message Publication
+ {
+  optional enabled Boolean = 1
+  optional archived Boolean = 2
+  optional description NarrativeText = 3
+  optional note NarrativeText = 4
+  repeated category NamedThing = 5
+  optional license String = 6
+  optional rights String = 7
+  optional format String = 8
+  optional creationDate Date = 9
+  repeated authors String = 10
+  repeated pages String = 11
+  optional summary String = 12
+  repeated keywords String = 13
+  repeated lcshTerms Uriorcurie = 14
+  repeated xref IriType = 15
+  id String = 16
+  optional name LabelType = 17
+  type String = 18
+ }
+// A value of an attribute that is quantitative and measurable, available as a combination of a unit and a numeric value
+message QuantityValue
+ {
+  optional hasUnit Unit = 1
+  optional hasNumericValue Double = 2
+ }
+message Realm
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  repeated category NamedThing = 7
+ }
+// Any association between a realm configuration and a domain environment. There is no assumption of cardinality
+message RealmConfigurationToDomainEnvironmentAssociation
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  optional negated Boolean = 7
+  relation Uriorcurie = 8
+  repeated qualifiers OntologyClass = 9
+  repeated publications Publication = 10
+  optional type String = 11
+  repeated category Association = 12
+  predicate PredicateType = 13
+  subject RealmConfiguration = 14
+  object DomainEnvironment = 15
+ }
+// Any association between a realm configuration and a realm. There is no assumption of cardinality
+message RealmConfigurationToRealmAssociation
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  optional negated Boolean = 7
+  relation Uriorcurie = 8
+  repeated qualifiers OntologyClass = 9
+  repeated publications Publication = 10
+  optional type String = 11
+  repeated category Association = 12
+  predicate PredicateType = 13
+  subject RealmConfiguration = 14
+  object Realm = 15
+ }
+// An OWL property used as an edge label
+message RelationshipType
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  repeated category NamedThing = 7
+ }
+// A piece of computer hardware or software (computer program) that provides functionality for other programs or devices, called "clients"
+message Server
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  repeated category NamedThing = 7
+ }
+// An group of servers
+message ServerGroup
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  repeated category NamedThing = 7
+  repeated inTaxon SystemTaxon = 8
+  optional hasComputationalSequence ComputationalSequence = 9
+  optional hasHomogeneity Homogeneity = 10
+ }
+// Any association between a server group hub and a domain environment. There is no assumption of cardinality
+message ServerGroupHubToDomainEnvironmentAssociation
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  optional negated Boolean = 7
+  relation Uriorcurie = 8
+  repeated qualifiers OntologyClass = 9
+  repeated publications Publication = 10
+  optional type String = 11
+  repeated category Association = 12
+  predicate PredicateType = 13
+  subject ServerGroupHub = 14
+  object DomainEnvironment = 15
+ }
+// Any association between a server group hub and a server group. There is no assumption of cardinality
+message ServerGroupHubToServerGroupAssociation
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  optional negated Boolean = 7
+  relation Uriorcurie = 8
+  repeated qualifiers OntologyClass = 9
+  repeated publications Publication = 10
+  optional type String = 11
+  repeated category Association = 12
+  predicate PredicateType = 13
+  subject ServerGroupHub = 14
+  object ServerGroup = 15
+ }
+// Any association between a server group and a server type. There is no assumption of cardinality
+message ServerGroupToServerTypeAssociation
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  optional negated Boolean = 7
+  relation Uriorcurie = 8
+  repeated qualifiers OntologyClass = 9
+  repeated publications Publication = 10
+  optional type String = 11
+  repeated category Association = 12
+  predicate PredicateType = 13
+  subject ServerGroup = 14
+  object ServerType = 15
+ }
+// Any association between a server hub and a server. There is no assumption of cardinality
+message ServerHubToServerAssociation
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  optional negated Boolean = 7
+  relation Uriorcurie = 8
+  repeated qualifiers OntologyClass = 9
+  repeated publications Publication = 10
+  optional type String = 11
+  repeated category Association = 12
+  predicate PredicateType = 13
+  subject ServerHub = 14
+  object Server = 15
+ }
+// Any association between a server hub and a server group hub. There is no assumption of cardinality
+message ServerHubToServerGroupHubAssociation
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  optional negated Boolean = 7
+  relation Uriorcurie = 8
+  repeated qualifiers OntologyClass = 9
+  repeated publications Publication = 10
+  optional type String = 11
+  repeated category Association = 12
+  predicate PredicateType = 13
+  subject ServerHub = 14
+  object ServerGroupHub = 15
+ }
+// A type of server
+message ServerType
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  repeated category NamedThing = 7
+  repeated hasAttribute Attribute = 8
+ }
+// describes the severity of a observable feature or error
+message SeverityValue
+ {
+  optional name LabelType = 1
+  hasAttributeType OntologyClass = 2
+  repeated hasQuantitativeValue QuantityValue = 3
+  optional hasQualitativeValue NamedThing = 4
+  optional iri IriType = 5
+  optional source LabelType = 6
+ }
+// A classification of a set of systems.
+message SystemTaxon
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  repeated category NamedThing = 7
+  optional hasTaxonomicRank TaxonomicRank = 8
+  optional subclassOf SystemTaxon = 9
+ }
+// A descriptor for the rank within a taxonomic classification. Example instance: TAXRANK:0000017 (kingdom)
+message TaxonomicRank
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  repeated category NamedThing = 7
+ }
+message VcsRoot
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  repeated category NamedThing = 7
+  optional location String = 8
+ }
+// A workload is the sum of componentservice resources within a serviceunit or virion.
+message Workload
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  repeated category NamedThing = 7
+  repeated inTaxon SystemTaxon = 8
+  optional hasComputationalSequence ComputationalSequence = 9
+ }
+// An entity that can either be directly located on a workload (componentservice, componentserviceinstance, daemon, regulatory region) or is encoded in a workload (serviceinstance)
+message WorkloadEntity
+ {
+  id String = 1
+  optional name LabelType = 2
+  optional enabled Boolean = 3
+  optional archived Boolean = 4
+  optional description NarrativeText = 5
+  optional note NarrativeText = 6
+  repeated category NamedThing = 7
+  repeated inTaxon SystemTaxon = 8
+  optional hasComputationalSequence ComputationalSequence = 9
+ }
+

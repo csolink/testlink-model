@@ -464,7 +464,7 @@ slots:
   has attribute type:
     description: >-
       connects an attribute to a class that describes it
-    domain: attribute type    #### split ...
+    domain: attribute type    #### split !!!
     range: ontology class
     multivalued: false
     required: true

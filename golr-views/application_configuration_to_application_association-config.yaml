@@ -1,0 +1,57 @@
+id: application_configuration_to_application_association
+schema_generating: true
+description: Any association between a application configuration and a application.
+  There is no assumption of cardinality
+display_name: application configuration to application association
+document_category: application configuration to application association
+weight: 20
+fields:
+- id: id
+  description: A unique identifier for an entity. Must be either a CURIE shorthand
+    for a URI or a complete URI
+  display_name: id
+- id: name
+  description: A human-readable name for an attribute or entity.
+  display_name: name
+- id: enabled
+  display_name: enabled
+- id: archived
+  display_name: archived
+- id: description
+  description: a human-readable description of an entity
+  display_name: description
+- id: note
+  display_name: note
+- id: negated
+  description: if set to true, then the association is negated i.e. is not true
+  display_name: negated
+- id: relation
+  description: The relation which describes an association between a subject and an
+    object in a more granular manner. Usually this is a term from Relation Ontology,
+    but it can be any edge CURIE.
+  display_name: relation
+- id: qualifiers
+  description: connects an association to qualifiers that modify or qualify the meaning
+    of that association
+  display_name: qualifiers
+  cardinality: multi
+- id: publications
+  description: connects an association to publications supporting the association
+  display_name: publications
+  cardinality: multi
+- id: type
+  description: rdf:type of testlink:Association should be fixed at rdf:Statement
+  display_name: association_type
+- id: category
+  display_name: association_category
+  cardinality: multi
+- id: predicate
+  description: the relationship type used to connect application configuration to
+    application
+  display_name: application configuration to application association_predicate
+- id: subject
+  description: parent application configuration
+  display_name: application configuration to application association_subject
+- id: object
+  description: application configuration implicated in application
+  display_name: application configuration to application association_object

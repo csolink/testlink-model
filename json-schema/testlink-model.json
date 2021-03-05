@@ -1,0 +1,5244 @@
+{
+   "$id": "http://example.org/sample/organization",
+   "$schema": "http://json-schema.org/draft-07/schema#",
+   "definitions": {
+      "Activity": {
+         "additionalProperties": false,
+         "description": "An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "note": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "Activity",
+         "type": "object"
+      },
+      "AdministrativeOperation": {
+         "additionalProperties": false,
+         "description": "A event intended for use in the diagnosis, cure, mitigation, repairing, or prevention of error",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "has_control_actor": {
+               "description": "one or more control actors within a cluster",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "in_taxon": {
+               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "note": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "AdministrativeOperation",
+         "type": "object"
+      },
+      "Agent": {
+         "additionalProperties": false,
+         "description": "service, group, organization or project that provides a piece of information (i.e. a knowledge association)",
+         "properties": {
+            "address": {
+               "description": "the particulars of the place where someone or an organization is situated.  For now, this slot is a simple text \"blob\" containing all relevant details of the given location for fitness of purpose. For the moment, this \"address\" can include other contact details such as email and phone number(?).",
+               "type": "string"
+            },
+            "affiliation": {
+               "description": "a professional relationship between one provider (x) within another provider (often an organization). Target provider identity should be specified by a CURIE. Providers may have multiple affiliations.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "Different classes of agents have distinct preferred identifiers. For publishers, use the ISBN publisher code. See https://grp.isbn-international.org/ for publisher code lookups. For editors, authors and  individual providers, use the individual's ORCID if available; Otherwise, a ScopusID, ResearchID or Google Scholar ID ('GSID') may be used if the author ORCID is unknown. Institutional agents could be identified by an International Standard Name Identifier ('ISNI') code.",
+               "type": "string"
+            },
+            "name": {
+               "description": "it is recommended that an author's 'name' property be formatted as \"surname, firstname initial.\"",
+               "type": "string"
+            },
+            "note": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "category",
+            "id"
+         ],
+         "title": "Agent",
+         "type": "object"
+      },
+      "ApplicationConfigurationToApplicationAssociation": {
+         "additionalProperties": false,
+         "description": "Any association between a application configuration and a application. There is no assumption of cardinality",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "negated": {
+               "description": "if set to true, then the association is negated i.e. is not true",
+               "type": "boolean"
+            },
+            "note": {
+               "type": "string"
+            },
+            "object": {
+               "$ref": "#/definitions/Application",
+               "description": "application configuration implicated in application"
+            },
+            "predicate": {
+               "description": "the relationship type used to connect application configuration to application",
+               "type": "string"
+            },
+            "publications": {
+               "description": "connects an association to publications supporting the association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "qualifiers": {
+               "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
+               "type": "string"
+            },
+            "subject": {
+               "description": "parent application configuration",
+               "type": "string"
+            },
+            "type": {
+               "description": "rdf:type of testlink:Association should be fixed at rdf:Statement",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "relation",
+            "category",
+            "predicate",
+            "subject",
+            "object"
+         ],
+         "title": "ApplicationConfigurationToApplicationAssociation",
+         "type": "object"
+      },
+      "ApplicationInstance": {
+         "additionalProperties": false,
+         "description": "The unit of service workload the component is capable of providing or protecting.",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "has_computational_sequence": {
+               "description": "connects a service feature to its sequence of computation",
+               "type": "string"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "in_taxon": {
+               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "internal_version": {
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "note": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "ApplicationInstance",
+         "type": "object"
+      },
+      "ApplicationInstanceConfigurationToApplicationInstanceAssociation": {
+         "additionalProperties": false,
+         "description": "Any association between a application instance configuration and a application instance. There is no assumption of cardinality",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "negated": {
+               "description": "if set to true, then the association is negated i.e. is not true",
+               "type": "boolean"
+            },
+            "note": {
+               "type": "string"
+            },
+            "object": {
+               "description": "application instance configuration implicated in application instance",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "the relationship type used to connect application instance configuration to application instance",
+               "type": "string"
+            },
+            "publications": {
+               "description": "connects an association to publications supporting the association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "qualifiers": {
+               "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
+               "type": "string"
+            },
+            "subject": {
+               "description": "parent application instance configuration",
+               "type": "string"
+            },
+            "type": {
+               "description": "rdf:type of testlink:Association should be fixed at rdf:Statement",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "relation",
+            "category",
+            "predicate",
+            "subject",
+            "object"
+         ],
+         "title": "ApplicationInstanceConfigurationToApplicationInstanceAssociation",
+         "type": "object"
+      },
+      "ApplicationInstanceToApplicationAssociation": {
+         "additionalProperties": false,
+         "description": "Any association between a application instance and a application. There is no assumption of cardinality",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "negated": {
+               "description": "if set to true, then the association is negated i.e. is not true",
+               "type": "boolean"
+            },
+            "note": {
+               "type": "string"
+            },
+            "object": {
+               "$ref": "#/definitions/Application",
+               "description": "application instance implicated in application"
+            },
+            "predicate": {
+               "description": "the relationship type used to connect application instance to application",
+               "type": "string"
+            },
+            "publications": {
+               "description": "connects an association to publications supporting the association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "qualifiers": {
+               "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
+               "type": "string"
+            },
+            "subject": {
+               "description": "parent application instance",
+               "type": "string"
+            },
+            "type": {
+               "description": "rdf:type of testlink:Association should be fixed at rdf:Statement",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "relation",
+            "category",
+            "predicate",
+            "subject",
+            "object"
+         ],
+         "title": "ApplicationInstanceToApplicationAssociation",
+         "type": "object"
+      },
+      "ApplicationInstanceToDomainEnvironmentAssociation": {
+         "additionalProperties": false,
+         "description": "Any association between a application instance and a domain environment. There is no assumption of cardinality",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "negated": {
+               "description": "if set to true, then the association is negated i.e. is not true",
+               "type": "boolean"
+            },
+            "note": {
+               "type": "string"
+            },
+            "object": {
+               "description": "application instance implicated in domain environment",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "the relationship type used to connect application instance to domain environment",
+               "type": "string"
+            },
+            "publications": {
+               "description": "connects an association to publications supporting the association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "qualifiers": {
+               "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
+               "type": "string"
+            },
+            "subject": {
+               "description": "parent application instance",
+               "type": "string"
+            },
+            "type": {
+               "description": "rdf:type of testlink:Association should be fixed at rdf:Statement",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "relation",
+            "category",
+            "predicate",
+            "subject",
+            "object"
+         ],
+         "title": "ApplicationInstanceToDomainEnvironmentAssociation",
+         "type": "object"
+      },
+      "ApplicationInstanceToRealmAssociation": {
+         "additionalProperties": false,
+         "description": "Any association between a application instance and a realm. There is no assumption of cardinality",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "negated": {
+               "description": "if set to true, then the association is negated i.e. is not true",
+               "type": "boolean"
+            },
+            "note": {
+               "type": "string"
+            },
+            "object": {
+               "description": "application instance implicated in realm",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "the relationship type used to connect application instance to realm",
+               "type": "string"
+            },
+            "publications": {
+               "description": "connects an association to publications supporting the association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "qualifiers": {
+               "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
+               "type": "string"
+            },
+            "subject": {
+               "description": "parent application instance",
+               "type": "string"
+            },
+            "type": {
+               "description": "rdf:type of testlink:Association should be fixed at rdf:Statement",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "relation",
+            "category",
+            "predicate",
+            "subject",
+            "object"
+         ],
+         "title": "ApplicationInstanceToRealmAssociation",
+         "type": "object"
+      },
+      "ApplicationInstanceToServerGroupHubAssociation": {
+         "additionalProperties": false,
+         "description": "Any association between a application instance and a server group hub. There is no assumption of cardinality",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "negated": {
+               "description": "if set to true, then the association is negated i.e. is not true",
+               "type": "boolean"
+            },
+            "note": {
+               "type": "string"
+            },
+            "object": {
+               "description": "application instance implicated in server group hub",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "the relationship type used to connect application instance to server group hub",
+               "type": "string"
+            },
+            "publications": {
+               "description": "connects an association to publications supporting the association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "qualifiers": {
+               "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
+               "type": "string"
+            },
+            "subject": {
+               "description": "parent application instance",
+               "type": "string"
+            },
+            "type": {
+               "description": "rdf:type of testlink:Association should be fixed at rdf:Statement",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "relation",
+            "category",
+            "predicate",
+            "subject",
+            "object"
+         ],
+         "title": "ApplicationInstanceToServerGroupHubAssociation",
+         "type": "object"
+      },
+      "ApplicationToApplicationTypeAssociation": {
+         "additionalProperties": false,
+         "description": "Any association between a application and a application type. There is no assumption of cardinality",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "negated": {
+               "description": "if set to true, then the association is negated i.e. is not true",
+               "type": "boolean"
+            },
+            "note": {
+               "type": "string"
+            },
+            "object": {
+               "description": "application implicated in application type",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "the relationship type used to connect application to application type",
+               "type": "string"
+            },
+            "publications": {
+               "description": "connects an association to publications supporting the association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "qualifiers": {
+               "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
+               "type": "string"
+            },
+            "subject": {
+               "$ref": "#/definitions/Application",
+               "description": "parent application"
+            },
+            "type": {
+               "description": "rdf:type of testlink:Association should be fixed at rdf:Statement",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "relation",
+            "category",
+            "predicate",
+            "subject",
+            "object"
+         ],
+         "title": "ApplicationToApplicationTypeAssociation",
+         "type": "object"
+      },
+      "ApplicationToComponentAssociation": {
+         "additionalProperties": false,
+         "description": "Any association between a application and a component. There is no assumption of cardinality",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "negated": {
+               "description": "if set to true, then the association is negated i.e. is not true",
+               "type": "boolean"
+            },
+            "note": {
+               "type": "string"
+            },
+            "object": {
+               "description": "application implicated in component",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "the relationship type used to connect application to component",
+               "type": "string"
+            },
+            "publications": {
+               "description": "connects an association to publications supporting the association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "qualifiers": {
+               "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
+               "type": "string"
+            },
+            "subject": {
+               "$ref": "#/definitions/Application",
+               "description": "parent application"
+            },
+            "type": {
+               "description": "rdf:type of testlink:Association should be fixed at rdf:Statement",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "relation",
+            "category",
+            "predicate",
+            "subject",
+            "object"
+         ],
+         "title": "ApplicationToComponentAssociation",
+         "type": "object"
+      },
+      "ApplicationType": {
+         "additionalProperties": false,
+         "description": "A component type defines the set of components running the same software and sharing the same configuration. It's a single point of configuration control.",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "has_attribute": {
+               "description": "may often be an system attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "note": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "ApplicationType",
+         "type": "object"
+      },
+      "ApplicationUser": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "first_name": {
+               "type": "string"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "last_name": {
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "note": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "ApplicationUser",
+         "type": "object"
+      },
+      "ApplicationUserLogin": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "domain_name": {
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "note": {
+               "type": "string"
+            },
+            "user_name": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "ApplicationUserLogin",
+         "type": "object"
+      },
+      "ApplicationUserLoginToApplicationUserAssociation": {
+         "additionalProperties": false,
+         "description": "Any association between a application user login and a application user. There is no assumption of cardinality",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "negated": {
+               "description": "if set to true, then the association is negated i.e. is not true",
+               "type": "boolean"
+            },
+            "note": {
+               "type": "string"
+            },
+            "object": {
+               "description": "application user login implicated in application user",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "the relationship type used to connect application user login to application user",
+               "type": "string"
+            },
+            "publications": {
+               "description": "connects an association to publications supporting the association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "qualifiers": {
+               "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
+               "type": "string"
+            },
+            "subject": {
+               "description": "parent application user login",
+               "type": "string"
+            },
+            "type": {
+               "description": "rdf:type of testlink:Association should be fixed at rdf:Statement",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "relation",
+            "category",
+            "predicate",
+            "subject",
+            "object"
+         ],
+         "title": "ApplicationUserLoginToApplicationUserAssociation",
+         "type": "object"
+      },
+      "Archive": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "creation_date": {
+               "description": "date on which an entity was created. This can be applied to nodes or edges",
+               "type": "string"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "format": {
+               "type": "string"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "license": {
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "note": {
+               "type": "string"
+            },
+            "rights": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "Archive",
+         "type": "object"
+      },
+      "Association": {
+         "additionalProperties": false,
+         "description": "A typed association between two entities, supported by evidence",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "negated": {
+               "description": "if set to true, then the association is negated i.e. is not true",
+               "type": "boolean"
+            },
+            "note": {
+               "type": "string"
+            },
+            "object": {
+               "description": "connects an association to the object of the association. For example, in a componentservice-to-observability association, the componentservice is subject and observability is object.",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
+            "publications": {
+               "description": "connects an association to publications supporting the association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "qualifiers": {
+               "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
+               "type": "string"
+            },
+            "subject": {
+               "description": "connects an association to the subject of the association. For example, in a componentservice-to-observability association, the componentservice is subject and observability is object.",
+               "type": "string"
+            },
+            "type": {
+               "description": "rdf:type of testlink:Association should be fixed at rdf:Statement",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "subject",
+            "predicate",
+            "object",
+            "relation",
+            "category"
+         ],
+         "title": "Association",
+         "type": "object"
+      },
+      "Attribute": {
+         "additionalProperties": false,
+         "description": "A property or characteristic of an entity. For example, an apple may have properties such as color, shape, age, crispiness. An environmental sample may have attributes such as depth, lat, long, resource.",
+         "properties": {
+            "has_attribute_type": {
+               "description": "connects an attribute to a class that describes it",
+               "type": "string"
+            },
+            "has_qualitative_value": {
+               "description": "connects an attribute to a value",
+               "type": "string"
+            },
+            "has_quantitative_value": {
+               "description": "connects an attribute to a value",
+               "items": {
+                  "$ref": "#/definitions/QuantityValue"
+               },
+               "type": "array"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
+            }
+         },
+         "required": [
+            "has_attribute_type"
+         ],
+         "title": "Attribute",
+         "type": "object"
+      },
+      "AttributeType": {
+         "additionalProperties": false,
+         "description": "A property or characteristic type of an entity. For example, an apple may have properties types such as color type, shape type, age type, crispiness type.",
+         "properties": {},
+         "required": [],
+         "title": "AttributeType",
+         "type": "object"
+      },
+      "Build": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "created": {
+               "type": "string"
+            },
+            "creation_date": {
+               "description": "date on which an entity was created. This can be applied to nodes or edges",
+               "type": "string"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "format": {
+               "type": "string"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "internal_version": {
+               "type": "string"
+            },
+            "license": {
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "note": {
+               "type": "string"
+            },
+            "rights": {
+               "type": "string"
+            },
+            "updated": {
+               "type": "string"
+            },
+            "vcs_location": {
+               "type": "string"
+            },
+            "vcs_revision": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "Build",
+         "type": "object"
+      },
+      "BuildConfigurationToBuildAssociation": {
+         "additionalProperties": false,
+         "description": "Any association between a build configuration and a build. There is no assumption of cardinality",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "negated": {
+               "description": "if set to true, then the association is negated i.e. is not true",
+               "type": "boolean"
+            },
+            "note": {
+               "type": "string"
+            },
+            "object": {
+               "description": "build configuration implicated in build",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "the relationship type used to connect build configuration to build",
+               "type": "string"
+            },
+            "publications": {
+               "description": "connects an association to publications supporting the association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "qualifiers": {
+               "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
+               "type": "string"
+            },
+            "subject": {
+               "description": "parent build configuration",
+               "type": "string"
+            },
+            "type": {
+               "description": "rdf:type of testlink:Association should be fixed at rdf:Statement",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "relation",
+            "category",
+            "predicate",
+            "subject",
+            "object"
+         ],
+         "title": "BuildConfigurationToBuildAssociation",
+         "type": "object"
+      },
+      "BuildToApplicationInstanceAssociation": {
+         "additionalProperties": false,
+         "description": "Any association between a build and a application instance. There is no assumption of cardinality",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "negated": {
+               "description": "if set to true, then the association is negated i.e. is not true",
+               "type": "boolean"
+            },
+            "note": {
+               "type": "string"
+            },
+            "object": {
+               "description": "build implicated in application instance",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "the relationship type used to connect build to application instance",
+               "type": "string"
+            },
+            "publications": {
+               "description": "connects an association to publications supporting the association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "qualifiers": {
+               "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
+               "type": "string"
+            },
+            "subject": {
+               "description": "parent build",
+               "type": "string"
+            },
+            "type": {
+               "description": "rdf:type of testlink:Association should be fixed at rdf:Statement",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "relation",
+            "category",
+            "predicate",
+            "subject",
+            "object"
+         ],
+         "title": "BuildToApplicationInstanceAssociation",
+         "type": "object"
+      },
+      "BuildToApplicationUserLoginAssociation": {
+         "additionalProperties": false,
+         "description": "Any association between a build and a application user login. There is no assumption of cardinality",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "negated": {
+               "description": "if set to true, then the association is negated i.e. is not true",
+               "type": "boolean"
+            },
+            "note": {
+               "type": "string"
+            },
+            "object": {
+               "description": "build implicated in application user login",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "the relationship type used to connect build to application user login",
+               "type": "string"
+            },
+            "publications": {
+               "description": "connects an association to publications supporting the association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "qualifiers": {
+               "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
+               "type": "string"
+            },
+            "subject": {
+               "description": "parent build",
+               "type": "string"
+            },
+            "type": {
+               "description": "rdf:type of testlink:Association should be fixed at rdf:Statement",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "relation",
+            "category",
+            "predicate",
+            "subject",
+            "object"
+         ],
+         "title": "BuildToApplicationUserLoginAssociation",
+         "type": "object"
+      },
+      "BuildToProjectAssociation": {
+         "additionalProperties": false,
+         "description": "Any association between a build and a project. There is no assumption of cardinality",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "negated": {
+               "description": "if set to true, then the association is negated i.e. is not true",
+               "type": "boolean"
+            },
+            "note": {
+               "type": "string"
+            },
+            "object": {
+               "description": "build implicated in project",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "the relationship type used to connect build to project",
+               "type": "string"
+            },
+            "publications": {
+               "description": "connects an association to publications supporting the association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "qualifiers": {
+               "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
+               "type": "string"
+            },
+            "subject": {
+               "description": "parent build",
+               "type": "string"
+            },
+            "type": {
+               "description": "rdf:type of testlink:Association should be fixed at rdf:Statement",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "relation",
+            "category",
+            "predicate",
+            "subject",
+            "object"
+         ],
+         "title": "BuildToProjectAssociation",
+         "type": "object"
+      },
+      "BuildToVcsRootAssociation": {
+         "additionalProperties": false,
+         "description": "Any association between a build and a vcs root. There is no assumption of cardinality",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "negated": {
+               "description": "if set to true, then the association is negated i.e. is not true",
+               "type": "boolean"
+            },
+            "note": {
+               "type": "string"
+            },
+            "object": {
+               "description": "build implicated in vcs root",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "the relationship type used to connect build to vcs root",
+               "type": "string"
+            },
+            "publications": {
+               "description": "connects an association to publications supporting the association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "qualifiers": {
+               "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
+               "type": "string"
+            },
+            "subject": {
+               "description": "parent build",
+               "type": "string"
+            },
+            "type": {
+               "description": "rdf:type of testlink:Association should be fixed at rdf:Statement",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "relation",
+            "category",
+            "predicate",
+            "subject",
+            "object"
+         ],
+         "title": "BuildToVcsRootAssociation",
+         "type": "object"
+      },
+      "Component": {
+         "additionalProperties": false,
+         "description": "The component is the smallest system entity, located in or around a serviceunit It can be deployed, isolated, and repaired independently. Each component belongs to one, and only one, serviceunit.",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "has_attribute": {
+               "description": "may often be an system attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
+            "has_control_actor": {
+               "description": "one or more control actors within a cluster",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "in_taxon": {
+               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "note": {
+               "type": "string"
+            },
+            "vcs_location": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "Component",
+         "type": "object"
+      },
+      "ComponentConfigurationToComponentAssociation": {
+         "additionalProperties": false,
+         "description": "Any association between a component configuration and a component. There is no assumption of cardinality",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "negated": {
+               "description": "if set to true, then the association is negated i.e. is not true",
+               "type": "boolean"
+            },
+            "note": {
+               "type": "string"
+            },
+            "object": {
+               "description": "component configuration implicated in component",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "the relationship type used to connect component configuration to component",
+               "type": "string"
+            },
+            "publications": {
+               "description": "connects an association to publications supporting the association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "qualifiers": {
+               "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
+               "type": "string"
+            },
+            "subject": {
+               "description": "parent component configuration",
+               "type": "string"
+            },
+            "type": {
+               "description": "rdf:type of testlink:Association should be fixed at rdf:Statement",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "relation",
+            "category",
+            "predicate",
+            "subject",
+            "object"
+         ],
+         "title": "ComponentConfigurationToComponentAssociation",
+         "type": "object"
+      },
+      "ComponentOwner": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "note": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "ComponentOwner",
+         "type": "object"
+      },
+      "ComponentOwnerToApplicationUserAssociation": {
+         "additionalProperties": false,
+         "description": "Any association between a component owner and a application user. There is no assumption of cardinality",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "negated": {
+               "description": "if set to true, then the association is negated i.e. is not true",
+               "type": "boolean"
+            },
+            "note": {
+               "type": "string"
+            },
+            "object": {
+               "description": "component owner implicated in application user",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "the relationship type used to connect component owner to application user",
+               "type": "string"
+            },
+            "publications": {
+               "description": "connects an association to publications supporting the association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "qualifiers": {
+               "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
+               "type": "string"
+            },
+            "subject": {
+               "description": "parent component owner",
+               "type": "string"
+            },
+            "type": {
+               "description": "rdf:type of testlink:Association should be fixed at rdf:Statement",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "relation",
+            "category",
+            "predicate",
+            "subject",
+            "object"
+         ],
+         "title": "ComponentOwnerToApplicationUserAssociation",
+         "type": "object"
+      },
+      "ComponentOwnerToComponentAssociation": {
+         "additionalProperties": false,
+         "description": "Any association between a component owner and a component. There is no assumption of cardinality",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "negated": {
+               "description": "if set to true, then the association is negated i.e. is not true",
+               "type": "boolean"
+            },
+            "note": {
+               "type": "string"
+            },
+            "object": {
+               "description": "component owner implicated in component",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "the relationship type used to connect component owner to component",
+               "type": "string"
+            },
+            "publications": {
+               "description": "connects an association to publications supporting the association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "qualifiers": {
+               "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
+               "type": "string"
+            },
+            "subject": {
+               "description": "parent component owner",
+               "type": "string"
+            },
+            "type": {
+               "description": "rdf:type of testlink:Association should be fixed at rdf:Statement",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "relation",
+            "category",
+            "predicate",
+            "subject",
+            "object"
+         ],
+         "title": "ComponentOwnerToComponentAssociation",
+         "type": "object"
+      },
+      "ComponentToVcsRootAssociation": {
+         "additionalProperties": false,
+         "description": "Any association between a component and a vcs root. There is no assumption of cardinality",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "negated": {
+               "description": "if set to true, then the association is negated i.e. is not true",
+               "type": "boolean"
+            },
+            "note": {
+               "type": "string"
+            },
+            "object": {
+               "description": "component implicated in vcs root",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "the relationship type used to connect component to vcs root",
+               "type": "string"
+            },
+            "publications": {
+               "description": "connects an association to publications supporting the association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "qualifiers": {
+               "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
+               "type": "string"
+            },
+            "subject": {
+               "description": "parent component",
+               "type": "string"
+            },
+            "type": {
+               "description": "rdf:type of testlink:Association should be fixed at rdf:Statement",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "relation",
+            "category",
+            "predicate",
+            "subject",
+            "object"
+         ],
+         "title": "ComponentToVcsRootAssociation",
+         "type": "object"
+      },
+      "ComponentType": {
+         "additionalProperties": false,
+         "description": "A component type defines the set of components running the same software and sharing the same configuration. It's a single point of configuration control.",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "has_attribute": {
+               "description": "may often be an system attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "note": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "ComponentType",
+         "type": "object"
+      },
+      "ComputationalProcessOrActivity": {
+         "additionalProperties": false,
+         "description": "Either an individual operational activity, or a collection of causally connected operational activities",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "enabled_by": {
+               "description": "holds between a process and a cyber entity, where the cyber entity executes the process",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_input": {
+               "description": "holds between a process and a continuant, where the continuant is an input into the process",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_output": {
+               "description": "holds between a process and a continuant, where the continuant is an output of the process",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "note": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "ComputationalProcessOrActivity",
+         "type": "object"
+      },
+      "Configuration": {
+         "additionalProperties": false,
+         "description": "Configuration is the manner in which components are arranged to make up the computer system. Configuration consists of both hardware and software components.",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "creation_date": {
+               "description": "date on which an entity was created. This can be applied to nodes or edges",
+               "type": "string"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "format": {
+               "type": "string"
+            },
+            "has_part": {
+               "description": "holds between wholes and their parts (resource entities or processes)",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_quantitative_value": {
+               "description": "connects an attribute to a value",
+               "items": {
+                  "$ref": "#/definitions/QuantityValue"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "license": {
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "note": {
+               "type": "string"
+            },
+            "rights": {
+               "type": "string"
+            },
+            "version": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "Configuration",
+         "type": "object"
+      },
+      "ConsumedResource": {
+         "additionalProperties": false,
+         "description": "A control actor (often a cluster) consumed for information, engineering or technical use.",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "has_control_actor": {
+               "description": "one or more control actors within a cluster",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "in_taxon": {
+               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "note": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "ConsumedResource",
+         "type": "object"
+      },
+      "ControlActor": {
+         "additionalProperties": false,
+         "description": "May be a orchestration entity or a formulation with a orchestration entity as active ingredient, or a complex resource with multiple orchestration entities as part",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "in_taxon": {
+               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "note": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "ControlActor",
+         "type": "object"
+      },
+      "CyberEntity": {
+         "additionalProperties": false,
+         "description": "An entity that has digital reality (a.k.a. cyber essence).",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "note": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "CyberEntity",
+         "type": "object"
+      },
+      "Data": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "in_taxon": {
+               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "note": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "Data",
+         "type": "object"
+      },
+      "Dataset": {
+         "additionalProperties": false,
+         "description": "an item that refers to a collection of data from a data source.",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "creation_date": {
+               "description": "date on which an entity was created. This can be applied to nodes or edges",
+               "type": "string"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "format": {
+               "type": "string"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "license": {
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "note": {
+               "type": "string"
+            },
+            "rights": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "Dataset",
+         "type": "object"
+      },
+      "DatasetDistribution": {
+         "additionalProperties": false,
+         "description": "an item that holds distribution level information about a dataset.",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "creation_date": {
+               "description": "date on which an entity was created. This can be applied to nodes or edges",
+               "type": "string"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "distribution_download_url": {
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "format": {
+               "type": "string"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "license": {
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "note": {
+               "type": "string"
+            },
+            "rights": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "DatasetDistribution",
+         "type": "object"
+      },
+      "DatasetVersion": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "creation_date": {
+               "description": "date on which an entity was created. This can be applied to nodes or edges",
+               "type": "string"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "format": {
+               "type": "string"
+            },
+            "has_dataset": {
+               "type": "string"
+            },
+            "has_distribution": {
+               "type": "string"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "ingest_date": {
+               "type": "string"
+            },
+            "license": {
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "note": {
+               "type": "string"
+            },
+            "rights": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "DatasetVersion",
+         "type": "object"
+      },
+      "Deployment": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "application_user_login": {
+               "type": "string"
+            },
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "has_attribute": {
+               "description": "may often be an system attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
+            "has_control_actor": {
+               "description": "one or more control actors within a cluster",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "in_taxon": {
+               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "note": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "Deployment",
+         "type": "object"
+      },
+      "DeploymentConfigurationToDeploymentAssociation": {
+         "additionalProperties": false,
+         "description": "Any association between a deployment configuration and a deployment. There is no assumption of cardinality",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "negated": {
+               "description": "if set to true, then the association is negated i.e. is not true",
+               "type": "boolean"
+            },
+            "note": {
+               "type": "string"
+            },
+            "object": {
+               "description": "deployment configuration implicated in deployment",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "the relationship type used to connect deployment configuration to deployment",
+               "type": "string"
+            },
+            "publications": {
+               "description": "connects an association to publications supporting the association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "qualifiers": {
+               "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
+               "type": "string"
+            },
+            "subject": {
+               "description": "parent deployment configuration",
+               "type": "string"
+            },
+            "type": {
+               "description": "rdf:type of testlink:Association should be fixed at rdf:Statement",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "relation",
+            "category",
+            "predicate",
+            "subject",
+            "object"
+         ],
+         "title": "DeploymentConfigurationToDeploymentAssociation",
+         "type": "object"
+      },
+      "DeploymentEntity": {
+         "additionalProperties": false,
+         "description": "A process location, serviceunit type or gross deployment part",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "has_attribute": {
+               "description": "may often be an system attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "in_taxon": {
+               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "note": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "DeploymentEntity",
+         "type": "object"
+      },
+      "DeploymentToApplicationUserLoginAssociation": {
+         "additionalProperties": false,
+         "description": "Any association between a deployment and a application user login. There is no assumption of cardinality",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "negated": {
+               "description": "if set to true, then the association is negated i.e. is not true",
+               "type": "boolean"
+            },
+            "note": {
+               "type": "string"
+            },
+            "object": {
+               "description": "deployment implicated in application user login",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "the relationship type used to connect deployment to application user login",
+               "type": "string"
+            },
+            "publications": {
+               "description": "connects an association to publications supporting the association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "qualifiers": {
+               "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
+               "type": "string"
+            },
+            "subject": {
+               "description": "parent deployment",
+               "type": "string"
+            },
+            "type": {
+               "description": "rdf:type of testlink:Association should be fixed at rdf:Statement",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "relation",
+            "category",
+            "predicate",
+            "subject",
+            "object"
+         ],
+         "title": "DeploymentToApplicationUserLoginAssociation",
+         "type": "object"
+      },
+      "DeploymentToBuildAssociation": {
+         "additionalProperties": false,
+         "description": "Any association between a deployment and a build. There is no assumption of cardinality",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "negated": {
+               "description": "if set to true, then the association is negated i.e. is not true",
+               "type": "boolean"
+            },
+            "note": {
+               "type": "string"
+            },
+            "object": {
+               "description": "deployment implicated in build",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "the relationship type used to connect deployment to build",
+               "type": "string"
+            },
+            "publications": {
+               "description": "connects an association to publications supporting the association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "qualifiers": {
+               "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
+               "type": "string"
+            },
+            "subject": {
+               "description": "parent deployment",
+               "type": "string"
+            },
+            "type": {
+               "description": "rdf:type of testlink:Association should be fixed at rdf:Statement",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "relation",
+            "category",
+            "predicate",
+            "subject",
+            "object"
+         ],
+         "title": "DeploymentToBuildAssociation",
+         "type": "object"
+      },
+      "Domain": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "fqdn": {
+               "type": "string"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "note": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "Domain",
+         "type": "object"
+      },
+      "DomainConfigurationToDomainEnvironmentAssociation": {
+         "additionalProperties": false,
+         "description": "Any association between a domain configuration and a domain environment. There is no assumption of cardinality",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "negated": {
+               "description": "if set to true, then the association is negated i.e. is not true",
+               "type": "boolean"
+            },
+            "note": {
+               "type": "string"
+            },
+            "object": {
+               "description": "domain configuration implicated in domain environment",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "the relationship type used to connect domain configuration to domain environment",
+               "type": "string"
+            },
+            "publications": {
+               "description": "connects an association to publications supporting the association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "qualifiers": {
+               "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
+               "type": "string"
+            },
+            "subject": {
+               "description": "parent domain configuration",
+               "type": "string"
+            },
+            "type": {
+               "description": "rdf:type of testlink:Association should be fixed at rdf:Statement",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "relation",
+            "category",
+            "predicate",
+            "subject",
+            "object"
+         ],
+         "title": "DomainConfigurationToDomainEnvironmentAssociation",
+         "type": "object"
+      },
+      "DomainEnvironmentToDomainAssociation": {
+         "additionalProperties": false,
+         "description": "Any association between a domain environment and a domain. There is no assumption of cardinality",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "negated": {
+               "description": "if set to true, then the association is negated i.e. is not true",
+               "type": "boolean"
+            },
+            "note": {
+               "type": "string"
+            },
+            "object": {
+               "description": "domain environment implicated in domain",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "the relationship type used to connect domain environment to domain",
+               "type": "string"
+            },
+            "publications": {
+               "description": "connects an association to publications supporting the association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "qualifiers": {
+               "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
+               "type": "string"
+            },
+            "subject": {
+               "description": "parent domain environment",
+               "type": "string"
+            },
+            "type": {
+               "description": "rdf:type of testlink:Association should be fixed at rdf:Statement",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "relation",
+            "category",
+            "predicate",
+            "subject",
+            "object"
+         ],
+         "title": "DomainEnvironmentToDomainAssociation",
+         "type": "object"
+      },
+      "DomainEnvironmentToEnvironmentAssociation": {
+         "additionalProperties": false,
+         "description": "Any association between a domain environment and a environment. There is no assumption of cardinality",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "negated": {
+               "description": "if set to true, then the association is negated i.e. is not true",
+               "type": "boolean"
+            },
+            "note": {
+               "type": "string"
+            },
+            "object": {
+               "description": "domain environment implicated in environment",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "the relationship type used to connect domain environment to environment",
+               "type": "string"
+            },
+            "publications": {
+               "description": "connects an association to publications supporting the association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "qualifiers": {
+               "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
+               "type": "string"
+            },
+            "subject": {
+               "description": "parent domain environment",
+               "type": "string"
+            },
+            "type": {
+               "description": "rdf:type of testlink:Association should be fixed at rdf:Statement",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "relation",
+            "category",
+            "predicate",
+            "subject",
+            "object"
+         ],
+         "title": "DomainEnvironmentToEnvironmentAssociation",
+         "type": "object"
+      },
+      "Email": {
+         "additionalProperties": false,
+         "description": "A text string identifier location for e-mail delivery.",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "note": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "Email",
+         "type": "object"
+      },
+      "EmailToApplicationUserAssociation": {
+         "additionalProperties": false,
+         "description": "Any association between a email and a application user. There is no assumption of cardinality",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "negated": {
+               "description": "if set to true, then the association is negated i.e. is not true",
+               "type": "boolean"
+            },
+            "note": {
+               "type": "string"
+            },
+            "object": {
+               "description": "email implicated in application user",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "the relationship type used to connect email to application user",
+               "type": "string"
+            },
+            "publications": {
+               "description": "connects an association to publications supporting the association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "qualifiers": {
+               "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
+               "type": "string"
+            },
+            "subject": {
+               "description": "parent email",
+               "type": "string"
+            },
+            "type": {
+               "description": "rdf:type of testlink:Association should be fixed at rdf:Statement",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "relation",
+            "category",
+            "predicate",
+            "subject",
+            "object"
+         ],
+         "title": "EmailToApplicationUserAssociation",
+         "type": "object"
+      },
+      "EnvironmentConfigurationToEnvironmentAssociation": {
+         "additionalProperties": false,
+         "description": "Any association between a environment configuration and a environment. There is no assumption of cardinality",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "negated": {
+               "description": "if set to true, then the association is negated i.e. is not true",
+               "type": "boolean"
+            },
+            "note": {
+               "type": "string"
+            },
+            "object": {
+               "description": "environment configuration implicated in environment",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "the relationship type used to connect environment configuration to environment",
+               "type": "string"
+            },
+            "publications": {
+               "description": "connects an association to publications supporting the association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "qualifiers": {
+               "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
+               "type": "string"
+            },
+            "subject": {
+               "description": "parent environment configuration",
+               "type": "string"
+            },
+            "type": {
+               "description": "rdf:type of testlink:Association should be fixed at rdf:Statement",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "relation",
+            "category",
+            "predicate",
+            "subject",
+            "object"
+         ],
+         "title": "EnvironmentConfigurationToEnvironmentAssociation",
+         "type": "object"
+      },
+      "FrequencyValue": {
+         "additionalProperties": false,
+         "description": "describes the frequency of occurrence of an event or condition",
+         "properties": {
+            "has_attribute_type": {
+               "description": "connects an attribute to a class that describes it",
+               "type": "string"
+            },
+            "has_qualitative_value": {
+               "description": "connects an attribute to a value",
+               "type": "string"
+            },
+            "has_quantitative_value": {
+               "description": "connects an attribute to a value",
+               "items": {
+                  "$ref": "#/definitions/QuantityValue"
+               },
+               "type": "array"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
+            }
+         },
+         "required": [
+            "has_attribute_type"
+         ],
+         "title": "FrequencyValue",
+         "type": "object"
+      },
+      "Homogeneity": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "has_attribute_type": {
+               "description": "connects an attribute to a class that describes it",
+               "type": "string"
+            },
+            "has_qualitative_value": {
+               "description": "connects an attribute to a value",
+               "type": "string"
+            },
+            "has_quantitative_value": {
+               "description": "connects an attribute to a value",
+               "items": {
+                  "$ref": "#/definitions/QuantityValue"
+               },
+               "type": "array"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
+            }
+         },
+         "required": [
+            "has_attribute_type"
+         ],
+         "title": "Homogeneity",
+         "type": "object"
+      },
+      "Hub": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "note": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "Hub",
+         "type": "object"
+      },
+      "Inventory": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "component_fixed": {
+               "type": "string"
+            },
+            "created": {
+               "type": "string"
+            },
+            "creation_date": {
+               "description": "date on which an entity was created. This can be applied to nodes or edges",
+               "type": "string"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "format": {
+               "type": "string"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "license": {
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "note": {
+               "type": "string"
+            },
+            "rights": {
+               "type": "string"
+            },
+            "svn_tag_url": {
+               "type": "string"
+            },
+            "tag": {
+               "type": "string"
+            },
+            "tag_name": {
+               "type": "string"
+            },
+            "user_login": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "Inventory",
+         "type": "object"
+      },
+      "NamedThing": {
+         "additionalProperties": false,
+         "description": "a databased entity or concept/class",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "note": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "NamedThing",
+         "type": "object"
+      },
+      "Notification": {
+         "additionalProperties": false,
+         "description": "A event consumed by a healthy system as a source of information",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "has_control_actor": {
+               "description": "one or more control actors within a cluster",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_data": {
+               "description": "one or more datas which are growth factors for a system",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "in_taxon": {
+               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "note": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "Notification",
+         "type": "object"
+      },
+      "NotificationComponent": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "in_taxon": {
+               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "note": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "NotificationComponent",
+         "type": "object"
+      },
+      "OntologyClass": {
+         "additionalProperties": false,
+         "description": "a concept or class in an ontology, vocabulary or thesaurus",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "note": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "OntologyClass",
+         "type": "object"
+      },
+      "OperationalActivity": {
+         "additionalProperties": false,
+         "description": "An execution of a operational function carried out by a servicetype or macrooperational complex.",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "enabled_by": {
+               "description": "The servicetype, componentservice, or complex that catalyzes the reaction",
+               "items": {
+                  "$ref": "#/definitions/MacrooperationalMachineMixin"
+               },
+               "type": "array"
+            },
+            "has_input": {
+               "description": "A orchestration entity that is the input for the reaction",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_output": {
+               "description": "A orchestration entity that is the output for the reaction",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "note": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "OperationalActivity",
+         "type": "object"
+      },
+      "OperationalEntity": {
+         "additionalProperties": false,
+         "description": "A componentservice, servicetype, small task or macrotask (including serviceinstance complex)\"",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "in_taxon": {
+               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "note": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "OperationalEntity",
+         "type": "object"
+      },
+      "OrchestrationExposure": {
+         "additionalProperties": false,
+         "description": "A orchestration exposure is an intake of a particular control actor, other than a administrative operation.",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "in_taxon": {
+               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "note": {
+               "type": "string"
+            },
+            "timepoint": {
+               "description": "a point in time",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "OrchestrationExposure",
+         "type": "object"
+      },
+      "Project": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "note": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "Project",
+         "type": "object"
+      },
+      "Publication": {
+         "additionalProperties": false,
+         "description": "Any published piece of information. Can refer to a whole publication, its encompassing publication (i.e. journal or book) or to a part of a publication, if of significant knowledge scope (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web, as well as printed resources, either directly or in one of the Publication testlink category subclasses.",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "authors": {
+               "description": "connects an publication to the list of authors who contributed to the publication. This property should be a comma-delimited list of author names. It is recommended that an author's name be formatted as \"surname, firstname initial.\".   Note that this property is a node annotation voicing the citation list of authorship which might typically otherwise be more completely documented in csolink:PublicationToProviderAssociation defined edges which point to full details about an author and possibly, some qualifiers which clarify the specific status of a given author in the publication.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "creation_date": {
+               "description": "date on which an entity was created. This can be applied to nodes or edges",
+               "type": "string"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "format": {
+               "type": "string"
+            },
+            "id": {
+               "description": "Different kinds of publication subtypes will have different preferred identifiers (curies when feasible). Precedence of identifiers for scientific articles is as follows: PMID if available; DOI if not; actual alternate CURIE otherwise. Enclosing publications (i.e. referenced by 'published in' node property) such as books and journals, should have industry-standard identifier such as from ISBN and ISSN.",
+               "type": "string"
+            },
+            "keywords": {
+               "description": "keywords tagging a publication",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "lcsh_terms": {
+               "description": "lcsh terms tagging a publication",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "license": {
+               "type": "string"
+            },
+            "name": {
+               "description": "the 'title' of the publication is generally recorded in the 'name' property (inherited from NamedThing). The field name 'title' is now also tagged as an acceptable alias for the node property 'name' (just in case).",
+               "type": "string"
+            },
+            "note": {
+               "type": "string"
+            },
+            "pages": {
+               "description": "When a 2-tuple of page numbers are provided, they represent the start and end page of the publication within its parent publication context. For books, this may be set to the total number of pages of the book.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "rights": {
+               "type": "string"
+            },
+            "summary": {
+               "description": "executive  summary of a publication",
+               "type": "string"
+            },
+            "type": {
+               "description": "Ontology term for publication type may be drawn from Dublin Core types (https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/), the Confederation of Open Access Repositories (COAR) Controlled Vocabulary for Resource Type Genres (http://vocabularies.coar-repositories.org/documentation/resource_types/), Wikidata (https://www.wikidata.org/wiki/Wikidata:Publication_types), or equivalent publication type ontology. When a given publication type ontology term is used within a given knowledge graph, then the CURIE identified term must be documented in the graph as a concept node of testlink:category testlink:OntologyClass.",
+               "type": "string"
+            },
+            "xref": {
+               "description": "Alternate CURIEs for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            }
+         },
+         "required": [
+            "category",
+            "id",
+            "type"
+         ],
+         "title": "Publication",
+         "type": "object"
+      },
+      "QuantityValue": {
+         "additionalProperties": false,
+         "description": "A value of an attribute that is quantitative and measurable, available as a combination of a unit and a numeric value",
+         "properties": {
+            "has_numeric_value": {
+               "description": "connects a quantity value to a number",
+               "type": "number"
+            },
+            "has_unit": {
+               "description": "connects a quantity value to a unit",
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "QuantityValue",
+         "type": "object"
+      },
+      "Realm": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "note": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "Realm",
+         "type": "object"
+      },
+      "RealmConfigurationToDomainEnvironmentAssociation": {
+         "additionalProperties": false,
+         "description": "Any association between a realm configuration and a domain environment. There is no assumption of cardinality",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "negated": {
+               "description": "if set to true, then the association is negated i.e. is not true",
+               "type": "boolean"
+            },
+            "note": {
+               "type": "string"
+            },
+            "object": {
+               "description": "realm configuration implicated in domain environment",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "the relationship type used to connect realm configuration to domain environment",
+               "type": "string"
+            },
+            "publications": {
+               "description": "connects an association to publications supporting the association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "qualifiers": {
+               "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
+               "type": "string"
+            },
+            "subject": {
+               "description": "parent realm configuration",
+               "type": "string"
+            },
+            "type": {
+               "description": "rdf:type of testlink:Association should be fixed at rdf:Statement",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "relation",
+            "category",
+            "predicate",
+            "subject",
+            "object"
+         ],
+         "title": "RealmConfigurationToDomainEnvironmentAssociation",
+         "type": "object"
+      },
+      "RealmConfigurationToRealmAssociation": {
+         "additionalProperties": false,
+         "description": "Any association between a realm configuration and a realm. There is no assumption of cardinality",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "negated": {
+               "description": "if set to true, then the association is negated i.e. is not true",
+               "type": "boolean"
+            },
+            "note": {
+               "type": "string"
+            },
+            "object": {
+               "description": "realm configuration implicated in realm",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "the relationship type used to connect realm configuration to realm",
+               "type": "string"
+            },
+            "publications": {
+               "description": "connects an association to publications supporting the association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "qualifiers": {
+               "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
+               "type": "string"
+            },
+            "subject": {
+               "description": "parent realm configuration",
+               "type": "string"
+            },
+            "type": {
+               "description": "rdf:type of testlink:Association should be fixed at rdf:Statement",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "relation",
+            "category",
+            "predicate",
+            "subject",
+            "object"
+         ],
+         "title": "RealmConfigurationToRealmAssociation",
+         "type": "object"
+      },
+      "RelationshipType": {
+         "additionalProperties": false,
+         "description": "An OWL property used as an edge label",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "note": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "RelationshipType",
+         "type": "object"
+      },
+      "Server": {
+         "additionalProperties": false,
+         "description": "A piece of computer hardware or software (computer program) that provides functionality for other programs or devices, called \"clients\"",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "note": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "Server",
+         "type": "object"
+      },
+      "ServerGroup": {
+         "additionalProperties": false,
+         "description": "An group of servers",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "has_computational_sequence": {
+               "description": "connects a service feature to its sequence of computation",
+               "type": "string"
+            },
+            "has_homogeneity": {
+               "$ref": "#/definitions/Homogeneity"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "in_taxon": {
+               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "note": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "ServerGroup",
+         "type": "object"
+      },
+      "ServerGroupHubToDomainEnvironmentAssociation": {
+         "additionalProperties": false,
+         "description": "Any association between a server group hub and a domain environment. There is no assumption of cardinality",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "negated": {
+               "description": "if set to true, then the association is negated i.e. is not true",
+               "type": "boolean"
+            },
+            "note": {
+               "type": "string"
+            },
+            "object": {
+               "description": "server group hub implicated in domain environment",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "the relationship type used to connect server group hub to domain environment",
+               "type": "string"
+            },
+            "publications": {
+               "description": "connects an association to publications supporting the association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "qualifiers": {
+               "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
+               "type": "string"
+            },
+            "subject": {
+               "description": "parent server group hub",
+               "type": "string"
+            },
+            "type": {
+               "description": "rdf:type of testlink:Association should be fixed at rdf:Statement",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "relation",
+            "category",
+            "predicate",
+            "subject",
+            "object"
+         ],
+         "title": "ServerGroupHubToDomainEnvironmentAssociation",
+         "type": "object"
+      },
+      "ServerGroupHubToServerGroupAssociation": {
+         "additionalProperties": false,
+         "description": "Any association between a server group hub and a server group. There is no assumption of cardinality",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "negated": {
+               "description": "if set to true, then the association is negated i.e. is not true",
+               "type": "boolean"
+            },
+            "note": {
+               "type": "string"
+            },
+            "object": {
+               "description": "server group hub implicated in server group",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "the relationship type used to connect server group hub to server group",
+               "type": "string"
+            },
+            "publications": {
+               "description": "connects an association to publications supporting the association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "qualifiers": {
+               "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
+               "type": "string"
+            },
+            "subject": {
+               "description": "parent server group hub",
+               "type": "string"
+            },
+            "type": {
+               "description": "rdf:type of testlink:Association should be fixed at rdf:Statement",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "relation",
+            "category",
+            "predicate",
+            "subject",
+            "object"
+         ],
+         "title": "ServerGroupHubToServerGroupAssociation",
+         "type": "object"
+      },
+      "ServerGroupToServerTypeAssociation": {
+         "additionalProperties": false,
+         "description": "Any association between a server group and a server type. There is no assumption of cardinality",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "negated": {
+               "description": "if set to true, then the association is negated i.e. is not true",
+               "type": "boolean"
+            },
+            "note": {
+               "type": "string"
+            },
+            "object": {
+               "description": "server group implicated in server type",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "the relationship type used to connect server group to server type",
+               "type": "string"
+            },
+            "publications": {
+               "description": "connects an association to publications supporting the association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "qualifiers": {
+               "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
+               "type": "string"
+            },
+            "subject": {
+               "description": "parent server group",
+               "type": "string"
+            },
+            "type": {
+               "description": "rdf:type of testlink:Association should be fixed at rdf:Statement",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "relation",
+            "category",
+            "predicate",
+            "subject",
+            "object"
+         ],
+         "title": "ServerGroupToServerTypeAssociation",
+         "type": "object"
+      },
+      "ServerHubToServerAssociation": {
+         "additionalProperties": false,
+         "description": "Any association between a server hub and a server. There is no assumption of cardinality",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "negated": {
+               "description": "if set to true, then the association is negated i.e. is not true",
+               "type": "boolean"
+            },
+            "note": {
+               "type": "string"
+            },
+            "object": {
+               "description": "server hub implicated in server",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "the relationship type used to connect server hub to server",
+               "type": "string"
+            },
+            "publications": {
+               "description": "connects an association to publications supporting the association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "qualifiers": {
+               "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
+               "type": "string"
+            },
+            "subject": {
+               "description": "parent server hub",
+               "type": "string"
+            },
+            "type": {
+               "description": "rdf:type of testlink:Association should be fixed at rdf:Statement",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "relation",
+            "category",
+            "predicate",
+            "subject",
+            "object"
+         ],
+         "title": "ServerHubToServerAssociation",
+         "type": "object"
+      },
+      "ServerHubToServerGroupHubAssociation": {
+         "additionalProperties": false,
+         "description": "Any association between a server hub and a server group hub. There is no assumption of cardinality",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "negated": {
+               "description": "if set to true, then the association is negated i.e. is not true",
+               "type": "boolean"
+            },
+            "note": {
+               "type": "string"
+            },
+            "object": {
+               "description": "server hub implicated in server group hub",
+               "type": "string"
+            },
+            "predicate": {
+               "description": "the relationship type used to connect server hub to server group hub",
+               "type": "string"
+            },
+            "publications": {
+               "description": "connects an association to publications supporting the association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "qualifiers": {
+               "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "relation": {
+               "description": "The relation which describes an association between a subject and an object in a more granular manner. Usually this is a term from Relation Ontology, but it can be any edge CURIE.",
+               "type": "string"
+            },
+            "subject": {
+               "description": "parent server hub",
+               "type": "string"
+            },
+            "type": {
+               "description": "rdf:type of testlink:Association should be fixed at rdf:Statement",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "relation",
+            "category",
+            "predicate",
+            "subject",
+            "object"
+         ],
+         "title": "ServerHubToServerGroupHubAssociation",
+         "type": "object"
+      },
+      "ServerType": {
+         "additionalProperties": false,
+         "description": "A type of server",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "has_attribute": {
+               "description": "may often be an system attribute",
+               "items": {
+                  "$ref": "#/definitions/Attribute"
+               },
+               "type": "array"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "note": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "ServerType",
+         "type": "object"
+      },
+      "SeverityValue": {
+         "additionalProperties": false,
+         "description": "describes the severity of a observable feature or error",
+         "properties": {
+            "has_attribute_type": {
+               "description": "connects an attribute to a class that describes it",
+               "type": "string"
+            },
+            "has_qualitative_value": {
+               "description": "connects an attribute to a value",
+               "type": "string"
+            },
+            "has_quantitative_value": {
+               "description": "connects an attribute to a value",
+               "items": {
+                  "$ref": "#/definitions/QuantityValue"
+               },
+               "type": "array"
+            },
+            "iri": {
+               "description": "An IRI for an entity. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "The human-readable 'attribute name' can be set to a string which reflects its context of interpretation, e.g. SEPIO evidence/provenance/confidence annotation or it can default to the name associated with the 'has attribute type' slot ontology term.",
+               "type": "string"
+            },
+            "source": {
+               "description": "a lightweight analog to the association class 'has provider' slot, which is the string name, or the authoritative (i.e. database) namespace, designating the origin of the entity to which the slot belongs.",
+               "type": "string"
+            }
+         },
+         "required": [
+            "has_attribute_type"
+         ],
+         "title": "SeverityValue",
+         "type": "object"
+      },
+      "SystemTaxon": {
+         "additionalProperties": false,
+         "description": "A classification of a set of systems.",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "has_taxonomic_rank": {
+               "type": "string"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "note": {
+               "type": "string"
+            },
+            "subclass_of": {
+               "description": "subclass of holds between two taxa, e.g. subclass of superclass",
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "SystemTaxon",
+         "type": "object"
+      },
+      "TaxonomicRank": {
+         "additionalProperties": false,
+         "description": "A descriptor for the rank within a taxonomic classification. Example instance: TAXRANK:0000017 (kingdom)",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "note": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "TaxonomicRank",
+         "type": "object"
+      },
+      "VcsRoot": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "location": {
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "note": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "VcsRoot",
+         "type": "object"
+      },
+      "Workload": {
+         "additionalProperties": false,
+         "description": "A workload is the sum of componentservice resources within a serviceunit or virion.",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "has_computational_sequence": {
+               "description": "connects a service feature to its sequence of computation",
+               "type": "string"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "in_taxon": {
+               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "note": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "Workload",
+         "type": "object"
+      },
+      "WorkloadEntity": {
+         "additionalProperties": false,
+         "description": "An entity that can either be directly located on a workload (componentservice, componentserviceinstance, daemon, regulatory region) or is encoded in a workload (serviceinstance)",
+         "properties": {
+            "archived": {
+               "type": "boolean"
+            },
+            "category": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of an entity",
+               "type": "string"
+            },
+            "enabled": {
+               "type": "boolean"
+            },
+            "has_computational_sequence": {
+               "description": "connects a service feature to its sequence of computation",
+               "type": "string"
+            },
+            "id": {
+               "description": "A unique identifier for an entity. Must be either a CURIE shorthand for a URI or a complete URI",
+               "type": "string"
+            },
+            "in_taxon": {
+               "description": "connects an entity to its taxonomic classification. Only certain kinds of entities can be taxonomically classified; see 'thing with taxon'",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "name": {
+               "description": "A human-readable name for an attribute or entity.",
+               "type": "string"
+            },
+            "note": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "id",
+            "category"
+         ],
+         "title": "WorkloadEntity",
+         "type": "object"
+      }
+   },
+   "properties": {},
+   "title": "organization",
+   "type": "object"
+}
+

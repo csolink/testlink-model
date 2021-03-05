@@ -1,0 +1,33 @@
+id: control_actor
+schema_generating: true
+description: May be a orchestration entity or a formulation with a orchestration entity
+  as active ingredient, or a complex resource with multiple orchestration entities
+  as part
+display_name: control actor
+document_category: control actor
+weight: 20
+fields:
+- id: id
+  description: A unique identifier for an entity. Must be either a CURIE shorthand
+    for a URI or a complete URI
+  display_name: id
+- id: name
+  description: A human-readable name for an attribute or entity.
+  display_name: name
+- id: enabled
+  display_name: enabled
+- id: archived
+  display_name: archived
+- id: description
+  description: a human-readable description of an entity
+  display_name: description
+- id: note
+  display_name: note
+- id: category
+  display_name: named thing_category
+  cardinality: multi
+- id: in_taxon
+  description: connects an entity to its taxonomic classification. Only certain kinds
+    of entities can be taxonomically classified; see 'thing with taxon'
+  display_name: in taxon
+  cardinality: multi

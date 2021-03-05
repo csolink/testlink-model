@@ -1,0 +1,294 @@
+{
+   "_comments": "Auto generated from testlink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2021-03-05 02:34\nSchema: organization\n\nid: http://example.org/sample/organization\ndescription: \nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
+   "@context": {
+      "type": {
+         "@id": "rdf:type"
+      },
+      "ACMBOOKS": "https://dl.acm.org/action/doSearch?SeriesKey=acmbooks&AllField=",
+      "ACMJOURNALS": "https://dl.acm.org/action/doSearch?ConceptID=118230&AllField=",
+      "AML": "https://w3id.org/i40/aml#",
+      "BFO": "http://example.org/UNKNOWN/BFO/",
+      "BTO": "http://example.org/UNKNOWN/BTO/",
+      "CDAO": "http://example.org/UNKNOWN/CDAO/",
+      "COAR_RESOURCE": "http://vocabularies.coar-repositories.org/documentation/resource_types/",
+      "CSO": "https://cso.kmi.open.ac.uk/topics/",
+      "CTRL": "https://w3id.org/ibp/CTRLont#",
+      "CVE": "https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=",
+      "ECO": "https://evidenceontology.org/term/",
+      "EDAM": "http://edamontology.org/",
+      "EDAM-DATA": "http://edamontology.org/data_",
+      "EDAM-FORMAT": "http://edamontology.org/format_",
+      "EDAM-OPERATION": "http://edamontology.org/operation_",
+      "EDAM-TOPIC": "http://edamontology.org/topic_",
+      "EFO": "http://www.ebi.ac.uk/efo/",
+      "ENVO": "http://example.org/UNKNOWN/ENVO/",
+      "EXO": "http://purl.obolibrary.org/obo/ExO_",
+      "GSID": "https://scholar.google.com/citations?user=",
+      "IAO": "http://example.org/UNKNOWN/IAO/",
+      "LCSH": "http://id.loc.gov/authorities/subjects/",
+      "LCSH_PUB": "http://id.loc.gov/vocabulary/mgovtpubtype/",
+      "LOINC": "http://loinc.org/rdf/",
+      "MAID": "https://academic.microsoft.com/#/detail/",
+      "NCBITaxon": "http://example.org/UNKNOWN/NCBITaxon/",
+      "NCIT": "http://example.org/UNKNOWN/NCIT/",
+      "OBO": "http://example.org/UNKNOWN/OBO/",
+      "OM": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+      "ORCID": "https://orcid.org/",
+      "PATO": "http://purl.obolibrary.org/obo/pato#",
+      "REPR": "https://w3id.org/reproduceme#",
+      "RO": "http://purl.obolibrary.org/obo/RO_",
+      "ResearchID": "https://publons.com/researcher/",
+      "SAN": "https://www.irit.fr/recherches/MELODI/ontologies/SAN",
+      "SIO": "http://semanticscience.org/resource/SIO_",
+      "SWO": "http://example.org/UNKNOWN/SWO/",
+      "ScopusID": "https://www.scopus.com/authid/detail.uri?authorId=",
+      "TAXRANK": "http://example.org/UNKNOWN/TAXRANK/",
+      "UO": "https://www.ebi.ac.uk/ols/ontologies/uo",
+      "WIKIDATA": "https://www.wikidata.org/wiki/",
+      "WIKIDATA_PROPERTY": "https://www.wikidata.org/wiki/Property:",
+      "XAPI": "http://ns.inria.fr/ludo/v1/docs/xapi.html#",
+      "XXXX": "http://example.org/UNKNOWN/XXXX/",
+      "biolinkml": "https://w3id.org/biolink/biolinkml/",
+      "csrc": "https://csrc.nist.gov/glossary/term",
+      "dcat": "http://www.w3.org/ns/dcat#",
+      "dct": "http://purl.org/dc/terms/",
+      "dctypes": "http://example.org/UNKNOWN/dctypes/",
+      "doi": "http://example.org/UNKNOWN/doi/",
+      "dwc": "https://dwc.tdwg.org/terms/#dc:",
+      "foaf": "http://xmlns.com/foaf/0.1/",
+      "geolink": "http://schema.geolink.org/1.0/base/main.html#",
+      "gr": "http://purl.org/goodrelations/v1#",
+      "gvp": "http://vocab.getty.edu/ontology#",
+      "isbn": "https://grp.isbn-international.org/content/using-register",
+      "isni": "http://example.org/UNKNOWN/isni/",
+      "openvocab": "https://vocab.org/open/#",
+      "owl": "http://www.w3.org/2002/07/owl#",
+      "pav": "http://purl.org/pav/",
+      "prov": "http://www.w3.org/ns/prov#",
+      "qud": "http://qudt.org/1.1/schema/qudt#",
+      "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+      "rr": "https://www.w3.org/ns/r2rml#",
+      "schema": "https://schema.org/",
+      "skos": "http://example.org/UNKNOWN/skos/",
+      "sosa": "http://www.w3.org/ns/sosa/",
+      "ssn": "https://www.w3.org/TR/vocab-ssn/#",
+      "ssn-system": "http://www.w3.org/ns/ssn/systems/",
+      "sumo": "http://sigma.ontologyportal.org:8080/sigma/TreeView.jsp?flang=SUO-KIF&kb=SUMO&simple=yes&term=",
+      "sumo-wn": "http://sigma.ontologyportal.org:8080/sigma/WordNet.jsp?POS=0&word=",
+      "testlink": "https://w3id.org/testlink/vocab/",
+      "uberon": "http://example.org/UNKNOWN/uberon/",
+      "wgs": "http://www.w3.org/2003/01/geo/wgs84_pos",
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "@vocab": "https://w3id.org/testlink/vocab/",
+      "affiliation": {
+         "@type": "@id"
+      },
+      "id": "@id",
+      "application_id": "@id",
+      "application_instance_id": "@id",
+      "application_user_id": "@id",
+      "application_user_login_id": "@id",
+      "archived": {
+         "@type": "xsd:boolean"
+      },
+      "association_type": {
+         "@type": "@id"
+      },
+      "author": {
+         "@type": "@id"
+      },
+      "build_number": "@id",
+      "category": {
+         "@type": "@id"
+      },
+      "component_id": "@id",
+      "contributor": {
+         "@type": "@id"
+      },
+      "created": {
+         "@type": "xsd:date"
+      },
+      "creation_date": {
+         "@type": "xsd:date"
+      },
+      "data_of": {
+         "@type": "@id"
+      },
+      "dataset_download_url": {
+         "@id": "dcat:downloadURL"
+      },
+      "description": {
+         "@id": "dct:description"
+      },
+      "download_url": {
+         "@id": "dcat:downloadURL"
+      },
+      "enabled": {
+         "@type": "xsd:boolean"
+      },
+      "enabled_by": {
+         "@type": "@id"
+      },
+      "enables": {
+         "@type": "@id"
+      },
+      "environment_id": "@id",
+      "frequency_qualifier": {
+         "@type": "@id"
+      },
+      "has_attribute": {
+         "@type": "@id"
+      },
+      "has_attribute_type": {
+         "@type": "@id"
+      },
+      "has_control_actor": {
+         "@type": "@id"
+      },
+      "has_data": {
+         "@type": "@id"
+      },
+      "has_dataset": {
+         "@type": "@id",
+         "@id": "dct:source"
+      },
+      "has_distribution": {
+         "@type": "@id",
+         "@id": "dct:distribution"
+      },
+      "has_homogeneity": {
+         "@type": "@id"
+      },
+      "has_input": {
+         "@type": "@id"
+      },
+      "has_notification_component": {
+         "@type": "@id"
+      },
+      "has_numeric_value": {
+         "@type": "xsd:double"
+      },
+      "has_output": {
+         "@type": "@id"
+      },
+      "has_part": {
+         "@type": "@id"
+      },
+      "has_participant": {
+         "@type": "@id"
+      },
+      "has_qualitative_value": {
+         "@type": "@id"
+      },
+      "has_quantitative_value": {
+         "@type": "@id"
+      },
+      "has_taxonomic_rank": {
+         "@type": "@id"
+      },
+      "has_unit": {
+         "@type": "UO:0000000"
+      },
+      "in_taxon": {
+         "@type": "@id"
+      },
+      "ingest_date": {
+         "@id": "pav:version"
+      },
+      "interacts_with": {
+         "@type": "@id"
+      },
+      "iri": {
+         "@type": "@id"
+      },
+      "lcsh_terms": {
+         "@type": "@id"
+      },
+      "name": {
+         "@id": "rdfs:label"
+      },
+      "negated": {
+         "@type": "xsd:boolean"
+      },
+      "notification_component_of": {
+         "@type": "@id"
+      },
+      "object": {
+         "@type": "@id",
+         "@id": "rdf:object"
+      },
+      "overlaps": {
+         "@type": "@id"
+      },
+      "part_of": {
+         "@type": "@id"
+      },
+      "participates_in": {
+         "@type": "@id"
+      },
+      "predicate": {
+         "@type": "@id",
+         "@id": "rdf:predicate"
+      },
+      "produced_by": {
+         "@type": "@id"
+      },
+      "produces": {
+         "@type": "@id"
+      },
+      "production_build_number": "@id",
+      "production_release_id": "@id",
+      "project_id": "@id",
+      "provided_by": {
+         "@type": "@id"
+      },
+      "publications": {
+         "@type": "@id"
+      },
+      "qualifiers": {
+         "@type": "@id"
+      },
+      "related_to": {
+         "@type": "@id"
+      },
+      "relation": {
+         "@type": "@id"
+      },
+      "release_date": {
+         "@type": "xsd:date"
+      },
+      "release_id": "@id",
+      "severity_qualifier": {
+         "@type": "@id"
+      },
+      "subclass_of": {
+         "@type": "@id"
+      },
+      "subject": {
+         "@type": "@id",
+         "@id": "rdf:subject"
+      },
+      "svn_tag_url": {
+         "@type": "@id"
+      },
+      "ticket_id": "@id",
+      "timepoint": {
+         "@type": "xsd:dateTime"
+      },
+      "update_date": {
+         "@type": "xsd:date"
+      },
+      "updated": {
+         "@type": "xsd:date"
+      },
+      "value": {
+         "@type": "@id"
+      },
+      "vcs_root_id": "@id",
+      "xref": {
+         "@type": "@id"
+      }
+   }
+}
+
