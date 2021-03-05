@@ -52,10 +52,10 @@ jobs:
           git config --global user.name "$GITHUB_NAME"
           git config --global user.email "$GITHUB_EMAIL"
           git add testlink-model.*
-          git add testlink-modeln.*
+          # git add testlink-modeln.*
           git add context*
           git add testlink/model.py
-          git add java/testlinkModel.java
+          # git add java/testlinkModel.java
           git add graphviz/*
           git add golr-views/*
           git add json-schema/testlink-model.json
