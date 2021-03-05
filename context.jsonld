@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from testlink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2021-03-05 02:34\nSchema: organization\n\nid: http://example.org/sample/organization\ndescription: \nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
+   "_comments": "Auto generated from testlink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2021-03-05 02:57\nSchema: testlink-model\n\nid: https://w3id.org/testlink\ndescription: Entity and association taxonomy and datamodel example\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
    "@context": {
       "type": {
          "@id": "rdf:type"

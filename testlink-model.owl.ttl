@@ -6,15 +6,6 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://example.org/sample/organization> a owl:Ontology ;
-    rdfs:label "organization" ;
-    dcterms:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
-    meta:generation_date "2021-03-05 02:34" ;
-    meta:metamodel_version "1.7.0" ;
-    meta:source_file "testlink-model.yaml" ;
-    meta:source_file_date "Fri Mar  5 02:31:53 2021" ;
-    meta:source_file_size 120772 .
-
 meta:SubsetDefinition a owl:Class ;
     rdfs:label "subset_definition" ;
     skos:definition "the name and description of a subset" .
@@ -1017,6 +1008,16 @@ meta:systemic_entity_has_attribute a owl:ObjectProperty,
             owl:qualifiedCardinality 1 ] ;
     skos:definition "a complete URI" .
 
+<https://w3id.org/testlink> a owl:Ontology ;
+    rdfs:label "testlink-model" ;
+    dcterms:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
+    skos:definition "Entity and association taxonomy and datamodel example" ;
+    meta:generation_date "2021-03-05 02:58" ;
+    meta:metamodel_version "1.7.0" ;
+    meta:source_file "testlink-model.yaml" ;
+    meta:source_file_date "Fri Mar  5 02:56:34 2021" ;
+    meta:source_file_size 120888 .
+
 <https://w3id.org/testlink/vocab/Activity> a owl:Class,
         meta:ClassDefinition ;
     rdfs:label "activity" ;
@@ -1078,19 +1079,19 @@ meta:systemic_entity_has_attribute a owl:ObjectProperty,
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/testlink/vocab/LabelType> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/tag> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/biolink/biolinkml/meta/types/String> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/user_login> ],
+            owl:onProperty <https://w3id.org/testlink/vocab/component_fixed> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/testlink/vocab/LabelType> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/component_fixed> ],
+            owl:onProperty <https://w3id.org/testlink/vocab/tag> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/biolinkml/meta/types/Date> ;
             owl:onProperty <https://w3id.org/testlink/vocab/created> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/biolink/biolinkml/meta/types/String> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/user_login> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/testlink/vocab/IriType> ;
@@ -2013,16 +2014,16 @@ meta:subclass_of a owl:ObjectProperty,
         meta:ClassDefinition ;
     rdfs:label "application configuration to application association" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass <https://w3id.org/testlink/vocab/Application> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/object> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
             owl:onClass <https://w3id.org/testlink/vocab/ApplicationConfiguration> ;
             owl:onProperty <https://w3id.org/testlink/vocab/subject> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass <https://w3id.org/testlink/vocab/PredicateType> ;
             owl:onProperty <https://w3id.org/testlink/vocab/predicate> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/testlink/vocab/Application> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/object> ;
             owl:qualifiedCardinality 1 ],
         <https://w3id.org/testlink/vocab/Association> ;
     skos:definition "Any association between a application configuration and a application. There is no assumption of cardinality" .
@@ -2031,16 +2032,16 @@ meta:subclass_of a owl:ObjectProperty,
         meta:ClassDefinition ;
     rdfs:label "application instance configuration to application instance association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/testlink/vocab/ApplicationInstance> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/object> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass <https://w3id.org/testlink/vocab/ApplicationInstanceConfiguration> ;
             owl:onProperty <https://w3id.org/testlink/vocab/subject> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass <https://w3id.org/testlink/vocab/PredicateType> ;
             owl:onProperty <https://w3id.org/testlink/vocab/predicate> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass <https://w3id.org/testlink/vocab/ApplicationInstance> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/object> ;
             owl:qualifiedCardinality 1 ],
         <https://w3id.org/testlink/vocab/Association> ;
     skos:definition "Any association between a application instance configuration and a application instance. There is no assumption of cardinality" .
@@ -2067,16 +2068,16 @@ meta:subclass_of a owl:ObjectProperty,
         meta:ClassDefinition ;
     rdfs:label "application instance to domain environment association" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass <https://w3id.org/testlink/vocab/DomainEnvironment> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/object> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
             owl:onClass <https://w3id.org/testlink/vocab/ApplicationInstance> ;
             owl:onProperty <https://w3id.org/testlink/vocab/subject> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass <https://w3id.org/testlink/vocab/PredicateType> ;
             owl:onProperty <https://w3id.org/testlink/vocab/predicate> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/testlink/vocab/DomainEnvironment> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/object> ;
             owl:qualifiedCardinality 1 ],
         <https://w3id.org/testlink/vocab/Association> ;
     skos:definition "Any association between a application instance and a domain environment. There is no assumption of cardinality" .
@@ -2085,16 +2086,16 @@ meta:subclass_of a owl:ObjectProperty,
         meta:ClassDefinition ;
     rdfs:label "application instance to realm association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/testlink/vocab/PredicateType> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/predicate> ;
+            owl:onClass <https://w3id.org/testlink/vocab/Realm> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/object> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass <https://w3id.org/testlink/vocab/ApplicationInstance> ;
             owl:onProperty <https://w3id.org/testlink/vocab/subject> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/testlink/vocab/Realm> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/object> ;
+            owl:onClass <https://w3id.org/testlink/vocab/PredicateType> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/predicate> ;
             owl:qualifiedCardinality 1 ],
         <https://w3id.org/testlink/vocab/Association> ;
     skos:definition "Any association between a application instance and a realm. There is no assumption of cardinality" .
@@ -2125,12 +2126,12 @@ meta:subclass_of a owl:ObjectProperty,
             owl:onProperty <https://w3id.org/testlink/vocab/predicate> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/testlink/vocab/ApplicationType> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/object> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass <https://w3id.org/testlink/vocab/Application> ;
             owl:onProperty <https://w3id.org/testlink/vocab/subject> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass <https://w3id.org/testlink/vocab/ApplicationType> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/object> ;
             owl:qualifiedCardinality 1 ],
         <https://w3id.org/testlink/vocab/Association> ;
     skos:definition "Any association between a application and a application type. There is no assumption of cardinality" .
@@ -2139,16 +2140,16 @@ meta:subclass_of a owl:ObjectProperty,
         meta:ClassDefinition ;
     rdfs:label "application to component association" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass <https://w3id.org/testlink/vocab/Application> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/subject> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
             owl:onClass <https://w3id.org/testlink/vocab/Component> ;
             owl:onProperty <https://w3id.org/testlink/vocab/object> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass <https://w3id.org/testlink/vocab/PredicateType> ;
             owl:onProperty <https://w3id.org/testlink/vocab/predicate> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/testlink/vocab/Application> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/subject> ;
             owl:qualifiedCardinality 1 ],
         <https://w3id.org/testlink/vocab/Association> ;
     skos:definition "Any association between a application and a component. There is no assumption of cardinality" .
@@ -2157,12 +2158,12 @@ meta:subclass_of a owl:ObjectProperty,
         meta:ClassDefinition ;
     rdfs:label "application user login to application user association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/testlink/vocab/ApplicationUserLogin> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/subject> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass <https://w3id.org/testlink/vocab/PredicateType> ;
             owl:onProperty <https://w3id.org/testlink/vocab/predicate> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass <https://w3id.org/testlink/vocab/ApplicationUserLogin> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/subject> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass <https://w3id.org/testlink/vocab/ApplicationUser> ;
@@ -2175,16 +2176,16 @@ meta:subclass_of a owl:ObjectProperty,
         meta:ClassDefinition ;
     rdfs:label "build configuration to build association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/testlink/vocab/BuildConfiguration> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/subject> ;
+            owl:onClass <https://w3id.org/testlink/vocab/PredicateType> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/predicate> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass <https://w3id.org/testlink/vocab/Build> ;
             owl:onProperty <https://w3id.org/testlink/vocab/object> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/testlink/vocab/PredicateType> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/predicate> ;
+            owl:onClass <https://w3id.org/testlink/vocab/BuildConfiguration> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/subject> ;
             owl:qualifiedCardinality 1 ],
         <https://w3id.org/testlink/vocab/Association> ;
     skos:definition "Any association between a build configuration and a build. There is no assumption of cardinality" .
@@ -2193,16 +2194,16 @@ meta:subclass_of a owl:ObjectProperty,
         meta:ClassDefinition ;
     rdfs:label "build to application instance association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/testlink/vocab/Build> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/subject> ;
+            owl:onClass <https://w3id.org/testlink/vocab/ApplicationInstance> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/object> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass <https://w3id.org/testlink/vocab/PredicateType> ;
             owl:onProperty <https://w3id.org/testlink/vocab/predicate> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/testlink/vocab/ApplicationInstance> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/object> ;
+            owl:onClass <https://w3id.org/testlink/vocab/Build> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/subject> ;
             owl:qualifiedCardinality 1 ],
         <https://w3id.org/testlink/vocab/Association> ;
     skos:definition "Any association between a build and a application instance. There is no assumption of cardinality" .
@@ -2233,12 +2234,12 @@ meta:subclass_of a owl:ObjectProperty,
             owl:onProperty <https://w3id.org/testlink/vocab/predicate> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/testlink/vocab/Build> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/subject> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass <https://w3id.org/testlink/vocab/Project> ;
             owl:onProperty <https://w3id.org/testlink/vocab/object> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass <https://w3id.org/testlink/vocab/Build> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/subject> ;
             owl:qualifiedCardinality 1 ],
         <https://w3id.org/testlink/vocab/Association> ;
     skos:definition "Any association between a build and a project. There is no assumption of cardinality" .
@@ -2265,16 +2266,16 @@ meta:subclass_of a owl:ObjectProperty,
         meta:ClassDefinition ;
     rdfs:label "component configuration to component association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/testlink/vocab/Component> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/object> ;
+            owl:onClass <https://w3id.org/testlink/vocab/ComponentConfiguration> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/subject> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass <https://w3id.org/testlink/vocab/PredicateType> ;
             owl:onProperty <https://w3id.org/testlink/vocab/predicate> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/testlink/vocab/ComponentConfiguration> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/subject> ;
+            owl:onClass <https://w3id.org/testlink/vocab/Component> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/object> ;
             owl:qualifiedCardinality 1 ],
         <https://w3id.org/testlink/vocab/Association> ;
     skos:definition "Any association between a component configuration and a component. There is no assumption of cardinality" .
@@ -2283,16 +2284,16 @@ meta:subclass_of a owl:ObjectProperty,
         meta:ClassDefinition ;
     rdfs:label "component owner to application user association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/testlink/vocab/ApplicationUser> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/object> ;
+            owl:onClass <https://w3id.org/testlink/vocab/ComponentOwner> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/subject> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass <https://w3id.org/testlink/vocab/PredicateType> ;
             owl:onProperty <https://w3id.org/testlink/vocab/predicate> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/testlink/vocab/ComponentOwner> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/subject> ;
+            owl:onClass <https://w3id.org/testlink/vocab/ApplicationUser> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/object> ;
             owl:qualifiedCardinality 1 ],
         <https://w3id.org/testlink/vocab/Association> ;
     skos:definition "Any association between a component owner and a application user. There is no assumption of cardinality" .
@@ -2305,12 +2306,12 @@ meta:subclass_of a owl:ObjectProperty,
             owl:onProperty <https://w3id.org/testlink/vocab/predicate> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/testlink/vocab/ComponentOwner> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/subject> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass <https://w3id.org/testlink/vocab/Component> ;
             owl:onProperty <https://w3id.org/testlink/vocab/object> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass <https://w3id.org/testlink/vocab/ComponentOwner> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/subject> ;
             owl:qualifiedCardinality 1 ],
         <https://w3id.org/testlink/vocab/Association> ;
     skos:definition "Any association between a component owner and a component. There is no assumption of cardinality" .
@@ -2319,16 +2320,16 @@ meta:subclass_of a owl:ObjectProperty,
         meta:ClassDefinition ;
     rdfs:label "component to vcs root association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/testlink/vocab/Component> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/subject> ;
+            owl:onClass <https://w3id.org/testlink/vocab/VcsRoot> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/object> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass <https://w3id.org/testlink/vocab/PredicateType> ;
             owl:onProperty <https://w3id.org/testlink/vocab/predicate> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/testlink/vocab/VcsRoot> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/object> ;
+            owl:onClass <https://w3id.org/testlink/vocab/Component> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/subject> ;
             owl:qualifiedCardinality 1 ],
         <https://w3id.org/testlink/vocab/Association> ;
     skos:definition "Any association between a component and a vcs root. There is no assumption of cardinality" .
@@ -2342,14 +2343,14 @@ meta:subclass_of a owl:ObjectProperty,
         meta:ClassDefinition ;
     rdfs:label "computational process or activity" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/testlink/vocab/NamedThing> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/has_input> ],
-        [ a owl:Restriction ;
             owl:allValuesFrom <https://w3id.org/testlink/vocab/CyberEntity> ;
             owl:onProperty <https://w3id.org/testlink/vocab/enabled_by> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <https://w3id.org/testlink/vocab/NamedThing> ;
             owl:onProperty <https://w3id.org/testlink/vocab/has_output> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/testlink/vocab/NamedThing> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/has_input> ],
         <https://w3id.org/testlink/vocab/ComputationalEntity>,
         <https://w3id.org/testlink/vocab/Occurrent> ;
     skos:definition "Either an individual operational activity, or a collection of causally connected operational activities" .
@@ -2382,12 +2383,12 @@ meta:subclass_of a owl:ObjectProperty,
         meta:ClassDefinition ;
     rdfs:label "deployment configuration to deployment association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/testlink/vocab/Deployment> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/object> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass <https://w3id.org/testlink/vocab/DeploymentConfiguration> ;
             owl:onProperty <https://w3id.org/testlink/vocab/subject> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass <https://w3id.org/testlink/vocab/Deployment> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/object> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass <https://w3id.org/testlink/vocab/PredicateType> ;
@@ -2404,12 +2405,12 @@ meta:subclass_of a owl:ObjectProperty,
             owl:onProperty <https://w3id.org/testlink/vocab/subject> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/testlink/vocab/ApplicationUserLogin> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/object> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass <https://w3id.org/testlink/vocab/PredicateType> ;
             owl:onProperty <https://w3id.org/testlink/vocab/predicate> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass <https://w3id.org/testlink/vocab/ApplicationUserLogin> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/object> ;
             owl:qualifiedCardinality 1 ],
         <https://w3id.org/testlink/vocab/Association> ;
     skos:definition "Any association between a deployment and a application user login. There is no assumption of cardinality" .
@@ -2418,16 +2419,16 @@ meta:subclass_of a owl:ObjectProperty,
         meta:ClassDefinition ;
     rdfs:label "deployment to build association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/testlink/vocab/Build> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/object> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass <https://w3id.org/testlink/vocab/Deployment> ;
             owl:onProperty <https://w3id.org/testlink/vocab/subject> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass <https://w3id.org/testlink/vocab/PredicateType> ;
             owl:onProperty <https://w3id.org/testlink/vocab/predicate> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass <https://w3id.org/testlink/vocab/Build> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/object> ;
             owl:qualifiedCardinality 1 ],
         <https://w3id.org/testlink/vocab/Association> ;
     skos:definition "Any association between a deployment and a build. There is no assumption of cardinality" .
@@ -2472,16 +2473,16 @@ meta:subclass_of a owl:ObjectProperty,
         meta:ClassDefinition ;
     rdfs:label "domain environment to environment association" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass <https://w3id.org/testlink/vocab/Environment> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/object> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
             owl:onClass <https://w3id.org/testlink/vocab/PredicateType> ;
             owl:onProperty <https://w3id.org/testlink/vocab/predicate> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass <https://w3id.org/testlink/vocab/DomainEnvironment> ;
             owl:onProperty <https://w3id.org/testlink/vocab/subject> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/testlink/vocab/Environment> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/object> ;
             owl:qualifiedCardinality 1 ],
         <https://w3id.org/testlink/vocab/Association> ;
     skos:definition "Any association between a domain environment and a environment. There is no assumption of cardinality" .
@@ -2490,16 +2491,16 @@ meta:subclass_of a owl:ObjectProperty,
         meta:ClassDefinition ;
     rdfs:label "email to application user association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/testlink/vocab/Email> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/subject> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass <https://w3id.org/testlink/vocab/ApplicationUser> ;
             owl:onProperty <https://w3id.org/testlink/vocab/object> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass <https://w3id.org/testlink/vocab/PredicateType> ;
             owl:onProperty <https://w3id.org/testlink/vocab/predicate> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass <https://w3id.org/testlink/vocab/Email> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/subject> ;
             owl:qualifiedCardinality 1 ],
         <https://w3id.org/testlink/vocab/Association> ;
     skos:definition "Any association between a email and a application user. There is no assumption of cardinality" .
@@ -2513,8 +2514,16 @@ meta:subclass_of a owl:ObjectProperty,
             owl:onProperty <https://w3id.org/testlink/vocab/note> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/testlink/vocab/NarrativeText> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/description> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/biolinkml/meta/types/Boolean> ;
             owl:onProperty <https://w3id.org/testlink/vocab/enabled> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/biolink/biolinkml/meta/types/Boolean> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/archived> ],
         [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/biolinkml/meta/types/String> ;
             owl:onProperty <https://w3id.org/testlink/vocab/id> ;
@@ -2522,15 +2531,7 @@ meta:subclass_of a owl:ObjectProperty,
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/testlink/vocab/LabelType> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/name> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/testlink/vocab/NarrativeText> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/description> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/biolink/biolinkml/meta/types/Boolean> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/archived> ] ;
+            owl:onProperty <https://w3id.org/testlink/vocab/name> ] ;
     skos:definition "Root testlink Model class for all things and informational relationships, real or imagined." .
 
 <https://w3id.org/testlink/vocab/EnvironmentConfigurationToEnvironmentAssociation> a owl:Class,
@@ -2588,12 +2589,12 @@ meta:subclass_of a owl:ObjectProperty,
             owl:onProperty <https://w3id.org/testlink/vocab/predicate> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/testlink/vocab/DomainEnvironment> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/object> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass <https://w3id.org/testlink/vocab/RealmConfiguration> ;
             owl:onProperty <https://w3id.org/testlink/vocab/subject> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass <https://w3id.org/testlink/vocab/DomainEnvironment> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/object> ;
             owl:qualifiedCardinality 1 ],
         <https://w3id.org/testlink/vocab/Association> ;
     skos:definition "Any association between a realm configuration and a domain environment. There is no assumption of cardinality" .
@@ -2620,12 +2621,12 @@ meta:subclass_of a owl:ObjectProperty,
         meta:ClassDefinition ;
     rdfs:label "server group hub to domain environment association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/testlink/vocab/DomainEnvironment> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/object> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass <https://w3id.org/testlink/vocab/PredicateType> ;
             owl:onProperty <https://w3id.org/testlink/vocab/predicate> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass <https://w3id.org/testlink/vocab/DomainEnvironment> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/object> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass <https://w3id.org/testlink/vocab/ServerGroupHub> ;
@@ -2638,16 +2639,16 @@ meta:subclass_of a owl:ObjectProperty,
         meta:ClassDefinition ;
     rdfs:label "server group hub to server group association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/testlink/vocab/ServerGroupHub> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/subject> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass <https://w3id.org/testlink/vocab/ServerGroup> ;
             owl:onProperty <https://w3id.org/testlink/vocab/object> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass <https://w3id.org/testlink/vocab/PredicateType> ;
             owl:onProperty <https://w3id.org/testlink/vocab/predicate> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass <https://w3id.org/testlink/vocab/ServerGroupHub> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/subject> ;
             owl:qualifiedCardinality 1 ],
         <https://w3id.org/testlink/vocab/Association> ;
     skos:definition "Any association between a server group hub and a server group. There is no assumption of cardinality" .
@@ -2656,16 +2657,16 @@ meta:subclass_of a owl:ObjectProperty,
         meta:ClassDefinition ;
     rdfs:label "server group to server type association" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass <https://w3id.org/testlink/vocab/ServerGroup> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/subject> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
             owl:onClass <https://w3id.org/testlink/vocab/ServerType> ;
             owl:onProperty <https://w3id.org/testlink/vocab/object> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass <https://w3id.org/testlink/vocab/PredicateType> ;
             owl:onProperty <https://w3id.org/testlink/vocab/predicate> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/testlink/vocab/ServerGroup> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/subject> ;
             owl:qualifiedCardinality 1 ],
         <https://w3id.org/testlink/vocab/Association> ;
     skos:definition "Any association between a server group and a server type. There is no assumption of cardinality" .
@@ -2674,12 +2675,12 @@ meta:subclass_of a owl:ObjectProperty,
         meta:ClassDefinition ;
     rdfs:label "server hub to server association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/testlink/vocab/PredicateType> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/predicate> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass <https://w3id.org/testlink/vocab/Server> ;
             owl:onProperty <https://w3id.org/testlink/vocab/object> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass <https://w3id.org/testlink/vocab/PredicateType> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/predicate> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass <https://w3id.org/testlink/vocab/ServerHub> ;
@@ -2692,12 +2693,12 @@ meta:subclass_of a owl:ObjectProperty,
         meta:ClassDefinition ;
     rdfs:label "server hub to server group hub association" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/testlink/vocab/ServerGroupHub> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/object> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass <https://w3id.org/testlink/vocab/PredicateType> ;
             owl:onProperty <https://w3id.org/testlink/vocab/predicate> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass <https://w3id.org/testlink/vocab/ServerGroupHub> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/object> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass <https://w3id.org/testlink/vocab/ServerHub> ;
@@ -2800,16 +2801,16 @@ meta:subclass_of a owl:ObjectProperty,
     rdfs:label "dataset version" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/testlink/vocab/Dataset> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/has_dataset> ],
+            owl:onClass <https://w3id.org/biolink/biolinkml/meta/types/String> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/ingest_date> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/testlink/vocab/DatasetDistribution> ;
             owl:onProperty <https://w3id.org/testlink/vocab/has_distribution> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/biolink/biolinkml/meta/types/String> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/ingest_date> ],
+            owl:onClass <https://w3id.org/testlink/vocab/Dataset> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/has_dataset> ],
         <https://w3id.org/testlink/vocab/Dataset> .
 
 <https://w3id.org/testlink/vocab/NarrativeText> a owl:Class,
@@ -2948,13 +2949,13 @@ meta:subclass_of a owl:ObjectProperty,
             owl:onClass <https://w3id.org/biolink/biolinkml/meta/types/String> ;
             owl:onProperty <https://w3id.org/testlink/vocab/address> ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/testlink/vocab/LabelType> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/name> ],
-        [ a owl:Restriction ;
             owl:onClass <https://w3id.org/biolink/biolinkml/meta/types/String> ;
             owl:onProperty <https://w3id.org/testlink/vocab/id> ;
             owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/testlink/vocab/LabelType> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/name> ],
         <https://w3id.org/testlink/vocab/AdministrativeEntity> ;
     skos:altLabel "group" ;
     skos:definition "service, group, organization or project that provides a piece of information (i.e. a knowledge association)" .
@@ -2978,23 +2979,23 @@ meta:subclass_of a owl:ObjectProperty,
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/testlink/vocab/LabelType> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/user_name> ],
+            owl:onProperty <https://w3id.org/testlink/vocab/domain_name> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/testlink/vocab/LabelType> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/domain_name> ],
+            owl:onProperty <https://w3id.org/testlink/vocab/user_name> ],
         <https://w3id.org/testlink/vocab/AdministrativeEntity> .
 
 <https://w3id.org/testlink/vocab/Deployment> a owl:Class,
         meta:ClassDefinition ;
     rdfs:label "deployment" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/testlink/vocab/ControlActor> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/has_control_actor> ],
-        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/biolinkml/meta/types/String> ;
             owl:onProperty <https://w3id.org/testlink/vocab/application_user_login> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/testlink/vocab/ControlActor> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/has_control_actor> ],
         <https://w3id.org/testlink/vocab/Application>,
         <https://w3id.org/testlink/vocab/DeploymentEntity>,
         <https://w3id.org/testlink/vocab/SystemicEntity> .
@@ -3073,15 +3074,15 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
         meta:ClassDefinition ;
     rdfs:label "configuration" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/biolink/biolinkml/meta/types/String> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/version> ],
+        [ a owl:Restriction ;
             owl:allValuesFrom <https://w3id.org/testlink/vocab/QuantityValue> ;
             owl:onProperty <https://w3id.org/testlink/vocab/has_quantitative_value> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <https://w3id.org/testlink/vocab/NamedThing> ;
             owl:onProperty <https://w3id.org/testlink/vocab/has_part> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/biolink/biolinkml/meta/types/String> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/version> ],
         <https://w3id.org/testlink/vocab/InformationContentEntity> ;
     skos:definition "Configuration is the manner in which components are arranged to make up the computer system. Configuration consists of both hardware and software components." .
 
@@ -3091,15 +3092,15 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/biolinkml/meta/types/String> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/format> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/biolink/biolinkml/meta/types/String> ;
             owl:onProperty <https://w3id.org/testlink/vocab/license> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/biolinkml/meta/types/String> ;
             owl:onProperty <https://w3id.org/testlink/vocab/rights> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/biolink/biolinkml/meta/types/String> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/format> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/biolinkml/meta/types/Date> ;
@@ -3147,6 +3148,13 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
             owl:onClass <https://w3id.org/testlink/vocab/IriType> ;
             owl:onProperty <https://w3id.org/testlink/vocab/iri> ],
         [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/testlink/vocab/QuantityValue> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/has_quantitative_value> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/testlink/vocab/NamedThing> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/has_qualitative_value> ],
+        [ a owl:Restriction ;
             owl:onClass <https://w3id.org/testlink/vocab/OntologyClass> ;
             owl:onProperty <https://w3id.org/testlink/vocab/has_attribute_type> ;
             owl:qualifiedCardinality 1 ],
@@ -3155,16 +3163,9 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
             owl:onClass <https://w3id.org/testlink/vocab/LabelType> ;
             owl:onProperty <https://w3id.org/testlink/vocab/name> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/testlink/vocab/QuantityValue> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/has_quantitative_value> ],
-        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/testlink/vocab/LabelType> ;
             owl:onProperty <https://w3id.org/testlink/vocab/source> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/testlink/vocab/NamedThing> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/has_qualitative_value> ],
         <https://w3id.org/testlink/vocab/Annotation> ;
     skos:definition "A property or characteristic of an entity. For example, an apple may have properties such as color, shape, age, crispiness. An environmental sample may have attributes such as depth, lat, long, resource." .
 
@@ -3221,14 +3222,6 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/biolinkml/meta/types/String> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/vcs_revision> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/biolink/biolinkml/meta/types/Date> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/created> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/biolink/biolinkml/meta/types/String> ;
             owl:onProperty <https://w3id.org/testlink/vocab/internal_version> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
@@ -3236,8 +3229,16 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
             owl:onProperty <https://w3id.org/testlink/vocab/updated> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/biolink/biolinkml/meta/types/Date> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/created> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/biolink/biolinkml/meta/types/String> ;
             owl:onProperty <https://w3id.org/testlink/vocab/vcs_location> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/biolink/biolinkml/meta/types/String> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/vcs_revision> ],
         <https://w3id.org/testlink/vocab/Dataset> .
 
 <https://w3id.org/testlink/vocab/DomainEnvironment> a owl:Class,
@@ -3251,7 +3252,24 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
     rdfs:label "publication" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:allValuesFrom <https://w3id.org/biolink/biolinkml/meta/types/String> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/authors> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/biolink/biolinkml/meta/types/String> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/summary> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/biolink/biolinkml/meta/types/String> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/pages> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/biolink/biolinkml/meta/types/Uriorcurie> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/lcsh_terms> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <https://w3id.org/biolink/biolinkml/meta/types/String> ;
             owl:onProperty <https://w3id.org/testlink/vocab/keywords> ],
+        [ a owl:Restriction ;
+            owl:onClass <https://w3id.org/biolink/biolinkml/meta/types/String> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/id> ;
+            owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/testlink/vocab/LabelType> ;
@@ -3261,25 +3279,8 @@ In an RDF database, nodes will typically have an rdf:type triples. This can be t
             owl:onProperty <https://w3id.org/testlink/vocab/type> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/biolink/biolinkml/meta/types/String> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/id> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/biolink/biolinkml/meta/types/Uriorcurie> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/lcsh_terms> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/biolink/biolinkml/meta/types/String> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/summary> ],
-        [ a owl:Restriction ;
             owl:allValuesFrom <https://w3id.org/testlink/vocab/IriType> ;
             owl:onProperty <https://w3id.org/testlink/vocab/xref> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/biolink/biolinkml/meta/types/String> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/pages> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <https://w3id.org/biolink/biolinkml/meta/types/String> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/authors> ],
         <https://w3id.org/testlink/vocab/InformationContentEntity> ;
     skos:definition "Any published piece of information. Can refer to a whole publication, its encompassing publication (i.e. journal or book) or to a part of a publication, if of significant knowledge scope (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web, as well as printed resources, either directly or in one of the Publication testlink category subclasses." .
 
@@ -3341,16 +3342,24 @@ meta:TypeDefinition a owl:Class ;
         meta:ClassDefinition ;
     rdfs:label "association" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/biolink/biolinkml/meta/types/Boolean> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/negated> ],
+        [ a owl:Restriction ;
             owl:onClass <https://w3id.org/testlink/vocab/NamedThing> ;
             owl:onProperty <https://w3id.org/testlink/vocab/subject> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/testlink/vocab/NamedThing> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/object> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:onClass <https://w3id.org/testlink/vocab/PredicateType> ;
             owl:onProperty <https://w3id.org/testlink/vocab/predicate> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass <https://w3id.org/biolink/biolinkml/meta/types/Uriorcurie> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/relation> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass <https://w3id.org/testlink/vocab/NamedThing> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/object> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:allValuesFrom <https://w3id.org/testlink/vocab/Publication> ;
@@ -3359,23 +3368,15 @@ meta:TypeDefinition a owl:Class ;
             owl:allValuesFrom <https://w3id.org/testlink/vocab/OntologyClass> ;
             owl:onProperty <https://w3id.org/testlink/vocab/qualifiers> ],
         [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/biolink/biolinkml/meta/types/Uriorcurie> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/relation> ;
-            owl:qualifiedCardinality 1 ],
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/biolink/biolinkml/meta/types/String> ;
+            owl:onProperty <https://w3id.org/testlink/vocab/type> ],
         [ a owl:Class ;
             owl:intersectionOf ( [ a owl:Restriction ;
                         owl:allValuesFrom <https://w3id.org/testlink/vocab/Association> ;
                         owl:onProperty <https://w3id.org/testlink/vocab/category> ] [ a owl:Restriction ;
                         owl:onProperty <https://w3id.org/testlink/vocab/category> ;
                         owl:someValuesFrom <https://w3id.org/testlink/vocab/Association> ] ) ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/biolink/biolinkml/meta/types/String> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/type> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/biolink/biolinkml/meta/types/Boolean> ;
-            owl:onProperty <https://w3id.org/testlink/vocab/negated> ],
         <https://w3id.org/testlink/vocab/Entity> ;
     skos:definition "A typed association between two entities, supported by evidence" .
 
