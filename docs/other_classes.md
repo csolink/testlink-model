@@ -1,6 +1,6 @@
 ---
 parent: Classes
-grand_parent: Browse Organization
+grand_parent: Browse Testlink Model
 title: Other Classes
 has_children: true
 nav_order: 4

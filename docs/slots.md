@@ -1,5 +1,5 @@
 ---
-parent: Browse Organization
+parent: Browse Testlink Model
 title: Slots
 has_children: true
 nav_order: 2

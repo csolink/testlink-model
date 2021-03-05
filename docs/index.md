@@ -1,12 +1,12 @@
 ---
-title: Browse Organization
+title: Browse Testlink Model
 has_children: true
 nav_order: 2
 layout: default
 has_toc: false
 ---
 
-
+Entity and association taxonomy and datamodel example
 
 
 ## Classes
