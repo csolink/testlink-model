@@ -119,3 +119,4 @@ See [GraphViz site](https://graphviz.org/) for installation in your operating sy
 ## How do I use testlink Model YAML programatically?
 
 For operations such as CURIE lookup, finding class by synonyms, get parents, get ancestors, etc. please make use of [biolink-model-toolkit](https://github.com/biolink/biolink-model-toolkit/). It provides a convenience methods for traversing biolink Model.
+
