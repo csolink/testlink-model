@@ -1,5 +1,7 @@
-id: http://example.org/sample/organization
-name: organization
+id: https://w3id.org/testlink
+name: testlink-model
+description: Entity and association taxonomy and datamodel example
+license: https://creativecommons.org/publicdomain/zero/1.0/
 # spec: https://biolink.github.io/biolinkml/SPECIFICATION
 
 ## ------------
