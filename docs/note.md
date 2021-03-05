@@ -1,0 +1,126 @@
+---
+parent: Node Properties
+title: testlink:note
+grand_parent: Slots
+layout: default
+---
+
+# Slot: note
+
+
+
+
+URI: [testlink:note](https://w3id.org/testlink/vocab/note)
+
+## Domain and Range
+
+[NamedThing](NamedThing.md) ->  <sub>OPT</sub> [NarrativeText](types/NarrativeText.md)
+
+## Parents
+
+ *  is_a: [node property](node_property.md)
+
+## Children
+
+
+## Used by
+
+ * [Activity](Activity.md)
+ * [AdministrativeEntity](AdministrativeEntity.md)
+ * [AdministrativeOperation](AdministrativeOperation.md)
+ * [Agent](Agent.md)
+ * [ApexInventoryArchive](ApexInventoryArchive.md)
+ * [ApplicationConfiguration](ApplicationConfiguration.md)
+ * [ApplicationConfigurationToApplicationAssociation](ApplicationConfigurationToApplicationAssociation.md)
+ * [ApplicationInstance](ApplicationInstance.md)
+ * [ApplicationInstanceConfiguration](ApplicationInstanceConfiguration.md)
+ * [ApplicationInstanceConfigurationToApplicationInstanceAssociation](ApplicationInstanceConfigurationToApplicationInstanceAssociation.md)
+ * [ApplicationInstanceToApplicationAssociation](ApplicationInstanceToApplicationAssociation.md)
+ * [ApplicationInstanceToDomainEnvironmentAssociation](ApplicationInstanceToDomainEnvironmentAssociation.md)
+ * [ApplicationInstanceToRealmAssociation](ApplicationInstanceToRealmAssociation.md)
+ * [ApplicationInstanceToServerGroupHubAssociation](ApplicationInstanceToServerGroupHubAssociation.md)
+ * [ApplicationToApplicationTypeAssociation](ApplicationToApplicationTypeAssociation.md)
+ * [ApplicationToComponentAssociation](ApplicationToComponentAssociation.md)
+ * [ApplicationType](ApplicationType.md)
+ * [ApplicationUser](ApplicationUser.md)
+ * [ApplicationUserLogin](ApplicationUserLogin.md)
+ * [ApplicationUserLoginToApplicationUserAssociation](ApplicationUserLoginToApplicationUserAssociation.md)
+ * [Archive](Archive.md)
+ * [Association](Association.md)
+ * [Build](Build.md)
+ * [BuildConfiguration](BuildConfiguration.md)
+ * [BuildConfigurationToBuildAssociation](BuildConfigurationToBuildAssociation.md)
+ * [BuildToApplicationInstanceAssociation](BuildToApplicationInstanceAssociation.md)
+ * [BuildToApplicationUserLoginAssociation](BuildToApplicationUserLoginAssociation.md)
+ * [BuildToProjectAssociation](BuildToProjectAssociation.md)
+ * [BuildToVcsRootAssociation](BuildToVcsRootAssociation.md)
+ * [Component](Component.md)
+ * [ComponentConfiguration](ComponentConfiguration.md)
+ * [ComponentConfigurationToComponentAssociation](ComponentConfigurationToComponentAssociation.md)
+ * [ComponentOwner](ComponentOwner.md)
+ * [ComponentOwnerToApplicationUserAssociation](ComponentOwnerToApplicationUserAssociation.md)
+ * [ComponentOwnerToComponentAssociation](ComponentOwnerToComponentAssociation.md)
+ * [ComponentToVcsRootAssociation](ComponentToVcsRootAssociation.md)
+ * [ComponentType](ComponentType.md)
+ * [ComputationalEntity](ComputationalEntity.md)
+ * [ComputationalProcessOrActivity](ComputationalProcessOrActivity.md)
+ * [Configuration](Configuration.md)
+ * [ConsumedResource](ConsumedResource.md)
+ * [ControlActor](ControlActor.md)
+ * [CyberEntity](CyberEntity.md)
+ * [Data](Data.md)
+ * [Dataset](Dataset.md)
+ * [DatasetDistribution](DatasetDistribution.md)
+ * [DatasetVersion](DatasetVersion.md)
+ * [Deployment](Deployment.md)
+ * [DeploymentConfiguration](DeploymentConfiguration.md)
+ * [DeploymentConfigurationToDeploymentAssociation](DeploymentConfigurationToDeploymentAssociation.md)
+ * [DeploymentEntity](DeploymentEntity.md)
+ * [DeploymentToApplicationUserLoginAssociation](DeploymentToApplicationUserLoginAssociation.md)
+ * [DeploymentToBuildAssociation](DeploymentToBuildAssociation.md)
+ * [DistributionLevel](DistributionLevel.md)
+ * [Domain](Domain.md)
+ * [DomainConfiguration](DomainConfiguration.md)
+ * [DomainConfigurationToDomainEnvironmentAssociation](DomainConfigurationToDomainEnvironmentAssociation.md)
+ * [DomainEnvironment](DomainEnvironment.md)
+ * [DomainEnvironmentToDomainAssociation](DomainEnvironmentToDomainAssociation.md)
+ * [DomainEnvironmentToEnvironmentAssociation](DomainEnvironmentToEnvironmentAssociation.md)
+ * [Email](Email.md)
+ * [EmailToApplicationUserAssociation](EmailToApplicationUserAssociation.md)
+ * [Entity](Entity.md)
+ * [Environment](Environment.md)
+ * [EnvironmentConfiguration](EnvironmentConfiguration.md)
+ * [EnvironmentConfigurationToEnvironmentAssociation](EnvironmentConfigurationToEnvironmentAssociation.md)
+ * [Hub](Hub.md)
+ * [InformationContentEntity](InformationContentEntity.md)
+ * [Inventory](Inventory.md)
+ * [NamedThing](NamedThing.md)
+ * [Notification](Notification.md)
+ * [NotificationComponent](NotificationComponent.md)
+ * [OntologyClass](OntologyClass.md)
+ * [OperationalActivity](OperationalActivity.md)
+ * [OperationalEntity](OperationalEntity.md)
+ * [OrchestrationExposure](OrchestrationExposure.md)
+ * [Project](Project.md)
+ * [Publication](Publication.md)
+ * [Realm](Realm.md)
+ * [RealmConfiguration](RealmConfiguration.md)
+ * [RealmConfigurationToDomainEnvironmentAssociation](RealmConfigurationToDomainEnvironmentAssociation.md)
+ * [RealmConfigurationToRealmAssociation](RealmConfigurationToRealmAssociation.md)
+ * [RelationshipType](RelationshipType.md)
+ * [Server](Server.md)
+ * [ServerGroup](ServerGroup.md)
+ * [ServerGroupHub](ServerGroupHub.md)
+ * [ServerGroupHubToDomainEnvironmentAssociation](ServerGroupHubToDomainEnvironmentAssociation.md)
+ * [ServerGroupHubToServerGroupAssociation](ServerGroupHubToServerGroupAssociation.md)
+ * [ServerGroupToServerTypeAssociation](ServerGroupToServerTypeAssociation.md)
+ * [ServerHub](ServerHub.md)
+ * [ServerHubToServerAssociation](ServerHubToServerAssociation.md)
+ * [ServerHubToServerGroupHubAssociation](ServerHubToServerGroupHubAssociation.md)
+ * [ServerType](ServerType.md)
+ * [SystemTaxon](SystemTaxon.md)
+ * [SystemicEntity](SystemicEntity.md)
+ * [TaxonomicRank](TaxonomicRank.md)
+ * [VcsRoot](VcsRoot.md)
+ * [Workload](Workload.md)
+ * [WorkloadEntity](WorkloadEntity.md)
